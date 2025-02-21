@@ -124,17 +124,18 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
-                  className="text-center"
                 >
-                  <div className="mb-6 flex justify-center">
-                    {value.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-luxury-gold-300 mb-4">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-300">
-                    {value.description}
-                  </p>
+                  <LuxuryCard className="p-6 h-full flex flex-col items-center text-center">
+                    <div className="mb-6">
+                      {value.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#c6a255] mb-4">
+                      {value.title}
+                    </h3>
+                    <p className="text-gray-300">
+                      {value.description}
+                    </p>
+                  </LuxuryCard>
                 </motion.div>
               ))}
             </div>

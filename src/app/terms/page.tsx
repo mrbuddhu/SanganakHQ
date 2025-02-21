@@ -156,19 +156,19 @@ export default function TermsPage() {
                   <div>
                     <h3 className="text-luxury-gold-300 font-semibold mb-2">Governing Law</h3>
                     <p className="text-gray-300">
-                      These terms are governed by the laws of California, United States. Any disputes shall be resolved
-                      in the courts of San Francisco, California.
+                      These terms are governed by the laws of Bihar, India. Any disputes shall be resolved
+                      in the courts of Bihar, India.
                     </p>
                   </div>
                   <div>
                     <h3 className="text-luxury-gold-300 font-semibold mb-2">Contact</h3>
                     <p className="text-gray-300">
-                      For any questions regarding these terms, please contact our legal team at{' '}
+                      For any questions regarding these terms, please contact us at{' '}
                       <a
-                        href="mailto:legal@sanganakpremium.com"
+                        href="mailto:contact@sanganak.org"
                         className="text-luxury-gold-300 hover:text-luxury-gold-200 transition-colors"
                       >
-                        legal@sanganakpremium.com
+                        contact@sanganak.org
                       </a>
                     </p>
                   </div>

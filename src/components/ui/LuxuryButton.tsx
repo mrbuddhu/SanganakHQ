@@ -1,12 +1,13 @@
 'use client';
 
-import { ButtonHTMLAttributes, forwardRef } from 'react';
-import { motion } from 'framer-motion';
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-interface LuxuryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface LuxuryButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | "children"> {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
+  children?: ReactNode;
 }
 
 const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(

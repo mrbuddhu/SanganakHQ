@@ -5,8 +5,13 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Sanganak - Premium IT Solutions',
-  description: 'Beyond AI-generated conformity, we handcraft distinctive digital experiences that transform your vision into reality.',
+  title: 'Sanganak Premium',
+  description: 'The Premium IT Boutique - From strategy to execution, we craft premium solutions that drive engagement, growth, and revenue.',
+  icons: {
+    icon: '/Logo.ico',
+    shortcut: '/Logo.ico',
+    apple: '/Logo.ico',
+  },
   openGraph: {
     title: 'Sanganak - Premium IT Boutique',
     description: 'Beyond AI-generated conformity, we handcraft distinctive digital experiences that transform your vision into reality.',
@@ -38,13 +43,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="icon" href="/Logo.ico" />
+        <link rel="apple-touch-icon" href="/Logo.ico" />
         <style>{`
           #nprogress {
             display: none !important;
           }
         `}</style>
       </head>
-      <body className="min-h-screen bg-black antialiased">
+      <body className="min-h-screen bg-black antialiased text-white">
         {children}
       </body>
     </html>

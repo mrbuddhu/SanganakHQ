@@ -137,10 +137,10 @@ export default function CookiesPage() {
                   <p className="text-gray-300">
                     If you have any questions about our use of cookies or this Cookie Policy, please contact us at{' '}
                     <a
-                      href="mailto:privacy@sanganakpremium.com"
+                      href="mailto:contact@sanganak.org"
                       className="text-luxury-gold-300 hover:text-luxury-gold-200 transition-colors"
                     >
-                      privacy@sanganakpremium.com
+                      contact@sanganak.org
                     </a>
                   </p>
                 </div>

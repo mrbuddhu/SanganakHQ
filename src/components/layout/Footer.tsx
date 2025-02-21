@@ -3,11 +3,21 @@
 import { CTA_URL } from '@/constants/links';
 import Image from 'next/image';
 import Link from 'next/link';
+import LuxuryHeading from '@/components/ui/LuxuryHeading';
 
 export default function Footer() {
   return (
     <footer className="bg-black">
       <div className="container mx-auto px-4 py-12">
+        {/* Footer Heading */}
+        <div className="mb-16">
+          <LuxuryHeading
+            title="Connect With Us"
+            subtitle="Explore our resources and get in touch"
+            center={true}
+          />
+        </div>
+
         {/* Main Footer Content */}
         <div className="relative h-[450px] flex items-center justify-center">
           {/* Center Logo */}
@@ -199,6 +209,18 @@ export default function Footer() {
                 <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
               </div>
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8">
+            <a
+              href={CTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
+            >
+              Schedule a Call
+            </a>
           </div>
         </div>
 

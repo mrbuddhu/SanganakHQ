@@ -39,7 +39,7 @@ export default function Navbar() {
   }
 
   const navItems = [
-    { href: '#hero', isLogo: true, logoImage: '/logo.ico' },
+    { href: '#hero', isLogo: true, logoImage: '/Logo.ico' },
     { href: '#services', label: 'Services', isLogo: false },
     { href: '#portfolio', label: 'Portfolio', isLogo: false },
     { href: '#testimonials', label: 'Testimonials', isLogo: false },
@@ -89,15 +89,14 @@ export default function Navbar() {
                 }`}
               >
                 {item.isLogo ? (
-                  <div className="relative w-[100px] h-[100px] flex items-center justify-center overflow-visible group">
+                  <div className="relative w-[100px] h-[100px] flex items-center justify-center overflow-hidden rounded-full group">
                     <div className="absolute inset-0 bg-[#c6a255]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <Image
-                      src={item.logoImage}
+                      src={item.logoImage || '/Logo.ico'}
                       alt="Sanganak Logo"
                       width={100}
                       height={100}
                       className="w-[100px] h-[100px] rounded-full p-2 transition-all duration-300 group-hover:scale-110"
-                      unoptimized
                       priority
                     />
                   </div>

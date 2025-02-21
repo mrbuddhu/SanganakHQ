@@ -5,6 +5,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { Book, Code2, Terminal, Workflow, ArrowRight } from 'lucide-react';
+import { CTA_URL } from '@/constants/links';
 
 export default function DocsPage() {
   const docs = [
@@ -115,10 +116,12 @@ export default function DocsPage() {
                 Our support team is here to help you with any questions or technical issues.
               </p>
               <a
-                href="/contact"
+                href={CTA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
               >
-                Contact Support
+                Schedule a Call
               </a>
             </LuxuryCard>
           </motion.div>

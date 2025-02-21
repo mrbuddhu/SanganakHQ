@@ -190,10 +190,10 @@ export default function SecurityPage() {
                 <p className="text-gray-300">
                   For security-related inquiries or to report a security concern, please contact our security team at{' '}
                   <a
-                    href="mailto:security@sanganakpremium.com"
+                    href="mailto:contact@sanganak.org"
                     className="text-luxury-gold-300 hover:text-luxury-gold-200 transition-colors"
                   >
-                    security@sanganakpremium.com
+                    contact@sanganak.org
                   </a>
                 </p>
               </div>

@@ -10,7 +10,6 @@ import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles, ChevronDown, Zap, Plus, Linkedin, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
-import AuthForm from './AuthForm';
 import { CTA_URL } from '@/constants/links';
 
 export default function Home() {
@@ -52,6 +51,158 @@ export default function Home() {
     }
   };
 
+  const portfolio = [
+    {
+      title: "Creators Home",
+      description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
+      image: "/portfolio/creators-home.jpg",
+      caseStudyLink: "/case-studies#creators-home",
+      liveLink: "https://creatorshome.xyz",
+      tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
+    },
+    {
+      title: "NFTCollect",
+      description: "Cross-platform mobile app for NFT collectors featuring real-time price tracking, portfolio management, and marketplace integration.",
+      image: "/portfolio/nftcollect.jpg",
+      caseStudyLink: "/case-studies#nftcollect",
+      tags: ["React Native", "Mobile App", "Web3", "NFT"]
+    },
+    {
+      title: "Burgerrr",
+      description: "Feature-rich food delivery mobile app specializing in gourmet burgers, with real-time order tracking and personalized recommendations.",
+      image: "/portfolio/burgerrr.jpg",
+      caseStudyLink: "/case-studies#burgerrr",
+      tags: ["React Native", "Mobile App", "Food Delivery", "Location Services"]
+    },
+    {
+      title: "Interio",
+      description: "Modern interior design platform showcasing luxury spaces and connecting designers with clients.",
+      image: "/portfolio/interio.jpg",
+      caseStudyLink: "/case-studies#interio",
+      liveLink: "https://interio-eta.vercel.app/",
+      tags: ["Interior Design", "Luxury", "Marketplace"]
+    },
+    {
+      title: "GlobalEats",
+      description: "International culinary platform connecting food enthusiasts with authentic global cuisines.",
+      image: "/portfolio/globaleats.jpg",
+      caseStudyLink: "/case-studies#globaleats",
+      tags: ["Food Tech", "Marketplace", "Culture"]
+    },
+    {
+      title: "MedicoBuddy",
+      description: "SaaS solution transforming medical education with AI-driven learning tools, case management, and professional networking for healthcare professionals.",
+      image: "/portfolio/medicobuddy.jpg",
+      caseStudyLink: "/case-studies#medicobuddy",
+      tags: ["SaaS", "Medical Education", "AI/ML", "Healthcare"]
+    }
+  ];
+
+  const process = [
+    {
+      title: "Discovery & Planning",
+      description: "We analyze your requirements and create a comprehensive project roadmap aligned with your goals."
+    },
+    {
+      title: "Branding & Design",
+      description: "Our creative team crafts stunning visuals and unique brand identity that sets you apart."
+    },
+    {
+      title: "Development & Test",
+      description: "We build and rigorously test your solution using cutting-edge technology and best practices."
+    },
+    {
+      title: "Delivery & Support",
+      description: "We ensure smooth deployment and provide ongoing maintenance to keep your solution running perfectly."
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah Chen",
+      role: "CEO, TechVision Inc.",
+      quote: "Sanganak transformed our digital presence with their innovative approach. The AI integration has revolutionized our customer service.",
+      videoUrl: "/testimonials/sarah-chen.mp4",
+      avatar: "/testimonials/sarah-chen.jpg"
+    },
+    {
+      name: "James Miller",
+      role: "CTO, BlockChain Solutions",
+      quote: "Their blockchain expertise is unmatched. They delivered a secure, scalable solution that exceeded our expectations.",
+      videoUrl: "/testimonials/james-miller.mp4",
+      avatar: "/testimonials/james-miller.jpg"
+    },
+    {
+      name: "Elena Rodriguez",
+      role: "Creative Director, Design Hub",
+      quote: "The attention to detail in their design work is exceptional. Our brand has never looked more premium and cohesive.",
+      videoUrl: "/testimonials/elena-rodriguez.mp4",
+      avatar: "/testimonials/elena-rodriguez.jpg"
+    },
+    {
+      name: "Michael Zhang",
+      role: "Founder, AI Ventures",
+      quote: "Sanganak's AI solutions have given us a competitive edge. Their team's technical expertise is truly world-class.",
+      videoUrl: "/testimonials/michael-zhang.mp4",
+      avatar: "/testimonials/michael-zhang.jpg"
+    },
+    {
+      name: "Priya Patel",
+      role: "Head of Marketing, LuxeBrand",
+      quote: "The branding work they delivered was simply outstanding. Our engagement metrics have increased by 300%.",
+      videoUrl: "/testimonials/priya-patel.mp4",
+      avatar: "/testimonials/priya-patel.jpg"
+    },
+    {
+      name: "David Anderson",
+      role: "Product Manager, CloudTech",
+      quote: "Their development team created a flawless application that has transformed our business operations.",
+      videoUrl: "/testimonials/david-anderson.mp4",
+      avatar: "/testimonials/david-anderson.jpg"
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "What sets Sanganak apart from other digital agencies?",
+      answer: "We combine cutting-edge technology with luxury design principles to create digital experiences that truly stand out. Our attention to detail, commitment to excellence, and focus on measurable results make us the preferred choice for discerning clients."
+    },
+    {
+      question: "How do you ensure the success of digital projects?",
+      answer: "Our proven process involves thorough research, strategic planning, iterative development, and rigorous testing. We maintain transparent communication throughout and use data-driven insights to optimize outcomes."
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "While we excel across various sectors, we have particular expertise in luxury brands, financial services, technology companies, and high-end retail. Our adaptable approach ensures success regardless of industry."
+    },
+    {
+      question: "How do you handle project timelines and budgets?",
+      answer: "We believe in transparent communication and realistic planning. Each project receives a detailed timeline and budget breakdown upfront, with regular updates and milestone tracking throughout the development process."
+    },
+    {
+      question: "What ongoing support do you provide after launch?",
+      answer: "We offer comprehensive post-launch support including monitoring, maintenance, updates, and optimization. Our team remains available for continuous improvements and rapid response to any concerns."
+    }
+  ];
+
+  const elitePoints = [
+    {
+      icon: "",
+      title: "Elite Clientele",
+      description: "Serving industry leaders and visionaries who demand excellence in every pixel."
+    },
+    {
+      icon: "",
+      title: "Bespoke Solutions",
+      description: "Crafting unique digital experiences that reflect your distinct identity and aspirations."
+    },
+    {
+      icon: "",
+      title: "Tailored Solutions",
+      description: "Providing unparalleled attention and dedication to every aspect of your project."
+    }
+  ];
+
   return (
     <MainLayout>
       <main>
@@ -73,8 +224,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="flex items-center justify-center pt-0"
               >
-                <div className="bg-black/40 backdrop-blur-sm border border-luxury-gold-300/20 rounded-full px-6 py-2 flex items-center gap-2"
-                >
+                <div className="bg-black/40 backdrop-blur-sm border border-luxury-gold-300/20 rounded-full px-6 py-2 flex items-center gap-2">
                   <div className="flex -space-x-3">
                     {[1, 2, 3, 4, 5].map((index) => (
                       <div
@@ -114,139 +264,69 @@ export default function Home() {
                 />
               </div>
 
-              <div className="text-center space-y-4">
-                <h1 
-                  className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-wider mb-0"
-                  style={{
-                    background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
-                  }}
-                >
-                  SANGANAK
-                </h1>
-                <h2 
-                  className="text-2xl md:text-3xl font-bold tracking-wide mt-0"
-                  style={{
-                    background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
-                  }}
-                >
-                  {displayText}
-                </h2>
+              <div className="text-center space-y-8">
+                <div>
+                  <h1 
+                    className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-wider mb-4"
+                    style={{
+                      background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
+                    }}
+                  >
+                    SANGANAK
+                  </h1>
+                  <h2 
+                    className="text-2xl md:text-3xl font-bold tracking-wide"
+                    style={{
+                      background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
+                    }}
+                  >
+                    The Premium IT Boutique
+                  </h2>
+                </div>
                 <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                  From strategy to we craft premium solutions that drive engagement,<br />
-                  <span className="font-extrabold text-[#c6a255]">execution, growth, and revenue.</span>
+                  From strategy to execution, we craft premium solutions that drive <span className="font-extrabold text-[#c6a255]">engagement, growth, and revenue.</span>
                 </p>
 
                 {/* Service Categories */}
-                <div className="flex flex-wrap justify-center gap-8 mt-8">
+                <div className="flex flex-wrap justify-center gap-8 mt-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                     className="flex flex-col items-center space-y-2"
                   >
-                    <span className="text-4xl text-luxury-gold-300">👑</span>
-                    <span className="text-luxury-gold-300 font-semibold">Elite Clientele</span>
+                    <span className="text-3xl">👑</span>
+                    <span className="text-[#c6a255] font-medium">Elite Clientele</span>
                   </motion.div>
-                  
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="flex flex-col items-center space-y-2"
+                  >
+                    <span className="text-3xl">⭐</span>
+                    <span className="text-[#c6a255] font-medium">Bespoke Solutions</span>
+                  </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                     className="flex flex-col items-center space-y-2"
                   >
-                    <span className="text-4xl text-luxury-gold-300">⭐</span>
-                    <span className="text-luxury-gold-300 font-semibold">Bespoke Solutions</span>
-                  </motion.div>
-                  
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="flex flex-col items-center space-y-2"
-                  >
-                    <span className="text-4xl text-luxury-gold-300">✨</span>
-                    <span className="text-luxury-gold-300 font-semibold">Tailored Solutions</span>
+                    <span className="text-3xl">✨</span>
+                    <span className="text-[#c6a255] font-medium">Tailored Solutions</span>
                   </motion.div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Main Hero Content */}
-          <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center -mt-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center space-y-8"
-            >
-              {/* Logo */}
-              <div className="relative w-40 h-40 mx-auto mb-8">
-                <Image
-                  src="/logo.ico"
-                  alt="Sanganak Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-
-              {/* Company Name */}
-              <h2 className="text-5xl md:text-6xl font-bold text-luxury-gold-300 tracking-wider mb-4">
-                {displayText}
-              </h2>
-
-              {/* Tagline */}
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light">
-                From strategy to we craft premium solutions that drive engagement,<br />
-                <span className="font-extrabold text-[#c6a255]">execution, growth, and revenue.</span>
-              </p>
-
-              {/* Service Categories */}
-              <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto mt-16">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="text-center"
-                >
-                  <div className="text-luxury-gold-300 flex justify-center mb-3">
-                    <span className="text-4xl">👑</span>
-                  </div>
-                  <h3 className="text-luxury-gold-300 font-medium">Elite Clientele</h3>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="text-center"
-                >
-                  <div className="text-luxury-gold-300 flex justify-center mb-3">
-                    <span className="text-4xl">⭐</span>
-                  </div>
-                  <h3 className="text-luxury-gold-300 font-medium">Bespoke Solutions</h3>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-center"
-                >
-                  <div className="text-luxury-gold-300 flex justify-center mb-3">
-                    <span className="text-4xl">✨</span>
-                  </div>
-                  <h3 className="text-luxury-gold-300 font-medium">Tailored Solutions</h3>
-                </motion.div>
-              </div>
-            </motion.div>
           </div>
         </section>
 
@@ -467,10 +547,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {process.map((step, index) => (
-                <LuxuryCard
-                  key={index}
-                  className="p-6 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20 flex flex-col"
-                >
+                <LuxuryCard key={index} className="p-6 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="w-8 h-8 rounded-full bg-[#c6a255] text-black flex items-center justify-center font-bold">
                       {index + 1}
@@ -924,157 +1001,3 @@ export default function Home() {
     </MainLayout>
   );
 }
-
-const portfolio = [
-  {
-    title: "Creators Home",
-    description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
-    image: "/portfolio/creators-home.jpg",
-    caseStudyLink: "/case-studies#creators-home",
-    liveLink: "https://creatorshome.xyz",
-    tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
-  },
-  {
-    title: "NFTCollect",
-    description: "Cross-platform mobile app for NFT collectors featuring real-time price tracking, portfolio management, and marketplace integration.",
-    image: "/portfolio/nftcollect.jpg",
-    caseStudyLink: "/case-studies#nftcollect",
-    tags: ["React Native", "Mobile App", "Web3", "NFT"]
-  },
-  {
-    title: "Burgerrr",
-    description: "Feature-rich food delivery mobile app specializing in gourmet burgers, with real-time order tracking and personalized recommendations.",
-    image: "/portfolio/burgerrr.jpg",
-    caseStudyLink: "/case-studies#burgerrr",
-    tags: ["React Native", "Mobile App", "Food Delivery", "Location Services"]
-  },
-  {
-    title: "Interio",
-    description: "Modern interior design platform showcasing luxury spaces and connecting designers with clients.",
-    image: "/portfolio/interio.jpg",
-    caseStudyLink: "/case-studies#interio",
-    liveLink: "https://interio-eta.vercel.app/",
-    tags: ["Interior Design", "Luxury", "Marketplace"]
-  },
-  {
-    title: "GlobalEats",
-    description: "International culinary platform connecting food enthusiasts with authentic global cuisines.",
-    image: "/portfolio/globaleats.jpg",
-    caseStudyLink: "/case-studies#globaleats",
-    tags: ["Food Tech", "Marketplace", "Culture"]
-  },
-  {
-    title: "MedicoBuddy",
-    description: "SaaS solution transforming medical education with AI-driven learning tools, case management, and professional networking for healthcare professionals.",
-    image: "/portfolio/medicobuddy.jpg",
-    caseStudyLink: "/case-studies#medicobuddy",
-    tags: ["SaaS", "Medical Education", "AI/ML", "Healthcare"]
-  }
-];
-
-const process = [
-  {
-    title: "Discovery & Planning",
-    description: "We analyze your requirements and create a comprehensive project roadmap aligned with your goals."
-  },
-  {
-    title: "Branding & Design",
-    description: "Our creative team crafts stunning visuals and unique brand identity that sets you apart."
-  },
-  {
-    title: "Development & Test",
-    description: "We build and rigorously test your solution using cutting-edge technology and best practices."
-  },
-  {
-    title: "Delivery & Support",
-    description: "We ensure smooth deployment and provide ongoing maintenance to keep your solution running perfectly."
-  }
-];
-
-const testimonials = [
-  {
-    name: "Sarah Chen",
-    role: "CEO, TechVision Inc.",
-    quote: "Sanganak transformed our digital presence with their innovative approach. The AI integration has revolutionized our customer service.",
-    videoUrl: "/testimonials/sarah-chen.mp4",
-    avatar: "/testimonials/sarah-chen.jpg"
-  },
-  {
-    name: "James Miller",
-    role: "CTO, BlockChain Solutions",
-    quote: "Their blockchain expertise is unmatched. They delivered a secure, scalable solution that exceeded our expectations.",
-    videoUrl: "/testimonials/james-miller.mp4",
-    avatar: "/testimonials/james-miller.jpg"
-  },
-  {
-    name: "Elena Rodriguez",
-    role: "Creative Director, Design Hub",
-    quote: "The attention to detail in their design work is exceptional. Our brand has never looked more premium and cohesive.",
-    videoUrl: "/testimonials/elena-rodriguez.mp4",
-    avatar: "/testimonials/elena-rodriguez.jpg"
-  },
-  {
-    name: "Michael Zhang",
-    role: "Founder, AI Ventures",
-    quote: "Sanganak's AI solutions have given us a competitive edge. Their team's technical expertise is truly world-class.",
-    videoUrl: "/testimonials/michael-zhang.mp4",
-    avatar: "/testimonials/michael-zhang.jpg"
-  },
-  {
-    name: "Priya Patel",
-    role: "Head of Marketing, LuxeBrand",
-    quote: "The branding work they delivered was simply outstanding. Our engagement metrics have increased by 300%.",
-    videoUrl: "/testimonials/priya-patel.mp4",
-    avatar: "/testimonials/priya-patel.jpg"
-  },
-  {
-    name: "David Anderson",
-    role: "Product Manager, CloudTech",
-    quote: "Their development team created a flawless application that has transformed our business operations.",
-    videoUrl: "/testimonials/david-anderson.mp4",
-    avatar: "/testimonials/david-anderson.jpg"
-  }
-];
-
-const faqs = [
-  {
-    question: "What sets Sanganak apart from other digital agencies?",
-    answer: "We combine cutting-edge technology with luxury design principles to create digital experiences that truly stand out. Our attention to detail, commitment to excellence, and focus on measurable results make us the preferred choice for discerning clients."
-  },
-  {
-    question: "How do you ensure the success of digital projects?",
-    answer: "Our proven process involves thorough research, strategic planning, iterative development, and rigorous testing. We maintain transparent communication throughout and use data-driven insights to optimize outcomes."
-  },
-  {
-    question: "What industries do you specialize in?",
-    answer: "While we excel across various sectors, we have particular expertise in luxury brands, financial services, technology companies, and high-end retail. Our adaptable approach ensures success regardless of industry."
-  },
-  {
-    question: "How do you handle project timelines and budgets?",
-    answer: "We believe in transparent communication and realistic planning. Each project receives a detailed timeline and budget breakdown upfront, with regular updates and milestone tracking throughout the development process."
-  },
-  {
-    question: "What ongoing support do you provide after launch?",
-    answer: "We offer comprehensive post-launch support including monitoring, maintenance, updates, and optimization. Our team remains available for continuous improvements and rapid response to any concerns."
-  }
-];
-
-const elitePoints = [
-  {
-    icon: "",
-    title: "Elite Clientele",
-    description: "Serving industry leaders and visionaries who demand excellence in every pixel."
-  },
-  {
-    icon: "",
-    title: "Bespoke Solutions",
-    description: "Crafting unique digital experiences that reflect your distinct identity and aspirations."
-  },
-  {
-    icon: "",
-    title: "Tailored Solutions",
-    description: "Providing unparalleled attention and dedication to every aspect of your project."
-  }
-];
-
-export { portfolio, process, testimonials, faqs };

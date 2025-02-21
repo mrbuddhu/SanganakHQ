@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
-import ContactForm from '@/components/ContactForm';
 import { Clock, HeartHandshake, MessageSquare, ShieldCheck, Phone, Mail, MapPin } from 'lucide-react';
+import { CTA_URL } from '@/constants/links';
 
 export default function SupportPage() {
   const supportFeatures = [
@@ -35,19 +35,19 @@ export default function SupportPage() {
     {
       icon: <Phone className="w-6 h-6 text-luxury-gold-300" />,
       title: 'Phone Support',
-      details: '+1 (888) 123-4567',
+      details: '+91 9631864610',
       subtext: 'Available 24/7 for premium clients'
     },
     {
       icon: <Mail className="w-6 h-6 text-luxury-gold-300" />,
       title: 'Email Support',
-      details: 'support@sanganakpremium.com',
+      details: 'contact@sanganak.org',
       subtext: 'Response within 2 hours'
     },
     {
       icon: <MapPin className="w-6 h-6 text-luxury-gold-300" />,
       title: 'Office Location',
-      details: 'Silicon Valley, California',
+      details: 'Bihar, India',
       subtext: 'Available for in-person consultations'
     }
   ];
@@ -109,11 +109,21 @@ export default function SupportPage() {
                   </div>
                 ))}
               </div>
-              <div className="border-t border-luxury-gold-300/20 pt-8">
+              <div className="border-t border-luxury-gold-300/20 pt-8 text-center">
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-6">
-                  Contact Support
+                  Get Premium Support
                 </h3>
-                <ContactForm />
+                <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+                  Schedule a call with our support team to discuss your needs and get immediate assistance.
+                </p>
+                <a
+                  href={CTA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
+                >
+                  Schedule a Call
+                </a>
               </div>
             </LuxuryCard>
           </div>

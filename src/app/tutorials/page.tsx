@@ -47,6 +47,9 @@ export default function TutorialsPage() {
     <MainLayout>
       <main className="min-h-screen bg-black text-white pt-24">
         <div className="container mx-auto px-4">
+          <div className="bg-[#c6a255]/10 border border-[#c6a255] rounded-lg p-4 mb-8 text-center">
+            <p className="text-[#c6a255] font-semibold">🎓 Tutorials Coming Soon! Stay tuned for our premium educational content.</p>
+          </div>
           <LuxuryHeading
             title="Premium Tutorials"
             subtitle="Master the art of digital excellence"

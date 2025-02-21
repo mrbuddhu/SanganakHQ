@@ -6,12 +6,14 @@ interface LuxuryHeadingProps {
   title: string;
   subtitle?: string;
   align?: 'left' | 'center' | 'right';
+  className?: string;
 }
 
 export default function LuxuryHeading({ 
   title, 
   subtitle, 
-  align = 'center' 
+  align = 'center',
+  className = ''
 }: LuxuryHeadingProps) {
   const alignClass = {
     left: 'text-left',
@@ -25,7 +27,7 @@ export default function LuxuryHeading({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className={`mb-16 ${alignClass[align]}`}
+      className={`mb-16 ${alignClass[align]} ${className}`}
     >
       {/* Decorative elements */}
       <div className="flex items-center justify-center gap-4 mb-6">

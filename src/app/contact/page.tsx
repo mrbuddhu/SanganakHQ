@@ -115,16 +115,19 @@ export default function ContactPage() {
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-4">
                       {info.title}
                     </h3>
-                    <p className="text-gray-300 mb-2">{info.content}</p>
-                    <p className="text-sm text-gray-400 mb-6">{info.description}</p>
-                    {info.link && (
-                      <a
-                        href={info.link}
-                        className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-200 transition-colors"
-                      >
-                        Connect <ArrowRight className="w-4 h-4 ml-2" />
-                      </a>
-                    )}
+                    <p className="text-gray-300 mb-2">
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          className="hover:text-luxury-gold-300 transition-colors"
+                        >
+                          {info.content}
+                        </a>
+                      ) : (
+                        info.content
+                      )}
+                    </p>
+                    <p className="text-sm text-gray-400">{info.description}</p>
                   </div>
                 </LuxuryCard>
               </motion.div>
