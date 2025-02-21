@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sanganak - Premium IT Solutions Boutique
 
-## Getting Started
+A luxurious, high-end website for Sanganak - a world-class IT boutique offering Branding, UI/UX, Development, AI, and Blockchain solutions. Built with cutting-edge technologies and premium design principles.
 
-First, run the development server:
+## 🌟 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Ultra-premium, dark & gold aesthetic
+- Cinematic animations and transitions
+- 3D effects and WebGL experiences
+- Responsive, mobile-first design
+- High-performance and SEO optimized
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 15 with TypeScript
+- Tailwind CSS for styling
+- Framer Motion for animations
+- GSAP for advanced animations
+- Three.js with React Three Fiber for 3D effects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Getting Started
 
-## Learn More
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/src/app` - Next.js app router pages
+- `/src/components` - Reusable React components
+- `/src/styles` - Global styles and Tailwind configuration
+- `/src/lib` - Utility functions and hooks
+- `/public` - Static assets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Contributing
 
-## Deploy on Vercel
+This is a private project for Sanganak. Please contact the development team for contribution guidelines.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All rights reserved © Sanganak 2025
