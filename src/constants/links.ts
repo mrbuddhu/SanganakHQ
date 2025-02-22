@@ -1,1 +1,1 @@
-export const CTA_URL = "https://cal.com/mrbuddhu/strategycall";
+export const CTA_URL = "https://cal.com/sanganak/strategycall";

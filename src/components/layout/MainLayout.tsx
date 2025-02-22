@@ -27,9 +27,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <main>
           {children}
         </main>
+        <Footer />
       </div>
       {!isHomePage && <BackToHome />}
-      <Footer />
     </div>
   );
 }

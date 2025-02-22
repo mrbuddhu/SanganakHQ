@@ -5,12 +5,29 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Sanganak Premium',
-  description: 'The Premium IT Boutique - From strategy to execution, we craft premium solutions that drive engagement, growth, and revenue.',
+  title: 'SANGANAK | The Premium IT Boutique',
+  description: 'Your trusted partner for premium IT solutions and services.',
+  manifest: '/manifest.json',
+  themeColor: '#c6a255',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'SANGANAK | The Premium IT Boutique',
+  },
   icons: {
     icon: '/Logo.ico',
     shortcut: '/Logo.ico',
     apple: '/Logo.ico',
+    other: {
+      rel: 'apple-touch-icon',
+      url: '/Logo.ico',
+    },
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
   },
   openGraph: {
     title: 'Sanganak - Premium IT Boutique',
@@ -51,7 +68,7 @@ export default function RootLayout({
           }
         `}</style>
       </head>
-      <body className="min-h-screen bg-black antialiased text-white">
+      <body className={`${inter.className} min-h-screen bg-black antialiased text-white`}>
         {children}
       </body>
     </html>

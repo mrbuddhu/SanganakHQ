@@ -1,232 +1,87 @@
 'use client';
 
-import { CTA_URL } from '@/constants/links';
 import Image from 'next/image';
 import Link from 'next/link';
-import LuxuryHeading from '@/components/ui/LuxuryHeading';
 
 export default function Footer() {
   return (
-    <footer className="bg-black">
-      <div className="container mx-auto px-4 py-12">
-        {/* Footer Heading */}
-        <div className="mb-16">
-          <LuxuryHeading
-            title="Connect With Us"
-            subtitle="Explore our resources and get in touch"
-            center={true}
-          />
-        </div>
-
+    <footer className="bg-black text-white pt-8 pb-32 md:pb-24">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Main Footer Content */}
-        <div className="relative h-[450px] flex items-center justify-center">
-          {/* Center Logo */}
-          <div className="absolute left-1/2 top-[55%] transform -translate-x-1/2 -translate-y-1/2">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Our Services */}
+          <div className="space-y-4 text-center lg:text-left">
+            <h3 className="text-lg font-semibold text-[#c6a255]">Our Services</h3>
+            <ul className="space-y-2">
+              <li><Link href="/services" className="hover:text-[#c6a255] transition-colors">All Services</Link></li>
+              <li><Link href="/products" className="hover:text-[#c6a255] transition-colors">Products</Link></li>
+              <li><Link href="/portfolio" className="hover:text-[#c6a255] transition-colors">Portfolio</Link></li>
+              <li><Link href="/case-studies" className="hover:text-[#c6a255] transition-colors">Case Studies</Link></li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div className="space-y-4 text-center lg:text-left">
+            <h3 className="text-lg font-semibold text-[#c6a255]">Company</h3>
+            <ul className="space-y-2">
+              <li><Link href="/about" className="hover:text-[#c6a255] transition-colors">About Us</Link></li>
+              <li><Link href="/team" className="hover:text-[#c6a255] transition-colors">Our Team</Link></li>
+              <li><Link href="/careers" className="hover:text-[#c6a255] transition-colors">Careers</Link></li>
+              <li><Link href="/process" className="hover:text-[#c6a255] transition-colors">Our Process</Link></li>
+            </ul>
+          </div>
+
+          {/* Center Logo and CTA */}
+          <div className="flex flex-col items-center justify-center order-first lg:order-none mb-8 lg:mb-0">
             <Image
               src="/RoundSanganak.jpeg"
               alt="Sanganak Premium Logo"
-              width={192}
-              height={192}
-              className="rounded-full"
+              width={180}
+              height={180}
+              className="rounded-full hover:scale-105 transition-transform duration-300 w-32 md:w-40 lg:w-[180px]"
             />
-          </div>
-
-          {/* Far Left Side Text - Our Services */}
-          <div className="absolute left-0 top-0 w-1/4 h-full">
-            <h4 className="text-[#c6a255] font-semibold absolute left-[55%] top-[20%]">Our Services</h4>
-            <div className="absolute left-[50%] top-[32%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/services" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Services
-                </Link>
-              </div>
-            </div>
-            <div className="absolute left-[40%] top-[44%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/products" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Products
-                </Link>
-              </div>
-            </div>
-            <div className="absolute left-[35%] top-[56%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/case-studies" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Case Studies
-                </Link>
-              </div>
-            </div>
-            <div className="absolute left-[40%] top-[68%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/portfolio" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Portfolio
-                </Link>
-              </div>
-            </div>
-            <div className="absolute left-[50%] top-[80%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/tutorials" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Tutorials
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Left Center Text - Company */}
-          <div className="absolute left-1/4 top-0 w-1/4 h-full">
-            <h4 className="text-[#c6a255] font-semibold absolute left-[40%] top-[20%]">Company</h4>
-            <div className="absolute left-[35%] top-[32%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/about" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  About Us
-                </Link>
-              </div>
-            </div>
-            <div className="absolute left-[25%] top-[44%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/team" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Our Team
-                </Link>
-              </div>
-            </div>
-            <div className="absolute left-[20%] top-[56%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/careers" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Careers
-                </Link>
-              </div>
-            </div>
-            <div className="absolute left-[25%] top-[68%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/process" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Our Process
-                </Link>
-              </div>
-            </div>
-            <div className="absolute left-[35%] top-[80%]">
-              <div className="flex items-center gap-6">
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-                <Link href="/contact" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Contact
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side Text - Resources */}
-          <div className="absolute right-1/4 top-0 w-1/4 h-full">
-            <h4 className="text-[#c6a255] font-semibold absolute right-[75%] top-[20%]">Resources</h4>
-            <div className="absolute right-[25%] top-[32%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/blog" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Blog
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-            <div className="absolute right-[20%] top-[44%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/docs" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Docs
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-            <div className="absolute right-[15%] top-[56%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/support" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Support
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-            <div className="absolute right-[20%] top-[68%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/tutorials" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Tutorials
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-            <div className="absolute right-[25%] top-[80%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/security" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Security
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Far Right Side Text - Legal */}
-          <div className="absolute right-0 top-0 w-1/4 h-full">
-            <h4 className="text-[#c6a255] font-semibold absolute right-[75%] top-[20%]">Legal</h4>
-            <div className="absolute right-[50%] top-[32%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/terms" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Terms
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-            <div className="absolute right-[40%] top-[44%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/privacy" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Privacy
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-            <div className="absolute right-[35%] top-[56%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/cookies" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Cookies
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-            <div className="absolute right-[40%] top-[68%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/security" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Security
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-            <div className="absolute right-[50%] top-[80%]">
-              <div className="flex flex-row-reverse items-center gap-6">
-                <Link href="/contact" className="text-gray-300 hover:text-[#c6a255] transition-colors px-2">
-                  Contact
-                </Link>
-                <div className="w-1 h-1 rounded-full bg-[#c6a255]"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8">
-            <a
-              href={CTA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
+            <Link 
+              href="/contact"
+              className="group relative inline-flex items-center justify-center px-6 py-2 mt-6 overflow-hidden font-medium transition duration-300 ease-out border border-[#c6a255] rounded-full shadow-md text-sm"
             >
-              Schedule a Call
-            </a>
+              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#c6a255] group-hover:translate-x-0 ease">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </span>
+              <span className="absolute flex items-center justify-center w-full h-full text-[#c6a255] transition-all duration-300 transform group-hover:translate-x-full ease">Contact Us</span>
+              <span className="relative invisible">Contact Us</span>
+            </Link>
+          </div>
+
+          {/* Resources */}
+          <div className="space-y-4 text-center lg:text-left lg:pl-24">
+            <h3 className="text-lg font-semibold text-[#c6a255]">Resources</h3>
+            <ul className="space-y-2">
+              <li><Link href="/blog" className="hover:text-[#c6a255] transition-colors">Blog</Link></li>
+              <li><Link href="/docs" className="hover:text-[#c6a255] transition-colors">Documentation</Link></li>
+              <li><Link href="/tutorials" className="hover:text-[#c6a255] transition-colors">Tutorials</Link></li>
+              <li><Link href="/support" className="hover:text-[#c6a255] transition-colors">Support</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="space-y-4 text-center lg:text-left lg:pl-24">
+            <h3 className="text-lg font-semibold text-[#c6a255]">Legal</h3>
+            <ul className="space-y-2">
+              <li><Link href="/privacy" className="hover:text-[#c6a255] transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-[#c6a255] transition-colors">Terms of Service</Link></li>
+              <li><Link href="/cookies" className="hover:text-[#c6a255] transition-colors">Cookie Policy</Link></li>
+              <li><Link href="/security" className="hover:text-[#c6a255] transition-colors">Security</Link></li>
+            </ul>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-gray-300 text-sm mt-8">
-          &copy; {new Date().getFullYear()} Sanganak. A venture of mrbuddhu & mrsbuddhu Sanganak LLP. All rights reserved.
+        <div className="text-center pt-8 pb-16 md:pb-16 border-t border-[#c6a255]/50 mt-16">
+          <p className="text-[#c6a255] text-sm">
+            2025 Sanganak. A venture of mrbuddhu & mrbuddhu Sanganak LLP. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

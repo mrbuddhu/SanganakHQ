@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -15,9 +16,9 @@ const config: Config = {
           50: '#FFF9E5',
           100: '#FFF0B3',
           200: '#FFE680',
-          300: '#FFD700', // Pure gold
-          400: '#E6C200',
-          500: '#CCAC00',
+          300: 'rgb(var(--luxury-gold-300))', 
+          400: 'rgb(var(--luxury-gold-400))', 
+          500: 'rgb(var(--luxury-gold-500))', 
           600: '#B39700',
           700: '#998200',
           800: '#806C00',
@@ -37,32 +38,9 @@ const config: Config = {
           900: '#1A1A1A',
         },
       },
-      fontFamily: {
-        sans: ['var(--font-inter)'],
-      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'luxury-gradient': 'linear-gradient(to right, var(--luxury-gold-300), var(--luxury-gold-400))',
-      },
-      boxShadow: {
-        'luxury': '0 0 15px rgba(255, 215, 0, 0.3)',
-        'luxury-hover': '0 0 20px rgba(255, 215, 0, 0.5)',
-        'glow-gold': '0 0 15px rgba(218,165,32,0.5)',
-      },
-      animation: {
-        'luxury-shine': 'luxury-shine 2s linear infinite',
-        'luxury-float': 'luxury-float 3s ease-in-out infinite',
-      },
-      keyframes: {
-        'luxury-shine': {
-          '0%': { backgroundPosition: '200% center' },
-          '100%': { backgroundPosition: '-200% center' },
-        },
-        'luxury-float': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
       },
     },
   },

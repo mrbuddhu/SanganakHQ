@@ -40,14 +40,17 @@ export default function Home() {
     }
   };
 
-  const scrollPortfolio = (direction: 'left' | 'right') => {
-    const container = document.querySelector('.portfolio-grid');
-    if (container) {
-      const scrollAmount = direction === 'left' ? -420 : 420; // 400px card width + 20px gap
-      container.scrollTo({
-        left: container.scrollLeft + scrollAmount,
-        behavior: 'smooth'
-      });
+  const [currentPortfolioIndex, setCurrentPortfolioIndex] = useState(0);
+
+  const handlePortfolioScroll = (direction: 'prev' | 'next') => {
+    if (direction === 'prev') {
+      setCurrentPortfolioIndex(prev => 
+        prev === 0 ? portfolio.length - 3 : Math.max(0, prev - 3)
+      );
+    } else {
+      setCurrentPortfolioIndex(prev => 
+        prev + 3 >= portfolio.length ? 0 : prev + 3
+      );
     }
   };
 
@@ -56,45 +59,37 @@ export default function Home() {
       title: "Creators Home",
       description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
       image: "/portfolio/creators-home.jpg",
-      caseStudyLink: "/case-studies#creators-home",
-      liveLink: "https://creatorshome.xyz",
       tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
     },
     {
       title: "NFTCollect",
       description: "Cross-platform mobile app for NFT collectors featuring real-time price tracking, portfolio management, and marketplace integration.",
       image: "/portfolio/nftcollect.jpg",
-      caseStudyLink: "/case-studies#nftcollect",
       tags: ["React Native", "Mobile App", "Web3", "NFT"]
     },
     {
       title: "Burgerrr",
       description: "Feature-rich food delivery mobile app specializing in gourmet burgers, with real-time order tracking and personalized recommendations.",
       image: "/portfolio/burgerrr.jpg",
-      caseStudyLink: "/case-studies#burgerrr",
       tags: ["React Native", "Mobile App", "Food Delivery", "Location Services"]
     },
     {
       title: "Interio",
       description: "Modern interior design platform showcasing luxury spaces and connecting designers with clients.",
       image: "/portfolio/interio.jpg",
-      caseStudyLink: "/case-studies#interio",
-      liveLink: "https://interio-eta.vercel.app/",
       tags: ["Interior Design", "Luxury", "Marketplace"]
     },
     {
       title: "GlobalEats",
       description: "International culinary platform connecting food enthusiasts with authentic global cuisines.",
       image: "/portfolio/globaleats.jpg",
-      caseStudyLink: "/case-studies#globaleats",
       tags: ["Food Tech", "Marketplace", "Culture"]
     },
     {
       title: "MedicoBuddy",
-      description: "SaaS solution transforming medical education with AI-driven learning tools, case management, and professional networking for healthcare professionals.",
+      description: "Comprehensive healthcare SaaS platform connecting medical facilities with patients, featuring appointment scheduling, telemedicine, medical records management, and integrated healthcare services.",
       image: "/portfolio/medicobuddy.jpg",
-      caseStudyLink: "/case-studies#medicobuddy",
-      tags: ["SaaS", "Medical Education", "AI/ML", "Healthcare"]
+      tags: ["Healthcare", "SaaS", "Telemedicine", "Patient Care"]
     }
   ];
 
@@ -119,46 +114,46 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "CEO, TechVision Inc.",
-      quote: "Sanganak transformed our digital presence with their innovative approach. The AI integration has revolutionized our customer service.",
-      videoUrl: "/testimonials/sarah-chen.mp4",
-      avatar: "/testimonials/sarah-chen.jpg"
+      quote: "As the founder of Interio, I've seen how this platform has transformed our interior design business. The 3D visualization tools and project management features have helped us deliver exceptional results to our high-end clients.",
+      name: "Shyam Sunder Sharma",
+      role: "Founder & CEO, Interio Design Studio",
+      videoUrl: "/testimonials/shyam-sharma.mp4",
+      avatar: "/testimonials/headshots/shyam-sharma.jpg"
     },
     {
+      quote: "As a medical professional in Bengaluru, I'm impressed by SANGANAK's innovative healthcare IT solutions. Their custom software has streamlined our patient management system and significantly improved our operational efficiency. Their attention to detail and understanding of healthcare needs is exceptional.",
+      name: "Dr. Ankit Kumar",
+      role: "Medical Professional, Bengaluru",
+      videoUrl: "/testimonials/ankit-kumar.mp4",
+      avatar: "/testimonials/headshots/ankit-kumar.jpg"
+    },
+    {
+      quote: "As the founder of GlobalEats, this platform has been instrumental in helping us share authentic Indian cuisine with food enthusiasts worldwide. The cultural sensitivity and user experience features have helped us create a truly global presence for our restaurant.",
+      name: "Shubham Kumar",
+      role: "Founder & CEO, GlobalEats",
+      videoUrl: "/testimonials/shubham-kumar.mp4",
+      avatar: "/testimonials/headshots/shubham-kumar.jpg"
+    },
+    {
+      quote: "The Creators Home platform revolutionized our content creation workflow. The AI tools and analytics have significantly improved our productivity and revenue streams.",
+      name: "Sarah Anderson",
+      role: "Digital Content Creator",
+      videoUrl: "/testimonials/sarah-anderson.mp4",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop&q=80"
+    },
+    {
+      quote: "NFTCollect's cross-platform capabilities and real-time tracking features have made managing our NFT portfolio seamless and efficient.",
       name: "James Miller",
-      role: "CTO, BlockChain Solutions",
-      quote: "Their blockchain expertise is unmatched. They delivered a secure, scalable solution that exceeded our expectations.",
+      role: "NFT Investor & Collector",
       videoUrl: "/testimonials/james-miller.mp4",
-      avatar: "/testimonials/james-miller.jpg"
+      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&auto=format&fit=crop&q=80"
     },
     {
+      quote: "Burgerrr's delivery app transformed our restaurant business. The real-time tracking and personalized recommendations have increased our customer satisfaction significantly.",
       name: "Elena Rodriguez",
-      role: "Creative Director, Design Hub",
-      quote: "The attention to detail in their design work is exceptional. Our brand has never looked more premium and cohesive.",
+      role: "Restaurant Owner",
       videoUrl: "/testimonials/elena-rodriguez.mp4",
-      avatar: "/testimonials/elena-rodriguez.jpg"
-    },
-    {
-      name: "Michael Zhang",
-      role: "Founder, AI Ventures",
-      quote: "Sanganak's AI solutions have given us a competitive edge. Their team's technical expertise is truly world-class.",
-      videoUrl: "/testimonials/michael-zhang.mp4",
-      avatar: "/testimonials/michael-zhang.jpg"
-    },
-    {
-      name: "Priya Patel",
-      role: "Head of Marketing, LuxeBrand",
-      quote: "The branding work they delivered was simply outstanding. Our engagement metrics have increased by 300%.",
-      videoUrl: "/testimonials/priya-patel.mp4",
-      avatar: "/testimonials/priya-patel.jpg"
-    },
-    {
-      name: "David Anderson",
-      role: "Product Manager, CloudTech",
-      quote: "Their development team created a flawless application that has transformed our business operations.",
-      videoUrl: "/testimonials/david-anderson.mp4",
-      avatar: "/testimonials/david-anderson.jpg"
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&auto=format&fit=crop&q=80"
     }
   ];
 
@@ -203,6 +198,22 @@ export default function Home() {
     }
   ];
 
+  const [playingVideos, setPlayingVideos] = useState<{ [key: number]: boolean }>({});
+
+  const toggleVideo = (e: React.MouseEvent, index: number) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const video = document.getElementById(`testimonial-video-${index}`) as HTMLVideoElement;
+    if (video) {
+      if (playingVideos[index]) {
+        video.pause();
+      } else {
+        video.play();
+      }
+      setPlayingVideos(prev => ({ ...prev, [index]: !prev[index] }));
+    }
+  };
+
   return (
     <MainLayout>
       <main>
@@ -219,23 +230,60 @@ export default function Home() {
             <div className="container mx-auto">
               {/* Testimonial Banner */}
               <motion.div 
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ delay: 0.1 }}
                 className="flex items-center justify-center pt-0"
               >
                 <div className="bg-black/40 backdrop-blur-sm border border-luxury-gold-300/20 rounded-full px-6 py-2 flex items-center gap-2">
                   <div className="flex -space-x-3">
-                    {[1, 2, 3, 4, 5].map((index) => (
+                    <div className="w-10 h-10 rounded-full border-2 border-luxury-gold-300 overflow-hidden">
+                      <Image
+                        src="/testimonials/headshots/shyam-sharma.jpg"
+                        alt="Shyam Sunder Sharma"
+                        width={40}
+                        height={40}
+                        className="object-cover"
+                      />
+                    </div>
+                    <div 
+                      className="w-10 h-10 rounded-full border-2 border-luxury-gold-300 overflow-hidden"
+                      title="Dr. Ankit Kumar - Medical Professional, Bengaluru"
+                    >
+                      <Image
+                        src="/testimonials/headshots/ankit-kumar.jpg"
+                        alt="Dr. Ankit Kumar - Medical Professional, Bengaluru"
+                        width={40}
+                        height={40}
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="w-10 h-10 rounded-full border-2 border-luxury-gold-300 overflow-hidden">
+                      <Image
+                        src="/testimonials/headshots/shubham-kumar.jpg"
+                        alt="Shubham Kumar"
+                        width={40}
+                        height={40}
+                        className="object-cover"
+                      />
+                    </div>
+                    {[1, 2].map((index) => (
                       <div
                         key={index}
                         className="w-10 h-10 rounded-full border-2 border-luxury-gold-300 overflow-hidden bg-gray-800 flex items-center justify-center"
                       >
-                        <span className="text-luxury-gold-300 text-xs">F{index}</span>
+                        <Image
+                          src={`https://images.unsplash.com/photo-${index === 1 ? '1494790108377-be9c29b29330' : '1560250097-0b93528c311a'}?w=40&h=40&auto=format&fit=crop&q=80`}
+                          alt={`Client ${index + 3}`}
+                          width={40}
+                          height={40}
+                          className="object-cover"
+                        />
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-center gap-2 ml-2">
+                  <div className="flex flex-col ml-2 gap-1">
+                    <span className="text-[#c6a255] text-sm">5+ Happy Clients</span>
                     <div className="flex">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <svg
@@ -248,7 +296,6 @@ export default function Home() {
                         </svg>
                       ))}
                     </div>
-                    <span className="text-white font-semibold">5+ Clients</span>
                   </div>
                 </div>
               </motion.div>
@@ -289,8 +336,12 @@ export default function Home() {
                     The Premium IT Boutique
                   </h2>
                 </div>
+
                 <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                  From strategy to execution, we craft premium solutions that drive <span className="font-extrabold text-[#c6a255]">engagement, growth, and revenue.</span>
+                  From strategy to execution, we craft premium solutions that drive<br />
+                  <span className="font-extrabold text-[#c6a255]">engagement</span>,{' '}
+                  <span className="font-extrabold text-[#c6a255]">growth</span>, and{' '}
+                  <span className="font-extrabold text-[#c6a255]">revenue</span>.
                 </p>
 
                 {/* Service Categories */}
@@ -343,7 +394,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
             >
               {/* Luxury Branding */}
               <LuxuryCard>
@@ -510,30 +561,85 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services CTA */}
-        <section className="py-20 relative">
-          <div className="max-w-3xl mx-auto px-4 text-center">
-            <motion.div
+        {/* Portfolio Section */}
+        <section id="portfolio" className="py-24 bg-black/95 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-[#c6a255]/5 to-black/0" />
+          <div className="max-w-7xl mx-auto px-4">
+            <LuxuryHeading
+              title="Our Portfolio"
+              subtitle="Showcasing excellence in digital innovation"
+            />
+            <div className="flex justify-between items-center mb-8">
+              <h2 className="text-3xl font-bold text-[#c6a255]">Featured Projects</h2>
+            </div>
+
+            <div className="relative">
+              <div className="flex gap-6 transition-transform duration-500 ease-in-out">
+                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + 3).map((item, index) => (
+                  <div key={index} className="flex-none w-[400px]">
+                    <LuxuryCard className="h-full p-6 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20">
+                      <div className="aspect-video relative overflow-hidden rounded-lg">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          width={400}
+                          height={300}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <h3 className="text-xl font-semibold mt-4 text-[#c6a255] line-clamp-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-300 mt-2 line-clamp-3">{item.description}</p>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {item.tags.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="px-2 py-1 text-xs rounded-full bg-[#c6a255]/10 text-[#c6a255] border border-[#c6a255]/20"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </LuxuryCard>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Navigation Arrows */}
+              <button
+                onClick={() => handlePortfolioScroll('prev')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={() => handlePortfolioScroll('next')}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Case Studies CTA */}
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
+              className="mt-16 mb-8 text-center"
             >
-              <h3 className="text-3xl md:text-4xl font-bold bg-metallic-gradient bg-clip-text text-transparent mb-6">
-                Ready to Elevate Your Digital Presence?
+              <h3 className="text-2xl md:text-3xl font-bold text-[#c6a255] mb-4">
+                Inspired by Our Work?
               </h3>
-              <p className="text-luxury-gray-300 mb-8">
-                Let's discuss how our bespoke solutions can transform your vision into digital excellence.
+              <p className="text-luxury-gray-300 mb-6">
+                Explore our detailed case studies to see how we deliver excellence.
               </p>
-              <a
-                href={CTA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="/case-studies">
                 <LuxuryButton size="lg">
-                  Schedule a Private Consultation
+                  View Case Studies
                 </LuxuryButton>
-              </a>
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -545,7 +651,7 @@ export default function Home() {
             subtitle="How we transform your vision into reality"
           />
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
               {process.map((step, index) => (
                 <LuxuryCard key={index} className="p-6 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20 flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
@@ -583,109 +689,6 @@ export default function Home() {
               >
                 <LuxuryButton size="lg">
                   Start Your Project
-                </LuxuryButton>
-              </a>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Portfolio Section */}
-        <section id="portfolio" className="py-20 relative">
-          <LuxuryHeading
-            title="Our Portfolio"
-            subtitle="Discover our latest projects"
-          />
-          
-          <div className="max-w-[90rem] mx-auto pl-16 pr-20 relative">
-            {/* Navigation Arrows */}
-            <button 
-              onClick={() => scrollPortfolio('left')}
-              className="absolute left-6 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 backdrop-blur-sm text-[#c6a255] p-4 rounded-full border border-[#c6a255]/20 transition-all duration-300"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button 
-              onClick={() => scrollPortfolio('right')}
-              className="absolute right-6 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 backdrop-blur-sm text-[#c6a255] p-4 rounded-full border border-[#c6a255]/20 transition-all duration-300"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Portfolio Horizontal Scroll */}
-            <div className="flex overflow-hidden gap-8 portfolio-grid -ml-2">
-              {portfolio.map((item) => (
-                <div key={item.title} className="flex flex-col gap-4 w-[400px]">
-                  <LuxuryCard className="h-[450px] p-6 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20">
-                    <div className="h-48 overflow-hidden rounded-lg">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        width={400}
-                        height={300}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-xl font-semibold mt-4 text-luxury-gold-300 line-clamp-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-300 mt-2 line-clamp-3">{item.description}</p>
-                    <div className="flex flex-wrap gap-2 mt-3">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 text-xs rounded-full bg-luxury-gold-900/30 text-luxury-gold-300"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </LuxuryCard>
-                  <div className="flex gap-4 justify-center">
-                    <a 
-                      href={item.caseStudyLink} 
-                      className="px-6 py-2 text-sm border border-luxury-gold-500 text-luxury-gold-300 rounded-md transition-all duration-300 transform hover:scale-105 hover:bg-luxury-gold-500/10 hover:shadow-[0_0_25px_rgba(234,179,8,0.5)] hover:border-luxury-gold-300"
-                    >
-                      Case Study
-                    </a>
-                    {item.liveLink && (
-                      <a 
-                        href={item.liveLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="px-6 py-2 text-sm border border-luxury-gold-500 text-luxury-gold-300 rounded-md transition-all duration-300 transform hover:scale-105 hover:bg-luxury-gold-500/10 hover:shadow-[0_0_25px_rgba(234,179,8,0.5)] hover:border-luxury-gold-300"
-                      >
-                        See Live
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Portfolio CTA */}
-        <section className="py-20 relative">
-          <div className="max-w-3xl mx-auto px-4 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-3xl md:text-4xl font-bold bg-metallic-gradient bg-clip-text text-transparent mb-6">
-                Inspired by Our Work?
-              </h3>
-              <p className="text-luxury-gray-300 mb-8">
-                Discover how we can create a unique digital masterpiece for your brand.
-              </p>
-              <a
-                href={CTA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LuxuryButton size="lg">
-                  View Detailed Case Studies
                 </LuxuryButton>
               </a>
             </motion.div>
@@ -851,56 +854,81 @@ export default function Home() {
             <div className="relative">
               <button 
                 onClick={() => handleTestimonialScroll('prev')}
-                className="absolute -left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/80 border border-[#c6a255]/20 text-[#c6a255] flex items-center justify-center hover:bg-black transition-colors"
+                className="absolute -left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/80 border border-[#c6a255]/20 text-[#c6a255] flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-black/60"
               >
                 ←
               </button>
 
               <div 
-                className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                className="testimonials-grid flex gap-6 overflow-x-hidden scroll-smooth"
               >
                 {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + 3).map((testimonial, index) => (
-                  <LuxuryCard key={index} className="flex flex-col h-[500px]">
-                    {/* Video Container */}
-                    <div className="relative h-[300px] rounded-lg overflow-hidden mb-4">
-                      <video
-                        src={testimonial.videoUrl}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    </div>
+                  <div key={index} className="flex-none w-[400px]">
+                    <LuxuryCard className="flex flex-col h-[500px]">
+                      {/* Video Container */}
+                      <div className="relative h-[300px] rounded-lg overflow-hidden mb-4 group">
+                        <video
+                          id={`testimonial-video-${index}`}
+                          src={testimonial.videoUrl}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          playsInline
+                          loop
+                          muted
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                        
+                        {/* Play/Pause Button */}
+                        <button
+                          onClick={(e) => toggleVideo(e, index)}
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#c6a255]/90 text-black flex items-center justify-center transition-all transform hover:scale-110 hover:bg-[#c6a255] z-20 cursor-pointer"
+                        >
+                          {playingVideos[index] ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                            </svg>
+                          ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
+                            </svg>
+                          )}
+                        </button>
 
-                    {/* Content */}
-                    <div className="flex-1 flex flex-col">
-                      <p className="text-gray-300 italic mb-4">{testimonial.quote}</p>
-                      <div className="mt-auto">
-                        <div className="flex items-center gap-3">
-                          <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                            <Image
-                              src={testimonial.avatar}
-                              alt={testimonial.name}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div>
-                            <h4 className="text-[#c6a255] font-medium">{testimonial.name}</h4>
-                            <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                        {/* Video Progress Bar */}
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
+                          <div className={`h-full bg-[#c6a255] transition-all duration-300 ${playingVideos[index] ? 'w-full' : 'w-0'}`} />
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 flex flex-col">
+                        <p className="text-gray-300 italic mb-4">{testimonial.quote}</p>
+                        <div className="mt-auto">
+                          <div className="flex items-center gap-3">
+                            <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                              <Image
+                                src={testimonial.avatar}
+                                alt={testimonial.name}
+                                fill
+                                className="object-cover rounded-full"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                priority={index < 3}
+                              />
+                            </div>
+                            <div>
+                              <h4 className="text-[#c6a255] font-medium">{testimonial.name}</h4>
+                              <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </LuxuryCard>
+                    </LuxuryCard>
+                  </div>
                 ))}
               </div>
 
               <button 
                 onClick={() => handleTestimonialScroll('next')}
-                className="absolute -right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/80 border border-[#c6a255]/20 text-[#c6a255] flex items-center justify-center hover:bg-black transition-colors"
+                className="absolute -right-6 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255]/20 text-[#c6a255] flex items-center justify-center hover:bg-black transition-colors"
               >
                 →
               </button>
@@ -994,6 +1022,25 @@ export default function Home() {
                   Get in Touch
                 </LuxuryButton>
               </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Footer Section */}
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-4"
+            >
+              <LuxuryHeading
+                title="Stay Connected"
+                subtitle="Join our community and stay updated with the latest in premium tech solutions"
+                centered
+              />
             </motion.div>
           </div>
         </section>

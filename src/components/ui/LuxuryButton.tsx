@@ -12,12 +12,12 @@ interface LuxuryButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | "chi
 
 const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
   ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
-    const baseStyles = 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-[0_0_25px_rgba(198,162,85,0.5)] active:scale-95';
+    const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-[0_0_25px_rgba(198,162,85,0.5)] active:scale-95';
     
     const sizeStyles = {
-      sm: 'px-4 py-2 text-sm',
-      md: 'px-6 py-3 text-base',
-      lg: 'px-8 py-4 text-lg'
+      sm: 'px-6 py-2 text-sm',
+      md: 'px-8 py-3 text-base',
+      lg: 'px-10 py-4 text-lg'
     };
 
     const variantStyles = {
