@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react';
+import { ButtonHTMLAttributes, forwardRef, ReactNode, ReactElement } from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -8,10 +8,11 @@ interface LuxuryButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | "chi
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   children?: ReactNode;
+  as?: React.ElementType;
 }
 
 const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
-  ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'md', children, as, ...props }, ref) => {
     const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-[0_0_25px_rgba(198,162,85,0.5)] active:scale-95';
     
     const sizeStyles = {
@@ -28,6 +29,7 @@ const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
 
     return (
       <motion.button
+        as={as}
         ref={ref}
         className={cn(
           baseStyles,
