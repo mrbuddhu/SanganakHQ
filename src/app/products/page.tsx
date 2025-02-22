@@ -70,9 +70,9 @@ export default function Products() {
                     ))}
                   </ul>
                   <div className="mt-8">
-                    <Link href="/contact">
-                      <LuxuryButton>Learn More</LuxuryButton>
-                    </Link>
+                    <LuxuryButton as="a" href="/contact">
+                      Learn More
+                    </LuxuryButton>
                   </div>
                 </div>
               </LuxuryCard>
@@ -86,9 +86,9 @@ export default function Products() {
                 <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
                   Our team can build bespoke solutions tailored to your specific requirements.
                 </p>
-                <Link href="/contact">
-                  <LuxuryButton size="lg">Get in Touch</LuxuryButton>
-                </Link>
+                <LuxuryButton as="a" href="/contact" size="lg">
+                  Get in Touch
+                </LuxuryButton>
               </div>
             </LuxuryCard>
           </div>

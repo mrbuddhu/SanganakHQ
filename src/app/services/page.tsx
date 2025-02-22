@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
+import LuxuryButton from '@/components/ui/LuxuryButton';
 import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
+import Link from 'next/link';
 
 export default function Services() {
   const services = [
@@ -17,7 +19,7 @@ export default function Services() {
         "Custom Brand Strategy",
         "Visual Identity Design",
         "Brand Guidelines",
-        "Marketing Collateral"
+        "Copywriting"
       ]
     },
     {
@@ -33,46 +35,46 @@ export default function Services() {
     },
     {
       icon: <Code2 className="w-8 h-8" />,
-      title: "Premium Development",
-      description: "Cutting-edge development solutions for exceptional digital experiences.",
+      title: "Bespoke Applications",
+      description: "Custom software solutions tailored to your needs.",
       features: [
-        "Custom Web Applications",
-        "Mobile App Development",
-        "E-commerce Solutions",
-        "API Integration"
+        "Custom Web/Mobile Dev",
+        "E-Commerce Solution",
+        "Landing Pages",
+        "SaaS Solution"
       ]
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "Digital Marketing",
-      description: "Strategic digital marketing to enhance your brand's presence.",
+      title: "Blockchain Innovation",
+      description: "Advanced blockchain solutions for modern enterprises.",
       features: [
-        "SEO Optimization",
-        "Content Strategy",
-        "Social Media Management",
-        "Analytics & Reporting"
-      ]
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Cybersecurity",
-      description: "Robust security solutions to protect your digital assets.",
-      features: [
-        "Security Audits",
-        "Penetration Testing",
-        "Compliance Management",
-        "24/7 Monitoring"
+        "Smart Contract Development",
+        "DApp Architecture",
+        "Blockchain Integration",
+        "Security Auditing"
       ]
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
-      title: "Innovation Consulting",
-      description: "Strategic guidance for digital transformation and growth.",
+      title: "Advanced AI",
+      description: "Cutting-edge AI solutions for business transformation.",
       features: [
-        "Technology Strategy",
-        "Digital Transformation",
-        "Innovation Workshops",
-        "Process Optimization"
+        "Custom AI Models",
+        "Machine Learning",
+        "Data Analytics",
+        "Process Automation"
+      ]
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Elite Package",
+      description: "Comprehensive digital transformation solution.",
+      features: [
+        "Complete Brand Identity & Design",
+        "Custom Software Development",
+        "AI & Blockchain Integration *",
+        "Ongoing Support & Evolution"
       ]
     }
   ];
@@ -114,28 +116,35 @@ export default function Services() {
           </div>
 
           {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mt-20"
-          >
-            <h3 className="text-3xl md:text-4xl font-bold bg-metallic-gradient bg-clip-text text-transparent mb-6">
-              Ready to Transform Your Digital Presence?
-            </h3>
-            <p className="text-luxury-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our premium services can elevate your brand and drive exceptional results.
-            </p>
-            <a
-              href={CTA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#c6a255] text-black px-8 py-3 rounded-lg font-medium hover:bg-[#d4b06a] transition-colors"
+          <div className="mt-20 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
             >
-              Schedule a Consultation
-            </a>
-          </motion.div>
+              <div className="space-y-4">
+                <h3 className="text-3xl md:text-4xl font-bold" style={{
+                  background: 'linear-gradient(to right, #c6a255, #e9d5a1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}>
+                  Elevate Your Digital Presence
+                </h3>
+                <p className="text-xl text-gray-300">
+                  Turn Your Vision into Reality
+                </p>
+              </div>
+              <div>
+                <Link href={CTA_URL} target="_blank">
+                  <LuxuryButton size="lg" variant="primary">
+                    Start Your Success Story
+                  </LuxuryButton>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </MainLayout>

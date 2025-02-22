@@ -418,7 +418,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
-                    Marketing Collateral
+                    Copywriting
                   </li>
                 </ul>
               </LuxuryCard>
@@ -460,20 +460,19 @@ export default function Home() {
                 <ul className="space-y-2 text-gray-300 text-sm">
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
-                    Full Stack Development
+                    Custom Web/Mobile Development
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
-                    Cloud Architecture
+                    E Commerce Solution
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
-                    API Integration
+                    Landing Pages
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
-                    Performance Optimization
-                  </li>
+                    Saas Solutions                  </li>
                 </ul>
               </LuxuryCard>
 
@@ -491,7 +490,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
-                    DApp Architecture
+                    DApp Developemnt
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
@@ -549,7 +548,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
-                    AI & Blockchain Integration
+                    AI & Blockchain Integration*
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#c6a255]">•</span>
@@ -1039,7 +1038,7 @@ export default function Home() {
               <LuxuryHeading
                 title="Stay Connected"
                 subtitle="Join our community and stay updated with the latest in premium tech solutions"
-                centered
+                align="center"
               />
             </motion.div>
           </div>
