@@ -31,28 +31,31 @@ export default function Home() {
   const handleTestimonialScroll = (direction: 'prev' | 'next') => {
     if (direction === 'prev') {
       setCurrentTestimonialIndex(prev => 
-        prev === 0 ? testimonials.length - 3 : Math.max(0, prev - 3)
+        prev === 0 ? testimonials.length - 1 : prev - 1
       );
     } else {
       setCurrentTestimonialIndex(prev => 
-        prev + 3 >= testimonials.length ? 0 : prev + 3
+        prev + 1 >= testimonials.length ? 0 : prev + 1
       );
     }
   };
-
   const [currentPortfolioIndex, setCurrentPortfolioIndex] = useState(0);
-
   const handlePortfolioScroll = (direction: 'prev' | 'next') => {
-    if (direction === 'prev') {
-      setCurrentPortfolioIndex(prev => 
-        prev === 0 ? portfolio.length - 3 : Math.max(0, prev - 3)
-      );
-    } else {
-      setCurrentPortfolioIndex(prev => 
-        prev + 3 >= portfolio.length ? 0 : prev + 3
-      );
-    }
-  };
+  const windowWidth = window.innerWidth;
+  const isTablet = windowWidth >= 768 && windowWidth < 1024;
+  const isMobile = windowWidth < 768;
+  const step = isMobile ? 1 : isTablet ? 2 : 3;
+
+  if (direction === 'prev') {
+    setCurrentPortfolioIndex(prev => 
+      prev === 0 ? portfolio.length - step : Math.max(0, prev - step)
+    );
+  } else {
+    setCurrentPortfolioIndex(prev => 
+      prev + step >= portfolio.length ? 0 : prev + step
+    );
+  }
+};
 
   const portfolio = [
     {
@@ -218,7 +221,7 @@ export default function Home() {
     <MainLayout>
       <main>
         {/* Hero Section */}
-        <section id="hero" className="relative h-screen">
+        <section id="hero" className="relative min-h-screen py-8 md:py-12 flex items-center">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black">
@@ -226,8 +229,8 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="absolute top-0 left-0 right-0 z-10">
-            <div className="container mx-auto">
+          <div className="relative w-full z-10">
+            <div className="container mx-auto px-4">
               {/* Testimonial Banner */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
