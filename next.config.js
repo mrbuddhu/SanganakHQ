@@ -19,7 +19,10 @@ const nextConfig = {
         pathname: '/**',
       }
     ],
-    domains: ['localhost'],
+    domains: ['localhost', 'vercel.app'],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: false,
   },
 }
