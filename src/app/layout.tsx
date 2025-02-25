@@ -52,6 +52,8 @@ export const metadata: Metadata = {
   }
 }
 
+import React from 'react';
+
 export default function RootLayout({
   children,
 }: {
@@ -59,15 +61,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <link rel="icon" href="/Logo.ico" />
-        <link rel="apple-touch-icon" href="/Logo.ico" />
-        <style>{`
-          #nprogress {
-            display: none !important;
-          }
-        `}</style>
-      </head>
       <body className={`${inter.className} min-h-screen bg-black antialiased text-white`}>
         {children}
       </body>

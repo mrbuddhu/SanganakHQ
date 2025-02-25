@@ -221,7 +221,7 @@ export default function Home() {
     <MainLayout>
       <main>
         {/* Hero Section */}
-        <section id="hero" className="relative min-h-screen py-8 md:py-12 flex items-center">
+        <section id="hero" className="relative min-h-[100svh] py-4 sm:py-8 md:py-12 flex items-center overflow-x-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black">
@@ -317,12 +317,13 @@ export default function Home() {
               <div className="text-center space-y-8">
                 <div>
                   <h1 
-                    className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-wider mb-4"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-4 px-4 whitespace-nowrap"
                     style={{
                       background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
-                      textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
+                      textShadow: '0 0 20px rgba(198, 162, 85, 0.3)',
+                      overflowWrap: 'normal'
                     }}
                   >
                     SANGANAK
@@ -397,8 +398,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
-            >
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-[95%] sm:max-w-7xl mx-auto">
               {/* Luxury Branding */}
               <LuxuryCard>
                 <div className="text-[#c6a255] mb-4 text-2xl">
