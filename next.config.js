@@ -14,19 +14,13 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'vercel.app',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'sanganakpremium.vercel.app',
+        hostname: '*.vercel.app',
         port: '',
         pathname: '/**',
       }
     ],
-    domains: ['localhost', 'vercel.app', 'sanganak.vercel.app', 'sanganak-premium.vercel.app', 'sanganakpremium.vercel.app'],
-    unoptimized: true,
+    domains: ['localhost'],
+    unoptimized: false,
   },
 }
 
