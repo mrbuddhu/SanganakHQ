@@ -16,7 +16,7 @@ export default function Portfolio() {
     {
       title: "Creators Home",
       description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
-      image: "/portfolio/creators-home.jpg",
+      image: "/portfolio/creatorshome.jpg",
       caseStudyLink: "/case-studies#creators-home",
       liveLink: "https://creatorshome.xyz",
       tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
