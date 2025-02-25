@@ -13,6 +13,8 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    domains: ['localhost', 'vercel.app'],
+    unoptimized: true,
   },
 }
 
