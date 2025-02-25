@@ -22,7 +22,7 @@ export default function LuxuryCard({ children, className = '', delay = 0 }: Luxu
       }}
       className={classNames(
         'luxury-card luxury-shine',
-        'relative bg-black/40 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8',
+        'relative bg-black/40 backdrop-blur-xl rounded-2xl p-8',
         'transition-all duration-300',
         className
       )}

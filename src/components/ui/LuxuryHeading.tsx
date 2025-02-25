@@ -31,14 +31,14 @@ export default function LuxuryHeading({
     >
       {/* Decorative elements */}
       <div className="flex items-center justify-center gap-4 mb-6">
-        <div className="h-[2px] w-16 bg-gradient-to-r from-transparent via-luxury-gold-300 to-transparent" />
+        <div className="h-[2px] w-16 bg-gradient-to-r from-luxury-gold-300/10 via-luxury-gold-300 to-luxury-gold-300/10" />
         <div className="w-3 h-3 rounded-full bg-luxury-gold-300 shadow-glow-gold" />
-        <div className="h-[2px] w-16 bg-gradient-to-r from-transparent via-luxury-gold-300 to-transparent" />
+        <div className="h-[2px] w-16 bg-gradient-to-r from-luxury-gold-300/10 via-luxury-gold-300 to-luxury-gold-300/10" />
       </div>
 
       {/* Title with enhanced gradient and glow */}
       <motion.h2
-        className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-4 sm:mb-6 drop-shadow-[0_0_10px_rgba(218,165,32,0.3)] tracking-tight"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#c6a255] bg-gradient-to-r from-[#c6a255] via-[#e9d5a1] to-[#c6a255] text-transparent bg-clip-text mb-4 sm:mb-6 drop-shadow-[0_0_10px_rgba(218,165,32,0.3)] tracking-tight"
         initial={{ backgroundPosition: '200% center' }}
         whileInView={{ backgroundPosition: '0% center' }}
         transition={{ duration: 2 }}
