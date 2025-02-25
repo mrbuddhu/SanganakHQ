@@ -1,6 +1,14 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+
+export const viewport: Viewport = {
+  themeColor: '#c6a255',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false
+}
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -8,7 +16,6 @@ export const metadata: Metadata = {
   title: 'SANGANAK | The Premium IT Boutique',
   description: 'Your trusted partner for premium IT solutions and services.',
   manifest: '/manifest.json',
-  themeColor: '#c6a255',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -22,12 +29,6 @@ export const metadata: Metadata = {
       rel: 'apple-touch-icon',
       url: '/Logo.ico',
     },
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
   },
   openGraph: {
     title: 'Sanganak - Premium IT Boutique',
