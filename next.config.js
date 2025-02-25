@@ -12,8 +12,14 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'vercel.app',
+        port: '',
+        pathname: '/**',
+      }
     ],
-    domains: ['localhost', 'vercel.app'],
+    domains: ['localhost', 'vercel.app', 'sanganak.vercel.app', 'sanganak-premium.vercel.app'],
     unoptimized: true,
   },
 }
