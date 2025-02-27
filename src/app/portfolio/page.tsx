@@ -12,6 +12,7 @@ import LuxuryButton from '@/components/ui/LuxuryButton';
 
 export default function Portfolio() {
   const [selectedTag, setSelectedTag] = useState<string>('All');
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   const portfolio = [
     {
@@ -94,74 +95,73 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="w-full"
-              >
-                <LuxuryCard className="h-full flex flex-col">
-                  {/* Project Image */}
-                  <div className="relative w-full h-40 sm:h-48 mb-4 sm:mb-6 rounded-lg overflow-hidden">
-                    <Image 
-                      src={project.image} 
-                      alt={project.title} 
-                      fill 
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover" 
-                      priority={index < 3}
-                      loading="eager"
-                      unoptimized={true}
-                      onError={(e) => {
-                        console.error(`Error loading image for ${project.title}:`, e);
-                      }}
-                    />
-                  </div>
-
-                  {/* Project Content */}
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-lg sm:text-xl font-bold text-[#c6a255] mb-2">{project.title}</h3>
-                    <p className="text-sm sm:text-base text-gray-400 mb-4 flex-1">{project.description}</p>
-                    
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
-                      {project.tags.map((tag) => (
-                        <span 
-                          key={tag} 
-                          className="px-2 sm:px-3 py-1 rounded-full bg-[#c6a255]/10 text-[#c6a255] text-xs sm:text-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex gap-3 sm:gap-4 text-sm sm:text-base">
-                      <Link 
-                        href={project.caseStudyLink} 
-                        className="text-[#c6a255] hover:text-[#d4b06a] transition-colors"
+          {/* Portfolio Cards */}
+          <div className="overflow-x-hidden pb-6">
+            <div className="flex flex-wrap gap-8 justify-center px-4">
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="w-[400px] max-w-full"
+                >
+                  <LuxuryCard className="h-full p-8 hover:border-luxury-gold-300/50 transition-all duration-300 hover:shadow-xl hover:shadow-luxury-gold-300/10">
+                    <div className="flex flex-col items-center text-center h-full">
+                      <motion.div 
+                        className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
                       >
-                        View Case Study
-                      </Link>
-                      {project.liveLink && (
-                        <a 
-                          href={project.liveLink} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="text-[#c6a255] hover:text-[#d4b06a] transition-colors"
-                        >
-                          Visit Live Site →
-                        </a>
-                      )}
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-300"
+                          priority={index < 3}
+                        />
+                      </motion.div>
+                      
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-4">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-300 leading-relaxed mb-6">{project.description}</p>
+                        
+                        <div className="flex flex-wrap justify-center gap-2 mb-6">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-3 py-1 text-xs font-medium text-luxury-gold-300/70"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="flex justify-center gap-6">
+                          <Link
+                            href={project.caseStudyLink}
+                            className="text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors flex items-center gap-2"
+                          >
+                            View Case Study
+                          </Link>
+                          {project.liveLink && (
+                            <a
+                              href={project.liveLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors flex items-center gap-2"
+                            >
+                              Visit Live Site
+                            </a>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </LuxuryCard>
-              </motion.div>
-            ))}
+                  </LuxuryCard>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* CTA Section */}

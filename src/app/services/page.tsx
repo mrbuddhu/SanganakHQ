@@ -8,6 +8,25 @@ import LuxuryButton from '@/components/ui/LuxuryButton';
 import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
 import Link from 'next/link';
+// Services Page Component - Premium services ko showcase karne wala main component
+// Features:
+// - Responsive grid layout - Mobile se desktop tak adaptive design
+// - Service cards - Har service ke liye premium card with icon and details
+// - Smooth animations - Framer Motion se smooth transitions and effects
+// - CTA section - Call-to-action section for user engagement
+
+// Services List:
+// - Luxury Branding - Brand identity and strategy
+// - Elite Design - UI/UX design solutions
+// - Bespoke Applications - Custom software development
+// - Blockchain Innovation - Advanced blockchain solutions
+// - Advanced AI - AI/ML solutions
+// - Elite Package - Comprehensive digital solutions
+
+// Animation Features:
+// - Scroll-based animations using Framer Motion
+// - Smooth card hover effects
+// - Fade-in animations for sections
 
 export default function Services() {
   const services = [

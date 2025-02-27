@@ -3,6 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Footer component - Website ka footer section jo important links aur company information display karta hai
+// Isme 5 main sections hain:
+// 1. Our Services - Company ki services ke links
+// 2. Company - Company related pages ke links
+// 3. Center Logo - Brand logo aur CTA button
+// 4. Resources - Documentation aur help ke links
+// 5. Legal - Privacy policy aur terms ke links
 export default function Footer() {
   return (
     <footer className="bg-black text-white pt-8 pb-32 md:pb-24">

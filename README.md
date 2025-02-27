@@ -4,19 +4,35 @@ A luxurious, high-end website for Sanganak - a world-class IT boutique offering 
 
 ## 🌟 Features
 
-- Ultra-premium, dark & gold aesthetic
+### Core Features
+- Ultra-premium, dark & gold aesthetic design
 - Cinematic animations and transitions
 - 3D effects and WebGL experiences
 - Responsive, mobile-first design
 - High-performance and SEO optimized
 
+### Key Pages & Components
+- **Home Page**: Dynamic hero section with animated text and premium visuals
+- **Services**: Showcases our elite services with luxury cards and smooth transitions
+- **Portfolio**: Interactive project showcase with filtering and case studies
+- **About**: Company story and values with parallax effects
+- **Blog**: Rich content platform with premium article layouts
+- **Support**: Comprehensive support system with FAQ and contact options
+
 ## 🚀 Tech Stack
 
-- Next.js 15 with TypeScript
-- Tailwind CSS for styling
-- Framer Motion for animations
-- GSAP for advanced animations
-- Three.js with React Three Fiber for 3D effects
+### Frontend
+- Next.js 15 with TypeScript for robust type safety
+- Tailwind CSS for responsive and maintainable styling
+- Framer Motion for smooth, performant animations
+- GSAP for advanced animations and transitions
+- Three.js with React Three Fiber for immersive 3D effects
+
+### Performance & SEO
+- Next.js App Router for optimized routing and SSR
+- Image optimization with next/image
+- SEO meta tags and Open Graph support
+- Responsive images and lazy loading
 
 ## 🛠️ Getting Started
 
@@ -33,11 +49,42 @@ A luxurious, high-end website for Sanganak - a world-class IT boutique offering 
 
 ## 📦 Project Structure
 
-- `/src/app` - Next.js app router pages
+### Core Directories
+- `/src/app` - Next.js app router pages and layouts
+  - `/page.tsx` - Home page with hero section and key features
+  - `/services` - Services showcase and details
+  - `/portfolio` - Project portfolio and case studies
+  - `/about` - Company information and team
+  - `/blog` - Blog articles and posts
+  - `/support` - Support system and FAQs
+
+### Components
 - `/src/components` - Reusable React components
+  - `/layout` - Layout components (Navbar, Footer)
+  - `/ui` - UI components (LuxuryButton, LuxuryCard, etc.)
+  - `/sections` - Page sections and features
+
+### Assets & Utilities
 - `/src/styles` - Global styles and Tailwind configuration
-- `/src/lib` - Utility functions and hooks
-- `/public` - Static assets
+- `/src/lib` - Utility functions and custom hooks
+- `/public` - Static assets (images, fonts, icons)
+
+## 🔄 Component Flows
+
+### Navigation Flow
+1. MainLayout wraps all pages with Navbar and Footer
+2. Navbar provides smooth section navigation
+3. Mobile menu handles responsive navigation
+
+### Page Loading Flow
+1. Next.js App Router handles routing
+2. Loading states during page transitions
+3. Smooth animations on component mount
+
+### Data Flow
+1. Static data stored in constants
+2. Dynamic content managed through state
+3. Animations controlled by Framer Motion
 
 ## ✨ Contributing
 

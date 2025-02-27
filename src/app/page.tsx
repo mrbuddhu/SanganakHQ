@@ -9,7 +9,7 @@ import LuxuryCard from '@/components/ui/LuxuryCard';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles, ChevronDown, Zap, Plus, Linkedin, Phone, ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles, ChevronDown, Zap, Plus, Linkedin, Phone, ChevronLeft, ChevronRight, Play, Pause, ArrowRight } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
 
 export default function Home() {

@@ -10,6 +10,9 @@ interface MainLayoutProps {
   children: ReactNode;
 }
 
+// MainLayout component - Ye hamara main layout component hai jo pure application ka structure maintain karta hai
+// Props:
+// - children: React.ReactNode - Is prop mein child components pass hote hain jo layout ke andar render honge
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isHomePage = pathname === '/';

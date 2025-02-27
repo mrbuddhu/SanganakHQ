@@ -6,6 +6,30 @@ import Link from 'next/link'
 import { CTA_URL } from '@/constants/links';
 import LuxuryButton from '@/components/ui/LuxuryButton';
 
+// Navbar component - Website ka navigation section jo user ko different pages par navigate karne mein help karta hai
+// Features:
+// - Responsive design - Mobile aur desktop dono ke liye optimize kiya gaya hai
+// - Dynamic links - Current page ke hisab se active state show karta hai
+// - Smooth transitions - Menu open/close ke liye smooth animations
+// - Premium look - Dark theme with luxury gold accents
+
+// State management:
+// - isMenuOpen: Mobile menu ka open/close state track karta hai
+// - activeSection: Current visible section ka track rakhta hai
+
+// Intersection Observer:
+// - Page scroll ke time automatically active section ko detect karta hai
+// - rootMargin: -50% se section ko middle mein aane par active karta hai
+
+// Navigation Items:
+// - Logo: Home page ka link
+// - Services: Services section ka link
+// - Portfolio: Portfolio section ka link
+// - Testimonials: Testimonials section ka link
+
+// Scroll Functionality:
+// - scrollToSection: Smooth scrolling ke sath section par navigate karta hai
+// - Mobile menu ko automatically close karta hai navigation ke baad
 export default function Navbar() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
