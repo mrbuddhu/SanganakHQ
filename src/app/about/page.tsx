@@ -83,7 +83,7 @@ export default function AboutPage() {
                   href={CTA_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center mt-8 text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors"
+                  className="inline-flex items-center mt-8 px-8 py-3 rounded-full bg-luxury-gold-300 text-black font-semibold hover:bg-luxury-gold-400 transition-colors"
                 >
                   Schedule a Call <ArrowRight className="ml-2 w-4 h-4" />
                 </a>

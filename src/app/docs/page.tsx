@@ -67,7 +67,7 @@ export default function DocsPage() {
             />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             {docs.map((section, index) => (
               <motion.div
                 key={index}
@@ -100,30 +100,19 @@ export default function DocsPage() {
             ))}
           </div>
 
-          {/* Search Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mt-24 text-center max-w-4xl mx-auto"
+            className="text-center"
           >
-            <LuxuryCard className="p-12">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-4">
-                Can't find what you're looking for?
-              </h2>
-              <p className="text-gray-300 mb-8">
-                Our support team is here to help you with any questions or technical issues.
-              </p>
-              <a
-                href={CTA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
-              >
-                Schedule a Call
-              </a>
-            </LuxuryCard>
+            <a
+              href={CTA_URL}
+              className="inline-block px-8 py-4 bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-black font-semibold rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Get Started with Documentation
+            </a>
           </motion.div>
         </div>
       </main>

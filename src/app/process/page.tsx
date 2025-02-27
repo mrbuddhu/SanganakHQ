@@ -142,22 +142,20 @@ export default function Process() {
               viewport={{ once: true }}
               className="mt-24 text-center"
             >
-              <LuxuryCard className="p-12">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-4">
-                  Ready to Begin Your Journey?
-                </h2>
-                <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Let's transform your vision into reality with our premium development process.
-                </p>
-                <a
-                  href={CTA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
-                >
-                  Schedule a Strategy Call
-                </a>
-              </LuxuryCard>
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-4">
+                Ready to Begin Your Journey?
+              </h2>
+              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+                Let's transform your vision into reality with our premium development process.
+              </p>
+              <a
+                href={CTA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
+              >
+                Schedule a Strategy Call
+              </a>
             </motion.div>
           </div>
         </div>

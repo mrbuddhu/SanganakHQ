@@ -50,6 +50,9 @@ export default function Products() {
     <MainLayout>
       <main className="min-h-screen bg-black text-white pt-24 pb-16">
         <div className="container mx-auto px-4">
+          <div className="bg-[#c6a255]/10 border border-[#c6a255] rounded-lg p-4 mb-8 text-center">
+            <p className="text-[#c6a255] font-semibold">✨ Products Coming Soon! Stay tuned for our premium digital solutions.</p>
+          </div>
           <LuxuryHeading
             title="Our Products"
             subtitle="Discover our suite of premium tools, extensions, and design resources crafted to elevate your digital experience."
@@ -81,20 +84,16 @@ export default function Products() {
             ))}
           </div>
 
-          <div className="mt-20">
-            <LuxuryCard>
-              <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-6">Need a Custom Solution?</h3>
-                <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Our team can build bespoke solutions tailored to your specific requirements.
-                </p>
-                <Link href="/contact">
-                  <LuxuryButton size="lg">
-                    Get in Touch
-                  </LuxuryButton>
-                </Link>
-              </div>
-            </LuxuryCard>
+          <div className="mt-20 text-center max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-6">Need a Custom Solution?</h3>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Our team can build bespoke solutions tailored to your specific requirements.
+            </p>
+            <Link href="/contact">
+              <LuxuryButton size="lg" variant="primary">
+                Get in Touch
+              </LuxuryButton>
+            </Link>
           </div>
         </div>
       </main>

@@ -1,13 +1,17 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import MainLayout from '@/components/layout/MainLayout';
-import LuxuryHeading from '@/components/ui/LuxuryHeading';
-import LuxuryCard from '@/components/ui/LuxuryCard';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Star } from 'lucide-react';
+import LuxuryHeading from '@/components/ui/LuxuryHeading';
+import LuxuryCard from '@/components/ui/LuxuryCard';
 import { caseStudies } from './data';
+
+const MainLayout = dynamic(() => import('@/components/layout/MainLayout'), {
+  ssr: false
+});
 
 export default function CaseStudies() {
   return (
@@ -33,121 +37,46 @@ export default function CaseStudies() {
         {/* Case Studies Grid */}
         <section className="pb-32">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid gap-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {caseStudies.map((study, index) => (
-                <motion.div
-                  key={study.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="space-y-8"
-                >
-                  <LuxuryCard className="overflow-hidden">
-                    <div className="grid md:grid-cols-2 gap-8">
+                <Link href={`/case-studies/${study.id}`} key={study.id}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    className="group"
+                  >
+                    <LuxuryCard className="h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
                       {/* Image Section */}
-                      <div className="relative h-64 md:h-full">
+                      <div className="relative h-48">
                         <Image
                           src={study.heroImage}
                           alt={study.title}
                           fill
-                          className="object-cover"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                       </div>
 
                       {/* Content Section */}
-                      <div className="p-8">
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2">
+                      <div className="p-6 space-y-4">
+                        <h3 className="text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
                           {study.title}
                         </h3>
-                        <div className="flex items-center gap-4 text-luxury-gold-300/80 mb-6">
+                        <div className="flex items-center gap-3 text-luxury-gold-300/80 text-sm">
                           <span>{study.client}</span>
                           <span>•</span>
                           <span>{study.industry}</span>
                         </div>
-
-                        <div className="space-y-6">
-                          <div>
-                            <h4 className="text-luxury-gold-300 font-semibold mb-2">Challenge</h4>
-                            <p className="text-gray-300">{study.challenge}</p>
-                          </div>
-                          <div>
-                            <h4 className="text-luxury-gold-300 font-semibold mb-2">Solution</h4>
-                            <p className="text-gray-300">{study.solution}</p>
-                          </div>
-                          
-                          {/* Results */}
-                          <div>
-                            <h4 className="text-luxury-gold-300 font-semibold mb-2">Key Results</h4>
-                            <ul className="grid grid-cols-2 gap-4">
-                              {study.results.map((result, i) => (
-                                <li key={i} className="flex items-start gap-2">
-                                  <Star className="w-5 h-5 text-luxury-gold-300 flex-shrink-0 mt-1" />
-                                  <span className="text-gray-300 text-sm">{result}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Technologies */}
-                          <div>
-                            <h4 className="text-luxury-gold-300 font-semibold mb-2">Technologies Used</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {study.technologies.map((tech, i) => (
-                                <span
-                                  key={i}
-                                  className="px-3 py-1 text-sm rounded-full bg-luxury-gold-300/10 text-luxury-gold-300 border border-luxury-gold-300/20"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Testimonial */}
-                          <blockquote className="border-l-2 border-luxury-gold-300 pl-4">
-                            <div className="space-y-2">
-                              <p className="text-sm">
-                                <span className="text-gray-400">Branding:</span>
-                                <span className="text-luxury-gold-300 ml-1">{study.credits.branding.name}</span>
-                              </p>
-                              <p className="text-sm">
-                                <span className="text-gray-400">Design:</span>
-                                <span className="text-luxury-gold-300 ml-1">{study.credits.designing.name}</span>
-                              </p>
-                              <p className="text-sm">
-                                <span className="text-gray-400">Development:</span>
-                                <span className="text-luxury-gold-300 ml-1">{study.credits.development.name}</span>
-                              </p>
-                              <p className="text-sm">
-                                <span className="text-gray-400">Deployment:</span>
-                                <span className="text-luxury-gold-300 ml-1">{study.credits.deployment.name}</span>
-                              </p>
-                            </div>
-                          </blockquote>
+                        <p className="text-gray-400 text-sm line-clamp-3">{study.challenge}</p>
+                        <div className="flex items-center gap-2 text-luxury-gold-300 group-hover:gap-3 transition-all duration-300">
+                          <span className="text-sm font-medium">View Case Study</span>
+                          <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
-                    </div>
-                  </LuxuryCard>
-
-                  {/* View Details Button - Moved outside the card */}
-                  <div className="flex justify-center pt-8">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Link
-                        href={`/case-studies/${study.id}`}
-                        className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-luxury-gold-900 via-luxury-gold-700 to-luxury-gold-800 rounded-md shadow-lg hover:from-luxury-gold-800 hover:via-luxury-gold-600 hover:to-luxury-gold-700 transition-all duration-300"
-                      >
-                        <span className="flex items-center">
-                          View Full Case Study
-                          <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </Link>
-                    </motion.div>
-                  </div>
-                </motion.div>
+                    </LuxuryCard>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>

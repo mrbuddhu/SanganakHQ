@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonHTMLAttributes, forwardRef, ReactNode, ReactElement } from 'react';
+import { ButtonHTMLAttributes, forwardRef, ReactNode, ElementType } from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -8,10 +8,12 @@ interface LuxuryButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | "chi
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   children?: ReactNode;
+  as?: ElementType;
+  href?: string;
 }
 
 const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
-  ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'md', children, as: Component = 'button', ...props }, ref) => {
     const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-[0_0_25px_rgba(198,162,85,0.5)] active:scale-95';
     
     const sizeStyles = {
@@ -26,8 +28,10 @@ const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
       outline: 'bg-transparent border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255]/10'
     };
 
+    const MotionComponent = motion[Component === 'button' ? 'button' : 'div'];
+
     return (
-      <motion.button
+      <MotionComponent
         ref={ref}
         className={cn(
           baseStyles,
@@ -58,7 +62,7 @@ const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
         {(variant === 'secondary' || variant === 'outline') && (
           <span className="absolute inset-0 border border-luxury-gold-300/50 blur-[1px] rounded-full" />
         )}
-      </motion.button>
+      </MotionComponent>
     );
   }
 );

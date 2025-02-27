@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 export default function TeamPage() {
@@ -13,25 +12,13 @@ export default function TeamPage() {
       name: "Aryabhatta (mrbuddhu)",
       role: "Founder & CEO",
       image: "/mrbuddhu.jpeg",
-      bio: "Visionary technologist and entrepreneur leading Sanganak's mission to revolutionize the digital landscape. Expertise in blockchain, AI, and premium software solutions.",
-      links: {
-        github: "https://github.com/mrbuddhu",
-        linkedin: "https://linkedin.com/in/mrbuddhu",
-        twitter: "https://twitter.com/mrbuddhu",
-        email: "mailto:aryabhatta@sanganak.org"
-      }
+      bio: "Visionary technologist and entrepreneur leading Sanganak's mission to revolutionize the digital landscape. Expertise in blockchain, AI, and premium software solutions."
     },
     {
       name: "Shabi Kaushal (msbuddhu)",
       role: "Co-Founder & Creative Director",
       image: "/msbuddhu.jpeg",
-      bio: "Creative visionary shaping Sanganak's premium brand identity and design philosophy. Expert in luxury branding and user experience design.",
-      links: {
-        github: "https://github.com/msbuddhu",
-        linkedin: "https://linkedin.com/in/msbuddhu",
-        twitter: "https://twitter.com/msbuddhu",
-        email: "mailto:shabi@sanganak.org"
-      }
+      bio: "Creative visionary shaping Sanganak's premium brand identity and design philosophy. Expert in luxury branding and user experience design."
     }
   ];
 
@@ -80,8 +67,8 @@ export default function TeamPage() {
           >
             {team.map((member, index) => (
               <motion.div key={index} variants={cardVariants}>
-                <LuxuryCard className="transform hover:scale-[1.02] transition-transform duration-300">
-                  <div className="flex flex-col items-center text-center p-8">
+                <LuxuryCard className="h-[600px] transform hover:scale-[1.02] transition-transform duration-300">
+                  <div className="flex flex-col items-center text-center p-8 h-full justify-between">
                     <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors">
                       <Image
                         src={member.image}
@@ -90,44 +77,12 @@ export default function TeamPage() {
                         className="object-cover filter brightness-95 group-hover:brightness-100 transition-all"
                       />
                     </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-luxury-gold-300/70 mb-4 font-medium">{member.role}</p>
-                    <p className="text-gray-300 mb-8 leading-relaxed max-w-lg">{member.bio}</p>
-                    <div className="flex gap-6">
-                      <a
-                        href={member.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-luxury-gold-300 transition-colors transform hover:scale-110"
-                      >
-                        <Github className="w-6 h-6" />
-                      </a>
-                      <a
-                        href={member.links.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-luxury-gold-300 transition-colors transform hover:scale-110"
-                      >
-                        <Linkedin className="w-6 h-6" />
-                      </a>
-                      <a
-                        href={member.links.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-luxury-gold-300 transition-colors transform hover:scale-110"
-                      >
-                        <Twitter className="w-6 h-6" />
-                      </a>
-                      <a
-                        href={member.links.email}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-luxury-gold-300 transition-colors transform hover:scale-110"
-                      >
-                        <Mail className="w-6 h-6" />
-                      </a>
+                    <div className="flex-1 flex flex-col justify-center">
+                      <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-luxury-gold-300/70 mb-4 font-medium">{member.role}</p>
+                      <p className="text-gray-300 leading-relaxed max-w-lg">{member.bio}</p>
                     </div>
                   </div>
                 </LuxuryCard>

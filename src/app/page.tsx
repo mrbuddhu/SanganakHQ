@@ -9,7 +9,7 @@ import LuxuryCard from '@/components/ui/LuxuryCard';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles, ChevronDown, Zap, Plus, Linkedin, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles, ChevronDown, Zap, Plus, Linkedin, Phone, ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
 
 export default function Home() {
@@ -61,37 +61,37 @@ export default function Home() {
     {
       title: "Creators Home",
       description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
-      image: "/portfolio/creators-home.jpg",
+      image: "/images/portfolio/creators-home.jpg",
       tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
     },
     {
       title: "NFTCollect",
       description: "Cross-platform mobile app for NFT collectors featuring real-time price tracking, portfolio management, and marketplace integration.",
-      image: "/portfolio/nftcollect.jpg",
+      image: "/images/portfolio/nftcollect.jpg",
       tags: ["React Native", "Mobile App", "Web3", "NFT"]
     },
     {
       title: "Burgerrr",
       description: "Feature-rich food delivery mobile app specializing in gourmet burgers, with real-time order tracking and personalized recommendations.",
-      image: "/portfolio/burgerrr.jpg",
+      image: "/images/portfolio/burgerrr.jpg",
       tags: ["React Native", "Mobile App", "Food Delivery", "Location Services"]
     },
     {
       title: "Interio",
       description: "Modern interior design platform showcasing luxury spaces and connecting designers with clients.",
-      image: "/portfolio/interio.jpg",
+      image: "/images/portfolio/interio.jpg",
       tags: ["Interior Design", "Luxury", "Marketplace"]
     },
     {
       title: "GlobalEats",
       description: "International culinary platform connecting food enthusiasts with authentic global cuisines.",
-      image: "/portfolio/globaleats.jpg",
+      image: "/images/portfolio/globaleats.jpg",
       tags: ["Food Tech", "Marketplace", "Culture"]
     },
     {
       title: "MedicoBuddy",
       description: "Comprehensive healthcare SaaS platform connecting medical facilities with patients, featuring appointment scheduling, telemedicine, medical records management, and integrated healthcare services.",
-      image: "/portfolio/medicobuddy.jpg",
+      image: "/images/portfolio/medicobuddy.jpg",
       tags: ["Healthcare", "SaaS", "Telemedicine", "Patient Care"]
     }
   ];
@@ -136,27 +136,6 @@ export default function Home() {
       role: "Founder & CEO, GlobalEats",
       videoUrl: "/testimonials/shubham-kumar.mp4",
       avatar: "/testimonials/headshots/shubham-kumar.jpg"
-    },
-    {
-      quote: "The Creators Home platform revolutionized our content creation workflow. The AI tools and analytics have significantly improved our productivity and revenue streams.",
-      name: "Sarah Anderson",
-      role: "Digital Content Creator",
-      videoUrl: "/testimonials/sarah-anderson.mp4",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop&q=80"
-    },
-    {
-      quote: "NFTCollect's cross-platform capabilities and real-time tracking features have made managing our NFT portfolio seamless and efficient.",
-      name: "James Miller",
-      role: "NFT Investor & Collector",
-      videoUrl: "/testimonials/james-miller.mp4",
-      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&auto=format&fit=crop&q=80"
-    },
-    {
-      quote: "Burgerrr's delivery app transformed our restaurant business. The real-time tracking and personalized recommendations have increased our customer satisfaction significantly.",
-      name: "Elena Rodriguez",
-      role: "Restaurant Owner",
-      videoUrl: "/testimonials/elena-rodriguez.mp4",
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&auto=format&fit=crop&q=80"
     }
   ];
 
@@ -221,7 +200,7 @@ export default function Home() {
     <MainLayout>
       <main>
         {/* Hero Section */}
-        <section id="hero" className="relative min-h-[100svh] py-4 sm:py-8 md:py-12 flex items-center overflow-x-hidden">
+        <section id="hero" className="relative min-h-[75svh] py-1 sm:py-2 md:py-4 flex items-center overflow-x-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black">
@@ -236,62 +215,62 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="flex items-center justify-center pt-0"
+                className="flex items-center justify-center pb-0.5"
               >
-                <div className="bg-black/40 backdrop-blur-sm border border-luxury-gold-300/20 rounded-full px-6 py-2 flex items-center gap-2">
-                  <div className="flex -space-x-3">
-                    <div className="w-10 h-10 rounded-full border-2 border-luxury-gold-300 overflow-hidden">
+                <div className="bg-black/40 backdrop-blur-sm border border-luxury-gold-300/20 rounded-full px-4 py-1.5 flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    <div className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden">
                       <Image
                         src="/testimonials/headshots/shyam-sharma.jpg"
                         alt="Shyam Sunder Sharma"
-                        width={40}
-                        height={40}
+                        width={32}
+                        height={32}
                         className="object-cover"
                       />
                     </div>
                     <div 
-                      className="w-10 h-10 rounded-full border-2 border-luxury-gold-300 overflow-hidden"
+                      className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden"
                       title="Dr. Ankit Kumar - Medical Professional, Bengaluru"
                     >
                       <Image
                         src="/testimonials/headshots/ankit-kumar.jpg"
                         alt="Dr. Ankit Kumar - Medical Professional, Bengaluru"
-                        width={40}
-                        height={40}
+                        width={32}
+                        height={32}
                         className="object-cover"
                       />
                     </div>
-                    <div className="w-10 h-10 rounded-full border-2 border-luxury-gold-300 overflow-hidden">
+                    <div className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden">
                       <Image
                         src="/testimonials/headshots/shubham-kumar.jpg"
                         alt="Shubham Kumar"
-                        width={40}
-                        height={40}
+                        width={32}
+                        height={32}
                         className="object-cover"
                       />
                     </div>
                     {[1, 2].map((index) => (
                       <div
                         key={index}
-                        className="w-10 h-10 rounded-full border-2 border-luxury-gold-300 overflow-hidden bg-gray-800 flex items-center justify-center"
+                        className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden bg-gray-800 flex items-center justify-center"
                       >
                         <Image
-                          src={`https://images.unsplash.com/photo-${index === 1 ? '1494790108377-be9c29b29330' : '1560250097-0b93528c311a'}?w=40&h=40&auto=format&fit=crop&q=80`}
+                          src={`https://images.unsplash.com/photo-${index === 1 ? '1494790108377-be9c29b29330' : '1560250097-0b93528c311a'}?w=32&h=32&auto=format&fit=crop&q=80`}
                           alt={`Client ${index + 3}`}
-                          width={40}
-                          height={40}
+                          width={32}
+                          height={32}
                           className="object-cover"
                         />
                       </div>
                     ))}
                   </div>
-                  <div className="flex flex-col ml-2 gap-1">
-                    <span className="text-[#c6a255] text-sm">5+ Happy Clients</span>
+                  <div className="flex flex-col ml-2 gap-0.5">
+                    <span className="text-[#c6a255] text-xs">5+ Happy Clients</span>
                     <div className="flex">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <svg
                           key={star}
-                          className="w-5 h-5 text-yellow-400"
+                          className="w-4 h-4 text-yellow-400"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -303,21 +282,21 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              <div className="w-full flex justify-center">
+              <div className="w-full flex justify-center -mt-2">
                 <Image 
                   src="/Globe.jpg" 
                   alt="Sanganak Company Logo" 
-                  width={350} 
-                  height={350} 
+                  width={250} 
+                  height={250} 
                   className="mx-auto"
                   priority={true}
                 />
               </div>
 
-              <div className="text-center space-y-8">
+              <div className="text-center space-y-3">
                 <div>
                   <h1 
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-4 px-4 whitespace-nowrap"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-2 px-4 whitespace-nowrap"
                     style={{
                       background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                       WebkitBackgroundClip: 'text',
@@ -329,7 +308,7 @@ export default function Home() {
                     SANGANAK
                   </h1>
                   <h2 
-                    className="text-2xl md:text-3xl font-bold tracking-wide"
+                    className="text-2xl md:text-3xl font-bold tracking-wide mb-4"
                     style={{
                       background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                       WebkitBackgroundClip: 'text',
@@ -349,7 +328,7 @@ export default function Home() {
                 </p>
 
                 {/* Service Categories */}
-                <div className="flex flex-wrap justify-center gap-8 mt-12">
+                <div className="flex flex-wrap justify-center gap-6 mt-8">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -586,7 +565,6 @@ export default function Home() {
                           alt={item.title}
                           width={400}
                           height={300}
-                          className="w-full h-full object-cover"
                         />
                       </div>
                       <h3 className="text-xl font-semibold mt-4 text-[#c6a255] line-clamp-1">

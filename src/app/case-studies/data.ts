@@ -6,7 +6,7 @@ export const caseStudies = [
     client: 'Creator Economy',
     industry: 'SaaS / Content Creation',
     duration: '8 weeks',
-    heroImage: '/portfolio/creators-home.jpg',
+    heroImage: '/images/portfolio/creatorshome.jpg',
     challenge: 'Build a comprehensive SaaS platform that empowers content creators with AI-driven tools and analytics for better content creation and monetization.',
     solution: 'Developed an all-in-one platform featuring AI-powered content suggestions, analytics dashboard, and monetization tools.',
     results: [
@@ -48,7 +48,7 @@ export const caseStudies = [
     client: 'Web3 Community',
     industry: 'Blockchain / NFT',
     duration: '6 weeks',
-    heroImage: '/portfolio/nftcollect.jpg',
+    heroImage: '/images/portfolio/nftcollect.jpg',
     challenge: 'Create a mobile app that simplifies NFT collection management while providing real-time market insights.',
     solution: 'Built a cross-platform React Native app with real-time price tracking, portfolio analytics, and marketplace integration.',
     results: [
@@ -89,7 +89,7 @@ export const caseStudies = [
     client: 'Food Service Industry',
     industry: 'Food Delivery',
     duration: '7 weeks',
-    heroImage: '/portfolio/burgerrr.jpg',
+    heroImage: '/images/portfolio/burgerrr.jpg',
     challenge: 'Develop a specialized food delivery app focused on gourmet burgers with real-time tracking and personalization.',
     solution: 'Created a React Native app with location-based services, real-time order tracking, and AI-powered recommendations.',
     results: [
@@ -124,7 +124,7 @@ export const caseStudies = [
     client: 'Interior Design Industry',
     industry: 'Design / Marketplace',
     duration: '8 weeks',
-    heroImage: '/portfolio/interio.jpg',
+    heroImage: '/images/portfolio/interio.jpg',
     challenge: 'Create a platform that connects interior designers with clients while showcasing luxury spaces.',
     solution: 'Developed a modern marketplace platform with portfolio showcasing, client matching, and project management tools.',
     results: [
@@ -166,7 +166,7 @@ export const caseStudies = [
     client: 'Healthcare Education',
     industry: 'Medical Education / SaaS',
     duration: '8 weeks',
-    heroImage: '/portfolio/medicobuddy.jpg',
+    heroImage: '/images/portfolio/medicobuddy.jpg',
     challenge: 'Transform medical education with an AI-driven platform for learning, case management, and professional networking.',
     solution: 'Developed a comprehensive SaaS platform with AI-powered learning tools, case study management, and professional networking features.',
     results: [

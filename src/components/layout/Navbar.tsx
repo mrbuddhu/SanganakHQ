@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CTA_URL } from '@/constants/links';
+import LuxuryButton from '@/components/ui/LuxuryButton';
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -69,16 +70,16 @@ export default function Navbar() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 flex justify-center z-50"
+      className="fixed bottom-2 sm:bottom-3 md:bottom-4 left-0 right-0 flex justify-center z-50"
       style={{ transform: 'translateZ(0)' }}
     >
       <div className="relative w-[95%] sm:w-[90%] md:w-fit">
         <div className="absolute inset-0 nav-blur rounded-full -z-10" />
-        <div className="px-3 sm:px-4 md:px-8 h-[60px] sm:h-[70px] md:h-[100px] flex items-center justify-between space-x-3 sm:space-x-4 md:space-x-8 rounded-full border border-[#c6a255]/20 bg-black/40">
+        <div className="px-3 sm:px-4 md:px-8 h-[50px] sm:h-[60px] md:h-[80px] flex items-center justify-between space-x-3 sm:space-x-4 md:space-x-8 rounded-full border border-[#c6a255]/20 bg-black/40">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="relative w-[50px] sm:w-[60px] md:w-[100px] h-[50px] sm:h-[60px] md:h-[100px] flex items-center justify-center overflow-hidden rounded-full group">
+              <div className="relative w-[50px] sm:w-[60px] md:w-[80px] h-[50px] sm:h-[60px] md:h-[80px] flex items-center justify-center overflow-hidden rounded-full group">
                 <div className="absolute inset-0 bg-[#c6a255]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Image
                   src="/RoundSanganak.jpeg"
@@ -91,8 +92,6 @@ export default function Navbar() {
               </div>
             </Link>
           </div>
-
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 md:space-x-8">
             {navItems.filter(item => !item.isLogo).map((item) => (
               <a
@@ -134,14 +133,15 @@ export default function Navbar() {
           </button>
 
           {/* CTA Button */}
-          <a
+          <LuxuryButton
             href={CTA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm md:text-base font-medium text-black bg-luxury-gold-300 rounded-full hover:bg-luxury-gold-100 transition-colors duration-300"
+            variant="primary"
+            size="sm"
           >
             Let's Talk
-          </a>
+          </LuxuryButton>
         </div>
 
         {/* Mobile menu */}

@@ -94,12 +94,12 @@ export default function SupportPage() {
           </div>
 
           {/* Contact Information */}
-          <div className="max-w-4xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto mb-8">
             <LuxuryCard className="p-8">
               <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-8 text-center">
                 Get in Touch
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="text-center">
                     <div className="flex justify-center mb-4">{info.icon}</div>
@@ -109,24 +109,31 @@ export default function SupportPage() {
                   </div>
                 ))}
               </div>
-              <div className="border-t border-luxury-gold-300/20 pt-8 text-center">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-6">
-                  Get Premium Support
-                </h3>
-                <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Schedule a call with our support team to discuss your needs and get immediate assistance.
-                </p>
-                <a
-                  href={CTA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
-                >
-                  Schedule a Call
-                </a>
-              </div>
             </LuxuryCard>
           </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-16 text-center"
+          >
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-6">
+              Get Premium Support
+            </h3>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Schedule a call with our support team to discuss your needs and get immediate assistance.
+            </p>
+            <a
+              href={CTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
+            >
+              Schedule a Call
+            </a>
+          </motion.div>
 
           {/* FAQ Section */}
           <div className="max-w-4xl mx-auto pb-16">
