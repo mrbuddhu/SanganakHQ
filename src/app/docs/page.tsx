@@ -5,6 +5,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { Book, Code2, Terminal, Workflow, ArrowRight } from 'lucide-react';
+import LuxuryButton from '@/components/ui/LuxuryButton';
 import { CTA_URL } from '@/constants/links';
 
 export default function DocsPage() {
@@ -67,7 +68,7 @@ export default function DocsPage() {
             />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {docs.map((section, index) => (
               <motion.div
                 key={index}
@@ -99,21 +100,6 @@ export default function DocsPage() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <a
-              href={CTA_URL}
-              className="inline-block px-8 py-4 bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-black font-semibold rounded-lg hover:opacity-90 transition-opacity"
-            >
-              Get Started with Documentation
-            </a>
-          </motion.div>
         </div>
       </main>
     </MainLayout>
