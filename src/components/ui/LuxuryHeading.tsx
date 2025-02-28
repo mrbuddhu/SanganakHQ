@@ -38,7 +38,7 @@ export default function LuxuryHeading({
 
       {/* Title with enhanced gradient and glow */}
       <motion.h2
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#c6a255] bg-gradient-to-r from-[#c6a255] via-[#e9d5a1] to-[#c6a255] text-transparent bg-clip-text mb-4 sm:mb-6 drop-shadow-[0_0_10px_rgba(218,165,32,0.3)] tracking-tight"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#c6a255] bg-gradient-to-r from-[#c6a255] via-[#e9d5a1] to-[#c6a255] text-transparent bg-clip-text mb-4 sm:mb-6 drop-shadow-[0_0_10px_rgba(218,165,32,0.3)] tracking-tight py-1"
         initial={{ backgroundPosition: '200% center' }}
         whileInView={{ backgroundPosition: '0% center' }}
         transition={{ duration: 2 }}
