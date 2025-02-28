@@ -117,26 +117,30 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "As the founder of Interio, I've seen how this platform has transformed our interior design business. The 3D visualization tools and project management features have helped us deliver exceptional results to our high-end clients.",
-      name: "Shyam Sunder Sharma",
-      role: "Founder & CEO, Interio Design Studio",
-      videoUrl: "/testimonials/shyam-sharma.mp4",
-      avatar: "/testimonials/headshots/shyam-sharma.jpg"
-    },
-    {
-      quote: "As a medical professional in Bengaluru, I'm impressed by SANGANAK's innovative healthcare IT solutions. Their custom software has streamlined our patient management system and significantly improved our operational efficiency. Their attention to detail and understanding of healthcare needs is exceptional.",
-      name: "Dr. Ankit Kumar",
-      role: "Medical Professional, Bengaluru",
+      name: "Ankit Kumar",
+      role: "Co-founder @Burgerrr",
+      content: "Working with Sanganak Premium has been an absolute game-changer for our business. Their expertise in web development and commitment to excellence is unmatched.",
+      rating: 5,
       videoUrl: "/testimonials/ankit-kumar.mp4",
       avatar: "/testimonials/headshots/ankit-kumar.jpg"
     },
     {
-      quote: "As the founder of GlobalEats, this platform has been instrumental in helping us share authentic Indian cuisine with food enthusiasts worldwide. The cultural sensitivity and user experience features have helped us create a truly global presence for our restaurant.",
+      name: "Shyam Sharma",
+      role: "Product Manager @Interio",
+      content: "The team at Sanganak Premium delivered beyond our expectations. Their attention to detail and innovative solutions helped us achieve our goals faster.",
+      rating: 5,
+      videoUrl: "/testimonials/shyam-sharma.mp4",
+      avatar: "/testimonials/headshots/shyam-sharma.jpg"
+    },
+    {
       name: "Shubham Kumar",
-      role: "Founder & CEO, GlobalEats",
+      role: "CEO @GlobalEats",
+      content: "Exceptional service and outstanding results! Sanganak Premium transformed our vision into reality with their technical expertise and creative approach.",
+      rating: 5,
       videoUrl: "/testimonials/shubham-kumar.mp4",
       avatar: "/testimonials/headshots/shubham-kumar.jpg"
-    }
+    },
+    
   ];
 
   const faqs = [

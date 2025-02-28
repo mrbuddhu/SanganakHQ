@@ -98,19 +98,10 @@ export default function PrivacyPage() {
               </h3>
               <p className="text-gray-300 mb-6">
                 If you have questions about our privacy practices or would like to exercise your rights,
-                please contact our privacy team.
+                please contact our privacy team at <a href="mailto:contact@sanganak.org" className="text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors">contact@sanganak.org</a>.
+                We are committed to addressing your privacy concerns and ensuring the protection of your personal information.
               </p>
             </LuxuryCard>
-            <div className="mt-8 text-center">
-              <LuxuryButton
-                href="mailto:contact@sangnak.org"
-                variant="primary"
-                size="lg"
-                isExternal
-              >
-                Contact Our Privacy Team
-              </LuxuryButton>
-            </div>
           </div>
         </div>
       </main>
