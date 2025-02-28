@@ -4,7 +4,7 @@ import { ButtonHTMLAttributes, forwardRef, ReactNode, ElementType } from 'react'
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-interface LuxuryButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | "children"> {
+interface LuxuryButtonProps extends Omit<HTMLMotionProps<"button" | "a">, "ref" | "children"> {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   children?: ReactNode;
@@ -13,7 +13,7 @@ interface LuxuryButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | "chi
   isExternal?: boolean;
 }
 
-const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
+const LuxuryButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, LuxuryButtonProps>(
   ({ className, variant = 'primary', size = 'md', children, as: Component = 'button', href, isExternal, ...props }, ref) => {
     const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-[0_0_25px_rgba(198,162,85,0.5)] active:scale-95';
     
@@ -29,7 +29,7 @@ const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
       outline: 'bg-transparent border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255]/10'
     };
 
-    const MotionComponent = motion[Component === 'button' ? 'button' : 'div'];
+    const MotionComponent = motion[Component === 'button' ? 'button' : 'a'] as typeof motion.button;
 
     const buttonProps = {
       ...props,
