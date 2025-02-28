@@ -61,37 +61,37 @@ export default function Home() {
     {
       title: "Creators Home",
       description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
-      image: "/images/portfolio/creators-home.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg",
       tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
     },
     {
       title: "NFTCollect",
       description: "Cross-platform mobile app for NFT collectors featuring real-time price tracking, portfolio management, and marketplace integration.",
-      image: "/images/portfolio/nftcollect.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750710/nftcollect_g3ygja.jpg",
       tags: ["React Native", "Mobile App", "Web3", "NFT"]
     },
     {
       title: "Burgerrr",
       description: "Feature-rich food delivery mobile app specializing in gourmet burgers, with real-time order tracking and personalized recommendations.",
-      image: "/images/portfolio/burgerrr.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/burgerrr_xhsb8c.jpg",
       tags: ["React Native", "Mobile App", "Food Delivery", "Location Services"]
     },
     {
       title: "Interio",
       description: "Modern interior design platform showcasing luxury spaces and connecting designers with clients.",
-      image: "/images/portfolio/interio.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/interio_kq1fky.jpg",
       tags: ["Interior Design", "Luxury", "Marketplace"]
     },
     {
       title: "GlobalEats",
       description: "International culinary platform connecting food enthusiasts with authentic global cuisines.",
-      image: "/images/portfolio/globaleats.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/globaleats_oqjzn8.jpg",
       tags: ["Food Tech", "Marketplace", "Culture"]
     },
     {
       title: "MedicoBuddy",
       description: "Comprehensive healthcare SaaS platform connecting medical facilities with patients, featuring appointment scheduling, telemedicine, medical records management, and integrated healthcare services.",
-      image: "/images/portfolio/medicobuddy.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/medicobuddy_fudnrl.jpg",
       tags: ["Healthcare", "SaaS", "Telemedicine", "Patient Care"]
     }
   ];
@@ -1009,24 +1009,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer Section */}
-        <section className="pb-8">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-4"
-            >
-              <LuxuryHeading
-                title="Stay Connected"
-                subtitle="Join our community and stay updated with the latest in premium tech solutions"
-                align="center"
-              />
-            </motion.div>
-          </div>
-        </section>
+
       </main>
     </MainLayout>
   );

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import LuxuryHeading from '../ui/LuxuryHeading';
 
 // Footer component - Website ka footer section jo important links aur company information display karta hai
 // Isme 5 main sections hain:
@@ -15,19 +16,11 @@ export default function Footer() {
     <footer className="bg-black text-white pt-8 pb-16 md:pb-12">
       <div className="container mx-auto px-4 md:px-6">
         {/* Stay Connected Section */}
-        <div className="text-center pb-8 mb-8">
-          <h2 className="text-3xl font-bold mb-4" style={{
-            background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
-          }}>
-            Stay Connected
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            Join our community and stay updated with the latest in premium tech solutions
-          </p>
-        </div>
+        <LuxuryHeading
+          title="Stay Connected"
+          subtitle="Join our community and stay updated with the latest in premium tech solutions"
+          className="pb-8 mb-8"
+        />
 
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 border-t border-[#c6a255]/50 pt-8">

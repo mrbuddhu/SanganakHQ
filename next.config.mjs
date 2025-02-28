@@ -14,9 +14,21 @@ const nextConfig = {
         hostname: 'www.godrejinterio.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'asset.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
       }
     ],
-    domains: ['images.unsplash.com', 'www.godrejinterio.com'],
+    domains: ['images.unsplash.com', 'www.godrejinterio.com', 'asset.cloudinary.com', 'res.cloudinary.com'],
     unoptimized: false
   },
 };
