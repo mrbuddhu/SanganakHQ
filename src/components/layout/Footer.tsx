@@ -17,8 +17,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Stay Connected Section */}
         <LuxuryHeading
-          title="Stay Connected"
-          subtitle="Join our community and stay updated with the latest in premium tech solutions"
+          title="Experience Digital Excellence"
+          subtitle="Premium solutions for digital success"
           className="pb-8 mb-8"
         />
 
