@@ -156,7 +156,7 @@ export default function Portfolio() {
             <p className="text-luxury-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base">
               Let's create something extraordinary together that sets new standards in digital excellence.
             </p>
-            <LuxuryButton href={CTA_URL} variant="primary" size="lg" className="mt-2">
+            <LuxuryButton href={CTA_URL} variant="primary" size="lg" className="mt-2" isExternal as="a">
               Start Your Project
             </LuxuryButton>
           </motion.div>
