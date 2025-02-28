@@ -10,10 +10,11 @@ interface LuxuryButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | "chi
   children?: ReactNode;
   as?: ElementType;
   href?: string;
+  isExternal?: boolean;
 }
 
 const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
-  ({ className, variant = 'primary', size = 'md', children, as: Component = 'button', ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'md', children, as: Component = 'button', href, isExternal, ...props }, ref) => {
     const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-[0_0_25px_rgba(198,162,85,0.5)] active:scale-95';
     
     const sizeStyles = {
@@ -30,6 +31,16 @@ const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
 
     const MotionComponent = motion[Component === 'button' ? 'button' : 'div'];
 
+    const buttonProps = {
+      ...props,
+      ...(href && {
+        as: 'a',
+        href,
+        target: isExternal ? '_blank' : undefined,
+        rel: isExternal ? 'noopener noreferrer' : undefined
+      })
+    };
+
     return (
       <MotionComponent
         ref={ref}
@@ -41,7 +52,7 @@ const LuxuryButton = forwardRef<HTMLButtonElement, LuxuryButtonProps>(
         )}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        {...props}
+        {...buttonProps}
       >
         {/* Shimmer effect */}
         <span className="absolute inset-0 w-full h-full rounded-full">
