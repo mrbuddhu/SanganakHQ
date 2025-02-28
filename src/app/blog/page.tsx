@@ -26,14 +26,14 @@ const BlogPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {articles.map((article) => (
-                <Link key={article.id} href={`/blog/${article.id}`}>
+                <Link key={article.id} href={`/blog/${article.id}`} className="block">
                   <LuxuryCard className="h-full transition-transform duration-300 hover:scale-[1.02]">
                     <h2 className="text-lg sm:text-xl font-semibold mb-2">{article.title}</h2>
                     <p className="text-sm sm:text-base text-gray-500 mb-3">By {article.author}</p>
                     <p className="text-sm sm:text-base mb-4">{article.excerpt}</p>
-                    <a href={`/blog/${article.id}`} className="text-[#c6a255] text-sm sm:text-base hover:text-[#d4b06a] transition-colors">
+                    <span className="text-[#c6a255] text-sm sm:text-base hover:text-[#d4b06a] transition-colors">
                       Read more
-                    </a>
+                    </span>
                   </LuxuryCard>
                 </Link>
               ))}

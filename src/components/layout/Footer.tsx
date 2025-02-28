@@ -12,10 +12,25 @@ import Link from 'next/link';
 // 5. Legal - Privacy policy aur terms ke links
 export default function Footer() {
   return (
-    <footer className="bg-black text-white pt-8 pb-32 md:pb-24">
+    <footer className="bg-black text-white pt-8 pb-16 md:pb-12">
       <div className="container mx-auto px-4 md:px-6">
+        {/* Stay Connected Section */}
+        <div className="text-center pb-8 mb-8">
+          <h2 className="text-3xl font-bold mb-4" style={{
+            background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
+          }}>
+            Stay Connected
+          </h2>
+          <p className="text-gray-300 text-lg mb-8">
+            Join our community and stay updated with the latest in premium tech solutions
+          </p>
+        </div>
+
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 border-t border-[#c6a255]/50 pt-8">
           {/* Our Services */}
           <div className="space-y-4 text-center lg:text-left">
             <h3 className="text-lg font-semibold text-[#c6a255]">Our Services</h3>
@@ -85,7 +100,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center pt-8 pb-16 md:pb-16 border-t border-[#c6a255]/50 mt-16">
+        <div className="text-center pb-16 md:pb-16">
           <p className="text-[#c6a255] text-sm">
             2025 Sanganak. A venture of mrbuddhu & mrbuddhu Sanganak LLP. All rights reserved.
           </p>

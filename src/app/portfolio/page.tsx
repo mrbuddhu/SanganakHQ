@@ -104,41 +104,42 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="w-[400px] max-w-full"
+                  className="w-full md:w-[800px] max-w-full"
                 >
-                  <LuxuryCard className="h-full p-8 hover:border-luxury-gold-300/50 transition-all duration-300 hover:shadow-xl hover:shadow-luxury-gold-300/10">
-                    <div className="flex flex-col items-center text-center h-full">
+                  <LuxuryCard className="h-full p-6 hover:border-luxury-gold-300/50 transition-all duration-300 hover:shadow-xl hover:shadow-luxury-gold-300/10">
+                    <div className="flex flex-col md:flex-row items-center gap-6 h-full">
                       <motion.div 
-                        className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-all duration-300"
-                        whileHover={{ scale: 1.05 }}
+                        className="relative w-full md:w-[60%] h-[400px] rounded-lg overflow-hidden border-2 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-all duration-300"
+                        whileHover={{ scale: 1.02 }}
                       >
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, 60vw"
                           className="object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-300"
-                          priority={index < 3}
+                          priority
                         />
                       </motion.div>
                       
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-4">
+                      <div className="flex-1 flex flex-col justify-start text-left md:pr-4 h-[171px] overflow-hidden">
+                        <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-3">
                           {project.title}
                         </h3>
-                        <p className="text-gray-300 leading-relaxed mb-6">{project.description}</p>
+                        <p className="text-gray-300 leading-relaxed mb-4">{project.description}</p>
                         
-                        <div className="flex flex-wrap justify-center gap-2 mb-6">
+                        <div className="flex flex-wrap gap-2 mb-4">
                           {project.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="px-3 py-1 text-xs font-medium text-luxury-gold-300/70"
+                              className="px-3 py-1 text-xs font-medium text-luxury-gold-300/70 border border-luxury-gold-300/20 rounded-full"
                             >
                               {tag}
                             </span>
                           ))}
                         </div>
 
-                        <div className="flex justify-center gap-6">
+                        <div className="flex gap-6">
                           <Link
                             href={project.caseStudyLink}
                             className="text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors flex items-center gap-2"

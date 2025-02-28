@@ -472,6 +472,16 @@ section::after {
   display: none;
 }
 
+/* Hide scrollbar for testimonials section while maintaining functionality */
+.testimonials-grid {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.testimonials-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
 /* Animations */
 @keyframes textShimmer {
   0% { background-position: 0% 50%; }

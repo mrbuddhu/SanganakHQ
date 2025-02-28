@@ -8,9 +8,15 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.godrejinterio.com',
+        port: '',
+        pathname: '/**',
       }
     ],
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'www.godrejinterio.com'],
     unoptimized: false
   },
 };

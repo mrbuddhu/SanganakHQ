@@ -830,33 +830,32 @@ export default function Home() {
                 subtitle="Hear from our distinguished clients"
               />
             </div>
-            
+           
             <div className="relative">
-              <button 
+              <button
                 onClick={() => handleTestimonialScroll('prev')}
-                className="absolute -left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/80 border border-[#c6a255]/20 text-[#c6a255] flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-black/60"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
               >
-                ←
+                <ChevronLeft className="w-6 h-6" />
               </button>
 
-              <div 
+              <div
                 className="testimonials-grid flex gap-6 overflow-x-hidden scroll-smooth"
               >
                 {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + 3).map((testimonial, index) => (
                   <div key={index} className="flex-none w-[400px]">
-                    <LuxuryCard className="flex flex-col h-[500px]">
+                    <LuxuryCard className="flex flex-col h-[600px]">
                       {/* Video Container */}
-                      <div className="relative h-[300px] rounded-lg overflow-hidden mb-4 group">
+                      <div className="relative h-[450px] rounded-lg overflow-hidden mb-4 group">
                         <video
                           id={`testimonial-video-${index}`}
                           src={testimonial.videoUrl}
                           className="absolute inset-0 w-full h-full object-cover"
                           playsInline
                           loop
-                          muted
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                        
+                       
                         {/* Play/Pause Button */}
                         <button
                           onClick={(e) => toggleVideo(e, index)}
@@ -880,24 +879,28 @@ export default function Home() {
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 flex flex-col">
-                        <p className="text-gray-300 italic mb-4">{testimonial.quote}</p>
-                        <div className="mt-auto">
-                          <div className="flex items-center gap-3">
-                            <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                              <Image
-                                src={testimonial.avatar}
-                                alt={testimonial.name}
-                                fill
-                                className="object-cover rounded-full"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                priority={index < 3}
-                              />
+                      <div className="flex-1 flex flex-col justify-end">
+                        <div className="flex items-center gap-3">
+                          <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                            <Image
+                              src={testimonial.avatar}
+                              alt={testimonial.name}
+                              fill
+                              className="object-cover rounded-full"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              priority={index < 3}
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-1 mb-1">
+                              {[...Array(5)].map((_, i) => (
+                                <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-[#c6a255]">
+                                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                              ))}
                             </div>
-                            <div>
-                              <h4 className="text-[#c6a255] font-medium">{testimonial.name}</h4>
-                              <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                            </div>
+                            <h4 className="font-semibold text-[#c6a255]">{testimonial.name}</h4>
+                            <p className="text-sm text-gray-400">{testimonial.role}</p>
                           </div>
                         </div>
                       </div>
@@ -906,11 +909,11 @@ export default function Home() {
                 ))}
               </div>
 
-              <button 
+              <button
                 onClick={() => handleTestimonialScroll('next')}
-                className="absolute -right-6 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255]/20 text-[#c6a255] flex items-center justify-center hover:bg-black transition-colors"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
               >
-                →
+                <ChevronRight className="w-6 h-6" />
               </button>
             </div>
           </div>
