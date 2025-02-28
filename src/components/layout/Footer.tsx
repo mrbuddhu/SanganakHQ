@@ -23,7 +23,7 @@ export default function Footer() {
         />
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 border-t border-[#c6a255]/50 pt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 pt-8">
           {/* Our Services */}
           <div className="space-y-4 text-center lg:text-left">
             <h3 className="text-lg font-semibold text-[#c6a255]">Our Services</h3>
