@@ -18,8 +18,8 @@ export default function CaseStudies() {
     <MainLayout>
       <main className="min-h-screen bg-black">
         {/* Hero Section */}
-        <section className="py-32 relative">
-          <div className="max-w-7xl mx-auto px-4">
+        <section className="py-16 sm:py-24 md:py-32 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function CaseStudies() {
         {/* Case Studies Grid */}
         <section className="pb-32">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {caseStudies.map((study, index) => (
                 <Link href={`/case-studies/${study.id}`} key={study.id}>
                   <motion.div
@@ -48,7 +48,7 @@ export default function CaseStudies() {
                   >
                     <LuxuryCard className="h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
                       {/* Image Section */}
-                      <div className="relative h-48">
+                      <div className="relative h-40 sm:h-48">
                         <Image
                           src={study.heroImage}
                           alt={study.title}
@@ -59,19 +59,19 @@ export default function CaseStudies() {
                       </div>
 
                       {/* Content Section */}
-                      <div className="p-6 space-y-4">
-                        <h3 className="text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
+                      <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                        <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
                           {study.title}
                         </h3>
-                        <div className="flex items-center gap-3 text-luxury-gold-300/80 text-sm">
+                        <div className="flex items-center gap-2 sm:gap-3 text-luxury-gold-300/80 text-xs sm:text-sm">
                           <span>{study.client}</span>
                           <span>•</span>
                           <span>{study.industry}</span>
                         </div>
-                        <p className="text-gray-400 text-sm line-clamp-3">{study.challenge}</p>
+                        <p className="text-gray-400 text-xs sm:text-sm line-clamp-2 sm:line-clamp-3">{study.challenge}</p>
                         <div className="flex items-center gap-2 text-luxury-gold-300 group-hover:gap-3 transition-all duration-300">
-                          <span className="text-sm font-medium">View Case Study</span>
-                          <ArrowRight className="w-4 h-4" />
+                          <span className="text-xs sm:text-sm font-medium">View Case Study</span>
+                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                         </div>
                       </div>
                     </LuxuryCard>

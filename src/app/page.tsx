@@ -558,10 +558,10 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-[#c6a255]">Featured Projects</h2>
             </div>
 
-            <div className="relative">
-              <div className="flex gap-6 transition-transform duration-500 ease-in-out">
+            <div className="relative w-full overflow-x-auto pb-4">
+              <div className="flex gap-6 transition-transform duration-500 ease-in-out min-w-max">
                 {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + 3).map((item, index) => (
-                  <div key={index} className="flex-none w-[400px]">
+                  <div key={index} className="flex-none w-[300px] sm:w-[400px]">
                     <LuxuryCard className="h-full p-6 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20">
                       <div className="aspect-video relative overflow-hidden rounded-lg">
                         <Image
@@ -847,7 +847,7 @@ export default function Home() {
                 className="testimonials-grid flex gap-6 overflow-x-hidden scroll-smooth"
               >
                 {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + 3).map((testimonial, index) => (
-                  <div key={index} className="flex-none w-[400px]">
+                  <div key={index} className="flex-none w-[300px] sm:w-[400px]">
                     <LuxuryCard className="flex flex-col h-[600px]">
                       {/* Video Container */}
                       <div className="relative h-[450px] rounded-lg overflow-hidden mb-4 group">
