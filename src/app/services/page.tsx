@@ -116,19 +116,21 @@ export default function Services() {
                 viewport={{ once: true }}
               >
                 <LuxuryCard>
-                  <div className="text-[#c6a255] mb-4 text-2xl">
-                    {service.icon}
+                  <div className="relative">
+                    <div className="text-[#c6a255] mb-4 text-2xl">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-[#c6a255] mb-4">{service.title}</h3>
+                    <p className="text-gray-400 mb-4">{service.description}</p>
+                    <ul className="space-y-2 text-gray-300 text-sm">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center gap-2">
+                          <span className="text-[#c6a255]">•</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <h3 className="text-xl font-bold text-[#c6a255] mb-4">{service.title}</h3>
-                  <p className="text-gray-400 mb-4">{service.description}</p>
-                  <ul className="space-y-2 text-gray-300 text-sm">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-2">
-                        <span className="text-[#c6a255]">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
                 </LuxuryCard>
               </motion.div>
             ))}

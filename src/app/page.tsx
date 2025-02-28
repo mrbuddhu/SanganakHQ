@@ -204,7 +204,7 @@ export default function Home() {
     <MainLayout>
       <main>
         {/* Hero Section */}
-        <section id="hero" className="relative min-h-[75svh] py-1 sm:py-2 md:py-4 flex items-center overflow-x-hidden">
+        <section id="hero" className="relative min-h-[85svh] py-4 sm:py-6 md:py-8 flex items-center overflow-x-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black">
@@ -219,9 +219,9 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="flex items-center justify-center pb-0.5"
+                className="flex items-center justify-center pb-3 sm:pb-4 md:pb-5"
               >
-                <div className="bg-black/40 backdrop-blur-sm border border-luxury-gold-300/20 rounded-full px-4 py-1.5 flex items-center gap-2">
+                <div className="bg-black/40 backdrop-blur-sm border border-luxury-gold-300/20 rounded-full px-4 py-2 flex items-center gap-2">
                   <div className="flex -space-x-2">
                     <div className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden">
                       <Image
@@ -286,21 +286,21 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              <div className="w-full flex justify-center -mt-2">
+              <div className="w-full flex justify-center mt-2 sm:mt-4 md:mt-6 mb-4 sm:mb-6 md:mb-8">
                 <Image 
                   src="/Globe.jpg" 
                   alt="Sanganak Company Logo" 
                   width={250} 
                   height={250} 
-                  className="mx-auto"
+                  className="mx-auto w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[250px] md:h-[250px]"
                   priority={true}
                 />
               </div>
 
-              <div className="text-center space-y-3">
+              <div className="text-center space-y-6 sm:space-y-8 md:space-y-10">
                 <div>
                   <h1 
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-2 px-4 whitespace-nowrap"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-4 sm:mb-5 md:mb-6 px-4 whitespace-nowrap"
                     style={{
                       background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                       WebkitBackgroundClip: 'text',
@@ -312,7 +312,7 @@ export default function Home() {
                     SANGANAK
                   </h1>
                   <h2 
-                    className="text-2xl md:text-3xl font-bold tracking-wide mb-4"
+                    className="text-2xl md:text-3xl font-bold tracking-wide mb-6 sm:mb-8"
                     style={{
                       background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                       WebkitBackgroundClip: 'text',
@@ -324,43 +324,43 @@ export default function Home() {
                   </h2>
                 </div>
 
-                <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                  From strategy to execution, we craft premium solutions that drive<br />
+                <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+                  From strategy to execution, we craft premium solutions that drive<br className="hidden sm:block" />
                   <span className="font-extrabold text-[#c6a255]">engagement</span>,{' '}
                   <span className="font-extrabold text-[#c6a255]">growth</span>, and{' '}
                   <span className="font-extrabold text-[#c6a255]">revenue</span>.
                 </p>
 
                 {/* Service Categories */}
-                <div className="flex flex-wrap justify-center gap-6 mt-8">
+                <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 mt-8 sm:mt-10 md:mt-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="flex flex-col items-center space-y-2"
+                    className="flex flex-col items-center space-y-3"
                   >
-                    <span className="text-3xl">👑</span>
-                    <span className="text-[#c6a255] font-medium">Elite Clientele</span>
+                    <span className="text-4xl sm:text-5xl">👑</span>
+                    <span className="text-[#c6a255] font-medium text-base sm:text-lg">Elite Clientele</span>
                   </motion.div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="flex flex-col items-center space-y-2"
+                    className="flex flex-col items-center space-y-3"
                   >
-                    <span className="text-3xl">⭐</span>
-                    <span className="text-[#c6a255] font-medium">Bespoke Solutions</span>
+                    <span className="text-4xl sm:text-5xl">⭐</span>
+                    <span className="text-[#c6a255] font-medium text-base sm:text-lg">Bespoke Solutions</span>
                   </motion.div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="flex flex-col items-center space-y-2"
+                    className="flex flex-col items-center space-y-3"
                   >
-                    <span className="text-3xl">✨</span>
-                    <span className="text-[#c6a255] font-medium">Tailored Solutions</span>
+                    <span className="text-4xl sm:text-5xl">✨</span>
+                    <span className="text-[#c6a255] font-medium text-base sm:text-lg">Tailored Solutions</span>
                   </motion.div>
                 </div>
               </div>

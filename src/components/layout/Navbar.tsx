@@ -162,8 +162,9 @@ export default function Navbar() {
             isExternal
             variant="primary"
             size="sm"
+            as="a"
           >
-            Let's Talk
+            Book a Call
           </LuxuryButton>
         </div>
 
