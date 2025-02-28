@@ -159,8 +159,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <LuxuryButton
             href={CTA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            isExternal
             variant="primary"
             size="sm"
           >
