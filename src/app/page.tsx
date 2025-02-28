@@ -325,10 +325,10 @@ export default function Home() {
                 </div>
 
                 <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-                  From strategy to execution, we craft premium solutions that drive<br className="hidden sm:block" />
-                  <span className="font-extrabold text-[#c6a255]">engagement</span>,{' '}
-                  <span className="font-extrabold text-[#c6a255]">growth</span>, and{' '}
-                  <span className="font-extrabold text-[#c6a255]">revenue</span>.
+                "We craft world-class digital experiences that"<br className="hidden sm:block" />
+                  <span className="font-extrabold text-[#c6a255]">drive engagement</span>,{' '}
+                  <span className="font-extrabold text-[#c6a255]">scale businesses</span>, and{' '}
+                  <span className="font-extrabold text-[#c6a255]">& maximize revenue—fast</span>.
                 </p>
 
                 {/* Service Categories */}
