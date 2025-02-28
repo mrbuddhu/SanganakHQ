@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -18,7 +19,7 @@ export default function Portfolio() {
     {
       title: "Creators Home",
       description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
-      image: "/images/portfolio/creatorshome.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg",
       caseStudyLink: "/case-studies#creators-home",
       liveLink: "https://creatorshome.xyz",
       tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
@@ -26,21 +27,21 @@ export default function Portfolio() {
     {
       title: "NFTCollect",
       description: "Cross-platform mobile app for NFT collectors featuring real-time price tracking, portfolio management, and marketplace integration.",
-      image: "/images/portfolio/nftcollect.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750710/nftcollect_g3ygja.jpg",
       caseStudyLink: "/case-studies#nftcollect",
       tags: ["React Native", "Mobile App", "Web3", "NFT"]
     },
     {
       title: "Burgerrr",
       description: "Feature-rich food delivery mobile app specializing in gourmet burgers, with real-time order tracking and personalized recommendations.",
-      image: "/images/portfolio/burgerrr.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/burgerrr_xhsb8c.jpg",
       caseStudyLink: "/case-studies#burgerrr",
       tags: ["React Native", "Mobile App", "Food Delivery", "Location Services"]
     },
     {
       title: "Interio",
       description: "Modern interior design platform showcasing luxury spaces and connecting designers with clients.",
-      image: "/images/portfolio/interio.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/interio_kq1fky.jpg",
       caseStudyLink: "/case-studies#interio",
       liveLink: "https://interio-eta.vercel.app/",
       tags: ["Interior Design", "Luxury", "Marketplace"]
@@ -48,14 +49,14 @@ export default function Portfolio() {
     {
       title: "GlobalEats",
       description: "International culinary platform connecting food enthusiasts with authentic global cuisines.",
-      image: "/images/portfolio/globaleats.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/globaleats_oqjzn8.jpg",
       caseStudyLink: "/case-studies#globaleats",
       tags: ["Food Tech", "Marketplace", "Culture"]
     },
     {
       title: "MedicoBuddy",
       description: "SaaS solution transforming medical education with AI-driven learning tools, case management, and professional networking for healthcare professionals.",
-      image: "/images/portfolio/medicobuddy.jpg",
+      image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/medicobuddy_fudnrl.jpg",
       caseStudyLink: "/case-studies#medicobuddy",
       tags: ["SaaS", "Medical Education", "AI/ML", "Healthcare"]
     }
@@ -97,67 +98,43 @@ export default function Portfolio() {
 
           {/* Portfolio Cards */}
           <div className="overflow-x-hidden pb-6">
-            <div className="flex flex-wrap gap-8 justify-center px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="w-full md:w-[800px] max-w-full"
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="group"
                 >
-                  <LuxuryCard className="h-full p-6 hover:border-luxury-gold-300/50 transition-all duration-300 hover:shadow-xl hover:shadow-luxury-gold-300/10">
-                    <div className="flex flex-col md:flex-row items-center gap-6 h-full">
-                      <motion.div 
-                        className="relative w-full md:w-[60%] h-[400px] rounded-lg overflow-hidden border-2 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-all duration-300"
-                        whileHover={{ scale: 1.02 }}
-                      >
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 60vw"
-                          className="object-cover filter brightness-95 group-hover:brightness-100 transition-all duration-300"
-                          priority
-                        />
-                      </motion.div>
-                      
-                      <div className="flex-1 flex flex-col justify-start text-left md:pr-4 h-[171px] overflow-hidden">
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-3">
-                          {project.title}
-                        </h3>
-                        <p className="text-gray-300 leading-relaxed mb-4">{project.description}</p>
-                        
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-3 py-1 text-xs font-medium text-luxury-gold-300/70 border border-luxury-gold-300/20 rounded-full"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
+                  <LuxuryCard className="h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
+                    {/* Image Section */}
+                    <div className="relative h-48">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                    </div>
 
-                        <div className="flex gap-6">
-                          <Link
-                            href={project.caseStudyLink}
-                            className="text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors flex items-center gap-2"
+                    {/* Content Section */}
+                    <div className="p-6 space-y-4">
+                      <h3 className="text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
+                        {project.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs px-2 py-1 rounded-full border border-[#c6a255]/20 text-[#c6a255]"
                           >
-                            View Case Study
-                          </Link>
-                          {project.liveLink && (
-                            <a
-                              href={project.liveLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors flex items-center gap-2"
-                            >
-                              Visit Live Site
-                            </a>
-                          )}
-                        </div>
+                            {tag}
+                          </span>
+                        ))}
                       </div>
+                      <p className="text-gray-400 text-sm line-clamp-3">{project.description}</p>
                     </div>
                   </LuxuryCard>
                 </motion.div>

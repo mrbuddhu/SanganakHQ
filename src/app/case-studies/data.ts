@@ -6,7 +6,7 @@ export const caseStudies = [
     client: 'Interior Design Industry',
     industry: 'Interior Design / AR',
     duration: '12 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1705670985/case-studies/interio-platform.jpg',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/interio_kq1fky.jpg',
     challenge: 'Create an AR-powered interior design platform that helps users visualize and plan their space transformations.',
     solution: 'Developed an innovative AR platform with real-time visualization, custom design tools, and professional consultation features.',
     results: [
@@ -47,7 +47,7 @@ export const caseStudies = [
     client: 'Food & Beverage Industry',
     industry: 'Food Delivery / Logistics',
     duration: '16 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1705670985/case-studies/globaleats-platform.jpg',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/globaleats_oqjzn8.jpg',
     challenge: 'Build a comprehensive food delivery platform that connects international cuisines with local customers.',
     solution: 'Created a scalable platform with real-time order tracking, multi-vendor support, and AI-powered recommendations.',
     results: [
@@ -88,7 +88,7 @@ export const caseStudies = [
     client: 'Healthcare Industry',
     industry: 'Healthcare / Telemedicine',
     duration: '20 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1705670985/case-studies/medicobuddy-platform.jpg',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/medicobuddy_fudnrl.jpg',
     challenge: 'Develop a telemedicine platform that connects patients with healthcare providers while ensuring data security and compliance.',
     solution: 'Built a HIPAA-compliant platform with video consultations, electronic health records, and secure messaging features.',
     results: [
@@ -129,7 +129,7 @@ export const caseStudies = [
     client: 'Food Service Industry',
     industry: 'Food Delivery',
     duration: '7 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1705670985/case-studies/burgerrr-platform.jpg',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/burgerrr_xhsb8c.jpg',
     challenge: 'Develop a specialized food delivery app focused on gourmet burgers with real-time tracking and personalization.',
     solution: 'Created a React Native app with location-based services, real-time order tracking, and AI-powered recommendations.',
     results: [
@@ -170,7 +170,7 @@ export const caseStudies = [
     client: 'Web3 Community',
     industry: 'Blockchain / NFT',
     duration: '6 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1705670985/case-studies/nftcollect-platform.jpg',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750710/nftcollect_g3ygja.jpg',
     challenge: 'Create a mobile app that simplifies NFT collection management while providing real-time market insights.',
     solution: 'Built a cross-platform React Native app with real-time price tracking, portfolio analytics, and marketplace integration.',
     results: [
@@ -211,7 +211,7 @@ export const caseStudies = [
     client: 'Creator Economy',
     industry: 'SaaS / Content Creation',
     duration: '8 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1705670985/case-studies/creatorshome-platform.jpg',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg',
     challenge: 'Build a comprehensive SaaS platform that empowers content creators with AI-driven tools and analytics for better content creation and monetization.',
     solution: 'Developed an all-in-one platform featuring AI-powered content suggestions, analytics dashboard, and monetization tools.',
     results: [
