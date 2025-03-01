@@ -40,8 +40,16 @@ export default function Home() {
     }
   };
   const [currentPortfolioIndex, setCurrentPortfolioIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handlePortfolioScroll = (direction: 'prev' | 'next') => {
-  const windowWidth = window.innerWidth;
   const isTablet = windowWidth >= 768 && windowWidth < 1024;
   const isMobile = windowWidth < 768;
   const step = isMobile ? 1 : isTablet ? 2 : 3;
