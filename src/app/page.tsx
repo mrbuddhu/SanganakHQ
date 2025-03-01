@@ -40,30 +40,37 @@ export default function Home() {
     }
   };
   const [currentPortfolioIndex, setCurrentPortfolioIndex] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
   useEffect(() => {
-    setWindowWidth(window.innerWidth);
     const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize(); // Set initial width
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  const handlePortfolioScroll = (direction: 'prev' | 'next') => {
+  
   const isTablet = windowWidth >= 768 && windowWidth < 1024;
   const isMobile = windowWidth < 768;
-  const step = isMobile ? 1 : isTablet ? 2 : 3;
 
-  if (direction === 'prev') {
-    setCurrentPortfolioIndex(prev => 
-      prev === 0 ? portfolio.length - step : Math.max(0, prev - step)
-    );
-  } else {
-    setCurrentPortfolioIndex(prev => 
-      prev + step >= portfolio.length ? 0 : prev + step
-    );
-  }
-};
+  const getVisibleItems = (width: number) => {
+    if (width >= 1024) return 3;
+    if (width >= 768) return 2;
+    return 1;
+  };
+
+  const handlePortfolioScroll = (direction: 'prev' | 'next') => {
+    const step = getVisibleItems(windowWidth);
+
+    if (direction === 'prev') {
+      setCurrentPortfolioIndex(prev => 
+        prev === 0 ? portfolio.length - step : Math.max(0, prev - step)
+      );
+    } else {
+      setCurrentPortfolioIndex(prev => 
+        prev + step >= portfolio.length ? 0 : prev + step
+      );
+    }
+  };
 
   const portfolio = [
     {
@@ -573,7 +580,7 @@ export default function Home() {
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full justify-center">
-                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)).map((item, index) => (
+                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + getVisibleItems(windowWidth)).map((item, index) => (
                   <div key={index} className="flex-none w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[360px]">
                     <LuxuryCard className="overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300 h-full">
                       <div className="relative h-[200px] rounded-lg overflow-hidden mb-4">
@@ -845,7 +852,7 @@ export default function Home() {
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full justify-center">
-                {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)).map((testimonial, index) => (
+                {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + getVisibleItems(windowWidth)).map((testimonial, index) => (
                   <div key={index} className="flex-none w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[360px]">
                     <LuxuryCard className="flex flex-col h-full">
                       {/* Video Container */}
