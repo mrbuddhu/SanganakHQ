@@ -555,7 +555,6 @@ export default function Home() {
               subtitle="Showcasing excellence in digital innovation"
             />
             <div className="flex justify-between items-center mb-8">
-              <h2 className="text-3xl font-bold text-[#c6a255]">Featured Projects</h2>
             </div>
             
             <div className="relative">
@@ -565,9 +564,9 @@ export default function Home() {
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full">
-                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + 3).map((item, index) => (
-                  <div key={index} className="flex-none w-[280px] sm:w-[320px] md:w-[360px]">
+              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full justify-center">
+                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)).map((item, index) => (
+                  <div key={index} className="flex-none w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[360px]">
                     <LuxuryCard className="overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300 h-full">
                       <div className="relative h-[200px] rounded-lg overflow-hidden mb-4">
                         <Image
@@ -837,9 +836,9 @@ export default function Home() {
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full">
-                {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + 3).map((testimonial, index) => (
-                  <div key={index} className="flex-none w-[280px] sm:w-[320px] md:w-[360px]">
+              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full justify-center">
+                {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)).map((testimonial, index) => (
+                  <div key={index} className="flex-none w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[360px]">
                     <LuxuryCard className="flex flex-col h-full">
                       {/* Video Container */}
                       <div className="relative h-[250px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden mb-4 group">
