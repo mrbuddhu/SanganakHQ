@@ -97,19 +97,19 @@ export default function Portfolio() {
           </div>
 
           {/* Portfolio Cards */}
-          <div className="overflow-x-hidden pb-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
+          <div className="overflow-x-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-0 sm:px-4 max-w-7xl mx-auto">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="group"
+                  className="group w-full px-4 sm:px-0"
                 >
                   <LuxuryCard className="h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
                     {/* Image Section */}
-                    <div className="relative h-48">
+                    <div className="relative h-52 sm:h-64 md:h-48 lg:h-56">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -120,7 +120,7 @@ export default function Portfolio() {
                     </div>
 
                     {/* Content Section */}
-                    <div className="p-6 space-y-4">
+                    <div className="p-4 sm:p-6 space-y-4">
                       <h3 className="text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
                         {project.title}
                       </h3>

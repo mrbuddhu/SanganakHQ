@@ -557,46 +557,47 @@ export default function Home() {
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-3xl font-bold text-[#c6a255]">Featured Projects</h2>
             </div>
-
-            <div className="relative w-full overflow-x-auto pb-4">
-              <div className="flex gap-6 transition-transform duration-500 ease-in-out min-w-max">
-                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + 3).map((item, index) => (
-                  <div key={index} className="flex-none w-[300px] sm:w-[400px]">
-                    <LuxuryCard className="h-full p-6 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20">
-                      <div className="aspect-video relative overflow-hidden rounded-lg">
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          width={400}
-                          height={300}
-                        />
-                      </div>
-                      <h3 className="text-xl font-semibold mt-4 text-[#c6a255] line-clamp-1">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-300 mt-2 line-clamp-3">{item.description}</p>
-                      <div className="flex flex-wrap gap-2 mt-3">
-                        {item.tags.map((tag, index) => (
-                          <span
-                            key={index}
-                            className="px-2 py-1 text-xs rounded-full bg-[#c6a255]/10 text-[#c6a255] border border-[#c6a255]/20"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </LuxuryCard>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Navigation Arrows */}
+            
+            <div className="relative">
               <button
                 onClick={() => handlePortfolioScroll('prev')}
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
+              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full">
+                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + 3).map((item, index) => (
+                  <div key={index} className="flex-none w-[280px] sm:w-[320px] md:w-[360px]">
+                    <LuxuryCard className="overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300 h-full">
+                      <div className="relative h-[200px] rounded-lg overflow-hidden mb-4">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-contain group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      </div>
+                      <div className="p-4 space-y-4">
+                        <h3 className="text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
+                          {item.title}
+                        </h3>
+                        <p className="text-gray-300 line-clamp-2">{item.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {item.tags.map((tag, tagIndex) => (
+                            <span
+                              key={tagIndex}
+                              className="px-2 py-1 text-xs rounded-full bg-[#c6a255]/10 text-[#c6a255] border border-[#c6a255]/20"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </LuxuryCard>
+                  </div>
+                ))}
+              </div>
               <button
                 onClick={() => handlePortfolioScroll('next')}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
@@ -604,7 +605,6 @@ export default function Home() {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
-
             {/* Case Studies CTA */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -627,7 +627,6 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-
         {/* Process Section */}
         <section className="py-20 relative">
           <LuxuryHeading
@@ -650,7 +649,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Process CTA */}
         <section className="py-20 relative">
           <div className="max-w-3xl mx-auto px-4 text-center">
@@ -678,7 +676,6 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-
         {/* Comparison Section */}
         <section className="relative py-24 overflow-hidden">
           <LuxuryHeading
@@ -796,7 +793,6 @@ export default function Home() {
             </LuxuryCard>
           </div>
         </section>
-
         {/* Why Choose Sanganak CTA */}
         <section className="py-20 relative">
           <div className="max-w-3xl mx-auto px-4 text-center">
@@ -824,7 +820,6 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-
         {/* Testimonials Section */}
         <section id="testimonials" className="relative py-24 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4">
@@ -842,15 +837,12 @@ export default function Home() {
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
-
-              <div
-                className="testimonials-grid flex gap-6 overflow-x-hidden scroll-smooth"
-              >
+              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full">
                 {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + 3).map((testimonial, index) => (
-                  <div key={index} className="flex-none w-[300px] sm:w-[400px]">
-                    <LuxuryCard className="flex flex-col h-[600px]">
+                  <div key={index} className="flex-none w-[280px] sm:w-[320px] md:w-[360px]">
+                    <LuxuryCard className="flex flex-col h-full">
                       {/* Video Container */}
-                      <div className="relative h-[450px] rounded-lg overflow-hidden mb-4 group">
+                      <div className="relative h-[250px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden mb-4 group">
                         <video
                           id={`testimonial-video-${index}`}
                           src={testimonial.videoUrl}
@@ -922,7 +914,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Testimonials CTA */}
         <section className="py-20 relative">
           <div className="max-w-3xl mx-auto px-4 text-center">
@@ -950,7 +941,6 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-
         {/* FAQ Section */}
         <section className="py-20 relative">
           <LuxuryHeading
@@ -984,7 +974,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
         {/* FAQ CTA */}
         <section className="py-20 relative">
           <div className="max-w-3xl mx-auto px-4 text-center">
