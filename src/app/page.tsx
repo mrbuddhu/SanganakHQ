@@ -198,9 +198,7 @@ export default function Home() {
       description: "Providing unparalleled attention and dedication to every aspect of your project."
     }
   ];
-
   const [playingVideos, setPlayingVideos] = useState<{ [key: number]: boolean }>({});
-
   const toggleVideo = (e: React.MouseEvent, index: number) => {
     e.preventDefault();
     e.stopPropagation();
@@ -214,7 +212,6 @@ export default function Home() {
       setPlayingVideos(prev => ({ ...prev, [index]: !prev[index] }));
     }
   };
-
   return (
     <MainLayout>
       <main>
@@ -342,7 +339,7 @@ export default function Home() {
                 <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
                 "We craft world-class digital experiences that"<br className="hidden sm:block" />
                   <span className="font-extrabold text-[#c6a255]">drive engagement</span>,{' '}
-                  <span className="font-extrabold text-[#c6a255]">scale businesses</span>, and{' '}
+                  <span className="font-extrabold text-[#c6a255]">scale businesses</span>,{' '}
                   <span className="font-extrabold text-[#c6a255]">& maximize revenue—fast</span>.
                 </p>
 
@@ -375,7 +372,7 @@ export default function Home() {
                     className="flex flex-col items-center space-y-3"
                   >
                     <span className="text-4xl sm:text-5xl">✨</span>
-                    <span className="text-[#c6a255] font-medium text-base sm:text-lg">Tailored Solutions</span>
+                    <span className="text-[#c6a255] font-medium text-base sm:text-lg">ROI Driven</span>
                   </motion.div>
                 </div>
               </div>
