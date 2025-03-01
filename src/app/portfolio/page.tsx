@@ -98,30 +98,31 @@ export default function Portfolio() {
 
           {/* Portfolio Cards */}
           <div className="overflow-x-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-0 sm:px-4 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="group w-full px-4 sm:px-0"
+                  className="group"
                 >
                   <LuxuryCard className="h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
                     {/* Image Section */}
-                    <div className="relative h-52 sm:h-64 md:h-48 lg:h-56">
+                    <div className="relative aspect-[16/9] w-full">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="object-contain group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                     </div>
 
                     {/* Content Section */}
-                    <div className="p-4 sm:p-6 space-y-4">
-                      <h3 className="text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
+                    <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                      <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
                         {project.title}
                       </h3>
                       <div className="flex flex-wrap gap-2">
@@ -134,7 +135,7 @@ export default function Portfolio() {
                           </span>
                         ))}
                       </div>
-                      <p className="text-gray-400 text-sm line-clamp-3">{project.description}</p>
+                      <p className="text-gray-400 text-xs sm:text-sm line-clamp-2 sm:line-clamp-3">{project.description}</p>
                     </div>
                   </LuxuryCard>
                 </motion.div>

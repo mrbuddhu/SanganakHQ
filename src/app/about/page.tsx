@@ -88,12 +88,12 @@ export default function AboutPage() {
                   Schedule a Call <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden">
                 <Image
                   src="/Sanganak.jpeg"
                   alt="Sanganak Premium"
                   fill
-                  className="object-cover"
+                  className="object-contain sm:object-cover"
                   quality={100}
                 />
               </div>

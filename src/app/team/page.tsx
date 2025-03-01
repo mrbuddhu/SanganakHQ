@@ -69,12 +69,14 @@ export default function TeamPage() {
               <motion.div key={index} variants={cardVariants}>
                 <LuxuryCard className="h-[600px] transform hover:scale-[1.02] transition-transform duration-300">
                   <div className="flex flex-col items-center text-center p-8 h-full justify-between">
-                    <div className="relative w-48 h-48 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors">
                       <Image
                         src={member.image}
                         alt={member.name}
                         fill
+                        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
                         className="object-cover filter brightness-95 group-hover:brightness-100 transition-all"
+                        priority
                       />
                     </div>
                     <div className="flex-1 flex flex-col justify-center">
