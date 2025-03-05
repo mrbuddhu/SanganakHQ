@@ -134,7 +134,7 @@ export default function Home() {
     {
       name: "Ankit Kumar",
       role: "Co-founder @Burgerrr",
-      content: "Working with Sanganak Premium has been an absolute game-changer for our business. Their expertise in web development and commitment to excellence is unmatched.",
+      content: "Working with Sanganak Premium has been an absolut game-changer for our business. Their expertise in web development and commitment to excellence is unmatched.",
       rating: 5,
       videoUrl: "/testimonials/ankit-kumar.mp4",
       avatar: "/testimonials/headshots/ankit-kumar.jpg"
@@ -144,7 +144,6 @@ export default function Home() {
       role: "Product Manager @Interio",
       content: "The team at Sanganak Premium delivered beyond our expectations. Their attention to detail and innovative solutions helped us achieve our goals faster.",
       rating: 5,
-      videoUrl: "/testimonials/shyam-sharma.mp4",
       avatar: "/testimonials/headshots/shyam-sharma.jpg"
     },
     {
@@ -852,65 +851,97 @@ export default function Home() {
                 {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + getVisibleItems(windowWidth)).map((testimonial, index) => (
                   <div key={index} className="flex-none w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[360px]">
                     <LuxuryCard className="flex flex-col h-full">
-                      {/* Video Container */}
-                      <div className="relative h-[250px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden mb-4 group">
-                        <video
-                          id={`testimonial-video-${index}`}
-                          src={testimonial.videoUrl}
-                          className="absolute inset-0 w-full h-full object-cover"
-                          playsInline
-                          loop
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                       
-                        {/* Play/Pause Button */}
-                        <button
-                          onClick={(e) => toggleVideo(e, index)}
-                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#c6a255]/90 text-black flex items-center justify-center transition-all transform hover:scale-110 hover:bg-[#c6a255] z-20 cursor-pointer"
-                        >
-                          {playingVideos[index] ? (
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-                            </svg>
-                          ) : (
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
-                            </svg>
-                          )}
-                        </button>
-
-                        {/* Video Progress Bar */}
-                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
-                          <div className={`h-full bg-[#c6a255] transition-all duration-300 ${playingVideos[index] ? 'w-full' : 'w-0'}`} />
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 flex flex-col justify-end">
-                        <div className="flex items-center gap-3">
-                          <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                            <Image
-                              src={testimonial.avatar}
-                              alt={testimonial.name}
-                              fill
-                              className="object-cover rounded-full"
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              priority={index < 3}
-                            />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-1 mb-1">
-                              {[...Array(5)].map((_, i) => (
-                                <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-[#c6a255]">
-                                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                </svg>
-                              ))}
+                      {testimonial.name === 'Shyam Sharma' ? (
+                        <div className="flex-1 flex flex-col justify-end">
+                          <div className="flex items-center gap-3">
+                            <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                              <Image
+                                src={testimonial.avatar}
+                                alt={testimonial.name}
+                                fill
+                                className="object-cover rounded-full"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                priority={index < 3}
+                              />
                             </div>
-                            <h4 className="font-semibold text-[#c6a255]">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-400">{testimonial.role}</p>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-1 mb-1">
+                                {[...Array(5)].map((_, i) => (
+                                  <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-[#c6a255]">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                  </svg>
+                                ))}
+                              </div>
+                              <h4 className="font-semibold text-[#c6a255]">{testimonial.name}</h4>
+                              <p className="text-sm text-gray-400">{testimonial.role}</p>
+                            </div>
+                          </div>
+                          <p className="text-lg text-gray-300">{testimonial.content}</p>
+                        </div>
+                      ) : (
+                        <div>
+                          {/* Video Container */}
+                          <div className="relative h-[250px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden mb-4 group">
+                            <video
+                              id={`testimonial-video-${index}`}
+                              src={testimonial.videoUrl}
+                              className="absolute inset-0 w-full h-full object-cover"
+                              playsInline
+                              loop
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                           
+                            {/* Play/Pause Button */}
+                            <button
+                              onClick={(e) => toggleVideo(e, index)}
+                              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#c6a255]/90 text-black flex items-center justify-center transition-all transform hover:scale-110 hover:bg-[#c6a255] z-20 cursor-pointer"
+                            >
+                              {playingVideos[index] ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                                </svg>
+                              ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
+                                </svg>
+                              )}
+                            </button>
+
+                            {/* Video Progress Bar */}
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
+                              <div className={`h-full bg-[#c6a255] transition-all duration-300 ${playingVideos[index] ? 'w-full' : 'w-0'}`} />
+                            </div>
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex-1 flex flex-col justify-end">
+                            <div className="flex items-center gap-3">
+                              <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                                <Image
+                                  src={testimonial.avatar}
+                                  alt={testimonial.name}
+                                  fill
+                                  className="object-cover rounded-full"
+                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                  priority={index < 3}
+                                />
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex items-center gap-1 mb-1">
+                                  {[...Array(5)].map((_, i) => (
+                                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-[#c6a255]">
+                                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                  ))}
+                                </div>
+                                <h4 className="font-semibold text-[#c6a255]">{testimonial.name}</h4>
+                                <p className="text-sm text-gray-400">{testimonial.role}</p>
+                              </div>
+                            </div>
+                            <p className="text-lg text-gray-300">{testimonial.content}</p>
                           </div>
                         </div>
-                      </div>
+                      )}
                     </LuxuryCard>
                   </div>
                 ))}
