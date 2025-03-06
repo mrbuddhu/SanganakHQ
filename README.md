@@ -1,4 +1,4 @@
-# Sanganak - Premium IT Solutions Boutique
+# #1 Premium IT Solutions Boutique
 
 A luxurious, high-end website for Sanganak - a world-class IT boutique offering Branding, UI/UX, Development, AI, and Blockchain solutions. Built with cutting-edge technologies and premium design principles.
 

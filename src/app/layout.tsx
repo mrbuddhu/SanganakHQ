@@ -13,13 +13,13 @@ export const viewport: Viewport = {
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'SANGANAK | The Premium IT Boutique',
+  title: 'SANGANAK | #1 Premium IT Boutique',
   description: 'Your trusted partner for premium IT solutions and services.',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'SANGANAK | The Premium IT Boutique',
+    title: 'SANGANAK | #1 Premium IT Boutique',
   },
   icons: {
     icon: '/Logo.ico',

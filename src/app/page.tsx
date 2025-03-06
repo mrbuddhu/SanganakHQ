@@ -13,10 +13,10 @@ import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles, ChevronDown, Zap, Plus,
 import { CTA_URL } from '@/constants/links';
 
 export default function Home() {
-  const fullText = 'The Premium IT Boutique';
+  const fullText = '#1 Premium IT Boutique';
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState(-1);
-  const [displayText, setDisplayText] = useState('The Premium IT Boutique');
+  const [displayText, setDisplayText] = useState('#1 Premium IT Boutique');
   const router = useRouter();
   const pathname = usePathname();
 
@@ -133,7 +133,7 @@ export default function Home() {
   const testimonials = [
     {
       name: "Ankit Kumar",
-      role: "Co-founder @Burgerrr",
+      role: "@Burgerrr",
       content: "Working with Sanganak Premium has been an absolut game-changer for our business. Their expertise in web development and commitment to excellence is unmatched.",
       rating: 5,
       videoUrl: "/testimonials/ankit-kumar.mp4",
@@ -141,14 +141,15 @@ export default function Home() {
     },
     {
       name: "Shyam Sharma",
-      role: "Product Manager @Interio",
+      role: "@Interio",
       content: "The team at Sanganak Premium delivered beyond our expectations. Their attention to detail and innovative solutions helped us achieve our goals faster.",
       rating: 5,
+      videoUrl: "/testimonials/shyam-sharma.mp4",
       avatar: "/testimonials/headshots/shyam-sharma.jpg"
     },
     {
       name: "Shubham Kumar",
-      role: "CEO @GlobalEats",
+      role: "@GlobalEats",
       content: "Exceptional service and outstanding results! Sanganak Premium transformed our vision into reality with their technical expertise and creative approach.",
       rating: 5,
       videoUrl: "/testimonials/shubham-kumar.mp4",
@@ -193,7 +194,7 @@ export default function Home() {
     },
     {
       icon: "",
-      title: "Tailored Solutions",
+      title: "ROI Driven",
       description: "Providing unparalleled attention and dedication to every aspect of your project."
     }
   ];
@@ -245,11 +246,11 @@ export default function Home() {
                     </div>
                     <div 
                       className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden"
-                      title="Dr. Ankit Kumar - Medical Professional, Bengaluru"
+                      title="Ankit Kumar - Medical Professional, Bengaluru"
                     >
                       <Image
                         src="/testimonials/headshots/ankit-kumar.jpg"
-                        alt="Dr. Ankit Kumar - Medical Professional, Bengaluru"
+                        alt="Ankit Kumar - Medical Professional, Bengaluru"
                         width={32}
                         height={32}
                         className="object-cover"
@@ -331,7 +332,7 @@ export default function Home() {
                       textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
                     }}
                   >
-                    The Premium IT Boutique
+                    #1 Premium IT Boutique
                   </h2>
                 </div>
 
