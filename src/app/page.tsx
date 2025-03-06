@@ -135,6 +135,7 @@ export default function Home() {
       name: "Ankit Kumar",
       role: "@Burgerrr",
       rating: 5,
+      content: "Working with Sanganak Premium was a game-changing experience. Their attention to detail and innovative solutions exceeded our expectations.",
       videoUrl: "/testimonials/ankit-kumar.mp4",
       avatar: "/testimonials/headshots/ankit-kumar.jpg"
     },
@@ -142,6 +143,7 @@ export default function Home() {
       name: "Shyam Sharma",
       role: "@Interio",
       rating: 5,
+      content: "The team at Sanganak Premium delivered an exceptional design system that perfectly captures our brand's luxury essence.",
       videoUrl: "/testimonials/shyam-sharma.mp4",
       avatar: "/testimonials/headshots/shyam-sharma.jpg"
     },
@@ -149,6 +151,7 @@ export default function Home() {
       name: "Shubham Kumar",
       role: "@GlobalEats",
       rating: 5,
+      content: "Their expertise in food tech platforms helped us create a seamless experience for our global customer base.",
       videoUrl: "/testimonials/shubham-kumar.mp4",
       avatar: "/testimonials/headshots/shubham-kumar.jpg"
     }
@@ -908,7 +911,6 @@ export default function Home() {
                                 <p className="text-sm text-gray-400">{testimonial.role}</p>
                               </div>
                             </div>
-                            <p className="text-lg text-gray-300">{testimonial.content}</p>
                           </div>
                         </div>
                       ) : (
@@ -971,7 +973,6 @@ export default function Home() {
                                 <p className="text-sm text-gray-400">{testimonial.role}</p>
                               </div>
                             </div>
-                            <p className="text-lg text-gray-300">{testimonial.content}</p>
                           </div>
                         </div>
                       )}
