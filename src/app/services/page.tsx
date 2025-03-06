@@ -74,9 +74,8 @@ export default function Services() {
         "Security Auditing"
       ]
     },
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: "Advanced AI",
+    {  icon: <Lightbulb className="w-8 h-8" />,
+      title: "AI Elite",
       description: "Cutting-edge AI solutions for business transformation.",
       features: [
         "Custom AI Models",
