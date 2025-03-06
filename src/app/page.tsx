@@ -506,7 +506,7 @@ export default function Home() {
                 <div className="text-[#c6a255] mb-4 text-2xl">
                   <Lightbulb className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4">Advanced AI</h3>
+                <h3 className="text-xl font-bold text-[#c6a255] mb-4">AI Solutions</h3>
                 <p className="text-gray-400 mb-4">Cutting-edge AI solutions for business transformation.</p>
                 <ul className="space-y-2 text-gray-300 text-sm">
                   <li className="flex items-center gap-2">
