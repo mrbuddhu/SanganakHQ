@@ -8,7 +8,7 @@
   --luxury-gold-500: 158, 124, 87;  /* Even darker for depth */
   --luxury-gray-300: 229, 229, 229;
   --luxury-gray-400: 189, 189, 189;
-  --background: #0a0a0a;
+  --background: #000000;
   --foreground: #ededed;
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
@@ -29,7 +29,7 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0a0a0a;
+  background-color: #000000;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -58,7 +58,7 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   letter-spacing: -0.025em;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #0a0a0a;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -92,9 +92,22 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 
     0 4px 24px rgba(0, 0, 0, 0.2),
-    0 1px 2px rgba(255, 255, 255, 0.02);
+    0 1px 2px rgba(255, 255, 255, 0.02),
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 16px 48px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.luxury-card:hover {
+  transform: perspective(1000px) translateZ(20px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 16px 48px rgba(0, 0, 0, 0.2),
+    0 24px 64px rgba(0, 0, 0, 0.15);
 }
 
 .luxury-card::after {

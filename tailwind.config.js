@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'luxury-black': '#0A0A0A',
+        'luxury-black': '#000000',
         'luxury-dark': {
-          900: '#010101',
-          800: '#020202',
-          700: '#030303',
+          900: '#000000',
+          800: '#000000',
+          700: '#000000',
         },
         'luxury-gold': {
           100: '#FFF6E5',
