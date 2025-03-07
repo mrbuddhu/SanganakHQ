@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles, ChevronDown, Zap, Plus, Linkedin, Phone, ChevronLeft, ChevronRight, Play, Pause, ArrowRight } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
+import { LuxuryBranding, EliteDesign, BespokeApplications, BlockchainInnovation, AdvancedAI, ElitePackage, Testimonials, Portfolio, Process, Comparison, WhyChooseSanganak, TestimonialsCTA, FAQ, FAQCTA } from './services';
 
 export default function Home() {
   const fullText = '#1 Premium IT Boutique';
@@ -399,24 +400,27 @@ export default function Home() {
                   <Sparkles className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-[#c6a255] mb-4">Luxury Branding</h3>
-                <p className="text-gray-400 mb-4">Elevate your brand with our premium digital identity services.</p>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Custom Brand Strategy
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Visual Identity Design
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Brand Guidelines
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Copywriting
-                  </li>
+                <p className="text-gray-300 mb-4">Become a Category King with a brand that exudes authority, prestige, and undeniable influence.</p>
+                <ul className="space-y-3 text-gray-300 text-sm">
+                  {[
+                    "Strategic Brand Positioning – Stand out. Stay unforgettable.",
+                    "Signature Visual Identity – Designed for premium perception.",
+                    "Comprehensive Brand Guidelines – Cohesive, timeless branding.",
+                    "Conversion-Optimized Copywriting – Persuasion meets power."
+                  ].map((feature, featureIndex) => {
+                    const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+                    return (
+                      <li key={featureIndex} className="flex items-start gap-3">
+                        <span className="text-[#c6a255] mt-1">•</span>
+                        <span className="flex-1">
+                          <span className="text-[#c6a255]">{firstPart}</span>
+                          {rest.length > 0 && (
+                            <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </LuxuryCard>
 
@@ -426,24 +430,27 @@ export default function Home() {
                   <Gem className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-[#c6a255] mb-4">Elite Design</h3>
-                <p className="text-gray-400 mb-4">Bespoke UI/UX design solutions for discerning clients.</p>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Custom Website Design
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Mobile App Design
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    User Experience Strategy
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Interactive Prototypes
-                  </li>
+                <p className="text-gray-300 mb-4">Experience perfection. Every pixel, every interaction, meticulously crafted to convert.</p>
+                <ul className="space-y-3 text-gray-300 text-sm">
+                  {[
+                    "Bespoke Website & App Design – Luxury aesthetics, seamless UX.",
+                    "Conversion-Optimized User Journeys – Designed to maximize revenue.",
+                    "Interactive Prototypes – Experience your product before it's built.",
+                    "Premium Design System – Consistent luxury across platforms."
+                  ].map((feature, featureIndex) => {
+                    const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+                    return (
+                      <li key={featureIndex} className="flex items-start gap-3">
+                        <span className="text-[#c6a255] mt-1">•</span>
+                        <span className="flex-1">
+                          <span className="text-[#c6a255]">{firstPart}</span>
+                          {rest.length > 0 && (
+                            <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </LuxuryCard>
 
@@ -453,106 +460,118 @@ export default function Home() {
                   <Code2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-[#c6a255] mb-4">Bespoke Applications</h3>
-                <p className="text-gray-400 mb-4">Custom software solutions tailored to your needs.</p>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Custom Web/Mobile Development
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    E Commerce Solution
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Landing Pages
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Saas Solutions                  </li>
+                <p className="text-gray-300 mb-4">Tailor-made digital powerhouses. Scalable, high-performance software for trailblazers.</p>
+                <ul className="space-y-3 text-gray-300 text-sm">
+                  {[
+                    "Custom Web & Mobile Development – Precision-engineered for impact.",
+                    "E-Commerce Mastery – Elevate sales with elite UX.",
+                    "Conversion-Driven Landing Pages – Designed to captivate and convert.",
+                    "SaaS Product Development – Future-proofing your business."
+                  ].map((feature, featureIndex) => {
+                    const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+                    return (
+                      <li key={featureIndex} className="flex items-start gap-3">
+                        <span className="text-[#c6a255] mt-1">•</span>
+                        <span className="flex-1">
+                          <span className="text-[#c6a255]">{firstPart}</span>
+                          {rest.length > 0 && (
+                            <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </LuxuryCard>
+    {/* Blockchain Innovation */}
+    <LuxuryCard>
+      <div className="text-[#c6a255] mb-4 text-2xl">
+        <Globe className="w-8 h-8" />
+      </div>
+      <h3 className="text-xl font-bold text-[#c6a255] mb-4">Blockchain Innovation</h3>
+      <p className="text-gray-300 mb-4">Build the future. We architect blockchain solutions for enterprises ready to lead.</p>
+      <ul className="space-y-3 text-gray-300 text-sm">
+        {[
+          "Smart Contract Development – Automate with absolute security.",
+          "Next-Gen DApps – Redefining decentralized experiences.",
+          "Enterprise Blockchain Integration – Elevate your business with Web3.",
+          "Tokenomics & Strategy – Designing sustainable blockchain ecosystems."
+        ].map((feature, featureIndex) => {
+          const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+          return (
+            <li key={featureIndex} className="flex items-start gap-3">
+              <span className="text-[#c6a255] mt-1">•</span>
+              <span className="flex-1">
+                <span className="text-[#c6a255]">{firstPart}</span>
+                {rest.length > 0 && (
+                  <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                )}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </LuxuryCard>
 
-              {/* Blockchain Innovation */}
-              <LuxuryCard>
-                <div className="text-[#c6a255] mb-4 text-2xl">
-                  <Globe className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4">Blockchain Innovation</h3>
-                <p className="text-gray-400 mb-4">Advanced blockchain solutions for modern enterprises.</p>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Smart Contract Development
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    DApp Developemnt
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Blockchain Integration
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Security Auditing
-                  </li>
-                </ul>
-              </LuxuryCard>
+    {/* Advanced AI */}
+    <LuxuryCard>
+      <div className="text-[#c6a255] mb-4 text-2xl">
+        <Lightbulb className="w-8 h-8" />
+      </div>
+      <h3 className="text-xl font-bold text-[#c6a255] mb-4">AI-Powered Intelligence</h3>
+      <p className="text-gray-300 mb-4">Unleash the power of data. AI isn't the future—it's your competitive advantage today.</p>
+      <ul className="space-y-3 text-gray-300 text-sm">
+        {[
+          "Custom AI Models & Machine Learning – Predict. Optimize. Automate.",
+          "AI-Driven Business Insights – Data-powered growth strategies.",
+          "Process Automation – Scale smarter, work faster.",
+          "Computer Vision & NLP – Cutting-edge AI-driven experiences."
+        ].map((feature, featureIndex) => {
+          const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+          return (
+            <li key={featureIndex} className="flex items-start gap-3">
+              <span className="text-[#c6a255] mt-1">•</span>
+              <span className="flex-1">
+                <span className="text-[#c6a255]">{firstPart}</span>
+                {rest.length > 0 && (
+                  <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                )}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </LuxuryCard>
 
-              {/* Advanced AI */}
-              <LuxuryCard>
-                <div className="text-[#c6a255] mb-4 text-2xl">
-                  <Lightbulb className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4">AI Solutions</h3>
-                <p className="text-gray-400 mb-4">Cutting-edge AI solutions for business transformation.</p>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Custom AI Models
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Machine Learning
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Data Analytics
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Process Automation
-                  </li>
-                </ul>
-              </LuxuryCard>
-
-              {/* Elite Package */}
-              <LuxuryCard>
-                <div className="text-[#c6a255] mb-4 text-2xl">
-                  <Shield className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4">Elite Package</h3>
-                <p className="text-gray-400 mb-4">Comprehensive digital transformation solution.</p>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Complete Brand Identity & Design
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Custom Software Development
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    AI & Blockchain Integration*
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#c6a255]">•</span>
-                    Ongoing Support & Evolution
-                  </li>
-                </ul>
-              </LuxuryCard>
+    {/* Elite Package */}
+    <LuxuryCard>
+      <div className="text-[#c6a255] mb-4 text-2xl">
+        <Shield className="w-8 h-8" />
+      </div>
+      <h3 className="text-xl font-bold text-[#c6a255] mb-4">Elite Package</h3>
+      <p className="text-gray-300 mb-4">The ultimate digital transformation. For businesses serious about dominating their industry.</p>
+      <ul className="space-y-3 text-gray-300 text-sm">
+        {[
+          "End-to-End Brand Identity & UI/UX – Comprehensive brand and design excellence.",
+          "Custom Software, AI & Blockchain Solutions – Cutting-edge technology integration.",
+          "Ongoing Innovation & VIP Strategic Growth – Dedicated support and evolution.",
+          "Priority Access & Exclusive Benefits – VIP treatment at every step."
+        ].map((feature, featureIndex) => {
+          const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+          return (
+            <li key={featureIndex} className="flex items-start gap-3">
+              <span className="text-[#c6a255] mt-1">•</span>
+              <span className="flex-1">
+                <span className="text-[#c6a255]">{firstPart}</span>
+                {rest.length > 0 && (
+                  <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                )}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </LuxuryCard>
             </motion.div>
           </div>
         </section>
@@ -901,7 +920,7 @@ export default function Home() {
                               </div>
                               <div className="flex-1">
                                 <div className="flex items-center gap-1 mb-1">
-                                  {[...Array(5)].map((_, i) => (
+                                  {[1, 2, 3, 4, 5].map((_, i) => (
                                     <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-[#c6a255]">
                                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                     </svg>

@@ -33,66 +33,66 @@ export default function Services() {
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: "Luxury Branding",
-      description: "Elevate your brand with our premium digital identity services.",
+      description: "Become a Category King with a brand that exudes authority, prestige, and undeniable influence.",
       features: [
-        "Custom Brand Strategy",
-        "Visual Identity Design",
-        "Brand Guidelines",
-        "Copywriting"
+        "Strategic Brand Positioning – Stand out. Stay unforgettable.",
+        "Signature Visual Identity – Designed for premium perception.",
+        "Comprehensive Brand Guidelines – Cohesive, timeless branding.",
+        "Conversion-Optimized Copywriting – Persuasion meets power."
       ]
     },
     {
       icon: <Gem className="w-8 h-8" />,
       title: "Elite Design",
-      description: "Bespoke UI/UX design solutions for discerning clients.",
+      description: "Experience perfection. Every pixel, every interaction, meticulously crafted to convert.",
       features: [
-        "Custom Website Design",
-        "Mobile App Design",
-        "User Experience Strategy",
-        "Interactive Prototypes"
+        "Bespoke Website & App Design – Luxury aesthetics, seamless UX.",
+        "Conversion-Optimized User Journeys – Designed to maximize revenue.",
+        "Interactive Prototypes – Experience your product before it's built.",
+        "Premium Design System – Consistent luxury across platforms."
       ]
     },
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "Bespoke Applications",
-      description: "Custom software solutions tailored to your needs.",
+      description: "Tailor-made digital powerhouses. Scalable, high-performance software for trailblazers.",
       features: [
-        "Custom Web/Mobile Dev",
-        "E-Commerce Solution",
-        "Landing Pages",
-        "SaaS Solution"
+        "Custom Web & Mobile Development – Precision-engineered for impact.",
+        "E-Commerce Mastery – Elevate sales with elite UX.",
+        "Conversion-Driven Landing Pages – Designed to captivate and convert.",
+        "SaaS Product Development – Future-proofing your business."
       ]
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Blockchain Innovation",
-      description: "Advanced blockchain solutions for modern enterprises.",
+      description: "Build the future. We architect blockchain solutions for enterprises ready to lead.",
       features: [
-        "Smart Contract Development",
-        "DApp Architecture",
-        "Blockchain Integration",
-        "Security Auditing"
+        "Smart Contract Development – Automate with absolute security.",
+        "Next-Gen DApps – Redefining decentralized experiences.",
+        "Enterprise Blockchain Integration – Elevate your business with Web3.",
+        "Tokenomics & Strategy – Designing sustainable blockchain ecosystems."
       ]
     },
     {  icon: <Lightbulb className="w-8 h-8" />,
-      title: "AI Elite",
-      description: "Cutting-edge AI solutions for business transformation.",
+      title: "AI-Powered Intelligence",
+      description: "Unleash the power of data. AI isn't the future—it's your competitive advantage today.",
       features: [
-        "Custom AI Models",
-        "Machine Learning",
-        "Data Analytics",
-        "Process Automation"
+        "Custom AI Models & Machine Learning – Predict. Optimize. Automate.",
+        "AI-Driven Business Insights – Data-powered growth strategies.",
+        "Process Automation – Scale smarter, work faster.",
+        "Computer Vision & NLP – Cutting-edge AI-driven experiences."
       ]
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Elite Package",
-      description: "Comprehensive digital transformation solution.",
+      description: "The ultimate digital transformation. For businesses serious about dominating their industry.",
       features: [
-        "Complete Brand Identity & Design",
-        "Custom Software Development",
-        "AI & Blockchain Integration *",
-        "Ongoing Support & Evolution"
+        "End-to-End Brand Identity & UI/UX – Comprehensive brand and design excellence.",
+        "Custom Software, AI & Blockchain Solutions – Cutting-edge technology integration.",
+        "Ongoing Innovation & VIP Strategic Growth – Dedicated support and evolution.",
+        "Priority Access & Exclusive Benefits – VIP treatment at every step."
       ]
     }
   ];
@@ -120,14 +120,22 @@ export default function Services() {
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-bold text-[#c6a255] mb-4">{service.title}</h3>
-                    <p className="text-gray-400 mb-4">{service.description}</p>
-                    <ul className="space-y-2 text-gray-300 text-sm">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2">
-                          <span className="text-[#c6a255]">•</span>
-                          {feature}
-                        </li>
-                      ))}
+                    <p className="text-gray-300 mb-4">{service.description}</p>
+                    <ul className="space-y-3 text-gray-300 text-sm">
+                      {service.features.map((feature, featureIndex) => {
+                        const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+                        return (
+                          <li key={featureIndex} className="flex items-start gap-3">
+                            <span className="text-[#c6a255] mt-1">•</span>
+                            <span className="flex-1">
+                              <span className="text-[#c6a255]">{firstPart}</span>
+                              {rest.length > 0 && (
+                                <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                              )}
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </LuxuryCard>
