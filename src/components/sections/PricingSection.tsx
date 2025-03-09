@@ -11,7 +11,7 @@ import { CTA_URL } from '@/constants/links';
 const plans = [
   {
     name: "Essentials",
-    price: "Investment: $2,999",
+    price: "Investment: $2,999+",
     description: "Best for startup/brands ready to level up",
     slots: "2 weeks delivery",
     features: [
@@ -29,7 +29,7 @@ const plans = [
   },
   {
     name: "Accelerator",
-    price: "Investment: $4,999",
+    price: "Investment: $4,999+",
     description: "For businesses scaling aggressively",
     slots: "4 weeks delivery",
     features: [
@@ -47,7 +47,7 @@ const plans = [
   },
   {
     name: "Domination",
-    price: "Investment: $9,999",
+    price: "Investment: $9,999+",
     description: "For brands ready to dominate their industry",
     slots: "8 weeks delivery",
     features: [
