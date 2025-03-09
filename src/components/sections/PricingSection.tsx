@@ -101,7 +101,7 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative w-full min-w-[280px]"
             >
               <div className="flex flex-col gap-4">
                 <LuxuryCard 
