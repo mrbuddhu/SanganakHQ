@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.simpleicons.org',
+        port: '',
+        pathname: '/**',
+      },
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
@@ -11,25 +19,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.godrejinterio.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'asset.cloudinary.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'res.cloudinary.com',
         port: '',
         pathname: '/**',
-      }
+      },
     ],
-    domains: ['images.unsplash.com', 'www.godrejinterio.com', 'asset.cloudinary.com', 'res.cloudinary.com'],
-    unoptimized: false
   },
 };
 

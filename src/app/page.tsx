@@ -10,8 +10,10 @@ import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles, ChevronDown, Zap, Plus, Linkedin, Phone, ChevronLeft, ChevronRight, Play, Pause, ArrowRight } from 'lucide-react';
+import PricingSection from '@/components/sections/PricingSection';
 import { CTA_URL } from '@/constants/links';
 import { LuxuryBranding, EliteDesign, BespokeApplications, BlockchainInnovation, AdvancedAI, ElitePackage, Testimonials, Portfolio, Process, Comparison, WhyChooseSanganak, TestimonialsCTA, FAQ, FAQCTA } from './services';
+import TechStack from '@/components/ui/TechStack';
 
 export default function Home() {
   const fullText = '#1 Premium IT Boutique';
@@ -576,7 +578,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Portfolio Section */}
+        <TechStack />
+
+        <PricingSection />
+
         <section id="portfolio" className="py-24 bg-black/95 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-[#c6a255]/5 to-black/0" />
           <div className="max-w-7xl mx-auto px-4">

@@ -103,13 +103,10 @@ body {
 }
 
 .luxury-card:hover {
-  transform: perspective(1000px) translateZ(20px);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    0 16px 48px rgba(0, 0, 0, 0.2),
-    0 24px 64px rgba(0, 0, 0, 0.15);
+  transform: perspective(1000px) translateZ(20px) scale(1.02);
+  box-shadow: none;
+  border-color: rgba(198, 162, 85, 0.3);
 }
-
 .luxury-card::after {
   content: '';
   position: absolute;
@@ -117,8 +114,8 @@ body {
   background: linear-gradient(
     135deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.05) 40%,
-    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0.02) 40%,
+    rgba(255, 255, 255, 0.04) 60%,
     transparent 100%
   );
   opacity: 0;
@@ -180,7 +177,7 @@ body {
 
 .luxury-card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(184, 134, 11, 0.1);
+  box-shadow: none;
 }
 
 /* Glass effect */
@@ -206,9 +203,7 @@ body {
     rgba(198, 162, 85, 0.15) 100%
   );
   border-color: rgba(198, 162, 85, 0.3);
-  box-shadow: 
-    0 4px 30px rgba(198, 162, 85, 0.1),
-    inset 0 0 30px rgba(198, 162, 85, 0.1);
+  box-shadow: none;
 }
 
 /* Metallic shine animation */
@@ -318,7 +313,7 @@ body {
 
 .luxury-card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(184, 134, 11, 0.1);
+  box-shadow: none;
 }
 
 /* Glass morphism effect */
@@ -519,6 +514,22 @@ section::after {
 }
 
 @layer components {
+ /* CTA Text Single Line */
+  .cta-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  /* Ensure buttons maintain consistent width */
+  .btn-cta {
+    min-width: max-content;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .luxury-pattern {
     background-image: 
       linear-gradient(to right, rgba(var(--luxury-gold-300), 0.03) 1px, transparent 1px),
@@ -615,6 +626,50 @@ section::after {
   .curved-footer::before {
     clip-path: ellipse(100% 100% at 50% 100%);
   }
+}
+/* Pricing Card Icon */
+.pricing-card-icon {
+  @apply flex items-center justify-center w-12 h-12 mb-4 rounded-full;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--luxury-gold-300), 0.1),
+    rgba(var(--luxury-gold-300), 0.05)
+  );
+  border: 1px solid rgba(var(--luxury-gold-300), 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.pricing-card-icon svg {
+  @apply w-6 h-6;
+  color: rgb(var(--luxury-gold-300));
+}
+
+.pricing-card:hover .pricing-card-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--luxury-gold-300), 0.15),
+    rgba(var(--luxury-gold-300), 0.1)
+  );
+  border-color: rgba(var(--luxury-gold-300), 0.2);
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Pricing Card - Extends Luxury Card */
+.pricing-card {
+  @apply luxury-card;
+  padding: 1.5rem;
+  min-height: 380px;
+  gap: 1rem;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 8px 24px rgba(198, 162, 85, 0.1),
+    0 16px 32px rgba(198, 162, 85, 0.08),
+    0 24px 48px rgba(198, 162, 85, 0.05);
+  border-color: rgba(198, 162, 85, 0.3);
 }
 
 /* Navbar styles */

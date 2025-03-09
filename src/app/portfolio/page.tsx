@@ -98,47 +98,48 @@ export default function Portfolio() {
 
           {/* Portfolio Cards */}
           <div className="overflow-x-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="group"
-                >
-                  <LuxuryCard className="h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
-                    {/* Image Section */}
-                    <div className="relative aspect-[16/9] w-full">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-contain group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group h-full"
+              >
+                <LuxuryCard className="flex flex-col h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
+                  {/* Image Section */}
+                  <div className="relative w-full aspect-video">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  </div>
 
-                    {/* Content Section */}
-                    <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
-                      <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
-                        {project.title}
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-xs px-2 py-1 rounded-full border border-[#c6a255]/20 text-[#c6a255]"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-gray-400 text-xs sm:text-sm line-clamp-2 sm:line-clamp-3">{project.description}</p>
+                  {/* Content Section */}
+                  <div className="flex flex-col flex-grow p-4 space-y-2">
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-snug line-clamp-2">{project.description}</p>
+                    <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs px-2 py-0.5 rounded-full border border-[#c6a255]/20 text-[#c6a255] bg-[#c6a255]/5"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                  </LuxuryCard>
-                </motion.div>
+                  </div>
+                </LuxuryCard>
+              </motion.div>
               ))}
             </div>
           </div>
