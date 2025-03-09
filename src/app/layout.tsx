@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Sanganak - Premium IT Boutique',
+    title: 'Sanganak - #1 Premium IT Boutique',
     description: 'Beyond AI-generated conformity, we handcraft distinctive digital experiences that transform your vision into reality.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Sanganak - Premium IT Boutique'
+        alt: 'Sanganak - #1 Premium IT Boutique'
       }
     ],
     type: 'website',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sanganak - Premium IT Boutique',
+    title: 'Sanganak - #1 Premium IT Boutique',
     description: 'Beyond AI-generated conformity, we handcraft distinctive digital experiences that transform your vision into reality.',
     images: ['/og-image.jpg']
   }
