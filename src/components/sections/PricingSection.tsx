@@ -21,7 +21,7 @@ const plans = [
       "Lightning-fast execution"
     ],
     testimonial: {
-      author: "CEO, XYZ Startup",
+      author: "Shyam  CEO@Interio",
       quote: "We 5X'd our revenue after Sanganak's redesign!"
     },
     cta: "Upgrade My Brand Now",
@@ -39,7 +39,7 @@ const plans = [
         "Conversion-optimized RoI"
     ],
     testimonial: {
-      author: "CMO, SaaS Company",
+      author: "Shubham  CMO@GlobalEats",
       quote: "Sanganak helped us break into a $1M ARR market."
     },
     cta: "Let's 10X My Business",
@@ -57,7 +57,7 @@ const plans = [
       "End-to-end digital makeover"
     ],
     testimonial: {
-      author: "Founder, Global Brand",
+      author: "Ankit  CEO@Burgerrr",
       quote: "We outperformed our competitors within 60 days!"
     },
     cta: "Build My Million $ Brand",
@@ -75,7 +75,7 @@ const plans = [
       "Strategic Growth Partnership"
     ],
     testimonial: {
-      author: "CEO, Fortune 500 Tech",
+      author: "Ankit  CTO@NFT Collect",
       quote: "Sanganak transformed our entire digital ecosystem!"
     },
     cta: "Build My Digital Empire",
