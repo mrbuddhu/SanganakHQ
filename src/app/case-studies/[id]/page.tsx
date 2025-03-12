@@ -167,7 +167,7 @@ export default function CaseStudy() {
               <div className="p-8 space-y-8">
                 {/* Header */}
                 <div className="space-y-4">
-                  <h1 className="text-4xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
+                  <h1 className="text-4xl font-bold text-luxury-gold-200 mb-8 text-center bg-gradient-to-r from-luxury-gold-100 to-luxury-gold-300 bg-clip-text text-transparent">
                     {study.title}
                   </h1>
                   <div className="flex items-center gap-4 text-luxury-gold-300/80">

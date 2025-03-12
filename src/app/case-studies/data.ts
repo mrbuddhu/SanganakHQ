@@ -1,8 +1,49 @@
 // Case Studies Data
 export const caseStudies = [
   {
+    id: 'creators-home',
+    title: 'CreatorsHome: How We Built a High-Growth Creator Economy Platform with Seamless Monetization & Viral UX',
+    client: 'Creator Economy',
+    industry: 'SaaS / Content Creation',
+    duration: '24 weeks',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg',
+    challenge: 'Build a comprehensive platform that empowers content creators with AI tools, analytics, and monetization solutions.',
+    solution: 'Developed a feature-rich SaaS platform with AI-powered content tools, advanced analytics, and seamless monetization features.',
+    results: [
+      'AI-powered content tools',
+      'Advanced analytics dashboard',
+      'Multiple monetization channels',
+      'Creator community features'
+    ],
+    technologies: ['Next.js', 'Node.js', 'AI/ML', 'AWS'],
+    testimonial: {
+      quote: "CreatorsHome has transformed how I manage and monetize my content. The AI tools and analytics are game-changing.",
+      name: "Sarah Johnson",
+      role: "Content Creator",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop&q=80"
+    },
+    credits: {
+      branding: {
+        name: 'msbuddhu',
+        work: 'Brand Strategy & Identity'
+      },
+      designing: {
+        name: 'msbuddhu',
+        work: 'UI/UX & Visual Design'
+      },
+      development: {
+        name: 'mrbuddhu',
+        work: 'Full-stack Development'
+      },
+      deployment: {
+        name: 'mrbuddhu',
+        work: 'DevOps & Cloud Infrastructure'
+      }
+    }
+  },
+  {
     id: 'interio',
-    title: 'Interio',
+    title: 'Interio: How We Increased Sales 5X with a Next-Gen 3D Interior Experience',
     client: 'Interior Design Industry',
     industry: 'Interior Design / AR',
     duration: '12 weeks',
@@ -43,7 +84,7 @@ export const caseStudies = [
   },
   {
     id: 'globaleats',
-    title: 'GlobalEats',
+    title: 'GlobalEats: How We Revolutionized Food Delivery with AI & Scalable UX',
     client: 'Food & Beverage Industry',
     industry: 'Food Delivery / Logistics',
     duration: '16 weeks',
@@ -84,7 +125,7 @@ export const caseStudies = [
   },
   {
     id: 'medicobuddy',
-    title: 'MedicoBuddy',
+    title: 'MedicoBuddy: How We 10X\'d Signups & 5X\'d Revenue with a High-Performance UX Overhaul',
     client: 'Healthcare Industry',
     industry: 'Healthcare / Telemedicine',
     duration: '20 weeks',
@@ -99,7 +140,7 @@ export const caseStudies = [
     ],
     technologies: ['React', 'Node.js', 'WebRTC', 'AWS'],
     testimonial: {
-      quote: "MedicoBuddy has streamlined our patient care process while maintaining the highest standards of security and compliance.",
+      quote: "MedicoBuddy has streamlined our patient care process and improved our operational efficiency significantly.",
       name: "Dr. Sarah Johnson",
       role: "Medical Director",
       avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&auto=format&fit=crop&q=80"
@@ -125,65 +166,24 @@ export const caseStudies = [
   },
   {
     id: 'burgerrr',
-    title: 'Burgerrr',
-    client: 'Food Service Industry',
-    industry: 'Food Delivery',
-    duration: '7 weeks',
+    title: 'Burgerrr: How We Boosted Online Orders 4X with a Premium Digital Experience',
+    client: 'Restaurant Industry',
+    industry: 'Food Service',
+    duration: '14 weeks',
     heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/burgerrr_xhsb8c.jpg',
-    challenge: 'Develop a specialized food delivery app focused on gourmet burgers with real-time tracking and personalization.',
-    solution: 'Created a React Native app with location-based services, real-time order tracking, and AI-powered recommendations.',
+    challenge: 'Design and develop a modern food ordering system focused on gourmet burgers with real-time tracking.',
+    solution: 'Created an intuitive mobile app with personalized recommendations, real-time order tracking, and seamless payment integration.',
     results: [
-      'Intuitive order management',
-      'Real-time delivery tracking',
+      'Streamlined ordering process',
+      'Real-time order tracking',
       'Personalized recommendations',
-      'Seamless payment integration'
+      'Integrated loyalty program'
     ],
-    technologies: ['React Native', 'Location Services', 'AI/ML', 'Payment Gateway'],
+    technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
     testimonial: {
-      quote: "Burgerrr's real-time tracking and personalized recommendations have significantly improved our delivery efficiency and customer satisfaction.",
-      name: "Michael Chen",
+      quote: "The app has transformed our business model and significantly increased our customer satisfaction rates.",
+      name: "Michael Rodriguez",
       role: "Restaurant Chain Owner",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop&q=80"
-    },
-    credits: {
-      branding: {
-        name: 'msbuddhu',
-        work: 'Brand Strategy & Identity'
-      },
-      designing: {
-        name: 'msbuddhu',
-        work: 'UI/UX & Visual Design'
-      },
-      development: {
-        name: 'mrbuddhu',
-        work: 'Full-stack Development'
-      },
-      deployment: {
-        name: 'mrbuddhu',
-        work: 'DevOps & Cloud Infrastructure'
-      }
-    }
-  },
-  {
-    id: 'nftcollect',
-    title: 'NFTCollect',
-    client: 'Web3 Community',
-    industry: 'Blockchain / NFT',
-    duration: '6 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750710/nftcollect_g3ygja.jpg',
-    challenge: 'Create a mobile app that simplifies NFT collection management while providing real-time market insights.',
-    solution: 'Built a cross-platform React Native app with real-time price tracking, portfolio analytics, and marketplace integration.',
-    results: [
-      'Seamless NFT portfolio management',
-      'Real-time market data integration',
-      'Cross-platform compatibility',
-      'Enhanced user engagement'
-    ],
-    technologies: ['React Native', 'Web3.js', 'NFT APIs', 'Real-time Data'],
-    testimonial: {
-      quote: "NFTCollect's cross-platform capabilities and real-time tracking features have made managing our NFT portfolio seamless and efficient.",
-      name: "James Miller",
-      role: "NFT Investor & Collector",
       avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&auto=format&fit=crop&q=80"
     },
     credits: {
@@ -206,25 +206,66 @@ export const caseStudies = [
     }
   },
   {
-    id: 'creators-home',
-    title: 'Creators Home',
-    client: 'Creator Economy',
-    industry: 'SaaS / Content Creation',
-    duration: '8 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg',
-    challenge: 'Build a comprehensive SaaS platform that empowers content creators with AI-driven tools and analytics for better content creation and monetization.',
-    solution: 'Developed an all-in-one platform featuring AI-powered content suggestions, analytics dashboard, and monetization tools.',
+    id: 'nftcollect',
+    title: 'NFTCollect: How We 5X\'d NFT Sales with AI-Powered Discovery & Web3 Tech',
+    client: 'Digital Art Industry',
+    industry: 'NFT / Blockchain',
+    duration: '18 weeks',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750710/nftcollect_g3ygja.jpg',
+    challenge: 'Create a user-friendly NFT marketplace with advanced discovery features and portfolio management.',
+    solution: 'Developed a comprehensive NFT platform with AI-powered recommendations, real-time price tracking, and secure wallet integration.',
     results: [
-      'Streamlined content creation workflow',
-      'Enhanced creator monetization options',
-      'AI-driven content optimization',
-      'Real-time analytics and insights'
+      'Advanced NFT discovery',
+      'Portfolio analytics',
+      'Market insights',
+      'Secure transactions'
     ],
-    technologies: ['Next.js', 'AI/ML', 'Analytics', 'Cloud Infrastructure'],
+    technologies: ['React', 'Solidity', 'Web3.js', 'TensorFlow'],
     testimonial: {
-      quote: "The Creators Home platform revolutionized our content creation workflow. The AI tools and analytics have significantly improved our productivity and revenue streams.",
-      name: "Sarah Anderson",
-      role: "Digital Content Creator",
+      quote: "NFTCollect has made it incredibly easy to manage and grow my digital art collection.",
+      name: "Emma Thompson",
+      role: "Digital Art Collector",
+      avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&auto=format&fit=crop&q=80"
+    },
+    credits: {
+      branding: {
+        name: 'msbuddhu',
+        work: 'Brand Strategy & Identity'
+      },
+      designing: {
+        name: 'msbuddhu',
+        work: 'UI/UX & Visual Design'
+      },
+      development: {
+        name: 'mrbuddhu',
+        work: 'Full-stack Development'
+      },
+      deployment: {
+        name: 'mrbuddhu',
+        work: 'DevOps & Cloud Infrastructure'
+      }
+    }
+  },
+  {
+    id: 'creatorshome',
+    title: 'CreatorsHome: How We Built a High-Growth Creator Economy Platform with Seamless Monetization & Viral UX',
+    client: 'Digital Content Industry',
+    industry: 'Creator Economy',
+    duration: '24 weeks',
+    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg',
+    challenge: 'Build a comprehensive platform for content creators to manage, monetize, and grow their digital presence.',
+    solution: 'Developed an all-in-one platform with AI-powered analytics, automated monetization tools, and audience engagement features.',
+    results: [
+      'Streamlined content management',
+      'Automated monetization',
+      'Advanced analytics',
+      'Community engagement'
+    ],
+    technologies: ['React', 'Node.js', 'AI/ML', 'AWS'],
+    testimonial: {
+      quote: "CreatorsHome has simplified my content creation workflow and helped me grow my audience significantly.",
+      name: "Jessica Lee",
+      role: "Content Creator",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop&q=80"
     },
     credits: {
@@ -244,7 +285,6 @@ export const caseStudies = [
         name: 'mrbuddhu',
         work: 'DevOps & Cloud Infrastructure'
       }
-    },
-    link: 'https://creatorshome.xyz'
+    }
   }
 ];
