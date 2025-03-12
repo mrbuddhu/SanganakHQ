@@ -114,14 +114,14 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <LuxuryCard>
-                  <div className="relative p-4">
+                <LuxuryCard className="flex flex-col h-full">
+                  <div className="relative p-4 flex flex-col h-full">
                     <div className="text-[#c6a255] mb-3 text-2xl">
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-bold text-[#c6a255] mb-3">{service.title}</h3>
                     <p className="text-gray-300 mb-3">{service.description}</p>
-                    <ul className="space-y-2 text-gray-300 text-sm">
+                    <ul className="space-y-2 text-gray-300 text-sm flex-grow">
                       {service.features.map((feature, featureIndex) => {
                         const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
                         return (

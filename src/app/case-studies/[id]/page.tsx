@@ -140,23 +140,23 @@ export default function CaseStudy() {
   return (
     <MainLayout>
       <main className="min-h-screen bg-black">
-        <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
           {/* Back Button */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8"
+            className="mb-4 sm:mb-8"
           >
             <Link
               href="/case-studies"
-              className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors"
+              className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors text-sm sm:text-base"
             >
-              <ArrowLeft className="w-5 h-5 mr-2" />
+              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Back to Case Studies
             </Link>
           </motion.div>
-
+          
           {/* Main Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -164,89 +164,91 @@ export default function CaseStudy() {
             transition={{ duration: 0.6 }}
           >
             <LuxuryCard className="overflow-hidden">
-              <div className="p-8 space-y-8">
+              <div className="p-4 sm:p-8 space-y-6 sm:space-y-8">
                 {/* Header */}
                 <div className="space-y-4">
-                  <h1 className="text-4xl font-bold text-luxury-gold-200 mb-8 text-center bg-gradient-to-r from-luxury-gold-100 to-luxury-gold-300 bg-clip-text text-transparent">
+                  <h1 className="text-2xl sm:text-4xl font-bold text-luxury-gold-200 mb-4 sm:mb-8 text-center bg-gradient-to-r from-luxury-gold-100 to-luxury-gold-300 bg-clip-text text-transparent">
                     {study.title}
                   </h1>
                   
                   {/* Hero Image */}
-                  <div className="relative h-[400px] w-full mb-8 overflow-hidden rounded-lg">
+                  <div className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full mb-4 sm:mb-8 overflow-hidden rounded-lg">
                     <Image
                       src={study.heroImage}
                       alt={study.title}
                       fill
-                      className="object-cover transform hover:scale-105 transition-transform duration-700 ease-in-out"
+                      className="object-contain sm:object-cover transform hover:scale-105 transition-transform duration-700 ease-in-out"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 100vw"
+                      priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   </div>
-
-                  <div className="flex items-center gap-4 text-luxury-gold-300/80">
+                  
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-luxury-gold-300/80 text-sm sm:text-base">
                     <span>{study.client}</span>
-                    <span>•</span>
+                    <span className="hidden sm:inline">•</span>
                     <span>{study.industry}</span>
                   </div>
                 </div>
-
+                
                 {/* Challenge & Solution */}
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   <div>
-                    <h2 className="text-2xl font-semibold text-luxury-gold-100 mb-4">The Challenge</h2>
-                    <p className="text-luxury-gold-300/80">{study.challenge}</p>
+                    <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100 mb-3 sm:mb-4">The Challenge</h2>
+                    <p className="text-sm sm:text-base text-luxury-gold-300/80">{study.challenge}</p>
                   </div>
                   <div>
-                    <h2 className="text-2xl font-semibold text-luxury-gold-100 mb-4">Our Solution</h2>
-                    <p className="text-luxury-gold-300/80">{study.solution}</p>
+                    <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100 mb-3 sm:mb-4">Our Solution</h2>
+                    <p className="text-sm sm:text-base text-luxury-gold-300/80">{study.solution}</p>
                   </div>
                 </div>
-
+                
                 {/* Process Steps */}
-                <div className="space-y-6">
-                  <h2 className="text-2xl font-semibold text-luxury-gold-100">Our Process</h2>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="space-y-4 sm:space-y-6">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100">Our Process</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     {details.processSteps.map((step, index) => (
-                      <div key={index} className="p-6 bg-luxury-gold-900/50 rounded-lg">
-                        <h3 className="text-lg font-semibold text-luxury-gold-100 mb-2">{step.title}</h3>
-                        <p className="text-sm text-luxury-gold-300/80">{step.description}</p>
+                      <div key={index} className="p-4 sm:p-6 bg-luxury-gold-900/50 rounded-lg">
+                        <h3 className="text-base sm:text-lg font-semibold text-luxury-gold-100 mb-2">{step.title}</h3>
+                        <p className="text-xs sm:text-sm text-luxury-gold-300/80">{step.description}</p>
                       </div>
                     ))}
                   </div>
                 </div>
-
+                
                 {/* Results */}
-                <div className="space-y-6">
-                  <h2 className="text-2xl font-semibold text-luxury-gold-100">Key Results</h2>
-                  <div className="grid md:grid-cols-3 gap-6">
+                <div className="space-y-4 sm:space-y-6">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100">Key Results</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                     {details.metrics.map((metric, index) => (
-                      <div key={index} className="p-6 bg-luxury-gold-900/50 rounded-lg text-center">
-                        <div className="text-3xl font-bold text-luxury-gold-100 mb-2">{metric.value}</div>
-                        <div className="text-sm text-luxury-gold-300/80">{metric.label}</div>
+                      <div key={index} className="p-4 sm:p-6 bg-luxury-gold-900/50 rounded-lg text-center">
+                        <div className="text-2xl sm:text-3xl font-bold text-luxury-gold-100 mb-2">{metric.value}</div>
+                        <div className="text-xs sm:text-sm text-luxury-gold-300/80">{metric.label}</div>
                         <div className="text-xs text-luxury-gold-300/60">{metric.period}</div>
                       </div>
                     ))}
                   </div>
                 </div>
-
+                
                 {/* Technologies */}
-                <div className="space-y-4">
-                  <h2 className="text-2xl font-semibold text-luxury-gold-100">Technologies Used</h2>
+                <div className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100">Technologies Used</h2>
                   <div className="flex flex-wrap gap-2">
                     {study.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-luxury-gold-900/50 text-luxury-gold-300 rounded-full text-sm"
+                        className="px-2 sm:px-3 py-1 bg-luxury-gold-900/50 text-luxury-gold-300 rounded-full text-xs sm:text-sm"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
-
+                
                 {/* Testimonial */}
-                <div className="bg-luxury-gold-900/30 p-8 rounded-lg">
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="text-luxury-gold-300/80 italic text-lg">"{study.testimonial.quote}"</div>
+                <div className="bg-luxury-gold-900/30 p-4 sm:p-8 rounded-lg">
+                  <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                    <div className="text-luxury-gold-300/80 italic text-base sm:text-lg">"{study.testimonial.quote}"</div>
                     <div>
                       <div className="text-luxury-gold-100 font-semibold">{study.testimonial.name}</div>
                       <div className="text-luxury-gold-300/60 text-sm">{study.testimonial.role}</div>
