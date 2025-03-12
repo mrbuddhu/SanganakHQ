@@ -283,7 +283,7 @@ export default function Home() {
                     ))}
                   </div>
                   <div className="flex flex-col ml-2 gap-0.5">
-                    <span className="text-[#c6a255] text-xs">5+ Happy Clients</span>
+                    <span className="text-[#c6a255] text-xs">15+ Global Clients</span>
                     <div className="flex">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <svg
