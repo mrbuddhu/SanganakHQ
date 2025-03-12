@@ -170,6 +170,18 @@ export default function CaseStudy() {
                   <h1 className="text-4xl font-bold text-luxury-gold-200 mb-8 text-center bg-gradient-to-r from-luxury-gold-100 to-luxury-gold-300 bg-clip-text text-transparent">
                     {study.title}
                   </h1>
+                  
+                  {/* Hero Image */}
+                  <div className="relative h-[400px] w-full mb-8 overflow-hidden rounded-lg">
+                    <Image
+                      src={study.heroImage}
+                      alt={study.title}
+                      fill
+                      className="object-cover transform hover:scale-105 transition-transform duration-700 ease-in-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  </div>
+
                   <div className="flex items-center gap-4 text-luxury-gold-300/80">
                     <span>{study.client}</span>
                     <span>•</span>

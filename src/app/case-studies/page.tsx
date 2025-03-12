@@ -48,12 +48,12 @@ export default function CaseStudies() {
                   >
                     <LuxuryCard className="h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
                       {/* Image Section */}
-                      <div className="relative h-40 sm:h-48">
+                      <div className="relative h-40 sm:h-48 overflow-hidden">
                         <Image
                           src={study.heroImage}
                           alt={study.title}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                       </div>
