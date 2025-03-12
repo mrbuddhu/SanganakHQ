@@ -245,46 +245,5 @@ export const caseStudies = [
         work: 'DevOps & Cloud Infrastructure'
       }
     }
-  },
-  {
-    id: 'creatorshome',
-    title: 'CreatorsHome: How We Built a High-Growth Creator Economy Platform with Seamless Monetization & Viral UX',
-    client: 'Digital Content Industry',
-    industry: 'Creator Economy',
-    duration: '24 weeks',
-    heroImage: 'https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg',
-    challenge: 'Build a comprehensive platform for content creators to manage, monetize, and grow their digital presence.',
-    solution: 'Developed an all-in-one platform with AI-powered analytics, automated monetization tools, and audience engagement features.',
-    results: [
-      'Streamlined content management',
-      'Automated monetization',
-      'Advanced analytics',
-      'Community engagement'
-    ],
-    technologies: ['React', 'Node.js', 'AI/ML', 'AWS'],
-    testimonial: {
-      quote: "CreatorsHome has simplified my content creation workflow and helped me grow my audience significantly.",
-      name: "Jessica Lee",
-      role: "Content Creator",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop&q=80"
-    },
-    credits: {
-      branding: {
-        name: 'msbuddhu',
-        work: 'Brand Strategy & Identity'
-      },
-      designing: {
-        name: 'msbuddhu',
-        work: 'UI/UX & Visual Design'
-      },
-      development: {
-        name: 'mrbuddhu',
-        work: 'Full-stack Development'
-      },
-      deployment: {
-        name: 'mrbuddhu',
-        work: 'DevOps & Cloud Infrastructure'
-      }
-    }
   }
 ];
