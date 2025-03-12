@@ -59,7 +59,7 @@ export default function Navbar() {
   }, [])
 
   // Only show navbar on home page
-  if (pathname !== '/' && !pathname.startsWith('/case-studies')) {
+  if (pathname !== '/' ) {
     return null
   }
 
