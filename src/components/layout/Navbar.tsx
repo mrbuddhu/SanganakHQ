@@ -75,19 +75,20 @@ export default function Navbar() {
       window.location.href = '/' + href;
       return;
     }
+    
     const element = document.querySelector(href);
     if (element) {
-      const navbarHeight = 100; // Height of the navbar
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+      const navbarHeight = 80; // Adjusted navbar height
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight;
 
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
     }
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   return (
     <motion.nav

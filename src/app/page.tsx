@@ -20,6 +20,7 @@ export default function Home() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState(-1);
   const [displayText, setDisplayText] = useState('#1 Premium IT Boutique');
+  const [isAnimating, setIsAnimating] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -28,7 +29,18 @@ export default function Home() {
   }
 
   useEffect(() => {
-    setDisplayText(fullText); // Ensure it ends with the full text
+    const animateText = async () => {
+      setIsAnimating(true);
+      const words = ['Innovation', 'Excellence', 'Success'];
+      for (const word of words) {
+        setDisplayText(`#1 Premium IT Boutique for ${word}`);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+      setDisplayText('#1 Premium IT Boutique');
+      setIsAnimating(false);
+    };
+
+    animateText();
   }, []);
 
   const handleTestimonialScroll = (direction: 'prev' | 'next') => {
@@ -80,36 +92,42 @@ export default function Home() {
       title: "Creators Home",
       description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg",
+      caseStudyLink: "/case-studies/creators-home",
       tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
     },
     {
       title: "NFTCollect",
       description: "Cross-platform mobile app for NFT collectors featuring real-time price tracking, portfolio management, and marketplace integration.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750710/nftcollect_g3ygja.jpg",
+      caseStudyLink: "/case-studies/nftcollect",
       tags: ["React Native", "Mobile App", "Web3", "NFT"]
     },
     {
       title: "Burgerrr",
       description: "Feature-rich food delivery mobile app specializing in gourmet burgers, with real-time order tracking and personalized recommendations.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/burgerrr_xhsb8c.jpg",
+      caseStudyLink: "/case-studies/burgerrr",
       tags: ["React Native", "Mobile App", "Food Delivery", "Location Services"]
     },
     {
       title: "Interio",
       description: "Modern interior design platform showcasing luxury spaces and connecting designers with clients.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/interio_kq1fky.jpg",
+      caseStudyLink: "/case-studies/interio",
       tags: ["Interior Design", "Luxury", "Marketplace"]
     },
     {
       title: "GlobalEats",
       description: "International culinary platform connecting food enthusiasts with authentic global cuisines.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/globaleats_oqjzn8.jpg",
+      caseStudyLink: "/case-studies/globaleats",
       tags: ["Food Tech", "Marketplace", "Culture"]
     },
     {
       title: "MedicoBuddy",
       description: "Comprehensive healthcare SaaS platform connecting medical facilities with patients, featuring appointment scheduling, telemedicine, medical records management, and integrated healthcare services.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/medicobuddy_fudnrl.jpg",
+      caseStudyLink: "/case-studies/medicobuddy",
       tags: ["Healthcare", "SaaS", "Telemedicine", "Patient Care"]
     }
   ];
@@ -218,7 +236,7 @@ export default function Home() {
     <MainLayout>
       <main>
         {/* Hero Section */}
-        <section id="hero" className="relative min-h-[85svh] py-4 sm:py-6 md:py-8 flex items-center overflow-x-hidden">
+        <section id="hero" className="relative min-h-[80svh] py-2 sm:py-4 md:py-6 flex items-start overflow-x-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black">
@@ -226,14 +244,14 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="relative w-full z-10">
+          <div className="relative w-full z-10 pt-4">
             <div className="container mx-auto px-4">
               {/* Testimonial Banner */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="flex items-center justify-center pb-3 sm:pb-4 md:pb-5"
+                className="flex items-center justify-center pb-2 sm:pb-3 md:pb-4"
               >
                 <div className="bg-black/40 backdrop-blur-sm border border-luxury-gold-300/20 rounded-full px-4 py-2 flex items-center gap-2">
                   <div className="flex -space-x-2">
@@ -300,21 +318,30 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              <div className="w-full flex justify-center mt-2 sm:mt-4 md:mt-6 mb-4 sm:mb-6 md:mb-8">
+              <div className="w-full flex justify-center mt-0 sm:mt-1 md:mt-2 mb-2 sm:mb-3 md:mb-4">
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
                 <Image 
                   src="/Globe.jpg" 
                   alt="Sanganak Company Logo" 
                   width={250} 
                   height={250} 
-                  className="mx-auto w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[250px] md:h-[250px]"
+                    className="mx-auto w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px]"
                   priority={true}
                 />
+                </motion.div>
               </div>
 
-              <div className="text-center space-y-6 sm:space-y-8 md:space-y-10">
+              <div className="text-center space-y-3 sm:space-y-4 md:space-y-6">
                 <div>
-                  <h1 
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-4 sm:mb-5 md:mb-6 px-4 whitespace-nowrap"
+                  <motion.h1 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-2 sm:mb-3 md:mb-4 px-4 whitespace-nowrap"
                     style={{
                       background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                       WebkitBackgroundClip: 'text',
@@ -324,9 +351,12 @@ export default function Home() {
                     }}
                   >
                     SANGANAK
-                  </h1>
-                  <h2 
-                    className="text-2xl md:text-3xl font-bold tracking-wide mb-6 sm:mb-8"
+                  </motion.h1>
+                  <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="text-2xl md:text-3xl font-bold tracking-wide mb-4 sm:mb-6"
                     style={{
                       background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                       WebkitBackgroundClip: 'text',
@@ -334,47 +364,102 @@ export default function Home() {
                       textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
                     }}
                   >
-                    #1 Premium IT Boutique
-                  </h2>
+                    {displayText}
+                  </motion.h2>
                 </div>
 
-                <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4"
+                >
                 "We craft world-class digital experiences that"<br className="hidden sm:block" />
                   <span className="font-extrabold text-[#c6a255]">drive engagement</span>,{' '}
                   <span className="font-extrabold text-[#c6a255]">scale businesses</span>,{' '}
                   <span className="font-extrabold text-[#c6a255]">& maximize revenue—fast</span>.
-                </p>
+                </motion.p>
 
                 {/* Service Categories */}
-                <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 mt-8 sm:mt-10 md:mt-12">
+                <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 mt-4 sm:mt-6 md:mt-8 mb-4 sm:mb-2 md:mb-[-3rem]">
+                  {[
+                    { emoji: "👑", text: "Elite Clientele" },
+                    { emoji: "⭐", text: "Bespoke Solutions" },
+                    { emoji: "✨", text: "ROI Driven" }
+                  ].map((item, index) => (
                   <motion.div
+                      key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="flex flex-col items-center space-y-3"
-                  >
-                    <span className="text-4xl sm:text-5xl">👑</span>
-                    <span className="text-[#c6a255] font-medium text-base sm:text-lg">Elite Clientele</span>
+                      transition={{ delay: 0.6 + index * 0.1 }}
+                      className="flex flex-col items-center space-y-2 group"
+                    >
+                      <motion.span 
+                        className="text-3xl sm:text-4xl"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {item.emoji}
+                      </motion.span>
+                      <span className="text-[#c6a255] font-medium text-sm sm:text-base group-hover:text-[#e9d5a1] transition-colors">
+                        {item.text}
+                      </span>
                   </motion.div>
+                  ))}
+                </div>
 
+                {/* Client Logos Marquee */}
+                <div className="relative overflow-hidden mt-8 sm:mt-2 md:mt-[-2rem] mb-4 sm:mb-6">
+                  <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-black to-transparent z-10" />
+                  <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-black to-transparent z-10" />
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="flex flex-col items-center space-y-3"
+                    animate={{ x: [0, -1920] }}
+                    transition={{ 
+                      duration: 30,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    className="flex gap-8 items-center py-4"
                   >
-                    <span className="text-4xl sm:text-5xl">⭐</span>
-                    <span className="text-[#c6a255] font-medium text-base sm:text-lg">Bespoke Solutions</span>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="flex flex-col items-center space-y-3"
-                  >
-                    <span className="text-4xl sm:text-5xl">✨</span>
-                    <span className="text-[#c6a255] font-medium text-base sm:text-lg">ROI Driven</span>
+                    {[
+                      { name: "Creators Home", logo: "/client-logos/creatorshome.png" },
+                      { name: "NFTCollect", logo: "/client-logos/nftcollect.png" },
+                      { name: "Burgerrr", logo: "/client-logos/burgerrr.png" },
+                      { name: "Interio", logo: "/client-logos/interio.png" },
+                      { name: "GlobalEats", logo: "/client-logos/globaleats.png" },
+                      { name: "MedicoBuddy", logo: "/client-logos/medicobuddy.png" }
+                    ].map((client, index) => (
+                      <div key={index} className="flex-none w-[240px] h-[100px] relative">
+                        <Image
+                          src={client.logo}
+                          alt={client.name}
+                          fill
+                          sizes="240px"
+                          className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 hover:scale-105 transform duration-300"
+                          priority={true}
+                        />
+                      </div>
+                    ))}
+                    {/* Duplicate set for seamless loop */}
+                    {[
+                      { name: "Creators Home", logo: "/client-logos/creatorshome.png" },
+                      { name: "NFTCollect", logo: "/client-logos/nftcollect.png" },
+                      { name: "Burgerrr", logo: "/client-logos/burgerrr.png" },
+                      { name: "Interio", logo: "/client-logos/interio.png" },
+                      { name: "GlobalEats", logo: "/client-logos/globaleats.png" },
+                      { name: "MedicoBuddy", logo: "/client-logos/medicobuddy.png" }
+                    ].map((client, index) => (
+                      <div key={`duplicate-${index}`} className="flex-none w-[240px] h-[100px] relative">
+                        <Image
+                          src={client.logo}
+                          alt={client.name}
+                          fill
+                          sizes="240px"
+                          className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 hover:scale-105 transform duration-300"
+                          priority={true}
+                        />
+                      </div>
+                    ))}
                   </motion.div>
                 </div>
               </div>
@@ -386,194 +471,136 @@ export default function Home() {
         <section id="services" className="min-h-screen bg-black/95 relative py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-[#c6a255]/5 to-black/0" />
           <div className="max-w-6xl mx-auto px-4">
-            <LuxuryHeading
-              title="Elite Services"
-              subtitle="Transforming visions into digital excellence"
-            />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-[95%] sm:max-w-7xl mx-auto">
-              {/* Luxury Branding */}
-              <LuxuryCard>
-                <div className="text-[#c6a255] mb-4 text-2xl">
-                  <Sparkles className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4">Luxury Branding</h3>
-                <p className="text-gray-300 mb-4">Become a Category King with a brand that exudes authority, prestige, and undeniable influence.</p>
-                <ul className="space-y-3 text-gray-300 text-sm">
-                  {[
+            >
+            <LuxuryHeading
+              title="Elite Services"
+              subtitle="Transforming visions into digital excellence"
+            />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-[95%] sm:max-w-7xl mx-auto"
+            >
+              {[
+                {
+                  icon: <Sparkles className="w-8 h-8" />,
+                  title: "Luxury Branding",
+                  description: "Become a Category King with a brand that exudes authority, prestige, and undeniable influence.",
+                  features: [
                     "Strategic Brand Positioning – Stand out. Stay unforgettable.",
                     "Signature Visual Identity – Designed for premium perception.",
                     "Comprehensive Brand Guidelines – Cohesive, timeless branding.",
                     "Conversion-Optimized Copywriting – Persuasion meets power."
-                  ].map((feature, featureIndex) => {
-                    const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
-                    return (
-                      <li key={featureIndex} className="flex items-start gap-3">
-                        <span className="text-[#c6a255] mt-1">•</span>
-                        <span className="flex-1">
-                          <span className="text-[#c6a255]">{firstPart}</span>
-                          {rest.length > 0 && (
-                            <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
-                          )}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </LuxuryCard>
-
-              {/* Elite Design */}
-              <LuxuryCard>
-                <div className="text-[#c6a255] mb-4 text-2xl">
-                  <Gem className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4">Elite Design</h3>
-                <p className="text-gray-300 mb-4">Experience perfection. Every pixel, every interaction, meticulously crafted to convert.</p>
-                <ul className="space-y-3 text-gray-300 text-sm">
-                  {[
+                  ]
+                },
+                {
+                  icon: <Gem className="w-8 h-8" />,
+                  title: "Elite Design",
+                  description: "Experience perfection. Every pixel, every interaction, meticulously crafted to convert.",
+                  features: [
                     "Bespoke Website & App Design – Luxury aesthetics, seamless UX.",
                     "Conversion-Optimized User Journeys – Designed to maximize revenue.",
                     "Interactive Prototypes – Experience your product before it's built.",
                     "Premium Design System – Consistent luxury across platforms."
-                  ].map((feature, featureIndex) => {
-                    const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
-                    return (
-                      <li key={featureIndex} className="flex items-start gap-3">
-                        <span className="text-[#c6a255] mt-1">•</span>
-                        <span className="flex-1">
-                          <span className="text-[#c6a255]">{firstPart}</span>
-                          {rest.length > 0 && (
-                            <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
-                          )}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </LuxuryCard>
-
-              {/* Bespoke Applications */}
-              <LuxuryCard>
-                <div className="text-[#c6a255] mb-4 text-2xl">
-                  <Code2 className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4">Bespoke Applications</h3>
-                <p className="text-gray-300 mb-4">Tailor-made digital powerhouses. Scalable, high-performance software for trailblazers.</p>
-                <ul className="space-y-3 text-gray-300 text-sm">
-                  {[
+                  ]
+                },
+                {
+                  icon: <Code2 className="w-8 h-8" />,
+                  title: "Bespoke Applications",
+                  description: "Tailor-made digital powerhouses. Scalable, high-performance software for trailblazers.",
+                  features: [
                     "Custom Web & Mobile Development – Precision-engineered for impact.",
                     "E-Commerce Mastery – Elevate sales with elite UX.",
                     "Conversion-Driven Landing Pages – Designed to captivate and convert.",
                     "SaaS Product Development – Future-proofing your business."
-                  ].map((feature, featureIndex) => {
-                    const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
-                    return (
-                      <li key={featureIndex} className="flex items-start gap-3">
-                        <span className="text-[#c6a255] mt-1">•</span>
-                        <span className="flex-1">
-                          <span className="text-[#c6a255]">{firstPart}</span>
-                          {rest.length > 0 && (
-                            <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
-                          )}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </LuxuryCard>
-    {/* Blockchain Innovation */}
-    <LuxuryCard>
-      <div className="text-[#c6a255] mb-4 text-2xl">
-        <Globe className="w-8 h-8" />
-      </div>
-      <h3 className="text-xl font-bold text-[#c6a255] mb-4">Blockchain Innovation</h3>
-      <p className="text-gray-300 mb-4">Build the future. We architect blockchain solutions for enterprises ready to lead.</p>
-      <ul className="space-y-3 text-gray-300 text-sm">
-        {[
+                  ]
+                },
+                {
+                  icon: <Globe className="w-8 h-8" />,
+                  title: "Blockchain Innovation",
+                  description: "Build the future. We architect blockchain solutions for enterprises ready to lead.",
+                  features: [
           "Smart Contract Development – Automate with absolute security.",
           "Next-Gen DApps – Redefining decentralized experiences.",
           "Enterprise Blockchain Integration – Elevate your business with Web3.",
           "Tokenomics & Strategy – Designing sustainable blockchain ecosystems."
-        ].map((feature, featureIndex) => {
-          const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
-          return (
-            <li key={featureIndex} className="flex items-start gap-3">
-              <span className="text-[#c6a255] mt-1">•</span>
-              <span className="flex-1">
-                <span className="text-[#c6a255]">{firstPart}</span>
-                {rest.length > 0 && (
-                  <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
-                )}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
-    </LuxuryCard>
-
-    {/* Advanced AI */}
-    <LuxuryCard>
-      <div className="text-[#c6a255] mb-4 text-2xl">
-        <Lightbulb className="w-8 h-8" />
-      </div>
-      <h3 className="text-xl font-bold text-[#c6a255] mb-4">AI-Powered Intelligence</h3>
-      <p className="text-gray-300 mb-4">Unleash the power of data. AI isn't the future—it's your competitive advantage today.</p>
-      <ul className="space-y-3 text-gray-300 text-sm">
-        {[
+                  ]
+                },
+                {
+                  icon: <Lightbulb className="w-8 h-8" />,
+                  title: "AI-Powered Intelligence",
+                  description: "Unleash the power of data. AI isn't the future—it's your competitive advantage today.",
+                  features: [
           "Custom AI Models & Machine Learning – Predict. Optimize. Automate.",
           "AI-Driven Business Insights – Data-powered growth strategies.",
           "Process Automation – Scale smarter, work faster.",
           "Computer Vision & NLP – Cutting-edge AI-driven experiences."
-        ].map((feature, featureIndex) => {
-          const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
-          return (
-            <li key={featureIndex} className="flex items-start gap-3">
-              <span className="text-[#c6a255] mt-1">•</span>
-              <span className="flex-1">
-                <span className="text-[#c6a255]">{firstPart}</span>
-                {rest.length > 0 && (
-                  <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
-                )}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
-    </LuxuryCard>
-
-    {/* Elite Package */}
-    <LuxuryCard>
-      <div className="text-[#c6a255] mb-4 text-2xl">
-        <Shield className="w-8 h-8" />
-      </div>
-      <h3 className="text-xl font-bold text-[#c6a255] mb-4">Elite Package</h3>
-      <p className="text-gray-300 mb-4">The ultimate digital transformation. For businesses serious about dominating their industry.</p>
-      <ul className="space-y-3 text-gray-300 text-sm">
-        {[
+                  ]
+                },
+                {
+                  icon: <Shield className="w-8 h-8" />,
+                  title: "Elite Package",
+                  description: "The ultimate digital transformation. For businesses serious about dominating their industry.",
+                  features: [
           "End-to-End Brand Identity & UI/UX – Comprehensive brand and design excellence.",
           "Custom Software, AI & Blockchain Solutions – Cutting-edge technology integration.",
           "Ongoing Innovation & VIP Strategic Growth – Dedicated support and evolution.",
           "Priority Access & Exclusive Benefits – VIP treatment at every step."
-        ].map((feature, featureIndex) => {
+                  ]
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <LuxuryCard className="h-full group hover:border-luxury-gold-300/50 transition-all duration-300">
+                    <div className="text-[#c6a255] mb-4 text-2xl transform group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-[#c6a255] mb-4 group-hover:text-[#e9d5a1] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-3 text-gray-300 text-sm">
+                      {service.features.map((feature, featureIndex) => {
           const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
           return (
-            <li key={featureIndex} className="flex items-start gap-3">
-              <span className="text-[#c6a255] mt-1">•</span>
+                          <motion.li
+                            key={featureIndex}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex items-start gap-3 group/item"
+                          >
+                            <span className="text-[#c6a255] mt-1 group-hover/item:text-[#e9d5a1] transition-colors">•</span>
               <span className="flex-1">
-                <span className="text-[#c6a255]">{firstPart}</span>
+                              <span className="text-[#c6a255] group-hover/item:text-[#e9d5a1] transition-colors">{firstPart}</span>
                 {rest.length > 0 && (
-                  <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                                <span className="text-gray-300 block mt-1 group-hover/item:text-gray-200 transition-colors">{rest.join(' ')}</span>
                 )}
               </span>
-            </li>
+                          </motion.li>
           );
         })}
       </ul>
     </LuxuryCard>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -582,46 +609,50 @@ export default function Home() {
 
         <PricingSection />
 
-        <section id="portfolio" className="py-24 bg-black/95 relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-[#c6a255]/5 to-black/0" />
-          <div className="max-w-7xl mx-auto px-4">
+        {/* Portfolio Section */}
+        <section id="portfolio" className="py-16 sm:py-24 relative">
+          <div className="container mx-auto px-4">
             <LuxuryHeading
               title="Our Portfolio"
-              subtitle="Showcasing excellence in digital innovation"
+              subtitle="Explore our collection of premium digital experiences"
             />
-            <div className="flex justify-between items-center mb-8">
-            </div>
             
-            <div className="relative">
-              <button
-                onClick={() => handlePortfolioScroll('prev')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full justify-center">
-                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + getVisibleItems(windowWidth)).map((item, index) => (
-                  <div key={index} className="flex-none w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[360px]">
-                    <LuxuryCard className="overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300 h-full">
-                      <div className="relative h-[200px] rounded-lg overflow-hidden mb-4">
+            <div className="relative mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + getVisibleItems(windowWidth)).map((project, index) => (
+                  <motion.div
+                    key={project.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="group"
+                  >
+                    <Link href={project.caseStudyLink}>
+                      <LuxuryCard className="overflow-hidden h-full">
+                        <div className="relative w-full aspect-[16/9] overflow-hidden">
                         <Image
-                          src={item.image}
-                          alt={item.title}
+                            src={project.image}
+                            alt={`${project.title} - ${project.description}`}
                           fill
-                          className="object-contain group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                            loading="lazy"
+                            quality={85}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                       </div>
-                      <div className="p-4 space-y-4">
-                        <h3 className="text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
-                          {item.title}
+                        <div className="p-4 sm:p-6">
+                          <h3 className="text-lg sm:text-xl font-bold text-luxury-gold-100 mb-2 group-hover:text-luxury-gold-300 transition-colors">
+                            {project.title}
                         </h3>
-                        <p className="text-gray-300 line-clamp-2">{item.description}</p>
+                          <p className="text-sm text-luxury-gold-300/80 mb-4 line-clamp-2">
+                            {project.description}
+                          </p>
                         <div className="flex flex-wrap gap-2">
-                          {item.tags.map((tag, tagIndex) => (
+                            {project.tags.map((tag) => (
                             <span
-                              key={tagIndex}
-                              className="px-2 py-1 text-xs rounded-full bg-[#c6a255]/10 text-[#c6a255] border border-[#c6a255]/20"
+                                key={tag}
+                                className="px-2 py-1 bg-luxury-gold-900/50 text-luxury-gold-300 rounded-full text-xs"
                             >
                               {tag}
                             </span>
@@ -629,9 +660,18 @@ export default function Home() {
                         </div>
                       </div>
                     </LuxuryCard>
-                  </div>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
+              
+              {/* Navigation Buttons */}
+              <button
+                onClick={() => handlePortfolioScroll('prev')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
               <button
                 onClick={() => handlePortfolioScroll('next')}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
@@ -639,26 +679,6 @@ export default function Home() {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
-            {/* Case Studies CTA */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="mt-16 mb-8 text-center"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-[#c6a255] mb-4">
-                Inspired by Our Work?
-              </h3>
-              <p className="text-luxury-gray-300 mb-6">
-                Explore our detailed case studies to see how we deliver excellence.
-              </p>
-              <Link href="/case-studies">
-                <LuxuryButton size="lg">
-                  View Case Studies
-                </LuxuryButton>
-              </Link>
-            </motion.div>
           </div>
         </section>
         {/* Process Section */}
@@ -1039,6 +1059,64 @@ export default function Home() {
                 </LuxuryButton>
               </a>
             </motion.div>
+          </div>
+        </section>
+        {/* Newsletter Section */}
+        <section className="py-20 relative">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="mt-8 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20 rounded-lg p-8 sm:p-10">
+              <div className="flex flex-col items-center text-center mb-8">
+                <div className="mb-6">
+                  <div className="w-16 h-16 rounded-full bg-[#c6a255]/10 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-[#c6a255]">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                  </div>
+                </div>
+                <h4 className="text-xl font-semibold text-[#c6a255] mb-3">Weekly Premium Content</h4>
+                <div className="max-w-2xl">
+                  <p className="text-gray-300 mb-2">
+                    Get exclusive insights on luxury tech, AI innovations, and digital transformation.
+                  </p>
+                  <p className="text-[#c6a255] font-medium">
+                    For visionaries who demand excellence.
+                  </p>
+                </div>
+              </div>
+              <div className="relative max-w-2xl mx-auto">
+                <form 
+                  action="https://sanganak.substack.com/api/v1/free" 
+                  method="post" 
+                  className="relative z-20 flex flex-col sm:flex-row gap-4 items-stretch"
+                >
+                  <div className="flex-1 relative group">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email"
+                      required
+                      className="w-full px-6 py-4 bg-black/60 border border-[#c6a255]/20 rounded-lg focus:outline-none focus:border-[#c6a255] text-white placeholder-gray-400 transition-all duration-300"
+                    />
+                    <div className="absolute inset-0 bg-[#c6a255]/5 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300 pointer-events-none" />
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-8 py-4 bg-[#c6a255] hover:bg-[#e9d5a1] text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
+                  >
+                    Subscribe Now
+                  </button>
+                </form>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 rounded-lg z-10 pointer-events-none"></div>
+              </div>
+              <div className="mt-8 flex flex-col items-center">
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-[#c6a255]">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>No spam, unsubscribe anytime</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         {/* FAQ Section */}
