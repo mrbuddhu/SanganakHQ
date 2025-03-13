@@ -201,6 +201,13 @@ export default function CaseStudy() {
               <span>{study.industry}</span>
               <span>•</span>
               <span>{study.duration}</span>
+              <button
+                onClick={handleShare}
+                className="inline-flex items-center px-4 py-2 bg-luxury-gold-900/30 hover:bg-luxury-gold-900/50 rounded-full text-luxury-gold-100 transition-colors ml-4"
+              >
+                <Share2 className="w-4 h-4 mr-2" />
+                {shareStatus === 'copied' ? 'Link Copied!' : 'Share'}
+              </button>
             </div>
 
             <div className="flex flex-wrap gap-3">
