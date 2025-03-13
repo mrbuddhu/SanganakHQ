@@ -58,7 +58,7 @@ const plans = [
     ],
     testimonial: {
       author: "Ankit Kumar @Burgerrr",
-      quote: "6x order growth in just 45 days."
+      quote: "6x order growth in just 45 days due to all round solutions."
     },
     cta: "Build My Million $ Brand",
     popular: false
