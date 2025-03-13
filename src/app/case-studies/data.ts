@@ -120,10 +120,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ['React', 'Three.js', 'WebGL', 'AR Kit'],
     testimonial: {
-      quote: "Interio has transformed how we showcase and sell design services. The AR features and booking system have revolutionized our business.",
-      name: "Alexandra Chen",
-      role: "Design Director",
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&auto=format&fit=crop&q=80"
+      quote: "The team at Sanganak Premium delivered an exceptional design system that perfectly captures our brand's luxury essence.",
+      name: "Shyam Sharma",
+      role: "@Interio",
+      avatar: "/testimonials/headshots/shyam-sharma.jpg"
     },
     metrics: [
       { label: 'Bookings', value: '+700%', period: '30 days' },
@@ -179,10 +179,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ['React', 'Node.js', 'MongoDB', 'AI/ML'],
     testimonial: {
-      quote: "GlobalEats has revolutionized how we connect with food lovers. The platform's features and reach have exceeded our expectations.",
-      name: "David Park",
-      role: "Chief Innovation Officer",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&auto=format&fit=crop&q=80"
+      quote: "Their expertise in food tech platforms helped us create a seamless experience for our global customer base.",
+      name: "Shubham Kumar",
+      role: "@GlobalEats",
+      avatar: "/testimonials/headshots/shubham-kumar.jpg"
     },
     metrics: [
       { label: 'Partners', value: '+500%', period: '60 days' },
@@ -297,10 +297,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
     testimonial: {
-      quote: "Burgerrr has completely transformed our business. The platform's efficiency and user experience have exceeded all expectations.",
-      name: "Michael Rodriguez",
-      role: "Director of Operations",
-      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&auto=format&fit=crop&q=80"
+      quote: "Working with Sanganak Premium was a game-changing experience. Their attention to detail and innovative solutions exceeded our expectations.",
+      name: "Ankit Kumar",
+      role: "@Burgerrr",
+      avatar: "/testimonials/headshots/ankit-kumar.jpg"
     },
     metrics: [
       { label: 'Orders', value: '+600%', period: '45 days' },

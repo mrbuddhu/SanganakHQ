@@ -183,31 +183,35 @@ export default function CaseStudy() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mb-12"
           >
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors mb-8"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Case Studies
-            </Link>
+            <div className="flex items-center justify-between mb-8">
+              <Link
+                href="/case-studies"
+                className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5 mr-2" />
+                Back to Case Studies
+              </Link>
+              <button
+                onClick={handleShare}
+                className="inline-flex items-center justify-center w-10 h-10 bg-luxury-gold-900/30 hover:bg-luxury-gold-900/50 rounded-full text-luxury-gold-100 transition-colors"
+                title={shareStatus === 'copied' ? 'Link Copied!' : 'Share'}
+              >
+                <Share2 className="w-5 h-5" />
+              </button>
+            </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               {study.title}
             </h1>
             
-            <div className="flex items-center space-x-4 text-luxury-gold-300 mb-8">
-              <span>{study.client}</span>
-              <span>•</span>
-              <span>{study.industry}</span>
-              <span>•</span>
-              <span>{study.duration}</span>
-              <button
-                onClick={handleShare}
-                className="inline-flex items-center px-4 py-2 bg-luxury-gold-900/30 hover:bg-luxury-gold-900/50 rounded-full text-luxury-gold-100 transition-colors ml-4"
-              >
-                <Share2 className="w-4 h-4 mr-2" />
-                {shareStatus === 'copied' ? 'Link Copied!' : 'Share'}
-              </button>
+            <div className="flex flex-wrap items-center gap-4 text-luxury-gold-300 mb-8">
+              <div className="flex flex-wrap items-center gap-4">
+                <span>{study.client}</span>
+                <span>•</span>
+                <span>{study.industry}</span>
+                <span>•</span>
+                <span>{study.duration}</span>
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-3">

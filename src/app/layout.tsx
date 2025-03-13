@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: 'SANGANAK | #1 Premium IT Boutique',
   description: 'Your trusted partner for premium IT solutions and services.',
   manifest: '/manifest.json',
+  metadataBase: new URL('https://sanganak.org'),
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -35,10 +36,11 @@ export const metadata: Metadata = {
     description: 'We craft world-class digital experiences through Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI-Powered Intelligence, and Elite Package solutions. Transform your vision into digital excellence.',
     images: [
       {
-        url: 'https://sanganak.org/og-image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Sanganak - #1 Premium IT Boutique - Luxury Digital Solutions'
+        alt: 'Sanganak - #1 Premium IT Boutique - Luxury Digital Solutions',
+        type: 'image/png'
       }
     ],
     type: 'website',
@@ -49,7 +51,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sanganak - #1 Premium IT Boutique',
     description: 'We craft world-class digital experiences through Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI-Powered Intelligence, and Elite Package solutions. Transform your vision into digital excellence.',
-    images: ['https://sanganak.org/og-image.png']
+    images: [{
+      url: '/og-image.png',
+      width: 1200,
+      height: 630,
+      alt: 'Sanganak - #1 Premium IT Boutique - Luxury Digital Solutions',
+      type: 'image/png'
+    }]
   }
 }
 
