@@ -1162,10 +1162,10 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <h3 className="text-3xl md:text-4xl font-bold bg-metallic-gradient bg-clip-text text-transparent mb-6">
-                Still Have Questions?
+                Ready for Digital Excellence?
               </h3>
               <p className="text-luxury-gray-300 mb-8">
-                Our team is here to provide detailed answers and guide you through every step.
+                Jump on a free strategy call. Let's unlock your business potential.
               </p>
               <a
                 href={CTA_URL}
@@ -1173,7 +1173,7 @@ export default function Home() {
                 rel="noopener noreferrer"
               >
                 <LuxuryButton size="lg">
-                  Get in Touch
+                  Free Strategy Call
                 </LuxuryButton>
               </a>
             </motion.div>
