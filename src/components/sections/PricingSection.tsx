@@ -21,8 +21,8 @@ const plans = [
       "Lightning-fast execution"
     ],
     testimonial: {
-      author: "Shyam  CEO@Interio",
-      quote: "We 5X'd our revenue after Sanganak's redesign!"
+      author: "Shyam Sharma @Interio",
+      quote: "Bookings up 7x with our luxury design system."
     },
     cta: "Upgrade My Brand Now",
     popular: false
@@ -39,8 +39,8 @@ const plans = [
         "Conversion-optimized RoI"
     ],
     testimonial: {
-      author: "Shubham  CMO@GlobalEats",
-      quote: "Sanganak helped us break into a $1M ARR market."
+      author: "Shubham Kumar @GlobalEats",
+      quote: "5x order growth with our seamless global platform."
     },
     cta: "Let's 10X My Business",
     popular: true
@@ -57,8 +57,8 @@ const plans = [
       "End-to-end digital makeover"
     ],
     testimonial: {
-      author: "Ankit  CEO@Burgerrr",
-      quote: "We outperformed our competitors within 60 days!"
+      author: "Ankit Kumar @Burgerrr",
+      quote: "6x order growth in just 45 days."
     },
     cta: "Build My Million $ Brand",
     popular: false
@@ -75,8 +75,8 @@ const plans = [
       "Strategic Growth Partnership"
     ],
     testimonial: {
-      author: "Ankit  CTO@NFT Collect",
-      quote: "Sanganak transformed our entire digital ecosystem!"
+      author: "Rahul Kumar @NFTCollect",
+      quote: "8x trading volume growth with AI-powered tools."
     },
     cta: "Build My Digital Empire",
     popular: false

@@ -61,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ['Next.js', 'Node.js', 'OpenAI', 'AWS'],
     testimonial: {
-      quote: "The AI tools and analytics have completely transformed our content workflow. We're seeing unprecedented growth in both audience and revenue.",
+      quote: "Sanganak Premium's AI tools transformed our content workflow. Our revenue grew 3x in just 90 days.",
       name: "Sarah Johnson",
       role: "Head of Creator Success",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop&q=80"
@@ -120,7 +120,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ['React', 'Three.js', 'WebGL', 'AR Kit'],
     testimonial: {
-      quote: "The team at Sanganak Premium delivered an exceptional design system that perfectly captures our brand's luxury essence.",
+      quote: "Sanganak Premium crafted a luxury design system that perfectly captures our brand's essence. Bookings up 7x.",
       name: "Shyam Sharma",
       role: "@Interio",
       avatar: "/testimonials/headshots/shyam-sharma.jpg"
@@ -179,7 +179,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ['React', 'Node.js', 'MongoDB', 'AI/ML'],
     testimonial: {
-      quote: "Their expertise in food tech platforms helped us create a seamless experience for our global customer base.",
+      quote: "Their food-tech expertise delivered a seamless global platform. Orders increased 5x in two months.",
       name: "Shubham Kumar",
       role: "@GlobalEats",
       avatar: "/testimonials/headshots/shubham-kumar.jpg"
@@ -238,7 +238,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ['React', 'Node.js', 'WebRTC', 'AWS'],
     testimonial: {
-      quote: "MedicoBuddy has revolutionized how we deliver healthcare. The platform's efficiency and security features have exceeded all expectations.",
+      quote: "The platform revolutionized our healthcare delivery. Patient engagement up 10x with zero security issues.",
       name: "Dr. Sarah Johnson",
       role: "Chief Medical Officer",
       avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&auto=format&fit=crop&q=80"
@@ -295,9 +295,9 @@ export const caseStudies: CaseStudy[] = [
       '25% reduction in delivery time',
       '50K+ active users'
     ],
-    technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
+    technologies: ['React Native', 'Firebase'],
     testimonial: {
-      quote: "Working with Sanganak Premium was a game-changing experience. Their attention to detail and innovative solutions exceeded our expectations.",
+      quote: "Sanganak Premium's attention to detail delivered exceptional results. Orders up 6x in 45 days.",
       name: "Ankit Kumar",
       role: "@Burgerrr",
       avatar: "/testimonials/headshots/ankit-kumar.jpg"
@@ -356,10 +356,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     technologies: ['React', 'Solidity', 'Web3.js', 'TensorFlow'],
     testimonial: {
-      quote: "NFTCollect has transformed the NFT trading experience. The AI insights and portfolio management tools are game-changing.",
-      name: "Emma Thompson",
-      role: "Lead Blockchain Strategist",
-      avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&auto=format&fit=crop&q=80"
+      quote: "Their AI insights and portfolio tools transformed NFT trading. Trading volume grew 8x in a month.",
+      name: "Rahul Kumar",
+      role: "@NFTCollect",
+      avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&auto=format&fit=crop&q=80"
     },
     metrics: [
       { label: 'Volume', value: '+800%', period: '30 days' },
