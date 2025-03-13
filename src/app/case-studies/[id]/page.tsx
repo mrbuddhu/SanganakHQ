@@ -241,15 +241,14 @@ export default function CaseStudy() {
             className="mb-12"
           >
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
-                    <Image
-                      src={study.heroImage}
-                      alt={study.title}
-                      fill
-                className="object-cover"
-                      priority
-                    />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  </div>
+              <Image
+                src={study.heroImage}
+                alt={study.title}
+                fill
+                className="object-contain md:object-cover"
+                priority
+              />
+            </div>
           </motion.div>
 
           {/* Rest of the content */}
@@ -305,7 +304,7 @@ export default function CaseStudy() {
                         src={`/portfolio/${id}/before.png`}
                         alt="Before"
                         fill
-                        className="object-cover"
+                        className="object-contain md:object-cover"
                         unoptimized
                       />
                     </div>
@@ -327,7 +326,7 @@ export default function CaseStudy() {
                         src={study.heroImage}
                         alt="After"
                         fill
-                        className="object-cover"
+                        className="object-contain md:object-cover"
                         unoptimized
                       />
                     </div>
