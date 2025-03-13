@@ -32,13 +32,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Sanganak - #1 Premium IT Boutique',
-    description: 'Beyond AI-generated conformity, we handcraft distinctive digital experiences that transform your vision into reality.',
+    description: 'We craft world-class digital experiences through Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI-Powered Intelligence, and Elite Package solutions. Transform your vision into digital excellence.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://sanganak.org/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Sanganak - #1 Premium IT Boutique'
+        alt: 'Sanganak - #1 Premium IT Boutique - Luxury Digital Solutions'
       }
     ],
     type: 'website',
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sanganak - #1 Premium IT Boutique',
-    description: 'Beyond AI-generated conformity, we handcraft distinctive digital experiences that transform your vision into reality.',
-    images: ['/og-image.jpg']
+    description: 'We craft world-class digital experiences through Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI-Powered Intelligence, and Elite Package solutions. Transform your vision into digital excellence.',
+    images: ['https://sanganak.org/og-image.png']
   }
 }
 

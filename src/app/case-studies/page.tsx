@@ -4,85 +4,84 @@ import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Star } from 'lucide-react';
-import LuxuryHeading from '@/components/ui/LuxuryHeading';
+import { ArrowRight } from 'lucide-react';
 import LuxuryCard from '@/components/ui/LuxuryCard';
+import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import { caseStudies } from './data';
 
-const MainLayout = dynamic(() => import('@/components/layout/MainLayout'), {
-  ssr: false
-});
+const MainLayout = dynamic(() => import('@/components/layout/MainLayout'));
 
 export default function CaseStudies() {
   return (
     <MainLayout>
-      <main className="min-h-screen bg-black">
-        {/* Hero Section */}
-        <section className="py-16 sm:py-24 md:py-32 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <LuxuryHeading
-                title="Case Studies"
-                subtitle="Discover how we transform businesses through innovative digital solutions"
-              />
-            </motion.div>
+      <main className="min-h-screen bg-black py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Heading */}
+          <div className="mb-12 text-center">
+            <LuxuryHeading title="Our Case Studies" />
           </div>
-        </section>
 
-        {/* Case Studies Grid */}
-        <section className="pb-32">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-              {caseStudies.map((study, index) => (
-                <Link href={`/case-studies/${study.id}`} key={study.id} className="h-full">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    className="group h-full"
-                  >
-                    <LuxuryCard className="flex flex-col h-full overflow-hidden hover:border-luxury-gold-300/50 transition-colors duration-300">
-                      {/* Image Section */}
-                      <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0">
-                        <Image
-                          src={study.heroImage}
-                          alt={study.title}
-                          fill
-                          className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+          {/* Case Studies Grid */}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {caseStudies.map((study) => (
+              <motion.div
+                key={study.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Link href={`/case-studies/${study.id}`}>
+                  <LuxuryCard className="group h-full overflow-hidden hover:scale-[1.02] transition-all duration-300">
+                    {/* Image */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                      <Image
+                        src={study.heroImage}
+                        alt={study.title}
+                        fill
+                        className="object-contain md:object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                        priority={study.id === caseStudies[0].id}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold text-luxury-gold-200 group-hover:text-luxury-gold-100 transition-colors">
+                        {study.title}
+                      </h3>
+                      <div className="mt-2 flex items-center text-sm text-luxury-gold-300/60">
+                        <span>{study.client}</span>
+                        <span className="mx-2">•</span>
+                        <span>{study.industry}</span>
                       </div>
-
-                      {/* Content Section */}
-                      <div className="p-4 sm:p-6 flex flex-col flex-grow justify-between space-y-3 sm:space-y-4">
-                        <div className="space-y-3 sm:space-y-4">
-                          <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
-                            {study.title}
-                          </h3>
-                          <div className="flex items-center gap-2 sm:gap-3 text-luxury-gold-300/80 text-xs sm:text-sm">
-                            <span>{study.client}</span>
-                            <span>•</span>
-                            <span>{study.industry}</span>
+                      <p className="mt-4 text-luxury-gold-300/80 line-clamp-3">
+                        {study.challenge}
+                      </p>
+                      
+                      {/* Key Metrics */}
+                      <div className="mt-6 grid grid-cols-2 gap-4">
+                        {study.metrics.slice(0, 2).map((metric, index) => (
+                          <div key={index} className="text-center">
+                            <div className="text-2xl font-bold text-luxury-gold-200">{metric.value}</div>
+                            <div className="text-sm text-luxury-gold-300/60 capitalize">{metric.label}</div>
                           </div>
-                          <p className="text-gray-400 text-xs sm:text-sm line-clamp-2 sm:line-clamp-3">{study.challenge}</p>
-                        </div>
-                        <div className="flex items-center gap-2 text-luxury-gold-300 group-hover:gap-3 transition-all duration-300 mt-auto">
-                          <span className="text-xs sm:text-sm font-medium">View Case Study</span>
-                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-                        </div>
+                        ))}
                       </div>
-                    </LuxuryCard>
-                  </motion.div>
+
+                      {/* View Case Study Button */}
+                      <div className="mt-6 flex items-center justify-end text-luxury-gold-200 group-hover:text-luxury-gold-100">
+                        <span className="text-sm font-medium">View Case Study</span>
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    </div>
+                  </LuxuryCard>
                 </Link>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
       </main>
     </MainLayout>
   );

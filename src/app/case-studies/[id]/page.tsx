@@ -175,161 +175,209 @@ export default function CaseStudy() {
   return (
     <MainLayout>
       <main className="min-h-screen bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
-          {/* Back Button and Share */}
-          <div className="flex justify-between items-center mb-4 sm:mb-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Link
-                href="/case-studies"
-                className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors text-sm sm:text-base"
-              >
-                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Back to Case Studies
-              </Link>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <button
-                onClick={handleShare}
-                className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors text-sm sm:text-base"
-              >
-                <Share2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                {shareStatus === 'copied' ? 'Link Copied!' : 'Share Case Study'}
-              </button>
-            </motion.div>
-          </div>
-          
-          {/* Main Content */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12">
+          {/* Title Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="max-w-4xl mb-12"
           >
-            <LuxuryCard className="overflow-hidden">
-              <div className="p-4 sm:p-8 space-y-6 sm:space-y-8">
-                {/* Header */}
-                <div className="space-y-4">
-                  <h1 className="text-2xl sm:text-4xl font-bold text-luxury-gold-200 mb-4 sm:mb-8 text-center bg-gradient-to-r from-luxury-gold-100 to-luxury-gold-300 bg-clip-text text-transparent">
-                    {study.title}
-                  </h1>
-                  
-                  {/* Hero Image */}
-                  <div className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full mb-4 sm:mb-8 overflow-hidden rounded-lg">
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors mb-8"
+            >
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back to Case Studies
+            </Link>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              {study.title}
+            </h1>
+            
+            <div className="flex items-center space-x-4 text-luxury-gold-300 mb-8">
+              <span>{study.client}</span>
+              <span>•</span>
+              <span>{study.industry}</span>
+              <span>•</span>
+              <span>{study.duration}</span>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {study.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 bg-luxury-gold-900/30 backdrop-blur-sm rounded-full text-sm text-luxury-gold-100"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-12"
+          >
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
+              <Image
+                src={study.heroImage}
+                alt={study.title}
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </div>
+          </motion.div>
+
+          {/* Rest of the content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            {/* Overview Section */}
+            <LuxuryCard className="mb-12">
+              <div className="grid md:grid-cols-2 gap-12 p-6 md:p-12">
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold text-luxury-gold-100 mb-4">The Challenge</h2>
+                  <p className="text-sm md:text-base text-luxury-gold-300/80 leading-relaxed">{study.challenge}</p>
+                </div>
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold text-luxury-gold-100 mb-4">Our Solution</h2>
+                  <p className="text-sm md:text-base text-luxury-gold-300/80 leading-relaxed">{study.solution}</p>
+                </div>
+              </div>
+            </LuxuryCard>
+
+            {/* Results Section */}
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-luxury-gold-100 mb-6 md:mb-8">Key Results</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                {study.metrics.map((metric, index) => (
+                  <LuxuryCard key={index} className="p-4 md:p-6 text-center">
+                    <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-luxury-gold-100 mb-2">
+                      {metric.value}
+                    </div>
+                    <div className="text-xs md:text-sm text-luxury-gold-300/80">
+                      {metric.label}
+                    </div>
+                    {metric.period && (
+                      <div className="text-[10px] md:text-xs text-luxury-gold-300/60 mt-1">
+                        {metric.period}
+                      </div>
+                    )}
+                  </LuxuryCard>
+                ))}
+              </div>
+            </div>
+
+            {/* Before & After Section */}
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-luxury-gold-100 mb-6 md:mb-8">Before & After</h2>
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                <LuxuryCard className="overflow-hidden">
+                  <div className="relative h-64 md:h-80">
                     <Image
-                      src={study.heroImage}
-                      alt={study.title}
+                      src={`/portfolio/${id}/before.jpg`}
+                      alt="Before"
                       fill
-                      className="object-contain sm:object-cover transform hover:scale-105 transition-transform duration-700 ease-in-out"
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 100vw"
-                      priority
+                      className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                      <span className="text-xl md:text-2xl font-bold text-white">Before</span>
+                    </div>
                   </div>
-                  
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-luxury-gold-300/80 text-sm sm:text-base">
-                    <span>{study.client}</span>
-                    <span className="hidden sm:inline">•</span>
-                    <span>{study.industry}</span>
+                  <div className="p-4 md:p-6">
+                    <ul className="space-y-2 md:space-y-3">
+                      {study.beforeMetrics?.map((metric, index) => (
+                        <li key={index} className="flex items-center text-sm md:text-base text-luxury-gold-300/80">
+                          <span className="w-2 h-2 bg-luxury-gold-300/60 rounded-full mr-3" />
+                          {metric}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+                </LuxuryCard>
+
+                <LuxuryCard className="overflow-hidden">
+                  <div className="relative h-64 md:h-80">
+                    <Image
+                      src={`/portfolio/${id}/after.jpg`}
+                      alt="After"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-center">
+                      <span className="text-xl md:text-2xl font-bold text-luxury-gold-100">After</span>
+                    </div>
+                  </div>
+                  <div className="p-4 md:p-6 bg-luxury-gold-900/10">
+                    <ul className="space-y-2 md:space-y-3">
+                      {study.afterMetrics?.map((metric, index) => (
+                        <li key={index} className="flex items-center text-sm md:text-base text-luxury-gold-100">
+                          <span className="w-2 h-2 bg-luxury-gold-100 rounded-full mr-3" />
+                          {metric}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </LuxuryCard>
+              </div>
+            </div>
+
+            {/* Testimonial Section */}
+            <LuxuryCard className="mb-12 overflow-hidden">
+              <div className="relative p-6 md:p-12">
+                <div className="absolute top-0 left-0 w-16 md:w-20 h-16 md:h-20 bg-luxury-gold-900/20">
+                  <svg className="w-8 h-8 md:w-12 md:h-12 text-luxury-gold-300/20 absolute top-4 left-4" fill="currentColor" viewBox="0 0 32 32">
+                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                  </svg>
                 </div>
-                
-                {/* Challenge & Solution */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100 mb-3 sm:mb-4">The Challenge</h2>
-                    <p className="text-sm sm:text-base text-luxury-gold-300/80">{study.challenge}</p>
-                  </div>
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100 mb-3 sm:mb-4">Our Solution</h2>
-                    <p className="text-sm sm:text-base text-luxury-gold-300/80">{study.solution}</p>
-                  </div>
-                </div>
-                
-                {/* Process Steps */}
-                <div className="space-y-4 sm:space-y-6">
-                  <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100">Our Process</h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                    {details.processSteps.map((step, index) => (
-                      <div key={index} className="p-4 sm:p-6 bg-luxury-gold-900/50 rounded-lg">
-                        <h3 className="text-base sm:text-lg font-semibold text-luxury-gold-100 mb-2">{step.title}</h3>
-                        <p className="text-xs sm:text-sm text-luxury-gold-300/80">{step.description}</p>
+                <div className="relative">
+                  <p className="text-lg md:text-xl lg:text-2xl text-luxury-gold-300/90 italic mb-6">
+                    "{study.testimonial.quote}"
+                  </p>
+                  <div className="flex items-center">
+                    <Image
+                      src={study.testimonial.avatar}
+                      alt={study.testimonial.name}
+                      width={40}
+                      height={40}
+                      className="rounded-full md:w-12 md:h-12"
+                    />
+                    <div className="ml-3 md:ml-4">
+                      <div className="text-sm md:text-base font-semibold text-luxury-gold-100">
+                        {study.testimonial.name}
                       </div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Results */}
-                <div className="space-y-4 sm:space-y-6">
-                  <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100">Key Results</h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-                    {details.metrics.map((metric, index) => (
-                      <div key={index} className="p-4 sm:p-6 bg-luxury-gold-900/50 rounded-lg text-center">
-                        <div className="text-2xl sm:text-3xl font-bold text-luxury-gold-100 mb-2">{metric.value}</div>
-                        <div className="text-xs sm:text-sm text-luxury-gold-300/80">{metric.label}</div>
-                        <div className="text-xs text-luxury-gold-300/60">{metric.period}</div>
+                      <div className="text-xs md:text-sm text-luxury-gold-300/60">
+                        {study.testimonial.role}
                       </div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Technologies */}
-                <div className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-semibold text-luxury-gold-100">Technologies Used</h2>
-                  <div className="flex flex-wrap gap-2">
-                    {study.technologies.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-2 sm:px-3 py-1 bg-luxury-gold-900/50 text-luxury-gold-300 rounded-full text-xs sm:text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Testimonial */}
-                <div className="bg-luxury-gold-900/30 p-4 sm:p-8 rounded-lg">
-                  <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                    <div className="text-luxury-gold-300/80 italic text-base sm:text-lg">"{study.testimonial.quote}"</div>
-                    <div>
-                      <div className="text-luxury-gold-100 font-semibold">{study.testimonial.name}</div>
-                      <div className="text-luxury-gold-300/60 text-sm">{study.testimonial.role}</div>
                     </div>
                   </div>
                 </div>
               </div>
             </LuxuryCard>
 
-            {/* Single Prominent CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-12 text-center space-y-6"
-            >
-              <div className="space-y-3">
-                <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
-                  Ready to Create Your Success Story?
-                </h3>
-                <p className="text-luxury-gold-300/80 text-lg max-w-2xl mx-auto">
-                  Let's transform your vision into reality. Schedule a consultation to discuss how we can help you achieve similar results.
-                </p>
-              </div>
-              <Link href="https://cal.com/sanganak/strategycall">
-                <LuxuryButton size="lg" className="w-full sm:w-auto bg-gradient-to-r from-luxury-gold-100 to-luxury-gold-300 hover:from-luxury-gold-200 hover:to-luxury-gold-400 text-black font-semibold">
+            {/* CTA Section */}
+            <div className="text-center py-12 md:py-16 lg:py-24">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-luxury-gold-100 mb-4 md:mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-base md:text-lg text-luxury-gold-300/80 mb-6 md:mb-8 max-w-2xl mx-auto">
+                Let's discuss how we can help you achieve similar results. Schedule a consultation to get started.
+              </p>
+              <Link href={CTA_URL}>
+                <LuxuryButton size="lg" className="bg-gradient-to-r from-luxury-gold-100 to-luxury-gold-300 hover:from-luxury-gold-200 hover:to-luxury-gold-400 text-black text-sm md:text-base">
                   Schedule a Consultation
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </LuxuryButton>
               </Link>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </main>

@@ -84,16 +84,32 @@ const plans = [
 ];
 
 export default function PricingSection() {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <section className="py-24 overflow-hidden bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <LuxuryHeading
             title="Premium Solutions"
             subtitle="Transform Your Digital Presence"
             className="bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text"
           />
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-4 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
@@ -105,10 +121,11 @@ export default function PricingSection() {
               className="block relative w-full"
             >
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative w-full"
               >
                 <LuxuryCard 
@@ -116,27 +133,92 @@ export default function PricingSection() {
                 >
                   <div className="flex flex-col h-full justify-between">
                     <div>
-                      <div className="text-[#c6a255] mb-4 text-3xl">
+                      <motion.div
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                        className="text-[#c6a255] mb-4 text-3xl"
+                      >
                         {plan.name === "Essentials" && <Sparkles className="w-10 h-10" />}
                         {plan.name === "Accelerator" && <Zap className="w-10 h-10" />}
                         {plan.name === "Domination" && <Crown className="w-10 h-10" />}
                         {plan.name === "Elite" && <Star className="w-10 h-10" />}
-                      </div>
-                      <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2">{plan.name}</h3>
-                      <p className="text-gray-300 mb-4">{plan.description}</p>
-                      <div className="text-xl font-semibold text-[#c6a255] mb-4">{plan.price}</div>
-                      <div className="text-sm text-luxury-gold-300/70 mb-4">{plan.slots}</div>
+                      </motion.div>
+                      <motion.h3
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                        className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2"
+                      >
+                        {plan.name}
+                      </motion.h3>
+                      <motion.p
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                        className="text-gray-300 mb-4"
+                      >
+                        {plan.description}
+                      </motion.p>
+                      <motion.div
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                        className="text-xl font-semibold text-[#c6a255] mb-4"
+                      >
+                        {plan.price}
+                      </motion.div>
+                      <motion.div
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.6 }}
+                        className="text-sm text-luxury-gold-300/70 mb-4"
+                      >
+                        {plan.slots}
+                      </motion.div>
 
-                      <ul className="space-y-2 mb-4">
+                      <motion.ul
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.7 }}
+                        className="space-y-2 mb-4"
+                      >
                         {plan.features.map((feature, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm">
+                          <motion.li
+                            key={i}
+                            variants={contentVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 + 0.8 + (i * 0.1) }}
+                            className="flex items-start gap-2 text-sm"
+                          >
                             <span className="text-luxury-gold-300 mt-0.5 flex-shrink-0">•</span>
                             <span className="text-gray-300">{feature}</span>
-                          </li>
+                          </motion.li>
                         ))}
-                      </ul>
+                      </motion.ul>
 
-                      <div className="mt-6">
+                      <motion.div
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 1.2 }}
+                        className="mt-6"
+                      >
                         <LuxuryButton
                           href={CTA_URL}
                           isExternal
@@ -147,17 +229,24 @@ export default function PricingSection() {
                           <span className="truncate">{plan.cta}</span>
                           <ArrowRight className="w-4 h-4 ml-1 flex-shrink-0" />
                         </LuxuryButton>
-                      </div>
+                      </motion.div>
                     </div>
 
-                    <div className="mt-6">
+                    <motion.div
+                      variants={contentVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 1.3 }}
+                      className="mt-6"
+                    >
                       <div className="pt-4 border-t border-gray-800">
                         <blockquote className="text-sm italic text-gray-400">
                           "{plan.testimonial.quote}"
                           <footer className="mt-1.5 not-italic text-luxury-gold-300">— {plan.testimonial.author}</footer>
                         </blockquote>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </LuxuryCard>
               </motion.div>
