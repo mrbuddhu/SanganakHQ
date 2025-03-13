@@ -5,9 +5,12 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Phone, MessageSquare, Share2 } from 'lucide-react';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
+import LuxuryButton from '@/components/ui/LuxuryButton';
+import { CTA_URL } from '@/constants/links';
+import { useState } from 'react';
 
 // Import case studies data
 import { caseStudies } from '../data';
@@ -134,28 +137,75 @@ export default function CaseStudy() {
   const { id } = useParams();
   const study = caseStudies.find(s => s.id === id);
   const details = additionalDetails[id as string];
+  const [shareStatus, setShareStatus] = useState<'idle' | 'copied'>('idle');
 
   if (!study || !details) return <div>Case study not found</div>;
+
+  const handleShare = async () => {
+    const url = `https://sanganak.org/case-studies/${id}`;
+    
+    // Try native sharing first
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: study.title,
+          text: `Check out this case study: ${study.title}`,
+          url: url
+        });
+      } catch (err) {
+        // Fallback to clipboard if native sharing fails
+        await copyToClipboard();
+      }
+    } else {
+      // Fallback to clipboard if native sharing is not available
+      await copyToClipboard();
+    }
+  };
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(`https://sanganak.org/case-studies/${id}`);
+      setShareStatus('copied');
+      setTimeout(() => setShareStatus('idle'), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
   return (
     <MainLayout>
       <main className="min-h-screen bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
-          {/* Back Button */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-4 sm:mb-8"
-          >
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors text-sm sm:text-base"
+          {/* Back Button and Share */}
+          <div className="flex justify-between items-center mb-4 sm:mb-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Back to Case Studies
-            </Link>
-          </motion.div>
+              <Link
+                href="/case-studies"
+                className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors text-sm sm:text-base"
+              >
+                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Back to Case Studies
+              </Link>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <button
+                onClick={handleShare}
+                className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors text-sm sm:text-base"
+              >
+                <Share2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                {shareStatus === 'copied' ? 'Link Copied!' : 'Share Case Study'}
+              </button>
+            </motion.div>
+          </div>
           
           {/* Main Content */}
           <motion.div
@@ -257,6 +307,29 @@ export default function CaseStudy() {
                 </div>
               </div>
             </LuxuryCard>
+
+            {/* Single Prominent CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-12 text-center space-y-6"
+            >
+              <div className="space-y-3">
+                <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
+                  Ready to Create Your Success Story?
+                </h3>
+                <p className="text-luxury-gold-300/80 text-lg max-w-2xl mx-auto">
+                  Let's transform your vision into reality. Schedule a consultation to discuss how we can help you achieve similar results.
+                </p>
+              </div>
+              <Link href="https://cal.com/sanganak/strategycall">
+                <LuxuryButton size="lg" className="w-full sm:w-auto bg-gradient-to-r from-luxury-gold-100 to-luxury-gold-300 hover:from-luxury-gold-200 hover:to-luxury-gold-400 text-black font-semibold">
+                  Schedule a Consultation
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </LuxuryButton>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </main>
