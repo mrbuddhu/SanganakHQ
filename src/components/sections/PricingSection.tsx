@@ -129,7 +129,7 @@ export default function PricingSection() {
                 className="relative w-full h-full"
               >
                 <LuxuryCard 
-                  className="h-full w-full transition-all duration-300 hover:scale-105 hover:shadow-xl bg-black border-luxury-gold-300/20 p-6 md:p-8 flex flex-col justify-between"
+                  className="h-full w-full transition-all duration-300 hover:scale-105 hover:shadow-xl bg-black border-luxury-gold-300/20 p-4 md:p-6 flex flex-col justify-between"
                 >
                   <div className="flex flex-col h-full">
                     <div className="flex-grow">
