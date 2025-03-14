@@ -20,28 +20,12 @@ export default function Home() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState(-1);
   const [displayText, setDisplayText] = useState('#1 Premium IT Boutique');
-  const [isAnimating, setIsAnimating] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
   if (!pathname) {
     return <div>Loading...</div>;
   }
-
-  useEffect(() => {
-    const animateText = async () => {
-      setIsAnimating(true);
-      const words = ['Innovation', 'Excellence', 'Success'];
-      for (const word of words) {
-        setDisplayText(`#1 Premium IT Boutique for ${word}`);
-        await new Promise(resolve => setTimeout(resolve, 2000));
-      }
-      setDisplayText('#1 Premium IT Boutique');
-      setIsAnimating(false);
-    };
-
-    animateText();
-  }, []);
 
   const handleTestimonialScroll = (direction: 'prev' | 'next') => {
     if (direction === 'prev') {
@@ -341,13 +325,13 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-2 sm:mb-3 md:mb-4 px-4 whitespace-nowrap"
+                    className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-2 sm:mb-3 md:mb-4 px-2 sm:px-4 w-full"
                     style={{
                       background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       textShadow: '0 0 20px rgba(198, 162, 85, 0.3)',
-                      overflowWrap: 'normal'
+                      overflowWrap: 'break-word'
                     }}
                   >
                     SANGANAK

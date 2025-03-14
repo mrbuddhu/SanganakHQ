@@ -241,14 +241,14 @@ export default function CaseStudy() {
             className="mb-12"
           >
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
-              <Image
-                src={study.heroImage}
-                alt={study.title}
-                fill
+                    <Image
+                      src={study.heroImage}
+                      alt={study.title}
+                      fill
                 className="object-contain md:object-cover"
-                priority
-              />
-            </div>
+                      priority
+                    />
+                  </div>
           </motion.div>
 
           {/* Rest of the content */}
@@ -307,7 +307,7 @@ export default function CaseStudy() {
                         className="object-contain md:object-cover"
                         unoptimized
                       />
-                    </div>
+                      </div>
                     <div className="p-4 md:p-6">
                       <ul className="space-y-2 md:space-y-3">
                         {study.beforeMetrics?.map((metric, index) => (
@@ -317,7 +317,7 @@ export default function CaseStudy() {
                           </li>
                         ))}
                       </ul>
-                    </div>
+                  </div>
                   </LuxuryCard>
 
                   <LuxuryCard className="overflow-hidden">
@@ -329,7 +329,7 @@ export default function CaseStudy() {
                         className="object-contain md:object-cover"
                         unoptimized
                       />
-                    </div>
+                </div>
                     <div className="p-4 md:p-6 bg-luxury-gold-900/10">
                       <ul className="space-y-2 md:space-y-3">
                         {study.afterMetrics?.map((metric, index) => (
@@ -339,7 +339,7 @@ export default function CaseStudy() {
                           </li>
                         ))}
                       </ul>
-                    </div>
+                  </div>
                   </LuxuryCard>
                 </div>
               </div>
@@ -513,7 +513,7 @@ export default function CaseStudy() {
                   )}
                 </LuxuryButton>
               </Link>
-            </div>
+              </div>
           </motion.div>
         </div>
       </main>

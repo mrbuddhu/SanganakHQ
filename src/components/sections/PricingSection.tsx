@@ -111,14 +111,14 @@ export default function PricingSection() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <Link
               key={plan.name}
               href={CTA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block relative w-full"
+              className="block relative w-full h-full"
             >
               <motion.div
                 variants={cardVariants}
@@ -126,13 +126,13 @@ export default function PricingSection() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative w-full"
+                className="relative w-full h-full"
               >
                 <LuxuryCard 
-                  className="h-full w-full transition-all duration-300 hover:scale-105 hover:shadow-xl bg-black border-luxury-gold-300/20 p-6 sm:p-8 flex flex-col"
+                  className="h-full w-full transition-all duration-300 hover:scale-105 hover:shadow-xl bg-black border-luxury-gold-300/20 p-6 md:p-8 flex flex-col justify-between"
                 >
-                  <div className="flex flex-col h-full justify-between">
-                    <div>
+                  <div className="flex flex-col h-full">
+                    <div className="flex-grow">
                       <motion.div
                         variants={contentVariants}
                         initial="hidden"
@@ -152,7 +152,7 @@ export default function PricingSection() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                        className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2"
+                        className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-3"
                       >
                         {plan.name}
                       </motion.h3>
@@ -162,7 +162,7 @@ export default function PricingSection() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
-                        className="text-gray-300 mb-4"
+                        className="text-gray-300 mb-4 min-h-[48px]"
                       >
                         {plan.description}
                       </motion.p>
@@ -172,7 +172,7 @@ export default function PricingSection() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
-                        className="text-xl font-semibold text-[#c6a255] mb-4"
+                        className="text-xl font-semibold text-[#c6a255] mb-3"
                       >
                         {plan.price}
                       </motion.div>
@@ -182,7 +182,7 @@ export default function PricingSection() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 + 0.6 }}
-                        className="text-sm text-luxury-gold-300/70 mb-4"
+                        className="text-sm text-luxury-gold-300/70 mb-6"
                       >
                         {plan.slots}
                       </motion.div>
@@ -193,7 +193,7 @@ export default function PricingSection() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 + 0.7 }}
-                        className="space-y-2 mb-4"
+                        className="space-y-3 mb-6"
                       >
                         {plan.features.map((feature, i) => (
                           <motion.li
