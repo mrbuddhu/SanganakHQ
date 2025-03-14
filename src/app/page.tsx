@@ -1048,7 +1048,7 @@ export default function Home() {
         {/* Newsletter Section */}
         <section className="py-20 relative">
           <div className="max-w-4xl mx-auto px-4">
-            <div className="mt-8 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20 rounded-lg p-8 sm:p-10">
+            <LuxuryCard className="p-8 sm:p-10">
               <div className="flex flex-col items-center text-center mb-8">
                 <div className="mb-6">
                   <div className="w-16 h-16 rounded-full bg-[#c6a255]/10 flex items-center justify-center mb-4">
@@ -1090,7 +1090,6 @@ export default function Home() {
                     Subscribe Now
                   </button>
                 </form>
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 rounded-lg z-10 pointer-events-none"></div>
               </div>
               <div className="mt-8 flex flex-col items-center">
                 <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -1100,7 +1099,7 @@ export default function Home() {
                   <span>No spam, unsubscribe anytime</span>
                 </div>
               </div>
-            </div>
+            </LuxuryCard>
           </div>
         </section>
         {/* FAQ Section */}
