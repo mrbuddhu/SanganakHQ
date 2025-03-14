@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Zap, Crown, Star } from 'lucide-react';
+import { Sparkles, Zap, Crown, Star } from 'lucide-react';
 import Link from 'next/link';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
@@ -227,7 +227,6 @@ export default function PricingSection() {
                           className="w-full min-h-[48px] text-center"
                         >
                           <span className="truncate">{plan.cta}</span>
-                          <ArrowRight className="w-4 h-4 ml-1 flex-shrink-0" />
                         </LuxuryButton>
                       </motion.div>
                     </div>
