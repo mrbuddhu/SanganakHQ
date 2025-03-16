@@ -313,7 +313,7 @@ export default function Home() {
                   alt="Sanganak Company Logo" 
                   width={250} 
                   height={250} 
-                    className="mx-auto w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px]"
+                  className="mx-auto w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px]"
                   priority={true}
                 />
                 </motion.div>
