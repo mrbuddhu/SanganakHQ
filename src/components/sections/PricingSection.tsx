@@ -17,7 +17,7 @@ const plans = [
     features: [
       "Branding essentials",
       "UI/UX Design",
-      "Framer Landing Pages",
+      "JS/Framer Landing Pages",
       "Lightning-fast execution"
     ],
     testimonial: {
@@ -35,7 +35,7 @@ const plans = [
     features: [
         "Luxury Branding ",
         "Converting UI/UX Revamp",
-        "Custom Webflow Dev",
+        "JS/Shopify/Webflow Dev",
         "Conversion-optimized RoI"
     ],
     testimonial: {
@@ -43,7 +43,7 @@ const plans = [
       quote: "5x order growth with our seamless global platform."
     },
     cta: "Let's 10X My Business",
-    popular: true
+    popular: false
   },
   {
     name: "Domination",
@@ -53,7 +53,7 @@ const plans = [
     features: [
       "Luxury Branding",
       "AI-driven UI/UX ",
-      "Custom Webflow/NextJS Dev",
+      "Full Customized App",
       "End-to-end digital makeover"
     ],
     testimonial: {
@@ -61,7 +61,7 @@ const plans = [
       quote: "6x order growth in just 45 days due to all round solutions."
     },
     cta: "Build My Million $ Brand",
-    popular: false
+    popular: true
   },
   {
     name: "Elite",
@@ -129,8 +129,13 @@ export default function PricingSection() {
                 className="relative w-full h-full"
               >
                 <LuxuryCard 
-                  className="h-full w-full transition-all duration-300 hover:scale-105 hover:shadow-xl bg-black border-luxury-gold-300/20 p-4 md:p-6 flex flex-col justify-between"
+                  className="h-full w-full transition-all duration-300 hover:scale-105 hover:shadow-xl bg-black border-luxury-gold-300/20 p-4 md:p-6 flex flex-col justify-between relative"
                 >
+                  {plan.popular && (
+                    <div className="absolute top-0 right-0 bg-luxury-gold-300 text-black px-6 py-1.5 rounded-full text-sm font-medium z-50 mt-6 mr-6">
+                      Most Popular
+                    </div>
+                  )}
                   <div className="flex flex-col h-full">
                     <div className="flex-grow">
                       <motion.div
