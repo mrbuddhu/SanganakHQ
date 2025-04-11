@@ -20,8 +20,24 @@ export default function Home() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState(-1);
   const [displayText, setDisplayText] = useState('#1 Premium IT Boutique');
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const getVisibleItems = (width: number) => {
+    if (width < 640) return 1; // mobile
+    if (width < 1024) return 2; // tablet
+    return 3; // desktop
+  };
 
   if (!pathname) {
     return <div>Loading...</div>;
@@ -35,38 +51,6 @@ export default function Home() {
     } else {
       setCurrentTestimonialIndex(prev => 
         prev + 1 >= testimonials.length ? 0 : prev + 1
-      );
-    }
-  };
-  const [currentPortfolioIndex, setCurrentPortfolioIndex] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    handleResize(); // Set initial width
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
-  const isTablet = windowWidth >= 768 && windowWidth < 1024;
-  const isMobile = windowWidth < 768;
-
-  const getVisibleItems = (width: number) => {
-    if (width >= 1024) return 3;
-    if (width >= 768) return 2;
-    return 1;
-  };
-
-  const handlePortfolioScroll = (direction: 'prev' | 'next') => {
-    const step = getVisibleItems(windowWidth);
-
-    if (direction === 'prev') {
-      setCurrentPortfolioIndex(prev => 
-        prev === 0 ? portfolio.length - step : Math.max(0, prev - step)
-      );
-    } else {
-      setCurrentPortfolioIndex(prev => 
-        prev + step >= portfolio.length ? 0 : prev + step
       );
     }
   };
@@ -142,7 +126,8 @@ export default function Home() {
       rating: 5,
       content: "Working with Sanganak Premium was a game-changing experience. Their attention to detail and innovative solutions exceeded our expectations.",
       videoUrl: "/testimonials/ankit-kumar.mp4",
-      avatar: "/testimonials/headshots/ankit-kumar.jpg"
+      avatar: "/testimonials/headshots/ankit-kumar.jpg",
+      type: "video"
     },
     {
       name: "Shyam Sharma",
@@ -150,7 +135,8 @@ export default function Home() {
       rating: 5,
       content: "The team at Sanganak Premium delivered an exceptional design system that perfectly captures our brand's luxury essence.",
       videoUrl: "/testimonials/shyam-sharma.mp4",
-      avatar: "/testimonials/headshots/shyam-sharma.jpg"
+      avatar: "/testimonials/headshots/shyam-sharma.jpg",
+      type: "video"
     },
     {
       name: "Shubham Kumar",
@@ -158,7 +144,40 @@ export default function Home() {
       rating: 5,
       content: "Their expertise in food tech platforms helped us create a seamless experience for our global customer base.",
       videoUrl: "/testimonials/shubham-kumar.mp4",
-      avatar: "/testimonials/headshots/shubham-kumar.jpg"
+      avatar: "/testimonials/headshots/shubham-kumar.jpg",
+      type: "video"
+    },
+    {
+      name: "Rahul Verma",
+      role: "@TechStart",
+      rating: 5,
+      content: "Sanganak Premium transformed our digital presence with their innovative approach and attention to detail. The results speak for themselves.",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1e7220bb89?w=200&h=200&fit=crop&q=80",
+      type: "text"
+    },
+    {
+      name: "Priya Singh",
+      role: "@LuxeFashion",
+      rating: 5,
+      content: "Working with Sanganak Premium was a pleasure. Their team's dedication to quality and understanding of luxury branding is unmatched.",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80",
+      type: "text"
+    },
+    {
+      name: "Aarav Patel",
+      role: "@FinTechPro",
+      rating: 5,
+      content: "The level of professionalism and technical expertise at Sanganak Premium is truly remarkable. They delivered beyond our expectations.",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&q=80",
+      type: "text"
+    },
+    {
+      name: "Meera Kapoor",
+      role: "@LuxeInteriors",
+      rating: 5,
+      content: "Sanganak Premium's understanding of luxury aesthetics and user experience is exceptional. They've helped us create a truly premium digital presence.",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80",
+      type: "text"
     }
   ];
 
@@ -202,20 +221,102 @@ export default function Home() {
       description: "Providing unparalleled attention and dedication to every aspect of your project."
     }
   ];
-  const [playingVideos, setPlayingVideos] = useState<{ [key: number]: boolean }>({});
+  const [playingVideos, setPlayingVideos] = useState<boolean[]>([]);
+  const [isMovementPaused, setIsMovementPaused] = useState(false);
+  const [centeredCardIndex, setCenteredCardIndex] = useState<number | null>(null);
+
   const toggleVideo = (e: React.MouseEvent, index: number) => {
     e.preventDefault();
     e.stopPropagation();
     const video = document.getElementById(`testimonial-video-${index}`) as HTMLVideoElement;
+    const container = document.querySelector('.testimonials-container') as HTMLElement;
+    const card = document.querySelector(`[data-card-index="${index}"]`) as HTMLElement;
+    
     if (video) {
-      if (playingVideos[index]) {
-        video.pause();
-      } else {
+      if (video.paused) {
         video.play();
+        setIsMovementPaused(true);
+        setCenteredCardIndex(index);
+        if (container && card) {
+          container.style.animationPlayState = 'paused';
+          // Center the card
+          const containerRect = container.getBoundingClientRect();
+          const cardRect = card.getBoundingClientRect();
+          const scrollLeft = card.offsetLeft - (containerRect.width / 2) + (cardRect.width / 2);
+          container.scrollLeft = scrollLeft;
+        }
+      } else {
+        video.pause();
+        setIsMovementPaused(false);
+        setCenteredCardIndex(null);
+        if (container) {
+          container.style.animationPlayState = 'running';
+        }
       }
-      setPlayingVideos(prev => ({ ...prev, [index]: !prev[index] }));
+      setPlayingVideos(prev => {
+        const newState = [...prev];
+        newState[index] = !prev[index];
+        return newState;
+      });
     }
   };
+
+  // Add event listener for video end
+  useEffect(() => {
+    const videos = document.querySelectorAll('video');
+    const container = document.querySelector('.testimonials-container') as HTMLElement;
+
+    const handleVideoEnd = () => {
+      setIsMovementPaused(false);
+      setCenteredCardIndex(null);
+      if (container) {
+        container.style.animationPlayState = 'running';
+      }
+    };
+
+    videos.forEach(video => {
+      video.addEventListener('ended', handleVideoEnd);
+    });
+
+    return () => {
+      videos.forEach(video => {
+        video.removeEventListener('ended', handleVideoEnd);
+      });
+    };
+  }, []);
+
+  // Update container animation based on movement state
+  useEffect(() => {
+    const container = document.querySelector('.testimonials-container') as HTMLElement;
+    if (container) {
+      container.style.animationPlayState = isMovementPaused ? 'paused' : 'running';
+    }
+  }, [isMovementPaused]);
+
+  // Add hover effect to pause movement
+  const handleHover = (e: React.MouseEvent, index: number) => {
+    const video = document.getElementById(`testimonial-video-${index}`) as HTMLVideoElement;
+    if (video && !video.paused) {
+      const container = document.querySelector('.testimonials-container') as HTMLElement;
+      if (container) {
+        container.style.animationPlayState = 'paused';
+      }
+    }
+  };
+
+  const handleHoverEnd = (e: React.MouseEvent, index: number) => {
+    const video = document.getElementById(`testimonial-video-${index}`) as HTMLVideoElement;
+    if (video && !video.paused) {
+      const container = document.querySelector('.testimonials-container') as HTMLElement;
+      if (container) {
+        container.style.animationPlayState = 'paused';
+      }
+    }
+  };
+
+  const videoTestimonials = testimonials.filter(testimonial => testimonial.type === "video");
+  const textTestimonials = testimonials.filter(testimonial => testimonial.type === "text");
+
   return (
     <MainLayout>
       <main>
@@ -451,8 +552,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="min-h-screen bg-black/95 relative py-24">
+       {/* Services Section */}
+       <section id="services" className="min-h-screen bg-black/95 relative py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-[#c6a255]/5 to-black/0" />
           <div className="max-w-6xl mx-auto px-4">
             <motion.div
@@ -594,49 +695,56 @@ export default function Home() {
         <PricingSection />
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="py-16 sm:py-24 relative">
+        <section id="portfolio" className="py-16 sm:py-24 relative bg-gradient-to-b from-black to-black/95 overflow-hidden">
           <div className="container mx-auto px-4">
             <LuxuryHeading
               title="Our Portfolio"
               subtitle="Explore our collection of premium digital experiences"
             />
             
-            <div className="relative mt-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {portfolio.slice(currentPortfolioIndex, currentPortfolioIndex + getVisibleItems(windowWidth)).map((project, index) => (
-                  <motion.div
-                    key={project.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group"
-                  >
-                    <Link href={project.caseStudyLink}>
-                      <LuxuryCard className="overflow-hidden h-full">
-                        <div className="relative w-full aspect-[16/9] overflow-hidden">
+            {/* First Row - Moves Left */}
+            <motion.div 
+              initial={{ x: 0 }}
+              whileInView={{ x: "-100%" }}
+              transition={{ 
+                duration: 30, 
+                ease: "linear",
+                repeatType: "loop"
+              }}
+              viewport={{ once: false }}
+              className="flex gap-6 mt-16 mb-8 w-max"
+            >
+              {[...portfolio, ...portfolio].map((project, index) => (
+                <motion.div
+                  key={`row1-${project.title}-${index}`}
+                  className="w-[500px] flex-shrink-0"
+                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                >
+                  <Link href={project.caseStudyLink}>
+                    <LuxuryCard className="overflow-hidden h-full hover:border-luxury-gold-300/30 transition-all duration-300 group p-0">
+                      <div className="relative aspect-[16/10] w-full">
                         <Image
                             src={project.image}
-                            alt={`${project.title} - ${project.description}`}
+                          alt={project.title}
                           fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                            loading="lazy"
-                            quality={85}
+                          sizes="500px"
+                          className="object-cover transform group-hover:scale-110 transition-transform duration-700 brightness-110"
+                          priority={index < 2}
                         />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                       </div>
-                        <div className="p-4 sm:p-6">
-                          <h3 className="text-lg sm:text-xl font-bold text-luxury-gold-100 mb-2 group-hover:text-luxury-gold-300 transition-colors">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 transform group-hover:scale-105 transition-transform duration-300">
+                        <h3 className="text-lg font-bold text-luxury-gold-100 mb-2 group-hover:text-luxury-gold-300 transition-colors">
                             {project.title}
                         </h3>
-                          <p className="text-sm text-luxury-gold-300/80 mb-4 line-clamp-2">
+                        <p className="text-gray-300 text-sm mb-3 line-clamp-1">
                             {project.description}
                           </p>
                         <div className="flex flex-wrap gap-2">
                             {project.tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="px-2 py-1 bg-luxury-gold-900/50 text-luxury-gold-300 rounded-full text-xs"
+                              className="px-2 py-0.5 text-xs bg-luxury-gold-900/30 text-luxury-gold-300 rounded-full border border-luxury-gold-300/10"
                             >
                               {tag}
                             </span>
@@ -644,25 +752,65 @@ export default function Home() {
                         </div>
                       </div>
                     </LuxuryCard>
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-              
-              {/* Navigation Buttons */}
-              <button
-                onClick={() => handlePortfolioScroll('prev')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => handlePortfolioScroll('next')}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Second Row - Moves Right */}
+            <motion.div 
+              initial={{ x: "-100%" }}
+              whileInView={{ x: 0 }}
+              transition={{ 
+                duration: 30, 
+                ease: "linear",
+                repeatType: "loop"
+              }}
+              viewport={{ once: false }}
+              className="flex gap-6 w-max"
+            >
+              {[...portfolio.slice(2), ...portfolio.slice(2)].map((project, index) => (
+                <motion.div
+                  key={`row2-${project.title}-${index}`}
+                  className="w-[500px] flex-shrink-0"
+                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                >
+                  <Link href={project.caseStudyLink}>
+                    <LuxuryCard className="overflow-hidden h-full hover:border-luxury-gold-300/30 transition-all duration-300 group p-0">
+                      <div className="relative aspect-[16/10] w-full">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          sizes="500px"
+                          className="object-cover transform group-hover:scale-110 transition-transform duration-700 brightness-110"
+                          priority={index < 2}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 transform group-hover:scale-105 transition-transform duration-300">
+                        <h3 className="text-lg font-bold text-luxury-gold-100 mb-2 group-hover:text-luxury-gold-300 transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-300 text-sm mb-3 line-clamp-1">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2 py-0.5 text-xs bg-luxury-gold-900/30 text-luxury-gold-300 rounded-full border border-luxury-gold-300/10"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </LuxuryCard>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
         {/* Process Section */}
@@ -868,70 +1016,154 @@ export default function Home() {
               />
             </div>
            
-            <div className="relative">
-              <button
-                onClick={() => handleTestimonialScroll('prev')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-8 max-w-full justify-center">
-                {testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + getVisibleItems(windowWidth)).map((testimonial, index) => (
-                  <div key={index} className="flex-none w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[360px]">
-                    <LuxuryCard className="flex flex-col h-full">
-                      {testimonial.name === 'Shyam Sharma' ? (
-                        <div>
-                          {/* Video Container */}
-                          <div className="relative h-[250px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden mb-4 group">
-                            <video
-                              id={`testimonial-video-${index}`}
-                              src={testimonial.videoUrl}
-                              className="absolute inset-0 w-full h-full object-cover"
-                              playsInline
-                              loop
+            {/* Video Testimonials Row - Moves Left */}
+            <motion.div 
+              initial={{ x: 0 }}
+              animate={{ x: "-100%" }}
+              transition={{ 
+                duration: 30, 
+                ease: "linear",
+                repeatType: "loop"
+              }}
+              viewport={{ once: false }}
+              className="flex gap-6 mt-16 mb-8 w-max"
+            >
+              {[...videoTestimonials, ...videoTestimonials].map((testimonial, index) => (
+                <motion.div
+                  key={`video-${testimonial.name}-${index}`}
+                  className="w-[350px] flex-shrink-0"
+                  data-card-index={index}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                  onHoverStart={() => {
+                    const container = document.querySelector('.testimonials-container') as HTMLElement;
+                    if (container) {
+                      container.style.animationPlayState = 'paused';
+                    }
+                  }}
+                  onHoverEnd={() => {
+                    const container = document.querySelector('.testimonials-container') as HTMLElement;
+                    if (container) {
+                      container.style.animationPlayState = 'running';
+                    }
+                  }}
+                >
+                  <LuxuryCard className="overflow-hidden h-full hover:border-luxury-gold-300/30 transition-all duration-300 group p-0">
+                    <div 
+                      className="relative aspect-[3/4] w-full"
+                      onMouseEnter={(e) => handleHover(e, index)}
+                      onMouseLeave={(e) => handleHoverEnd(e, index)}
+                    >
+                      <video
+                        id={`testimonial-video-${index}`}
+                        src={testimonial.videoUrl}
+                        className="absolute inset-0 w-full h-full object-cover z-30"
+                        playsInline
+                        loop
+                        preload="auto"
+                        poster={testimonial.avatar}
+                        onClick={(e) => toggleVideo(e, index)}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-20" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 flex items-center justify-between z-40">
+                        <div className="flex items-center gap-3">
+                          <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                            <Image
+                              src={testimonial.avatar}
+                              alt={testimonial.name}
+                              fill
+                              className="object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                           
-                            {/* Play/Pause Button */}
-                            <button
-                              onClick={(e) => toggleVideo(e, index)}
-                              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#c6a255]/90 text-black flex items-center justify-center transition-all transform hover:scale-110 hover:bg-[#c6a255] z-20 cursor-pointer"
-                            >
-                              {playingVideos[index] ? (
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-                                </svg>
-                              ) : (
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
-                                </svg>
-                              )}
-                            </button>
-
-                            {/* Video Progress Bar */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
-                              <div className={`h-full bg-[#c6a255] transition-all duration-300 ${playingVideos[index] ? 'w-full' : 'w-0'}`} />
-                            </div>
                           </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-1 mb-1">
+                              {[...Array(testimonial.rating)].map((_, i) => (
+                                <svg
+                                  key={i}
+                                  className="w-4 h-4 text-luxury-gold-300"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                              ))}
+                            </div>
+                            <h4 className="font-semibold text-[#c6a255]">{testimonial.name}</h4>
+                            <p className="text-sm text-gray-400">{testimonial.role}</p>
+                          </div>
+                        </div>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            toggleVideo(e, index);
+                          }}
+                          className="w-12 h-12 rounded-full bg-[#c6a255]/90 text-black flex items-center justify-center transition-all transform hover:scale-110 hover:bg-[#c6a255] cursor-pointer"
+                        >
+                          {playingVideos[index] ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                            </svg>
+                          ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
+                            </svg>
+                          )}
+                        </button>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
+                        <div className={`h-full bg-[#c6a255] transition-all duration-300 ${playingVideos[index] ? 'w-full' : 'w-0'}`} />
+                      </div>
+                    </div>
+                  </LuxuryCard>
+                </motion.div>
+              ))}
+            </motion.div>
 
-                          {/* Content */}
-                          <div className="flex-1 flex flex-col justify-end">
+            {/* Text Testimonials Row - Moves Right */}
+            <motion.div 
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              transition={{ 
+                duration: 30, 
+                ease: "linear",
+                repeatType: "loop"
+              }}
+              viewport={{ once: false }}
+              className="flex gap-6 w-max"
+            >
+              {[...textTestimonials, ...textTestimonials].map((testimonial, index) => (
+                <motion.div
+                  key={`text-${testimonial.name}-${index}`}
+                  className="w-[350px] flex-shrink-0"
+                >
+                  <LuxuryCard className="overflow-hidden h-full hover:border-luxury-gold-300/30 transition-all duration-300 group p-0">
+                    <div className="relative aspect-[3/4] w-full bg-gradient-to-br from-luxury-gold-900/30 to-luxury-gold-900/10 transform group-hover:scale-105 transition-transform duration-700">
+                      <div className="absolute inset-0 flex items-center justify-center p-8">
+                        <p className="text-luxury-gold-100 text-lg italic text-center">
+                          "{testimonial.content}"
+                        </p>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 transform group-hover:scale-105 transition-transform duration-300">
                             <div className="flex items-center gap-3">
                               <div className="relative w-12 h-12 rounded-full overflow-hidden">
                                 <Image
                                   src={testimonial.avatar}
                                   alt={testimonial.name}
                                   fill
-                                  className="object-cover rounded-full"
-                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                  priority={index < 3}
+                            className="object-cover"
                                 />
                               </div>
                               <div className="flex-1">
                                 <div className="flex items-center gap-1 mb-1">
-                                  {[1, 2, 3, 4, 5].map((_, i) => (
-                                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-[#c6a255]">
-                                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                              <svg
+                                key={i}
+                                className="w-4 h-4 text-luxury-gold-300"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
                                   ))}
                                 </div>
@@ -940,82 +1172,10 @@ export default function Home() {
                               </div>
                             </div>
                           </div>
-                        </div>
-                      ) : (
-                        <div>
-                          {/* Video Container */}
-                          <div className="relative h-[250px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden mb-4 group">
-                            <video
-                              id={`testimonial-video-${index}`}
-                              src={testimonial.videoUrl}
-                              className="absolute inset-0 w-full h-full object-cover"
-                              playsInline
-                              loop
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                           
-                            {/* Play/Pause Button */}
-                            <button
-                              onClick={(e) => toggleVideo(e, index)}
-                              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#c6a255]/90 text-black flex items-center justify-center transition-all transform hover:scale-110 hover:bg-[#c6a255] z-20 cursor-pointer"
-                            >
-                              {playingVideos[index] ? (
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-                                </svg>
-                              ) : (
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
-                                </svg>
-                              )}
-                            </button>
-
-                            {/* Video Progress Bar */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
-                              <div className={`h-full bg-[#c6a255] transition-all duration-300 ${playingVideos[index] ? 'w-full' : 'w-0'}`} />
-                            </div>
-                          </div>
-
-                          {/* Content */}
-                          <div className="flex-1 flex flex-col justify-end">
-                            <div className="flex items-center gap-3">
-                              <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                                <Image
-                                  src={testimonial.avatar}
-                                  alt={testimonial.name}
-                                  fill
-                                  className="object-cover rounded-full"
-                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                  priority={index < 3}
-                                />
-                              </div>
-                              <div className="flex-1">
-                                <div className="flex items-center gap-1 mb-1">
-                                  {[...Array(5)].map((_, i) => (
-                                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-[#c6a255]">
-                                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                  ))}
-                                </div>
-                                <h4 className="font-semibold text-[#c6a255]">{testimonial.name}</h4>
-                                <p className="text-sm text-gray-400">{testimonial.role}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
                     </LuxuryCard>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={() => handleTestimonialScroll('next')}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-black/80 border border-[#c6a255] text-[#c6a255] hover:bg-[#c6a255] hover:text-white transition-all z-10"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
         {/* Testimonials CTA */}
