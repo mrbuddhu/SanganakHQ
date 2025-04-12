@@ -552,8 +552,8 @@ export default function Home() {
           </div>
         </section>
 
-       {/* Services Section */}
-       <section id="services" className="min-h-screen bg-black/95 relative py-24">
+        {/* Services Section */}
+        <section id="services" className="min-h-screen bg-black/95 relative py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-[#c6a255]/5 to-black/0" />
           <div className="max-w-6xl mx-auto px-4">
             <motion.div
@@ -703,7 +703,7 @@ export default function Home() {
             />
             
             {/* First Row - Moves Left */}
-            <motion.div 
+                  <motion.div
               initial={{ x: 0 }}
               whileInView={{ x: "-100%" }}
               transition={{ 
@@ -719,8 +719,8 @@ export default function Home() {
                   key={`row1-${project.title}-${index}`}
                   className="w-[500px] flex-shrink-0"
                   whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                >
-                  <Link href={project.caseStudyLink}>
+                  >
+                    <Link href={project.caseStudyLink}>
                     <LuxuryCard className="overflow-hidden h-full hover:border-luxury-gold-300/30 transition-all duration-300 group p-0">
                       <div className="relative aspect-[16/10] w-full">
                         <Image
@@ -752,9 +752,9 @@ export default function Home() {
                         </div>
                       </div>
                     </LuxuryCard>
-                  </Link>
-                </motion.div>
-              ))}
+                    </Link>
+                  </motion.div>
+                ))}
             </motion.div>
 
             {/* Second Row - Moves Right */}
@@ -822,15 +822,38 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
               {process.map((step, index) => (
-                <LuxuryCard key={index} className="p-6 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20 flex flex-col">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="w-8 h-8 rounded-full bg-[#c6a255] text-black flex items-center justify-center font-bold">
-                      {index + 1}
-                    </span>
-                    <h3 className="text-xl font-bold text-[#c6a255]">{step.title}</h3>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <LuxuryCard className="p-8 bg-black/40 backdrop-blur-sm border border-[#c6a255]/20 flex flex-col h-full group hover:border-[#c6a255]/40 transition-all duration-300">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-[#c6a255]/10 border border-[#c6a255]/20 flex items-center justify-center group-hover:bg-[#c6a255]/20 transition-colors">
+                        <span className="text-2xl font-bold text-[#c6a255]">{index + 1}</span>
                   </div>
-                  <p className="text-gray-400">{step.description}</p>
+                      <h3 className="text-xl font-bold bg-gradient-to-r from-[#c6a255] to-[#e6c878] text-transparent bg-clip-text">{step.title}</h3>
+                    </div>
+                    <p className="text-gray-400 flex-grow">{step.description}</p>
+                    <div className="mt-6 pt-6 border-t border-[#c6a255]/10">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-[#c6a255]/80">Step {index + 1}/4</span>
+                        <div className="flex gap-1">
+                          {[...Array(4)].map((_, i) => (
+                            <div
+                              key={i}
+                              className={`w-2 h-2 rounded-full ${
+                                i <= index ? 'bg-[#c6a255]' : 'bg-[#c6a255]/20'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                 </LuxuryCard>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -1053,29 +1076,29 @@ export default function Home() {
                       onMouseEnter={(e) => handleHover(e, index)}
                       onMouseLeave={(e) => handleHoverEnd(e, index)}
                     >
-                      <video
-                        id={`testimonial-video-${index}`}
-                        src={testimonial.videoUrl}
+                            <video
+                              id={`testimonial-video-${index}`}
+                              src={testimonial.videoUrl}
                         className="absolute inset-0 w-full h-full object-cover z-30"
-                        playsInline
-                        loop
+                              playsInline
+                              loop
                         preload="auto"
                         poster={testimonial.avatar}
-                        onClick={(e) => toggleVideo(e, index)}
+                              onClick={(e) => toggleVideo(e, index)}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-20" />
                       <div className="absolute bottom-0 left-0 right-0 p-4 flex items-center justify-between z-40">
-                        <div className="flex items-center gap-3">
-                          <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                            <Image
-                              src={testimonial.avatar}
-                              alt={testimonial.name}
-                              fill
+                            <div className="flex items-center gap-3">
+                              <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                                <Image
+                                  src={testimonial.avatar}
+                                  alt={testimonial.name}
+                                  fill
                               className="object-cover"
-                            />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-1 mb-1">
+                                />
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex items-center gap-1 mb-1">
                               {[...Array(testimonial.rating)].map((_, i) => (
                                 <svg
                                   key={i}
@@ -1084,36 +1107,36 @@ export default function Home() {
                                   viewBox="0 0 20 20"
                                 >
                                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                              ))}
+                                    </svg>
+                                  ))}
+                                </div>
+                                <h4 className="font-semibold text-[#c6a255]">{testimonial.name}</h4>
+                                <p className="text-sm text-gray-400">{testimonial.role}</p>
+                              </div>
                             </div>
-                            <h4 className="font-semibold text-[#c6a255]">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-400">{testimonial.role}</p>
-                          </div>
-                        </div>
-                        <button
+                            <button
                           onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
                             toggleVideo(e, index);
                           }}
                           className="w-12 h-12 rounded-full bg-[#c6a255]/90 text-black flex items-center justify-center transition-all transform hover:scale-110 hover:bg-[#c6a255] cursor-pointer"
-                        >
-                          {playingVideos[index] ? (
+                            >
+                              {playingVideos[index] ? (
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-                            </svg>
-                          ) : (
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                                </svg>
+                              ) : (
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
-                            </svg>
-                          )}
-                        </button>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653z" />
+                                </svg>
+                              )}
+                            </button>
                       </div>
-                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
-                        <div className={`h-full bg-[#c6a255] transition-all duration-300 ${playingVideos[index] ? 'w-full' : 'w-0'}`} />
-                      </div>
-                    </div>
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30">
+                              <div className={`h-full bg-[#c6a255] transition-all duration-300 ${playingVideos[index] ? 'w-full' : 'w-0'}`} />
+                            </div>
+                          </div>
                   </LuxuryCard>
                 </motion.div>
               ))}
