@@ -1,0 +1,694 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --luxury-gold-300: 198, 156, 109; /* Metallic gold base */
+  --luxury-gold-400: 178, 140, 98;  /* Slightly darker */
+  --luxury-gold-500: 158, 124, 87;  /* Even darker for depth */
+  --luxury-gray-300: 229, 229, 229;
+  --luxury-gray-400: 189, 189, 189;
+  --background: #000000;
+  --foreground: #ededed;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Selection color */
+::selection {
+  background: var(--luxury-gold-300);
+  color: #0A0A0A;
+}
+
+/* Base styles */
+body {
+  @apply bg-luxury-black text-luxury-gray-50 antialiased min-h-screen;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  letter-spacing: -0.025em;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Luxury gradient text */
+.luxury-gradient-text {
+  @apply bg-gradient-to-r from-luxury-gold-200 via-luxury-gold-300 to-luxury-gold-400 text-transparent bg-clip-text;
+}
+
+/* Metallic Card Effect */
+.metallic-card {
+  background: linear-gradient(
+    135deg,
+    rgba(253, 215, 0, 0.1),
+    rgba(222, 160, 0, 0.05)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(253, 215, 0, 0.1);
+  box-shadow: 0 0 20px rgba(253, 215, 0, 0.1);
+}
+
+/* Luxury Card Effect */
+.luxury-card {
+  background: linear-gradient(
+    135deg,
+     rgba(255, 255, 255, 0.05) 0%,
+
+    rgba(255, 255, 255, 0.02) 40%,
+
+    rgba(255, 255, 255, 0.01) 60%,
+
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(255, 255, 255, 0.02),
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 16px 48px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.luxury-card:hover {
+  transform: perspective(1000px) translateZ(20px) scale(1.02);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(255, 255, 255, 0.02),
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 16px 48px rgba(0, 0, 0, 0.2);
+  border-color: rgba(198, 162, 85, 0.4);
+}
+
+.luxury-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: none;
+  opacity: 0;
+}
+
+.luxury-card:hover::after {
+  opacity: 0;
+}
+
+/* Luxury shine animation */
+@keyframes borderShine {
+  0%, 10% {
+    background-position: 200% 0;
+  }
+  90%, 100% {
+    background-position: -200% 0;
+  }
+}
+
+.luxury-shine {
+  position: relative;
+}
+
+.luxury-shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(198, 162, 85, 0.1) 0%,
+    rgba(198, 162, 85, 0.1) 35%,
+    rgba(198, 162, 85, 0.8) 49%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(198, 162, 85, 0.8) 51%,
+    rgba(198, 162, 85, 0.1) 65%,
+    rgba(198, 162, 85, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.luxury-shine:hover::before {
+  opacity: 1;
+  animation: borderShine 2s ease-in-out infinite;
+}
+
+/* Additional hover effect */
+.luxury-card-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.luxury-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: none;
+}
+
+/* Glass effect */
+.glass-effect {
+  background: linear-gradient(
+    135deg,
+    rgba(198, 162, 85, 0.05) 0%,
+    rgba(0, 0, 0, 0.7) 49%,
+    rgba(198, 162, 85, 0.1) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(198, 162, 85, 0.2);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 30px rgba(198, 162, 85, 0.05);
+}
+
+.glass-effect:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(198, 162, 85, 0.1) 0%,
+    rgba(0, 0, 0, 0.75) 49%,
+    rgba(198, 162, 85, 0.15) 100%
+  );
+  border-color: rgba(198, 162, 85, 0.3);
+  box-shadow: none;
+}
+
+/* Metallic shine animation */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shine {
+  animation: shine 2s infinite;
+}
+
+/* Luxury Card Styles */
+.luxury-card-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--luxury-gold-300), 0.1) 0%,
+    transparent 50%,
+    rgba(var(--luxury-gold-300), 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.luxury-card-gradient:hover::before {
+  opacity: 1;
+}
+
+.luxury-card-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(var(--luxury-gold-300), 0.03) 45%,
+    rgba(var(--luxury-gold-300), 0.05) 50%,
+    rgba(var(--luxury-gold-300), 0.03) 55%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease-in-out;
+}
+
+.luxury-card-gradient:hover .luxury-card-shine {
+  transform: translateX(100%);
+}
+
+/* Keep existing card styles for backward compatibility */
+.service-card {
+  @apply luxury-card;
+}
+
+/* Luxury text shimmer effect */
+.text-shimmer-luxury {
+  background: linear-gradient(
+    to right,
+    #B8860B 20%,
+    #FFD700 30%,
+    #DAA520 70%,
+    #B8860B 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShimmer 8s ease-in-out infinite alternate;
+}
+
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Luxury gradient animation */
+.animate-gradient-luxury {
+  background-size: 200% 200%;
+  animation: gradient 8s linear infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Luxury card hover effect */
+.luxury-card-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.luxury-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: none;
+}
+
+/* Glass morphism effect */
+.glass-effect-luxury {
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(184, 134, 11, 0.125);
+}
+
+/* Metallic gradient */
+.bg-metallic-gradient-luxury {
+  background: linear-gradient(
+    45deg,
+    #B8860B,
+    #FFD700,
+    #DAA520,
+    #B8860B
+  );
+}
+
+/* Luxury background pattern */
+.luxury-pattern {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8860B' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Card glow and hover effects */
+.service-card {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Shine effect */
+.shine-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(184, 134, 11, 0.1),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.service-card:hover .shine-effect {
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  from { left: -100%; }
+  to { left: 200%; }
+}
+
+/* Enhanced focus styles */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #c6a255;
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Luxury button focus */
+button:focus {
+  box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.3),
+              0 0 0 4px rgba(184, 134, 11, 0.1);
+}
+
+/* Enhanced section spacing */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.1), transparent);
+}
+
+/* Responsive container padding */
+.container {
+  padding-left: max(1rem, calc((100vw - 1280px) / 2));
+  padding-right: max(1rem, calc((100vw - 1280px) / 2));
+}
+
+/* Responsive typography */
+@media (min-width: 640px) {
+  h1 {
+    letter-spacing: -0.06em;
+  }
+  
+  p {
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    rgba(184, 134, 11, 0.3),
+    rgba(218, 165, 32, 0.3)
+  );
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(184, 134, 11, 0.5),
+    rgba(218, 165, 32, 0.5)
+  );
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for testimonials section while maintaining functionality */
+.testimonials-grid {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.testimonials-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Animations */
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@layer base {
+  :root {
+    --luxury-gold-300: 255, 215, 0;
+  }
+
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@layer components {
+ /* CTA Text Single Line */
+  .cta-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  /* Ensure buttons maintain consistent width */
+  .btn-cta {
+    min-width: max-content;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .luxury-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(var(--luxury-gold-300), 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(var(--luxury-gold-300), 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-metallic-gradient {
+    background: linear-gradient(
+      125deg,
+      #000000 0%,
+      #1a1a1a 25%,
+      #262626 50%,
+      #1a1a1a 75%,
+      #000000 100%
+    );
+  }
+
+  .animate-gradient {
+    animation: gradientShift 8s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  .text-shimmer {
+    background: linear-gradient(
+      to right,
+      rgb(var(--luxury-gold-300)) 20%,
+      #ffffff 30%,
+      rgb(var(--luxury-gold-300)) 40%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer 4s ease-in-out infinite;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(60px, 60px);
+  }
+}
+
+/* Curved Footer */
+.curved-footer {
+  position: relative;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+  isolation: isolate;
+}
+
+.curved-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, #000);
+  z-index: -1;
+}
+
+.curved-footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile Footer */
+@media (max-width: 768px) {
+  .curved-footer::before {
+    clip-path: ellipse(100% 100% at 50% 100%);
+  }
+}
+/* Pricing Card Icon */
+.pricing-card-icon {
+  @apply flex items-center justify-center w-12 h-12 mb-4 rounded-full;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--luxury-gold-300), 0.1),
+    rgba(var(--luxury-gold-300), 0.05)
+  );
+  border: 1px solid rgba(var(--luxury-gold-300), 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.pricing-card-icon svg {
+  @apply w-6 h-6;
+  color: rgb(var(--luxury-gold-300));
+}
+
+.pricing-card:hover .pricing-card-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--luxury-gold-300), 0.15),
+    rgba(var(--luxury-gold-300), 0.1)
+  );
+  border-color: rgba(var(--luxury-gold-300), 0.2);
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Pricing Card - Extends Luxury Card */
+.pricing-card {
+  @apply luxury-card;
+  padding: 1.5rem;
+  min-height: 380px;
+  gap: 1rem;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 8px 24px rgba(198, 162, 85, 0.1),
+    0 16px 32px rgba(198, 162, 85, 0.08),
+    0 24px 48px rgba(198, 162, 85, 0.05);
+  border-color: rgba(198, 162, 85, 0.3);
+}
+
+/* Navbar styles */
+.nav-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.98),
+    rgba(0, 0, 0, 0.95)
+  );
+}
