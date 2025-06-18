@@ -239,6 +239,7 @@ const faqSchema = {
 }
 
 import React from 'react';
+import ExitIntentPopup from '@/components/ui/ExitIntentPopup';
 
 export default function RootLayout({
   children,
@@ -266,6 +267,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} min-h-screen bg-black antialiased text-white`}>
         {children}
+        <ExitIntentPopup />
       </body>
     </html>
   )
