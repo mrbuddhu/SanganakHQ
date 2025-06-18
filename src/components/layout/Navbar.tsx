@@ -98,7 +98,7 @@ export default function Navbar() {
       className="fixed bottom-2 sm:bottom-3 md:bottom-4 left-0 right-0 flex justify-center z-50"
       style={{ transform: 'translateZ(0)' }}
     >
-      <div className="relative w-[95%] sm:w-[90%] md:w-fit">
+      <div className="relative w-[75%] sm:w-[70%] md:w-fit ml-0 mr-16 sm:mr-20 md:mr-0">
         <div className="absolute inset-0 nav-blur rounded-full -z-10" />
         <div className="px-3 sm:px-4 md:px-8 h-[50px] sm:h-[60px] md:h-[80px] flex items-center justify-between space-x-3 sm:space-x-4 md:space-x-8 rounded-full border border-[#c6a255]/20 bg-black/40">
           {/* Logo */}
