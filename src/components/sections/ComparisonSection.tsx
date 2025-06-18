@@ -61,10 +61,10 @@ export default function ComparisonSection() {
         </motion.div>
         
         <div className="relative">
-          <div className="bg-gray-900/50 backdrop-blur-sm border border-luxury-gold-300/20 rounded-2xl overflow-hidden">
+          <div className="bg-black/70 backdrop-blur-sm border border-luxury-gold-300/30 rounded-2xl overflow-hidden shadow-[0_4px_32px_0_rgba(198,162,85,0.08)]">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
               {/* Feature Column */}
-              <div className="bg-black/30 p-8 border-b lg:border-b-0 lg:border-r border-luxury-gold-300/10">
+              <div className="bg-black/40 p-8 border-b lg:border-b-0 lg:border-r border-luxury-gold-300/10">
                 <h3 className="text-xl font-bold text-luxury-gold-300 mb-8 text-center lg:text-left">Features</h3>
                 <div className="space-y-8">
                   {comparisonData.map((item, index) => (
@@ -76,15 +76,15 @@ export default function ComparisonSection() {
                       viewport={{ once: true }}
                       className="flex items-center min-h-[60px]"
                     >
-                      <span className="text-gray-300 font-medium text-center lg:text-left">{item.feature}</span>
+                      <span className="text-gray-200 font-semibold text-center lg:text-left tracking-wide">{item.feature}</span>
                     </motion.div>
                   ))}
                 </div>
               </div>
               
               {/* Competitors Column */}
-              <div className="bg-red-500/5 p-8 border-b lg:border-b-0 lg:border-r border-luxury-gold-300/10">
-                <h3 className="text-xl font-bold text-red-400 mb-8 text-center">Other Agencies</h3>
+              <div className="bg-black/30 p-8 border-b lg:border-b-0 lg:border-r border-luxury-gold-300/10">
+                <h3 className="text-xl font-bold text-gray-400 mb-8 text-center">Other Agencies</h3>
                 <div className="space-y-8">
                   {comparisonData.map((item, index) => (
                     <motion.div
@@ -96,10 +96,10 @@ export default function ComparisonSection() {
                       className="flex items-center justify-center min-h-[60px]"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center">
-                          <X className="w-4 h-4 text-red-400" />
+                        <div className="w-6 h-6 rounded-full bg-gray-700/30 flex items-center justify-center">
+                          <X className="w-4 h-4 text-gray-400" />
                         </div>
-                        <span className="text-gray-400 text-center">{item.competitors}</span>
+                        <span className="text-gray-400 text-center font-medium">{item.competitors}</span>
                       </div>
                     </motion.div>
                   ))}
@@ -107,8 +107,8 @@ export default function ComparisonSection() {
               </div>
               
               {/* Sanganak Column */}
-              <div className="bg-luxury-gold-300/5 p-8">
-                <h3 className="text-xl font-bold text-luxury-gold-300 mb-8 text-center">Sanganak Premium</h3>
+              <div className="bg-luxury-gold-300/10 p-8 shadow-[0_0_32px_0_rgba(198,162,85,0.12)]">
+                <h3 className="text-xl font-extrabold text-luxury-gold-300 mb-8 text-center drop-shadow-lg">Sanganak Premium</h3>
                 <div className="space-y-8">
                   {comparisonData.map((item, index) => (
                     <motion.div
@@ -120,10 +120,10 @@ export default function ComparisonSection() {
                       className="flex items-center justify-center min-h-[60px]"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-luxury-gold-300/20 flex items-center justify-center">
-                          <Check className="w-4 h-4 text-luxury-gold-300" />
+                        <div className="w-6 h-6 rounded-full bg-luxury-gold-300/30 flex items-center justify-center shadow-[0_0_8px_0_rgba(198,162,85,0.18)]">
+                          <Check className="w-4 h-4 text-luxury-gold-300 drop-shadow" />
                         </div>
-                        <span className={`font-medium text-center ${item.sanganakHighlight ? 'text-luxury-gold-300' : 'text-gray-300'}`}>
+                        <span className={`font-bold text-center tracking-wide ${item.sanganakHighlight ? 'text-luxury-gold-300 drop-shadow' : 'text-gray-200'}`}>
                           {item.sanganak}
                         </span>
                       </div>

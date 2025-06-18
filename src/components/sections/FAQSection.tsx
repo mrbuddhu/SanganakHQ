@@ -18,7 +18,7 @@ export default function FAQSection() {
     },
     {
       question: "What industries do you specialize in?",
-      answer: "While we excel across various sectors, we have particular expertise in luxury brands, financial services, technology companies, and high-end retail. Our adaptable approach ensures success regardless of industry."
+      answer: "We serve a wide range of industries, including luxury brands, financial services, technology, healthcare, e-commerce, real estate, education, hospitality, startups, and enterprises. Our adaptable approach ensures success for ambitious clients in any sector."
     },
     {
       question: "How do you handle project timelines and budgets?",
@@ -50,24 +50,19 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className="relative"
             >
-              <LuxuryCard className="p-0 overflow-hidden">
+              <LuxuryCard className="p-0 overflow-visible">
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-luxury-gold-300/20 rounded-lg"
+                  className="w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-luxury-gold-300/20 rounded-lg pr-16"
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center">
                     <h3 className="text-lg font-semibold text-luxury-gold-300 pr-4">
                       {faq.question}
                     </h3>
-                    <ChevronDown
-                      className={`w-5 h-5 text-luxury-gold-300 transition-transform duration-300 ${
-                        openFaq === index ? 'rotate-180' : ''
-                      }`}
-                    />
                   </div>
                 </button>
-                
                 <motion.div
                   initial={false}
                   animate={{
@@ -84,6 +79,14 @@ export default function FAQSection() {
                   </div>
                 </motion.div>
               </LuxuryCard>
+              {/* Absolute +/− icon outside card on right */}
+              <span
+                onClick={() => toggleFaq(index)}
+                className="absolute top-1/2 right-4 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-2xl font-bold text-luxury-gold-300 bg-black/80 rounded-full shadow-lg cursor-pointer transition-transform duration-200 hover:scale-110 z-10"
+                aria-hidden="true"
+              >
+                {openFaq === index ? '−' : '+'}
+              </span>
             </motion.div>
           ))}
         </div>

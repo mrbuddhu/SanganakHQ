@@ -25,7 +25,7 @@ const plans = [
       author: "Shyam Sharma @Interio",
       quote: "Our monthly revenue grew from $15k to $105k in just 3 months after the brand transformation."
     },
-    cta: "Start My Brand Upgrade",
+    cta: "Unlock Essentials",
     popular: false,
     availability: "Only 3 spots left this month"
   },
@@ -45,7 +45,7 @@ const plans = [
       author: "Shubham Kumar @GlobalEats",
       quote: "Our daily orders increased from 500 to 2,500 in 2 months with their full-service solution."
     },
-    cta: "Scale My Business Now",
+    cta: "Boost My Brand",
     popular: false,
     availability: "Only 2 spots left this month"
   },
@@ -66,7 +66,7 @@ const plans = [
       author: "Ankit Kumar @Burgerrr",
       quote: "Our monthly revenue skyrocketed from $120k to $720k in just 45 days with their end-to-end solution."
     },
-    cta: "Build My Market Leader",
+    cta: "Claim Market Leadership",
     popular: true,
     availability: "Only 1 spot left this month"
   },
@@ -87,7 +87,7 @@ const plans = [
       author: "Rahul Kumar @NFTCollect",
       quote: "Our platform's monthly volume grew from $2M to $16M with their comprehensive digital solution."
     },
-    cta: "Transform My Enterprise",
+    cta: "Unlock Elite Partnership",
     popular: false,
     availability: "By application only"
   }
@@ -199,7 +199,7 @@ export default function PricingSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative w-full h-full flex flex-col gap-4"
               >
-                <div className="relative">
+                <div className="relative flex-grow">
                   {plan.popular && (
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-luxury-gold-300 text-black px-6 py-1.5 rounded-full text-xs font-medium z-50 whitespace-nowrap">
                       Most Popular
@@ -208,14 +208,14 @@ export default function PricingSection() {
                   <LuxuryCard 
                     className="h-full w-full transition-all duration-300 hover:shadow-xl bg-black border-luxury-gold-300/20 p-4 pt-8 md:p-6 md:pt-10 flex flex-col justify-between relative overflow-visible"
                   >
-                  <div className="flex flex-col h-full">
-                    <div className="flex-grow">
-                      <motion.div
-                        variants={contentVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                    <div className="flex flex-col h-full">
+                      <div className="flex-grow">
+                        <motion.div
+                          variants={contentVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
                           className="flex items-center gap-3 mb-6"
                         >
                           <div className="bg-luxury-gold-300/5 p-2 rounded-lg">
@@ -227,14 +227,14 @@ export default function PricingSection() {
                           <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
                             {plan.name}
                           </h3>
-                      </motion.div>
+                        </motion.div>
 
                         <motion.div
-                        variants={contentVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                          variants={contentVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                           className="mb-6"
                         >
                           <div className="flex items-center gap-2">
@@ -246,11 +246,11 @@ export default function PricingSection() {
                         </motion.div>
 
                         <motion.div
-                        variants={contentVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                          variants={contentVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
                           className="text-sm text-luxury-gold-300/70 mb-8"
                         >
                           <div className="flex items-center gap-2 mb-3">
@@ -260,33 +260,32 @@ export default function PricingSection() {
                           <div className="h-px bg-gradient-to-r from-transparent via-luxury-gold-300/20 to-transparent"></div>
                         </motion.div>
 
-                      <motion.div
-                        variants={contentVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                        <motion.div
+                          variants={contentVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
                           className="mb-8"
                         >
                           <div className="text-sm uppercase tracking-wider text-luxury-gold-300/70 mb-4">What's Included</div>
                           <ul className="space-y-3">
-                        {plan.features.map((feature, i) => (
-                          <motion.li
-                            key={i}
-                            variants={contentVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
+                            {plan.features.map((feature, i) => (
+                              <motion.li
+                                key={i}
+                                variants={contentVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 + 0.6 + (i * 0.1) }}
                                 className="flex items-start gap-3 text-sm"
-                          >
+                              >
                                 <span className="text-luxury-gold-300 mt-1 flex-shrink-0 text-xs">●</span>
                                 <span className="text-gray-300 leading-relaxed">{feature}</span>
-                          </motion.li>
-                        ))}
+                              </motion.li>
+                            ))}
                           </ul>
                         </motion.div>
-
                       </div>
 
                       <motion.div
@@ -330,25 +329,37 @@ export default function PricingSection() {
                       </motion.div>
                     </div>
                   </LuxuryCard>
-                    </div>
+                </div>
 
-                    <motion.div
-                      variants={contentVariants}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 1.0 }}
+                {/* CTA Button outside the card */}
+                <motion.div
+                  variants={contentVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 1.4 }}
+                  className="relative z-10"
                 >
-                  <Link href={CTA_URL} target="_blank" rel="noopener noreferrer">
-                    <LuxuryButton
-                      variant="primary"
-                      size="sm"
-                      className="w-full min-h-[48px] text-center group relative overflow-hidden text-sm font-medium"
-                    >
-                      <span className="relative z-10 truncate">{plan.cta}</span>
-                    </LuxuryButton>
-                  </Link>
-                    </motion.div>
+                  <LuxuryButton
+                    as="a"
+                    href={
+                      plan.name === "Essentials"
+                        ? "https://cal.com/sanganak/essentialquote"
+                        : plan.name === "Accelerator"
+                        ? "https://cal.com/sanganak/acceleratorquote"
+                        : plan.name === "Domination"
+                        ? "https://cal.com/sanganak/dominationquote"
+                        : plan.name === "Elite"
+                        ? "https://cal.com/sanganak/elitequote"
+                        : "https://cal.com/sanganak/strategycall"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-center text-base font-bold py-3 px-6"
+                  >
+                    {plan.cta}
+                  </LuxuryButton>
+                </motion.div>
               </motion.div>
             </div>
           ))}
