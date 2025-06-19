@@ -81,7 +81,7 @@ export default function ExitIntentPopup({ isEnabled = true }: ExitIntentPopupPro
               </div>
               
               <h3 className="text-2xl font-bold bg-gradient-to-r from-[#c6a255] via-[#e9d5a1] to-[#c6a255] text-transparent bg-clip-text mb-3">
-                Exclusive 30% Off Launch Offer
+                Exclusive 30% Off Anniversary Month
               </h3>
               
               <p className="text-gray-300 text-base leading-relaxed mb-6">
@@ -93,7 +93,7 @@ export default function ExitIntentPopup({ isEnabled = true }: ExitIntentPopupPro
                 <div className="grid gap-3">
                   <div className="flex items-center gap-3">
                     <CheckCircle size={16} className="text-[#c6a255] flex-shrink-0" />
-                    <span className="text-sm text-gray-300">Save up to ₹3,000 on premium packages</span>
+                    <span className="text-sm text-gray-300">30% discount on all premium packages</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle size={16} className="text-[#c6a255] flex-shrink-0" />
@@ -101,7 +101,7 @@ export default function ExitIntentPopup({ isEnabled = true }: ExitIntentPopupPro
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle size={16} className="text-[#c6a255] flex-shrink-0" />
-                    <span className="text-sm text-gray-300">Free 1-hour strategy consultation (₹5,000 value)</span>
+                    <span className="text-sm text-gray-300">Free 1-hour strategy consultation ($60 value)</span>
                   </div>
                 </div>
               </div>
