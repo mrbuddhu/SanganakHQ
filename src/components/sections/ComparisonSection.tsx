@@ -138,7 +138,7 @@ export default function ComparisonSection() {
           className="text-center mt-12"
         >
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            We don't just build websites—we create digital experiences that drive results. 
+            We don't just build/design Products—we create digital experiences that drive results. 
             Our premium approach ensures your project stands out in today's competitive landscape.
           </p>
         </motion.div>
