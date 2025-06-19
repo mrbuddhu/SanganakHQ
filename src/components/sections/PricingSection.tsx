@@ -208,14 +208,14 @@ export default function PricingSection() {
                   <LuxuryCard 
                     className="h-full w-full transition-all duration-300 hover:shadow-xl bg-black border-luxury-gold-300/20 p-4 pt-8 md:p-6 md:pt-10 flex flex-col justify-between relative overflow-visible"
                   >
-                    <div className="flex flex-col h-full">
-                      <div className="flex-grow">
-                        <motion.div
-                          variants={contentVariants}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                  <div className="flex flex-col h-full">
+                    <div className="flex-grow">
+                      <motion.div
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
                           className="flex items-center gap-3 mb-6"
                         >
                           <div className="bg-luxury-gold-300/5 p-2 rounded-lg">
@@ -227,14 +227,14 @@ export default function PricingSection() {
                           <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
                             {plan.name}
                           </h3>
-                        </motion.div>
+                      </motion.div>
 
                         <motion.div
-                          variants={contentVariants}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                           className="mb-6"
                         >
                           <div className="flex items-center gap-2">
@@ -246,11 +246,11 @@ export default function PricingSection() {
                         </motion.div>
 
                         <motion.div
-                          variants={contentVariants}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
                           className="text-sm text-luxury-gold-300/70 mb-8"
                         >
                           <div className="flex items-center gap-2 mb-3">
@@ -260,30 +260,30 @@ export default function PricingSection() {
                           <div className="h-px bg-gradient-to-r from-transparent via-luxury-gold-300/20 to-transparent"></div>
                         </motion.div>
 
-                        <motion.div
-                          variants={contentVariants}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                      <motion.div
+                        variants={contentVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
                           className="mb-8"
                         >
                           <div className="text-sm uppercase tracking-wider text-luxury-gold-300/70 mb-4">What's Included</div>
                           <ul className="space-y-3">
-                            {plan.features.map((feature, i) => (
-                              <motion.li
-                                key={i}
-                                variants={contentVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
+                        {plan.features.map((feature, i) => (
+                          <motion.li
+                            key={i}
+                            variants={contentVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 + 0.6 + (i * 0.1) }}
                                 className="flex items-start gap-3 text-sm"
-                              >
+                          >
                                 <span className="text-luxury-gold-300 mt-1 flex-shrink-0 text-xs">●</span>
                                 <span className="text-gray-300 leading-relaxed">{feature}</span>
-                              </motion.li>
-                            ))}
+                          </motion.li>
+                        ))}
                           </ul>
                         </motion.div>
                       </div>
@@ -329,18 +329,18 @@ export default function PricingSection() {
                       </motion.div>
                     </div>
                   </LuxuryCard>
-                </div>
+                    </div>
 
                 {/* CTA Button outside the card */}
-                <motion.div
-                  variants={contentVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
+                    <motion.div
+                      variants={contentVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 + 1.4 }}
                   className="relative z-10"
                 >
-                  <LuxuryButton
+                    <LuxuryButton
                     as="a"
                     href={
                       plan.name === "Essentials"
@@ -358,8 +358,8 @@ export default function PricingSection() {
                     className="w-full text-center text-base font-bold py-3 px-6"
                   >
                     {plan.cta}
-                  </LuxuryButton>
-                </motion.div>
+                    </LuxuryButton>
+                    </motion.div>
               </motion.div>
             </div>
           ))}

@@ -97,7 +97,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://twitter.com/sanganakorg" 
+                href="https://x.com/sanganakorg" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#c6a255] hover:text-[#e9d5a1] transition-colors"

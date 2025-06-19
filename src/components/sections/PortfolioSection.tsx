@@ -12,21 +12,21 @@ const PortfolioSection = () => {
       description: "Modern crypto wallet platform with seamless SSO integration",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1744705146/Chainwallet_ki4bvh.png",
       tags: ["Webflow", "Web3", "Crypto", "Authentication"],
-      caseStudyLink: "#"
+      caseStudyLink: "/case-studies/chainwallet"
     },
     {
       title: "Realtor",
       description: "Premium real estate platform with advanced property search",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1744705146/Realtor_apikwi.png",
       tags: ["Webflow", "Real Estate", "Property Search", "Booking System"],
-      caseStudyLink: "#"
+      caseStudyLink: "/case-studies/realtor"
     },
     {
       title: "MyAstro",
       description: "Personalized astrology platform offering daily insights and guidance powered by advanced algorithms.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1746695836/YourAstro_mtphz9.png",
       tags: ["Astrology", "Personalized", "Web App"],
-      caseStudyLink: "#"
+      caseStudyLink: "/case-studies/myastro"
     },
     {
       title: "NFTCollect",
@@ -68,7 +68,7 @@ const PortfolioSection = () => {
       description: "Data analytics SaaS platform with real-time insights",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1744705145/Torch_qikktc.png",
       tags: ["Webflow", "SaaS", "Analytics", "Dashboard"],
-      caseStudyLink: "#"
+      caseStudyLink: "/case-studies/beam-analytics"
     },
   ];
 

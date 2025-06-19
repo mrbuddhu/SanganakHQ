@@ -128,7 +128,7 @@ const jsonLd = {
     availableLanguage: ['English', 'Spanish', 'French', 'German', 'Japanese', 'Chinese']
   },
   sameAs: [
-    'https://twitter.com/sanganakorg',
+    'https://x.com/sanganakorg',
     'https://linkedin.com/company/sanganakorg',
     'https://github.com/sanganakorg',
     'https://instagram.com/sanganakorg',

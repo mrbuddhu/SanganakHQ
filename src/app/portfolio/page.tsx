@@ -20,7 +20,7 @@ export default function Portfolio() {
       title: "Creators Home",
       description: "SaaS platform revolutionizing content creation with AI-powered tools, analytics, and monetization solutions for digital creators.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/creatorshome_zzokl2.jpg",
-      caseStudyLink: "/case-studies#creators-home",
+      caseStudyLink: "/case-studies/creators-home",
       liveLink: "https://creatorshome.xyz",
       tags: ["SaaS", "Creator Economy", "AI Tools", "Analytics"]
     },
@@ -28,21 +28,21 @@ export default function Portfolio() {
       title: "NFTCollect",
       description: "Cross-platform mobile app for NFT collectors featuring real-time price tracking, portfolio management, and marketplace integration.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750710/nftcollect_g3ygja.jpg",
-      caseStudyLink: "/case-studies#nftcollect",
+      caseStudyLink: "/case-studies/nftcollect",
       tags: ["React Native", "Mobile App", "Web3", "NFT"]
     },
     {
       title: "Burgerrr",
       description: "Feature-rich food delivery mobile app specializing in gourmet burgers, with real-time order tracking and personalized recommendations.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/burgerrr_xhsb8c.jpg",
-      caseStudyLink: "/case-studies#burgerrr",
+      caseStudyLink: "/case-studies/burgerrr",
       tags: ["React Native", "Mobile App", "Food Delivery", "Location Services"]
     },
     {
       title: "Interio",
       description: "Modern interior design platform showcasing luxury spaces and connecting designers with clients.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/interio_kq1fky.jpg",
-      caseStudyLink: "/case-studies#interio",
+      caseStudyLink: "/case-studies/interio",
       liveLink: "https://interio-eta.vercel.app/",
       tags: ["Interior Design", "Luxury", "Marketplace"]
     },
@@ -50,14 +50,14 @@ export default function Portfolio() {
       title: "GlobalEats",
       description: "International culinary platform connecting food enthusiasts with authentic global cuisines.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/globaleats_oqjzn8.jpg",
-      caseStudyLink: "/case-studies#globaleats",
+      caseStudyLink: "/case-studies/globaleats",
       tags: ["Food Tech", "Marketplace", "Culture"]
     },
     {
       title: "MedicoBuddy",
       description: "SaaS solution transforming medical education with AI-driven learning tools, case management, and professional networking for healthcare professionals.",
       image: "https://res.cloudinary.com/sanganak/image/upload/v1740750711/medicobuddy_fudnrl.jpg",
-      caseStudyLink: "/case-studies#medicobuddy",
+      caseStudyLink: "/case-studies/medicobuddy",
       tags: ["SaaS", "Medical Education", "AI/ML", "Healthcare"]
     }
   ];

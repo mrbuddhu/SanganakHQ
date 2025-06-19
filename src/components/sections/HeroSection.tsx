@@ -59,7 +59,7 @@ export default function HeroSection({
                       className="object-cover"
                     />
                   </div>
-                  <div className="w-6 h-6 rounded-full border-2 border-luxury-gold-300 overflow-hidden bg-gray-800 flex items-center justify-center ring-2 ring-black">
+                  <div className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden bg-gray-800 flex items-center justify-center ring-2 ring-black">
                     <Image
                       src={`https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&auto=format&fit=crop&q=80`}
                       alt="Client 4"
@@ -68,7 +68,7 @@ export default function HeroSection({
                       className="object-cover"
                     />
                   </div>
-                  <div className="w-6 h-6 rounded-full border-2 border-luxury-gold-300 overflow-hidden bg-gray-800 flex items-center justify-center ring-2 ring-black">
+                  <div className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden bg-gray-800 flex items-center justify-center ring-2 ring-black">
                     <Image
                       src={`https://images.unsplash.com/photo-1560250097-0b93528c311a?w=32&h=32&auto=format&fit=crop&q=80`}
                       alt="Client 5"

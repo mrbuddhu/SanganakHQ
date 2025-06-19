@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { ArrowLeft, ArrowRight, Phone, MessageSquare, Share2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Phone, MessageSquare, Share2, Twitter as X, Linkedin, Facebook, Copy, Check, ExternalLink } from 'lucide-react';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import LuxuryButton from '@/components/ui/LuxuryButton';
@@ -130,6 +130,78 @@ const additionalDetails: Record<string, {
       { label: 'Delivery Time', value: '2x', period: 'faster' },
       { label: 'Restaurant Partners', value: '500+', period: 'active vendors' }
     ]
+  },
+  'chainwallet': {
+    processSteps: [
+      { title: 'Market Research', description: 'Analyzed crypto wallet market trends and user adoption barriers.' },
+      { title: 'Security Design', description: 'Implemented advanced security protocols and multi-factor authentication.' },
+      { title: 'UX Development', description: 'Created intuitive wallet interface with seamless SSO integration.' },
+      { title: 'Testing & Launch', description: 'Conducted extensive security testing and launched with partner integrations.' }
+    ],
+    gallery: [
+      '/portfolio/chainwallet/dashboard.jpg',
+      '/portfolio/chainwallet/security.jpg',
+      '/portfolio/chainwallet/transactions.jpg'
+    ],
+    metrics: [
+      { label: 'User Adoption', value: '9x', period: 'growth' },
+      { label: 'Onboarding Speed', value: '2.5x', period: 'faster' },
+      { label: 'Security Rating', value: '99.9%', period: 'compliance' }
+    ]
+  },
+  'realtor': {
+    processSteps: [
+      { title: 'Industry Analysis', description: 'Researched real estate market needs and user behavior patterns.' },
+      { title: 'Platform Design', description: 'Designed advanced search interface with virtual tour integration.' },
+      { title: 'Development', description: 'Built comprehensive platform with booking system and property management.' },
+      { title: 'Integration & Launch', description: 'Integrated with MLS systems and launched with real estate partners.' }
+    ],
+    gallery: [
+      '/portfolio/realtor/search.jpg',
+      '/portfolio/realtor/virtual-tour.jpg',
+      '/portfolio/realtor/booking.jpg'
+    ],
+    metrics: [
+      { label: 'Property Inquiries', value: '6x', period: 'increase' },
+      { label: 'Discovery Time', value: '3.5x', period: 'faster' },
+      { label: 'User Satisfaction', value: '95%', period: 'rating' }
+    ]
+  },
+  'myastro': {
+    processSteps: [
+      { title: 'User Research', description: 'Analyzed astrology market and personalization requirements.' },
+      { title: 'AI Development', description: 'Built personalization engine with advanced astrology algorithms.' },
+      { title: 'Interface Design', description: 'Created engaging UI with interactive birth chart visualizations.' },
+      { title: 'Launch & Optimization', description: 'Launched platform with continuous AI model improvements.' }
+    ],
+    gallery: [
+      '/portfolio/myastro/readings.jpg',
+      '/portfolio/myastro/charts.jpg',
+      '/portfolio/myastro/insights.jpg'
+    ],
+    metrics: [
+      { label: 'User Engagement', value: '8x', period: 'increase' },
+      { label: 'Active Users', value: '4.5x', period: 'growth' },
+      { label: 'Retention Rate', value: '92%', period: 'monthly' }
+    ]
+  },
+  'beam-analytics': {
+    processSteps: [
+      { title: 'Requirements Analysis', description: 'Analyzed enterprise data processing needs and performance requirements.' },
+      { title: 'Architecture Design', description: 'Designed scalable analytics architecture with real-time processing.' },
+      { title: 'Platform Development', description: 'Built comprehensive analytics platform with interactive dashboards.' },
+      { title: 'Enterprise Integration', description: 'Integrated with existing enterprise systems and deployed at scale.' }
+    ],
+    gallery: [
+      '/portfolio/beam-analytics/dashboard.jpg',
+      '/portfolio/beam-analytics/analytics.jpg',
+      '/portfolio/beam-analytics/insights.jpg'
+    ],
+    metrics: [
+      { label: 'Processing Speed', value: '7.5x', period: 'improvement' },
+      { label: 'Insight Generation', value: '4x', period: 'faster' },
+      { label: 'Client Satisfaction', value: '98%', period: 'rating' }
+    ]
   }
 };
 
@@ -138,39 +210,67 @@ export default function CaseStudy() {
   const study = caseStudies.find(s => s.id === id);
   const details = additionalDetails[id as string];
   const [shareStatus, setShareStatus] = useState<'idle' | 'copied'>('idle');
+  const [showShareDropdown, setShowShareDropdown] = useState(false);
   const isSanganakProduct = ['medicobuddy', 'creators-home'].includes(id as string);
 
   if (!study || !details) return <div>Case study not found</div>;
 
+  const shareUrl = `https://sanganak.org/case-studies/${id}`;
+  const shareTitle = study.title;
+  const shareText = `Check out this amazing case study: ${study.title}`;
+
   const handleShare = async () => {
-    const url = `https://sanganak.org/case-studies/${id}`;
-    
-    // Try native sharing first
+    // Try native sharing first (mobile)
     if (navigator.share) {
       try {
         await navigator.share({
-          title: study.title,
-          text: `Check out this case study: ${study.title}`,
-          url: url
+          title: shareTitle,
+          text: shareText,
+          url: shareUrl
         });
       } catch (err) {
-        // Fallback to clipboard if native sharing fails
-        await copyToClipboard();
+        // If native sharing fails, show dropdown
+        setShowShareDropdown(!showShareDropdown);
       }
     } else {
-      // Fallback to clipboard if native sharing is not available
-      await copyToClipboard();
+      // Desktop: show share options
+      setShowShareDropdown(!showShareDropdown);
     }
   };
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(`https://sanganak.org/case-studies/${id}`);
+      await navigator.clipboard.writeText(shareUrl);
       setShareStatus('copied');
       setTimeout(() => setShareStatus('idle'), 2000);
+      setShowShareDropdown(false);
     } catch (err) {
       console.error('Failed to copy:', err);
     }
+  };
+
+  const shareOnX = () => {
+    const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+    window.open(xUrl, '_blank', 'width=550,height=420');
+    setShowShareDropdown(false);
+  };
+
+  const shareOnLinkedIn = () => {
+    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+    window.open(linkedinUrl, '_blank', 'width=550,height=420');
+    setShowShareDropdown(false);
+  };
+
+  const shareOnFacebook = () => {
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+    window.open(facebookUrl, '_blank', 'width=550,height=420');
+    setShowShareDropdown(false);
+  };
+
+  const shareOnPeerlist = () => {
+    const peerlistUrl = `https://peerlist.io/share?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareTitle)}`;
+    window.open(peerlistUrl, '_blank', 'width=550,height=420');
+    setShowShareDropdown(false);
   };
 
   return (
@@ -185,20 +285,89 @@ export default function CaseStudy() {
             className="max-w-4xl mb-12"
           >
             <div className="flex items-center justify-between mb-8">
-            <Link
-              href="/case-studies"
+              <Link
+                href="/case-studies"
                 className="inline-flex items-center text-luxury-gold-300 hover:text-luxury-gold-100 transition-colors"
-            >
-                <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Case Studies
-            </Link>
-              <button
-                onClick={handleShare}
-                className="inline-flex items-center justify-center w-10 h-10 bg-luxury-gold-900/30 hover:bg-luxury-gold-900/50 rounded-full text-luxury-gold-100 transition-colors"
-                title={shareStatus === 'copied' ? 'Link Copied!' : 'Share'}
               >
-                <Share2 className="w-5 h-5" />
-              </button>
+                <ArrowLeft className="w-5 h-5 mr-2" />
+                Back to Case Studies
+              </Link>
+              
+              {/* Share Button with Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={handleShare}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-luxury-gold-900/30 hover:bg-luxury-gold-900/50 rounded-full text-luxury-gold-100 transition-colors"
+                  title={shareStatus === 'copied' ? 'Link Copied!' : 'Share Case Study'}
+                >
+                  <Share2 className="w-4 h-4" />
+                  <span className="text-sm font-medium">Share</span>
+                </button>
+                
+                {/* Share Dropdown */}
+                {showShareDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    className="absolute top-12 right-0 bg-black/95 backdrop-blur-sm border border-luxury-gold-300/20 rounded-xl p-4 min-w-[240px] z-50 shadow-xl"
+                    onMouseLeave={() => setShowShareDropdown(false)}
+                  >
+                    <div className="space-y-2">
+                      <button
+                        onClick={shareOnX}
+                        className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-luxury-gold-300 hover:bg-luxury-gold-900/20 hover:text-luxury-gold-200 transition-colors"
+                      >
+                        <X className="w-4 h-4" />
+                        <span>Share on X</span>
+                      </button>
+                      
+                      <button
+                        onClick={shareOnLinkedIn}
+                        className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-luxury-gold-300 hover:bg-luxury-gold-900/20 hover:text-luxury-gold-200 transition-colors"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                        <span>Share on LinkedIn</span>
+                      </button>
+                      
+                      <button
+                        onClick={shareOnFacebook}
+                        className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-luxury-gold-300 hover:bg-luxury-gold-900/20 hover:text-luxury-gold-200 transition-colors"
+                      >
+                        <Facebook className="w-4 h-4" />
+                        <span>Share on Facebook</span>
+                      </button>
+                      
+                      <button
+                        onClick={shareOnPeerlist}
+                        className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-luxury-gold-300 hover:bg-luxury-gold-900/20 hover:text-luxury-gold-200 transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span>Share on Peerlist</span>
+                      </button>
+                      
+                      <div className="border-t border-luxury-gold-300/20 my-2"></div>
+                      
+                      <button
+                        onClick={copyToClipboard}
+                        className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-luxury-gold-300 hover:bg-luxury-gold-900/20 hover:text-luxury-gold-200 transition-colors"
+                      >
+                        {shareStatus === 'copied' ? (
+                          <>
+                            <Check className="w-4 h-4 text-green-400" />
+                            <span className="text-green-400">Link Copied!</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-4 h-4" />
+                            <span>Copy Link</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
