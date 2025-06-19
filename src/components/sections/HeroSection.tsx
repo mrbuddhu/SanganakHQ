@@ -201,10 +201,10 @@ export default function HeroSection({
             </div>
 
             {/* Trusted by line above client logos */}
-            <div className="text-gray-400 text-base font-medium mb-0 mt-0 text-center">Trusted by 15+ Global Brands</div>
+            <div className="text-gray-400 text-base font-medium mb-1 mt-4 sm:mt-6 md:mt-8 text-center">Trusted by 15+ Global Brands</div>
 
             {/* Client Logos Marquee */}
-            <div className="relative overflow-hidden mt-0 sm:mt-0 mb-0 sm:mb-0">
+            <div className="relative overflow-hidden mt-1 mb-0 sm:mb-0">
               <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-black to-transparent z-10" />
               <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-black to-transparent z-10" />
               <motion.div
