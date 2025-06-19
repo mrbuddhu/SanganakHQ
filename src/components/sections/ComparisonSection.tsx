@@ -10,16 +10,11 @@ export default function ComparisonSection() {
       sanganak: "2-8 weeks",
       sanganakHighlight: true
     },
-    {
-      feature: "Quality Assurance",
-      competitors: "Basic testing",
-      sanganak: "Comprehensive QA",
-      sanganakHighlight: true
-    },
+
     {
       feature: "Support & Maintenance",
       competitors: "Limited support",
-      sanganak: "Lifetime support",
+      sanganak: "Dedicated support",
       sanganakHighlight: true
     },
     {
