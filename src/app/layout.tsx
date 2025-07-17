@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 
 export const viewport: Viewport = {
@@ -9,8 +8,6 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false
 }
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'SANGANAK | #1 Premium IT Boutique | Global Luxury Digital Solutions',
@@ -265,7 +262,7 @@ export default function RootLayout({
         <link rel="preload" href="/Logo.ico" as="image" />
         <link rel="preload" href="/og-image.png" as="image" />
       </head>
-      <body className={`${inter.className} min-h-screen bg-black antialiased text-white`}>
+      <body className="min-h-screen bg-black antialiased text-white">
         {children}
         <ExitIntentPopup />
       </body>
