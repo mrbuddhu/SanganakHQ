@@ -12,7 +12,7 @@ export default function HeroSection({
 }) {
   return (
     // === START HERO SECTION ===
-    <section id="hero" className="relative min-h-screen py-2 sm:py-4 md:py-6 flex items-start overflow-x-hidden pb-[70px] sm:pb-0">
+        <section id="hero" className="relative min-h-screen py-2 sm:py-4 md:py-6 flex flex-col items-center justify-center overflow-x-hidden pb-[70px] sm:pb-0">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black">
