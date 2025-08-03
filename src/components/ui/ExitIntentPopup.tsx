@@ -140,49 +140,31 @@ export default function ExitIntentPopup({ isEnabled = true }: ExitIntentPopupPro
             {/* Urgency indicator */}
             <div className="flex items-center gap-2 text-red-400 text-sm font-medium mb-4">
               <Clock size={14} className="animate-pulse sm:w-4 sm:h-4" />
-              <span className="text-xs sm:text-sm">Wait! Don't Miss This Opportunity</span>
+              <span className="text-xs sm:text-sm">Special Offer for First-Time Clients</span>
+            </div>
+
+            {/* Slot availability warning */}
+            <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-3 mb-4">
+              <div className="flex items-center justify-center gap-2 text-red-400 text-sm font-medium">
+                <span className="animate-pulse">🔥</span>
+                <span className="text-xs sm:text-sm">Only 1 slot left this week!</span>
+              </div>
             </div>
 
             {/* Main content */}
             <div className="text-center mb-6">
               <div className="flex justify-center mb-4">
-                <div className="bg-[#c6a255]/10 p-2 sm:p-3 rounded-full">
-                  <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-[#c6a255]" />
-                </div>
+                <Zap size={32} className="text-[#c6a255] sm:w-8 sm:h-8" />
               </div>
-              
-              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#c6a255] via-[#e9d5a1] to-[#c6a255] text-transparent bg-clip-text mb-3">
-                Exclusive 30% Off Anniversary Month
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                Get 25% Off Your First Project
               </h3>
-              
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-                Since you're serious about transforming your business, we're offering an exclusive <span className="text-[#c6a255] font-semibold">30% discount</span> on any premium package - but only for the next 24 hours.
+              <p className="text-sm sm:text-base text-gray-300 mb-4">
+                New clients get an exclusive 25% discount on their first premium project with Sanganak.
               </p>
-
-              {/* Benefits */}
-              <div className="text-left mb-6">
-                <div className="grid gap-2 sm:gap-3">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <CheckCircle size={14} className="text-[#c6a255] flex-shrink-0 sm:w-4 sm:h-4" />
-                    <span className="text-xs sm:text-sm text-gray-300">30% discount on all premium packages</span>
-                  </div>
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <CheckCircle size={14} className="text-[#c6a255] flex-shrink-0 sm:w-4 sm:h-4" />
-                    <span className="text-xs sm:text-sm text-gray-300">Priority delivery (jump the queue)</span>
-                  </div>
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <CheckCircle size={14} className="text-[#c6a255] flex-shrink-0 sm:w-4 sm:h-4" />
-                    <span className="text-xs sm:text-sm text-gray-300">Free 1-hour strategy consultation ($60 value)</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Countdown timer effect */}
-              <div className="bg-gradient-to-r from-[#c6a255]/10 to-transparent p-3 sm:p-4 rounded-lg border border-[#c6a255]/20 mb-6">
-                <div className="flex items-center justify-center gap-2 text-[#c6a255]">
-                  <Clock size={14} className="animate-pulse sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm font-medium">This offer expires in 24 hours</span>
-                </div>
+              <div className="flex items-center justify-center gap-2 text-[#c6a255] text-sm font-medium">
+                <CheckCircle size={16} className="sm:w-4 sm:h-4" />
+                <span>Premium Quality • Guaranteed Results</span>
               </div>
             </div>
 
@@ -196,7 +178,7 @@ export default function ExitIntentPopup({ isEnabled = true }: ExitIntentPopupPro
                 className="w-full text-center font-bold text-sm sm:text-base py-2 sm:py-3"
                 onClick={closePopup}
               >
-                Claim 30% Discount Now
+                Claim 25% First-Time Discount
               </LuxuryButton>
               
               <button
@@ -210,7 +192,7 @@ export default function ExitIntentPopup({ isEnabled = true }: ExitIntentPopupPro
             {/* Trust signal */}
             <div className="text-center mt-4">
               <p className="text-xs text-gray-500">
-                🔒 This offer is exclusive to first-time visitors
+                🔒 Exclusive offer for first-time clients only
               </p>
             </div>
           </motion.div>
