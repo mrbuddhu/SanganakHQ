@@ -89,30 +89,31 @@ export default function TeamPage() {
           >
             {team.map((member, index) => (
               <motion.div key={index} variants={cardVariants}>
-                <div>
-                                     <LuxuryCard className="h-[500px] transform hover:scale-[1.02] transition-transform duration-300">
-                    <div className="flex flex-col items-center text-center p-8 h-full justify-between">
-                      <div className="relative mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors" style={{ width: '120px', height: '120px' }}>
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          sizes="120px"
-                          className="object-cover filter brightness-95 group-hover:brightness-100 transition-all"
-                          priority
-                        />
-                      </div>
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2">
-                          {member.name}
-                        </h3>
-                        <p className="text-luxury-gold-300/70 mb-4 font-medium">{member.role}</p>
-                        <p className="text-gray-300 leading-relaxed max-w-lg">{member.bio}</p>
-                      </div>
+                                <div className="flex flex-col items-center">
+                  {/* Profile Photo - Above the card */}
+                  <div className="relative mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors" style={{ width: '120px', height: '120px' }}>
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="120px"
+                      className="object-cover filter brightness-95 group-hover:brightness-100 transition-all"
+                      priority
+                    />
+                  </div>
+                  
+                  {/* Card - Below the photo */}
+                  <LuxuryCard className="w-full transform hover:scale-[1.02] transition-transform duration-300">
+                    <div className="flex flex-col items-center text-center p-8">
+                      <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-luxury-gold-300/70 mb-4 font-medium">{member.role}</p>
+                      <p className="text-gray-300 leading-relaxed max-w-lg">{member.bio}</p>
                     </div>
                   </LuxuryCard>
                   
-                  {/* Social Icons - Outside the card */}
+                  {/* Social Icons - Below the card */}
                   <div className="flex justify-center gap-4 mt-6">
                     {member.socials?.map((social) => (
                       <a
