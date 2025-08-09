@@ -90,14 +90,14 @@ export default function TeamPage() {
             {team.map((member, index) => (
               <motion.div key={index} variants={cardVariants}>
                 <div>
-                                     <LuxuryCard className="h-[400px] transform hover:scale-[1.02] transition-transform duration-300">
+                                     <LuxuryCard className="h-[350px] sm:h-[400px] transform hover:scale-[1.02] transition-transform duration-300">
                     <div className="flex flex-col items-center text-center p-8 h-full justify-between">
-                      <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors aspect-square">
+                      <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors aspect-square">
                         <Image
                           src={member.image}
                           alt={member.name}
                           fill
-                          sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
+                          sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
                           className="object-cover filter brightness-95 group-hover:brightness-100 transition-all"
                           priority
                         />
