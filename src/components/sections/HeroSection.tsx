@@ -156,10 +156,9 @@ export default function HeroSection({
                 transition={{ duration: 0.6, delay: 0.45 }}
                 className="text-base sm:text-xl md:text-2xl font-black text-white mb-2 sm:mb-3"
               >
-                We architect premium digital experiences that transform ambitious visions into <br className="hidden sm:block" />
-                <span className="font-extrabold text-[#c6a255] drop-shadow-sm">market-leading businesses</span>,{' '}
-                <span className="font-extrabold text-[#c6a255] drop-shadow-sm">premium experiences</span>,{' '}
-                <span className="font-extrabold text-[#c6a255] drop-shadow-sm">& unstoppable growth</span>.
+                Elite digital experiences — crafted for startups, brands, and individuals who <br className="hidden sm:block" />
+                <span className="font-extrabold text-[#c6a255] drop-shadow-sm">lead</span>,{' '}
+                <span className="font-extrabold text-[#c6a255] drop-shadow-sm">not follow</span>.
               </motion.h3>
             </div>
 
