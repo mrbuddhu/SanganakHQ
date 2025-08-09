@@ -10,7 +10,7 @@ export default function TeamPage() {
   const team = [
     {
       name: "Aryabhatta (mrbuddhu)",
-      role: "Founder & CEO",
+      role: "Founder & CXO",
       image: "/mrbuddhu.jpeg",
       bio: "Visionary technologist and entrepreneur leading Sanganak's mission to revolutionize the digital landscape. Expertise in blockchain, AI, and premium software solutions.",
       socials: [
