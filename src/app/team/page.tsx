@@ -27,7 +27,7 @@ export default function TeamPage() {
     },
     {
       name: "Shabi Kaushal (msbuddhu)",
-      role: "Co-Founder & Creative Director",
+      role: "Co-Founder & Product Designer",
       image: "/msbuddhu.jpeg",
       bio: "Creative visionary shaping Sanganak's premium brand identity and design philosophy. Expert in luxury branding and user experience design.",
       socials: [
@@ -89,42 +89,45 @@ export default function TeamPage() {
           >
             {team.map((member, index) => (
               <motion.div key={index} variants={cardVariants}>
-                <LuxuryCard className="h-[600px] transform hover:scale-[1.02] transition-transform duration-300">
-                  <div className="flex flex-col items-center text-center p-8 h-full justify-between">
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
-                        className="object-cover filter brightness-95 group-hover:brightness-100 transition-all"
-                        priority
-                      />
-                    </div>
-                    <div className="flex-1 flex flex-col justify-center">
-                      <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2">
-                        {member.name}
-                      </h3>
-                      <p className="text-luxury-gold-300/70 mb-4 font-medium">{member.role}</p>
-                      <p className="text-gray-300 leading-relaxed max-w-lg">{member.bio}</p>
-                      {/* Social Icons */}
-                      <div className="flex justify-center gap-4 mt-4">
-                        {member.socials?.map((social) => (
-                          <a
-                            key={social.label}
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={social.label}
-                            className="text-gray-400 hover:text-[#c6a255] transition-colors duration-200"
-                          >
-                            {social.icon}
-                          </a>
-                        ))}
+                <div>
+                                     <LuxuryCard className="h-[400px] transform hover:scale-[1.02] transition-transform duration-300">
+                    <div className="flex flex-col items-center text-center p-8 h-full justify-between">
+                      <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors aspect-square">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
+                          className="object-cover filter brightness-95 group-hover:brightness-100 transition-all"
+                          priority
+                        />
+                      </div>
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text mb-2">
+                          {member.name}
+                        </h3>
+                        <p className="text-luxury-gold-300/70 mb-4 font-medium">{member.role}</p>
+                        <p className="text-gray-300 leading-relaxed max-w-lg">{member.bio}</p>
                       </div>
                     </div>
+                  </LuxuryCard>
+                  
+                  {/* Social Icons - Outside the card */}
+                  <div className="flex justify-center gap-4 mt-6">
+                    {member.socials?.map((social) => (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                        className="p-3 rounded-full bg-gray-800/50 hover:bg-[#c6a255]/20 text-gray-400 hover:text-[#c6a255] transition-all duration-200 hover:scale-110 cursor-pointer"
+                      >
+                        {social.icon}
+                      </a>
+                    ))}
                   </div>
-                </LuxuryCard>
+                </div>
               </motion.div>
             ))}
           </motion.div>
