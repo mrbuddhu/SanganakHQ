@@ -17,7 +17,7 @@ export default function TeamPage() {
         { href: "https://linkedin.com/in/mrbuddhu", label: "LinkedIn", icon: (
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
         ) },
-        { href: "https://x.com/mrbuddhu", label: "X", icon: (
+        { href: "https://x.com/_mrbuddhu_", label: "X", icon: (
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.53 6.47a.75.75 0 0 0-1.06 0l-4.47 4.47-4.47-4.47a.75.75 0 1 0-1.06 1.06l4.47 4.47-4.47 4.47a.75.75 0 1 0 1.06 1.06l4.47-4.47 4.47 4.47a.75.75 0 1 0 1.06-1.06l-4.47-4.47 4.47-4.47a.75.75 0 0 0 0-1.06z"/></svg>
         ) },
         { href: "https://github.com/mrbuddhu", label: "GitHub", icon: (
@@ -90,7 +90,7 @@ export default function TeamPage() {
             {team.map((member, index) => (
               <motion.div key={index} variants={cardVariants}>
                 <div>
-                                     <LuxuryCard className="h-[350px] sm:h-[400px] transform hover:scale-[1.02] transition-transform duration-300">
+                                     <LuxuryCard className="h-[500px] transform hover:scale-[1.02] transition-transform duration-300">
                     <div className="flex flex-col items-center text-center p-8 h-full justify-between">
                       <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-6 rounded-full overflow-hidden border-4 border-luxury-gold-300/30 group-hover:border-luxury-gold-300/50 transition-colors aspect-square">
                         <Image
