@@ -111,12 +111,12 @@ const PortfolioSection = () => {
           {[...portfolio.slice(0, 5), ...portfolio.slice(0, 5)].map((project, index) => (
                          <motion.div
                key={`row1-${project.title}-${index}`}
-               className="w-[500px] flex-shrink-0"
+               className="w-[280px] sm:w-[350px] md:w-[400px] lg:w-[500px] flex-shrink-0"
                whileHover={{ y: -8, transition: { duration: 0.5, ease: "easeOut" } }}
              >
               <div className="space-y-3">
                 <Link href={project.caseStudyLink}>
-                  <div className="relative w-full h-[300px] overflow-hidden rounded-2xl border border-luxury-gold-300/20 group hover:border-luxury-gold-300/30 transition-all duration-300">
+                  <div className="relative w-full h-[180px] sm:h-[220px] md:h-[250px] lg:h-[300px] overflow-hidden rounded-2xl border border-luxury-gold-300/20 group hover:border-luxury-gold-300/30 transition-all duration-300">
                     <div className="relative w-full h-full">
                       {/* Blurred background image */}
                       <Image
@@ -138,18 +138,18 @@ const PortfolioSection = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 rounded-2xl z-20 pointer-events-none" />
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-lg font-bold text-luxury-gold-100 mb-2 group-hover:text-luxury-gold-300 transition-colors">
+                    <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+                      <h3 className="text-sm sm:text-lg font-bold text-luxury-gold-100 mb-1 sm:mb-2 group-hover:text-luxury-gold-300 transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-gray-300 text-sm mb-3 line-clamp-1">
+                      <p className="text-gray-300 text-xs sm:text-sm mb-2 sm:mb-3 line-clamp-1">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2 py-0.5 text-xs bg-luxury-gold-900/30 text-luxury-gold-300 rounded-full border border-luxury-gold-300/10"
+                            className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs bg-luxury-gold-900/30 text-luxury-gold-300 rounded-full border border-luxury-gold-300/10"
                           >
                             {tag}
                           </span>
@@ -197,12 +197,12 @@ const PortfolioSection = () => {
           {[...portfolio.slice(5, 9), ...portfolio.slice(5, 9)].map((project, index) => (
                          <motion.div
                key={`row2-${project.title}-${index}`}
-               className="w-[500px] flex-shrink-0"
+               className="w-[280px] sm:w-[350px] md:w-[400px] lg:w-[500px] flex-shrink-0"
                whileHover={{ y: -8, transition: { duration: 0.5, ease: "easeOut" } }}
              >
               <div className="space-y-3">
                 <Link href={project.caseStudyLink}>
-                  <div className="relative w-full h-[300px] overflow-hidden rounded-2xl border border-luxury-gold-300/20 group hover:border-luxury-gold-300/30 transition-all duration-300">
+                  <div className="relative w-full h-[180px] sm:h-[220px] md:h-[250px] lg:h-[300px] overflow-hidden rounded-2xl border border-luxury-gold-300/20 group hover:border-luxury-gold-300/30 transition-all duration-300">
                     <div className="relative w-full h-full">
                       {/* Blurred background image */}
                       <Image
