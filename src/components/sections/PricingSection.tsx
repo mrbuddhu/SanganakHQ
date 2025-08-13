@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Sparkles, Zap, Crown, Star } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import LuxuryButton from '@/components/ui/LuxuryButton';
@@ -105,7 +106,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="py-24 overflow-hidden bg-black">
+          <section className="py-24 overflow-hidden bg-[#000000]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -364,6 +365,73 @@ export default function PricingSection() {
             </div>
           ))}
         </div>
+
+        {/* Client Logos Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          {/* Trusted by line */}
+          <div className="text-gray-400 text-base font-medium mb-8 text-center">Trusted by 15+ Global Brands</div>
+
+          {/* Client Logos Marquee */}
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-black to-transparent z-10" />
+            <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-black to-transparent z-10" />
+            <motion.div
+              animate={{ x: [0, -1920] }}
+              transition={{ 
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="flex gap-2 items-center py-3"
+            >
+              {[
+                { name: 'NFTCollect', logo: '/client-logos/nftcollect.png' },
+                { name: 'GlobalEats', logo: '/client-logos/globaleats.png' },
+                { name: 'Interio', logo: '/client-logos/interio.png' },
+                { name: 'MedicoBuddy', logo: '/client-logos/medicobuddy.png' },
+                { name: 'Burgerrr', logo: '/client-logos/burgerrr.png' },
+                { name: 'CreatorsHome', logo: '/client-logos/creatorshome.png' },
+                { name: 'Realtor', logo: '/client-logos/Realtor.png' },
+                { name: 'Beam', logo: '/client-logos/Beam.png' },
+                { name: 'NFTCollect', logo: '/client-logos/nftcollect.png' },
+                { name: 'GlobalEats', logo: '/client-logos/globaleats.png' },
+                { name: 'Interio', logo: '/client-logos/interio.png' },
+                { name: 'MedicoBuddy', logo: '/client-logos/medicobuddy.png' },
+                { name: 'Burgerrr', logo: '/client-logos/burgerrr.png' },
+                { name: 'CreatorsHome', logo: '/client-logos/creatorshome.png' },
+                { name: 'Realtor', logo: '/client-logos/Realtor.png' },
+                { name: 'Beam', logo: '/client-logos/Beam.png' }
+              ].map((client, index) => (
+                <motion.div
+                  key={index}
+                  className="flex-none w-[240px] h-[100px] relative group"
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  <Image
+                    src={client.logo}
+                    alt={`${client.name} - Premium Client`}
+                    fill
+                    sizes="(max-width: 768px) 180px, 240px"
+                    className="object-contain opacity-80 group-hover:opacity-100 transition-all duration-500 filter grayscale group-hover:grayscale-0 group-hover:brightness-125 brightness-110"
+                    priority={index < 8}
+                    loading={index < 8 ? "eager" : "lazy"}
+                    quality={85}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

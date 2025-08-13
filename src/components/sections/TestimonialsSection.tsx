@@ -132,12 +132,14 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="testimonials" className="relative py-24 bg-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <LuxuryHeading
-          title="Client Stories"
-          subtitle="Hear from our distinguished clients who achieved extraordinary results"
-        />
+    <section id="testimonials" className="relative py-24 bg-[#000000] overflow-hidden">
+      <div className="w-full px-4 sm:px-6 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <LuxuryHeading
+            title="Client Stories"
+            subtitle="Hear from our distinguished clients who achieved extraordinary results"
+          />
+        </div>
         
         <div className="relative mt-16">
           <motion.div 

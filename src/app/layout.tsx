@@ -262,7 +262,7 @@ export default function RootLayout({
         <link rel="preload" href="/Logo.ico" as="image" />
         <link rel="preload" href="/og-image.png" as="image" />
       </head>
-      <body className="min-h-screen bg-black antialiased text-white">
+      <body className="min-h-screen bg-[#000000] antialiased text-white">
         {children}
         <ExitIntentPopup />
       </body>

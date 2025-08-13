@@ -28,12 +28,18 @@ const techStack = [
   { name: 'Shopify', icon: 'https://cdn.simpleicons.org/shopify/c6a255' },
   { name: 'WordPress', icon: 'https://cdn.simpleicons.org/wordpress/c6a255' },
   { name: 'Stripe', icon: 'https://cdn.simpleicons.org/stripe/c6a255' },
-  { name: 'PayPal', icon: 'https://cdn.simpleicons.org/paypal/c6a255' }
+  { name: 'PayPal', icon: 'https://cdn.simpleicons.org/paypal/c6a255' },
+  { name: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud/c6a255' },
+  { name: 'Vercel', icon: 'https://cdn.simpleicons.org/vercel/c6a255' },
+  { name: 'Netlify', icon: 'https://cdn.simpleicons.org/netlify/c6a255' },
+  { name: 'Jest', icon: 'https://cdn.simpleicons.org/jest/c6a255' },
+  { name: 'Cypress', icon: 'https://cdn.simpleicons.org/cypress/c6a255' },
+  { name: 'Flutterflow', icon: 'https://cdn.simpleicons.org/flutter/c6a255' }
 ];
 
 export default function TechStack() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-[#000000] relative overflow-hidden">
       <div className="container mx-auto px-4">
         <LuxuryHeading
           title="Our Tech Stack"
@@ -58,13 +64,13 @@ export default function TechStack() {
                 }}
                 className="group relative"
               >
-                <div className="w-16 h-16 md:w-20 md:h-20 relative flex items-center justify-center bg-white/5 rounded-xl backdrop-blur-sm border border-luxury-gold-300/20 transition-all duration-300 group-hover:border-luxury-gold-300/50 group-hover:shadow-lg group-hover:shadow-luxury-gold-300/20 cursor-pointer mb-8">
+                <div className="w-16 h-16 md:w-20 md:h-20 relative flex items-center justify-center bg-white/5 rounded-xl backdrop-blur-sm border border-luxury-gold-300/20 transition-all duration-500 group-hover:border-luxury-gold-300/50 group-hover:shadow-[0_10px_30px_-5px_rgba(198,162,85,0.2)] group-hover:scale-110 group-hover:rotate-2 cursor-pointer mb-8">
                   <Image
                     src={tech.icon}
                     alt={tech.name}
                     width={40}
                     height={40}
-                    className="w-8 h-8 md:w-10 md:h-10 object-contain transition-all duration-300 group-hover:scale-110 opacity-100 group-hover:brightness-110"
+                    className="w-8 h-8 md:w-10 md:h-10 object-contain transition-all duration-500 group-hover:scale-125 opacity-100 group-hover:brightness-125 group-hover:drop-shadow-[0_0_10px_rgba(198,162,85,0.3)]"
                     unoptimized
                   />
                 </div>

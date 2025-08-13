@@ -25,10 +25,10 @@ export default function HeroSection({
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
             className="flex items-center justify-center pb-2 sm:pb-3 md:pb-4"
           >
-            <div className="bg-black/50 backdrop-blur-md border border-luxury-gold-300/25 rounded-full px-6 py-3 flex items-center gap-3 shadow-2xl shadow-luxury-gold-300/10">
+            <div className="bg-black/50 backdrop-blur-md border border-luxury-gold-300/25 rounded-full px-6 py-3 flex items-center gap-3">
               <div className="flex -space-x-2 flex-col items-center">
                 <div className="flex -space-x-2">
                   <div className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden ring-2 ring-black">
@@ -82,7 +82,7 @@ export default function HeroSection({
                   {[1, 2, 3, 4, 5].map((star) => (
                     <svg
                       key={star}
-                      className="w-3 h-3 text-yellow-400 drop-shadow-sm"
+                      className="w-3 h-3 text-yellow-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -92,17 +92,18 @@ export default function HeroSection({
                 </div>
               </div>
               <div className="flex flex-col ml-3 gap-1 justify-center">
-                <span className="text-[#c6a255] text-xs font-medium">15+ Global Clients</span>
-                <span className="text-white text-xs font-medium">50+ Deliveries</span>
+                <span className="text-[#c6a255] text-[10px] sm:text-xs font-medium whitespace-nowrap">15+ Global Clients</span>
+                <span className="text-white text-[10px] sm:text-xs font-medium whitespace-nowrap">50+ Deliveries</span>
               </div>
             </div>
           </motion.div>
 
           <div className="w-full flex justify-center mt-1 sm:mt-2 md:mt-3 mb-3 sm:mb-4 md:mb-5">
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ scale: 0.8, opacity: 0, rotate: -5 }}
+              animate={{ scale: 1, opacity: 1, rotate: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              whileHover={{ scale: 1.05, rotate: 2 }}
               className="relative"
             >
               <Image 
@@ -110,7 +111,7 @@ export default function HeroSection({
                 alt="Sanganak Company Logo" 
                 width={200} 
                 height={200} 
-                className="mx-auto w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] drop-shadow-2xl"
+                className="mx-auto w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px]"
                 priority={true}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-luxury-gold-300/5 rounded-full" />
@@ -120,9 +121,9 @@ export default function HeroSection({
           <div className="text-center space-y-3 sm:space-y-4 md:space-y-5 mx-auto max-w-[90%] sm:max-w-full">
             <div className="space-y-2 sm:space-y-3">
               <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-2 sm:mb-3 md:mb-4 px-2 sm:px-4 w-full"
                 style={{
                   background: 'linear-gradient(135deg, #c6a255, #e9d5a1, #c6a255, #f4e6b8)',
@@ -186,13 +187,14 @@ export default function HeroSection({
                   className="flex flex-col items-center space-y-2 group cursor-pointer"
                 >
                   <motion.span 
-                    className="text-3xl sm:text-4xl drop-shadow-lg"
-                    whileHover={{ scale: 1.15, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                    className="text-3xl sm:text-4xl"
+                    whileHover={{ scale: 1.2, rotate: 8, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
                   >
                     {item.emoji}
                   </motion.span>
-                  <span className="text-[#c6a255] font-semibold text-sm sm:text-base group-hover:text-[#e9d5a1] transition-colors duration-300 drop-shadow-sm">
+                                     <span className="text-[#c6a255] font-semibold text-sm sm:text-base group-hover:text-[#e9d5a1] transition-colors duration-300">
                     {item.text}
                   </span>
               </motion.div>

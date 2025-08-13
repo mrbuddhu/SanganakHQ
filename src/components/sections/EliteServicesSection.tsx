@@ -32,9 +32,9 @@ export default function EliteServicesSection() {
       title: "Bespoke Applications",
       description: "Tailor-made digital powerhouses. Scalable, high-performance software for trailblazers.",
       features: [
-        "Custom Web & Mobile Development – Precision-engineered for impact.",
+        "No-Code Solutions – Webflow for web, Flutterflow for mobile.",
+        "Custom Code Development – Next.js for web, React Native for mobile.",
         "E-Commerce Mastery – Elevate sales with elite UX.",
-        "Conversion-Driven Landing Pages – Designed to captivate and convert.",
         "SaaS Product Development – Future-proofing your business."
       ]
     },
@@ -74,8 +74,7 @@ export default function EliteServicesSection() {
   ];
 
   return (
-    <section id="services" className="min-h-screen bg-black relative py-12">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-[#c6a255]/5 to-black/0" />
+    <section id="services" className="min-h-screen bg-[#000000] relative py-12">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -104,11 +103,11 @@ export default function EliteServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <LuxuryCard className="h-full group hover:border-luxury-gold-300/5 transition-all duration-300">
-                <div className="text-[#c6a255] mb-4 text-2xl transform group-hover:scale-110 transition-transform duration-300">
+              <LuxuryCard className="h-full group hover:border-luxury-gold-300/40 transition-all duration-700 p-8 bg-black/60 backdrop-blur-md shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(198,162,85,0.15)] hover:scale-[1.02]">
+                <div className="text-[#c6a255] mb-4 text-2xl transform group-hover:scale-110 transition-all duration-500 group-hover:rotate-3 group-hover:drop-shadow-[0_0_20px_rgba(198,162,85,0.3)]">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4 group-hover:text-[#e9d5a1] transition-colors">
+                <h3 className="text-xl font-bold text-[#c6a255] mb-4 group-hover:text-[#e9d5a1] transition-all duration-500 group-hover:tracking-wide">
                   {service.title}
                 </h3>
                 <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
@@ -126,7 +125,7 @@ export default function EliteServicesSection() {
                         viewport={{ once: true }}
                         className="flex items-start gap-3 group/item"
                       >
-                        <span className="text-[#c6a255] mt-1 group-hover/item:text-[#e9d5a1] transition-colors">•</span>
+                        <span className="text-[#c6a255] mt-1 group-hover/item:text-[#e9d5a1] transition-all duration-300 group-hover/item:scale-125 group-hover/item:drop-shadow-[0_0_8px_rgba(198,162,85,0.4)]">•</span>
                         <span className="flex-1">
                           <span className="text-[#c6a255] group-hover/item:text-[#e9d5a1] transition-colors">{firstPart}</span>
                           {rest.length > 0 && (

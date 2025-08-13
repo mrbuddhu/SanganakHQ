@@ -4,7 +4,7 @@ import LuxuryHeading from '@/components/ui/LuxuryHeading';
 
 export default function FinalCTASection() {
   return (
-    <section id="final-cta" className="py-24 bg-black relative">
+    <section id="final-cta" className="py-24 bg-[#000000] relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

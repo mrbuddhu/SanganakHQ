@@ -28,7 +28,7 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section id="process" className="py-24 bg-black relative">
+    <section id="process" className="py-24 bg-[#000000] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
           title="Our Process"
@@ -41,7 +41,7 @@ export default function ProcessSection() {
               key={step.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.4 }}
               viewport={{ once: true }}
               className="relative"
             >

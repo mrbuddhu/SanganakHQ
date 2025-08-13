@@ -38,7 +38,7 @@ export default function ComparisonSection() {
   ];
 
   return (
-    <section id="comparison" className="py-24 bg-black relative">
+    <section id="comparison" className="py-24 bg-[#000000] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
