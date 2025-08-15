@@ -145,7 +145,7 @@ export default function Footer() {
 
 
         {/* Copyright */}
-        <div className="text-center mt-16 pb-16 md:pb-16">
+        <div className="text-center mt-16 pb-24 md:pb-24">
           <p className="text-[#c6a255] text-sm">
             {currentYear} Sanganak. A venture of mrbuddhu & msbuddhu Sanganak LLP. All rights reserved.
           </p>
