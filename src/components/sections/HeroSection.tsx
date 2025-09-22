@@ -93,6 +93,7 @@ export default function HeroSection({
               </div>
               <div className="flex flex-col ml-3 gap-1 justify-center">
                 <span className="text-[#c6a255] text-[10px] sm:text-xs font-medium whitespace-nowrap">15+ Global Clients</span>
+                <span className="text-white text-[10px] sm:text-xs font-medium whitespace-nowrap">6 Continents</span>
                 <span className="text-white text-[10px] sm:text-xs font-medium whitespace-nowrap">50+ Deliveries</span>
               </div>
             </div>
@@ -108,7 +109,7 @@ export default function HeroSection({
             >
               <Image 
                 src="/Globe.jpg" 
-                alt="Sanganak Company Logo" 
+                alt="SanganakHQ Company Logo" 
                 width={200} 
                 height={200} 
                 className="mx-auto w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px]"
@@ -124,7 +125,7 @@ export default function HeroSection({
                 initial={{ opacity: 0, y: 30, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-2 sm:mb-3 md:mb-4 px-2 sm:px-4 w-full"
+                className="text-display font-inter mb-2 sm:mb-3 md:mb-4 px-2 sm:px-4 w-full"
                 style={{
                   background: 'linear-gradient(135deg, #c6a255, #e9d5a1, #c6a255, #f4e6b8)',
                   WebkitBackgroundClip: 'text',
@@ -135,13 +136,13 @@ export default function HeroSection({
                   animation: 'gradientShift 4s ease-in-out infinite'
                 }}
               >
-                SANGANAK
+                SANGANAK HQ
               </motion.h1>
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-lg md:text-2xl font-bold tracking-wide mb-2 sm:mb-3"
+                className="text-h3 font-inter mb-2 sm:mb-3"
                 style={{
                   background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
                   WebkitBackgroundClip: 'text',
@@ -155,7 +156,7 @@ export default function HeroSection({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
-                className="text-base sm:text-xl md:text-2xl font-black text-white mb-2 sm:mb-3"
+                className="text-body-lg font-inter text-white mb-2 sm:mb-3"
               >
                 Elite digital experiences — crafted for startups, brands, and individuals who <br className="hidden sm:block" />
                 <span className="font-extrabold text-[#c6a255] drop-shadow-sm">lead</span>,{' '}
@@ -167,7 +168,7 @@ export default function HeroSection({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-sm md:text-base text-gray-400 max-w-4xl mx-auto px-4 leading-relaxed font-medium"
+              className="text-body font-inter text-gray-400 max-w-4xl mx-auto px-4"
             >
               Branding | Design | Development | AI & Blockchain
             </motion.p>
@@ -194,7 +195,7 @@ export default function HeroSection({
                   >
                     {item.emoji}
                   </motion.span>
-                                     <span className="text-[#c6a255] font-semibold text-sm sm:text-base group-hover:text-[#e9d5a1] transition-colors duration-300">
+                                     <span className="text-[#c6a255] font-inter font-medium text-body-sm group-hover:text-[#e9d5a1] transition-colors duration-300">
                     {item.text}
                   </span>
               </motion.div>
@@ -202,7 +203,7 @@ export default function HeroSection({
             </div>
 
             {/* Trusted by line above client logos */}
-            <div className="text-gray-400 text-base font-medium mb-0 mt-4 sm:mt-6 md:mt-8 text-center">Trusted by 15+ Global Brands</div>
+            <div className="text-gray-400 text-body font-inter font-medium mb-0 mt-4 sm:mt-6 md:mt-8 text-center">Trusted by 15+ Global Brands</div>
 
             {/* Client Logos Marquee */}
             <div className="relative overflow-hidden mt-0 mb-0 sm:mb-0">
@@ -264,12 +265,12 @@ export default function HeroSection({
       {/* Animated Counters */}
       <div className="flex justify-center gap-8 mt-8">
         <div className="text-center">
-          <span className="text-3xl font-bold text-[#c6a255]">{projectCount}+</span>
-          <p className="text-gray-300">Projects Completed</p>
+          <span className="text-h2 font-inter font-semibold text-[#c6a255]">{projectCount}+</span>
+          <p className="text-body-sm font-inter text-gray-300">Projects Completed</p>
         </div>
         <div className="text-center">
-          <span className="text-3xl font-bold text-[#c6a255]">{clientCount}+</span>
-          <p className="text-gray-300">Happy Clients</p>
+          <span className="text-h2 font-inter font-semibold text-[#c6a255]">{clientCount}+</span>
+          <p className="text-body-sm font-inter text-gray-300">Happy Clients</p>
         </div>
       </div>
     </section>

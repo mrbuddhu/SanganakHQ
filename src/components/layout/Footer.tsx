@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-center order-first lg:order-none mb-8 lg:mb-0">
             <Image
               src="/RoundSanganak.jpeg"
-              alt="Sanganak Premium Logo"
+              alt="SanganakHQ Logo"
               width={180}
               height={180}
               className="rounded-full hover:scale-105 transition-transform duration-300 w-32 md:w-40 lg:w-[180px]"
@@ -77,7 +77,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com/sanganakorg" 
+                href="https://www.instagram.com/sanganakHQ" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#c6a255] hover:text-[#e9d5a1] transition-colors"
@@ -87,7 +87,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://www.linkedin.com/company/sanganakorg" 
+                href="https://www.linkedin.com/company/sanganakHQ" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#c6a255] hover:text-[#e9d5a1] transition-colors"
@@ -97,7 +97,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://x.com/sanganakorg" 
+                href="https://x.com/sanganakHQ" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#c6a255] hover:text-[#e9d5a1] transition-colors"
@@ -147,7 +147,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="text-center mt-16 pb-24 md:pb-24">
           <p className="text-[#c6a255] text-sm">
-            {currentYear} Sanganak. A venture of mrbuddhu & msbuddhu Sanganak LLP. All rights reserved.
+            {currentYear} SanganakHQ. A venture of mrbuddhu & msbuddhu Sanganak LLP. All rights reserved.
           </p>
         </div>
       </div>
