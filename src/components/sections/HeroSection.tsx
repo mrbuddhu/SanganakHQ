@@ -158,52 +158,15 @@ export default function HeroSection({
                 transition={{ duration: 0.6, delay: 0.45 }}
                 className="text-body-lg font-inter text-white mb-2 sm:mb-3"
               >
-                Elite digital experiences — crafted for startups, brands, and individuals who <br className="hidden sm:block" />
-                <span className="font-extrabold text-[#c6a255] drop-shadow-sm">lead</span>,{' '}
-                <span className="font-extrabold text-[#c6a255] drop-shadow-sm">not follow</span>.
+                We help luxury brands and startups build elite experiences and scalable platforms—with measurable growth across 6 continents.
               </motion.h3>
             </div>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-body font-inter text-gray-400 max-w-4xl mx-auto px-4"
-            >
-              Branding | Design | Development | AI & Blockchain
-            </motion.p>
+            
 
-            {/* Service Categories */}
-            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 mt-4 sm:mt-6 md:mt-8 mb-8 sm:mb-10">
-              {[
-                { emoji: "👑", text: "Elite Clientele" },
-                { emoji: "⭐", text: "Bespoke Solutions" },
-                { emoji: "✨", text: "ROI Driven" }
-              ].map((item, index) => (
-              <motion.div
-                  key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + index * 0.1 }}
-                  className="flex flex-col items-center space-y-2 group cursor-pointer"
-                >
-                  <motion.span 
-                    className="text-3xl sm:text-4xl"
-                    whileHover={{ scale: 1.2, rotate: 8, y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                  >
-                    {item.emoji}
-                  </motion.span>
-                                     <span className="text-[#c6a255] font-inter font-medium text-body-sm group-hover:text-[#e9d5a1] transition-colors duration-300">
-                    {item.text}
-                  </span>
-              </motion.div>
-              ))}
-            </div>
+            
 
-            {/* Trusted by line above client logos */}
-            <div className="text-gray-400 text-body font-inter font-medium mb-0 mt-4 sm:mt-6 md:mt-8 text-center">Trusted by 15+ Global Brands</div>
+            
 
             {/* Client Logos Marquee */}
             <div className="relative overflow-hidden mt-0 mb-0 sm:mb-0">

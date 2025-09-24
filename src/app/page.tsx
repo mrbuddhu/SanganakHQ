@@ -15,7 +15,7 @@ import NewsletterSection from '@/components/sections/NewsletterSection';
 import FAQSection from '@/components/sections/FAQSection';
 
 export default function Home() {
-  const [displayText, setDisplayText] = useState("#1 Premium IT Boutique");
+  const [displayText, setDisplayText] = useState("Global Innovation Consultancy for Branding, Tech & Growth");
   const [projectCount, setProjectCount] = useState(0);
   const [clientCount, setClientCount] = useState(0);
 

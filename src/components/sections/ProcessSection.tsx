@@ -85,6 +85,23 @@ export default function ProcessSection() {
             Our streamlined process ensures transparency, quality, and timely delivery. 
             We maintain open communication throughout every phase of your project.
           </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+            <span className="px-3 py-1 rounded-full border border-luxury-gold-300/40 text-[#c6a255] bg-black/40">
+              Step 0: Secure Payment / Agreement
+            </span>
+            <span className="text-gray-400">→</span>
+            <span className="px-3 py-1 rounded-full border border-luxury-gold-300/40 text-[#c6a255] bg-black/40">
+              Slack Workspace Invitation
+            </span>
+            <span className="text-gray-400">→</span>
+            <span className="px-3 py-1 rounded-full border border-luxury-gold-300/40 text-[#c6a255] bg-black/40">
+              Execution in Dedicated Channel
+            </span>
+            <span className="text-gray-400">→</span>
+            <span className="px-3 py-1 rounded-full border border-luxury-gold-300/40 text-[#c6a255] bg-black/40">
+              Delivery & Ongoing Support
+            </span>
+          </div>
         </motion.div>
       </div>
     </section>

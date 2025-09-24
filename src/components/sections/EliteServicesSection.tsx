@@ -62,14 +62,16 @@ export default function EliteServicesSection() {
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Elite Package",
-      description: "The ultimate digital transformation. For businesses serious about dominating their industry.",
+      title: "Marketing HQ",
+      description: "Comprehensive marketing strategies to grow revenue & brand authority.",
       features: [
-        "End-to-End Brand Identity & UI/UX – Comprehensive brand and design excellence.",
-        "Custom Software, AI & Blockchain Solutions – Cutting-edge technology integration.",
-        "Ongoing Innovation & VIP Strategic Growth – Dedicated support and evolution.",
-        "Priority Access & Exclusive Benefits – VIP treatment at every step."
-      ]
+        "SEO & Content Marketing – Rank higher and build compounding inbound traffic.",
+        "Social Media Strategy & Management – Grow engagement and brand authority.",
+        "Paid Ads (Google, Meta, LinkedIn) – Acquire customers with profitable CAC.",
+        "Email Marketing & Automations – Nurture leads and increase LTV.",
+        "Performance Analytics & Reporting – Track ROI and optimize monthly."
+      ],
+      ctaNote: "Available as standalone or ongoing retainer."
     }
   ];
 
@@ -129,13 +131,16 @@ export default function EliteServicesSection() {
                         <span className="flex-1">
                           <span className="text-[#c6a255] group-hover/item:text-[#e9d5a1] transition-colors">{firstPart}</span>
                           {rest.length > 0 && (
-                            <span className="text-gray-300 block mt-1 group-hover/item:text-gray-200 transition-colors">{rest.join(' ')}</span>
+                            <span className="text-white block mt-1 transition-colors">{rest.join(' ')}</span>
                           )}
                         </span>
                       </motion.li>
                     );
                   })}
                 </ul>
+                {service.ctaNote && (
+                  <p className="mt-4 text-xs text-gray-400">{service.ctaNote}</p>
+                )}
               </LuxuryCard>
             </motion.div>
           ))}

@@ -1,6 +1,6 @@
-# #1 Premium IT Solutions Boutique
+# Sanganak HQ — Global Innovation Consultancy for Branding, Tech & Growth
 
-A luxurious, high-end website for Sanganak - a world-class IT boutique offering Branding, UI/UX, Development, AI, and Blockchain solutions. Built with cutting-edge technologies and premium design principles.
+A luxurious, high-end website for Sanganak HQ — a global innovation consultancy offering Branding, UI/UX, Development, AI, and Blockchain solutions. Built with cutting-edge technologies and premium design principles.
 
 ## 🌟 Features
 

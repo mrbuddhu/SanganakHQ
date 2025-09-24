@@ -23,11 +23,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'SanganakHQ | #1 Premium IT Boutique | Global Luxury Digital Solutions',
-  description: 'SanganakHQ - #1 Premium IT Boutique delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions. Trusted by global enterprises for cutting-edge digital transformation.',
+  title: 'Sanganak HQ | Global Innovation Consultancy for Branding, Tech & Growth',
+  description: 'Sanganak HQ — Global Innovation Consultancy for Branding, Tech & Growth. We deliver luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
   manifest: '/manifest.json',
   metadataBase: new URL('https://sanganak.org'),
-  keywords: 'SanganakHQ, Sanganak, #1 Premium IT Boutique, Global IT Solutions, Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, Digital Transformation, Enterprise Technology, International Tech Services, Premium Technology Solutions, Web Development, Mobile Apps, UI/UX Design, Software Development, Digital Agency, Tech Solutions, Enterprise Software, Custom Software Development, Cloud Solutions, SaaS Development, Fintech Solutions, E-commerce Development, Digital Marketing, Tech Consulting',
+  keywords: 'Sanganak HQ, Sanganak, Global Innovation Consultancy, Branding, Tech & Growth, Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, Digital Transformation, Enterprise Technology, International Tech Services, Premium Technology Solutions, Web Development, Mobile Apps, UI/UX Design, Software Development, Digital Agency, Tech Solutions, Enterprise Software, Custom Software Development, Cloud Solutions, SaaS Development, Fintech Solutions, E-commerce Development, Digital Marketing, Tech Consulting',
   authors: [{ name: 'mrbuddhu' }, { name: 'msbuddhu' }],
   creator: 'SanganakHQ',
   publisher: 'SanganakHQ',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'SanganakHQ | #1 Premium IT Boutique',
+    title: 'Sanganak HQ | Global Innovation Consultancy',
   },
   icons: {
     icon: '/Logo.ico',
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'SanganakHQ - #1 Premium IT Boutique | Global Luxury Digital Solutions',
-    description: 'SanganakHQ - #1 Premium IT Boutique delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions. Trusted by global enterprises for cutting-edge digital transformation.',
+    title: 'Sanganak HQ — Global Innovation Consultancy for Branding, Tech & Growth',
+    description: 'Sanganak HQ delivers luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'SanganakHQ - #1 Premium IT Boutique - Luxury Digital Solutions',
+        alt: 'Sanganak HQ — Global Innovation Consultancy',
         type: 'image/png'
       }
     ],
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SanganakHQ - #1 Premium IT Boutique | Global Luxury Digital Solutions',
-    description: 'SanganakHQ - #1 Premium IT Boutique delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions. Trusted by global enterprises for cutting-edge digital transformation.',
+    title: 'Sanganak HQ — Global Innovation Consultancy for Branding, Tech & Growth',
+    description: 'Luxury branding, elite design, bespoke applications, blockchain innovation, and AI across 6 continents.',
     images: [{
       url: '/og-image.png',
       width: 1200,
       height: 630,
-      alt: 'SanganakHQ - #1 Premium IT Boutique - Luxury Digital Solutions',
+      alt: 'Sanganak HQ — Global Innovation Consultancy',
       type: 'image/png'
     }],
     site: '@sanganakHQ',
@@ -119,11 +119,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Sanganak',
-  alternateName: '#1 Premium IT Boutique',
+  name: 'Sanganak HQ',
+  alternateName: 'Global Innovation Consultancy for Branding, Tech & Growth',
   url: 'https://sanganak.org',
   logo: 'https://sanganak.org/Logo.ico',
-  description: '#1 Premium IT Boutique delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions.',
+  description: 'Global Innovation Consultancy delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'Global'
@@ -242,7 +242,7 @@ const faqSchema = {
       name: 'What makes Sanganak different?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sanganak is the #1 Premium IT Boutique, offering luxury digital solutions with a focus on quality, innovation, and client success.'
+        text: 'Sanganak HQ is a Global Innovation Consultancy delivering luxury digital solutions with a focus on quality, innovation, and client success.'
       }
     }
   ]
