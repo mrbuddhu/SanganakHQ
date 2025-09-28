@@ -6,6 +6,8 @@ Sitemap: https://sanganak.org/sitemap.xml
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
 
 # Allow all other pages
 Allow: /*.html$
@@ -17,6 +19,14 @@ Allow: /*.jpeg$
 Allow: /*.gif$
 Allow: /*.ico$
 Allow: /*.svg$
+Allow: /*.webp$
+
+# Specific directives for important pages
+Allow: /careers
+Allow: /services
+Allow: /portfolio
+Allow: /case-studies
+Allow: /blog
 
 # Crawl-delay for all bots
-Crawl-delay: 10 
+Crawl-delay: 5 

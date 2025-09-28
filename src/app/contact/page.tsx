@@ -6,6 +6,37 @@ import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { Mail, Phone, MapPin, Clock, MessageCircle, ArrowRight, Calendar } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact SanganakHQ | Book Strategy Call | #1 Premium IT Boutique',
+  description: 'Contact SanganakHQ - the #1 Premium IT Boutique. Book your strategy call to discuss luxury branding, elite design, AI solutions, and blockchain innovation. Fast response, expert support.',
+  keywords: 'contact SanganakHQ, book strategy call, premium IT boutique contact, luxury branding consultation, elite design consultation, AI solutions consultation, blockchain consultation',
+  openGraph: {
+    title: 'Contact SanganakHQ | Book Strategy Call | #1 Premium IT Boutique',
+    description: 'Contact SanganakHQ - the #1 Premium IT Boutique. Book your strategy call to discuss luxury branding, elite design, AI solutions, and blockchain innovation.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact SanganakHQ - Book Strategy Call',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/contact'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact SanganakHQ | Book Strategy Call | #1 Premium IT Boutique',
+    description: 'Contact SanganakHQ - the #1 Premium IT Boutique. Book your strategy call to discuss luxury branding, elite design, AI solutions, and blockchain innovation.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/contact'
+  }
+};
  
 
 export default function ContactPage() {

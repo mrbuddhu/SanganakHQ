@@ -10,6 +10,37 @@ import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { CTA_URL } from '@/constants/links';
 import LuxuryButton from '@/components/ui/LuxuryButton';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Portfolio | SanganakHQ Premium Projects | #1 Premium IT Boutique',
+  description: 'Explore SanganakHQ portfolio - premium digital solutions including SaaS platforms, mobile apps, AI tools, and blockchain projects. See our luxury branding and elite design work.',
+  keywords: 'SanganakHQ portfolio, premium digital projects, luxury branding portfolio, elite design projects, SaaS development, mobile app development, AI solutions, blockchain projects',
+  openGraph: {
+    title: 'Portfolio | SanganakHQ Premium Projects | #1 Premium IT Boutique',
+    description: 'Explore SanganakHQ portfolio - premium digital solutions including SaaS platforms, mobile apps, AI tools, and blockchain projects.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Portfolio - Premium Digital Projects',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/portfolio'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portfolio | SanganakHQ Premium Projects | #1 Premium IT Boutique',
+    description: 'Explore SanganakHQ portfolio - premium digital solutions including SaaS platforms, mobile apps, AI tools, and blockchain projects.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/portfolio'
+  }
+};
 
 export default function Portfolio() {
   const [selectedTag, setSelectedTag] = useState<string>('All');

@@ -9,6 +9,37 @@ import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { articles } from '@/app/articles';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | SanganakHQ Insights | Premium IT Boutique Articles',
+  description: 'Read SanganakHQ blog for expert insights on luxury branding, elite design, AI solutions, blockchain innovation, and premium digital strategies. Stay updated with the latest in premium technology.',
+  keywords: 'SanganakHQ blog, premium IT insights, luxury branding articles, elite design tips, AI solutions blog, blockchain innovation, digital strategy, technology insights',
+  openGraph: {
+    title: 'Blog | SanganakHQ Insights | Premium IT Boutique Articles',
+    description: 'Read SanganakHQ blog for expert insights on luxury branding, elite design, AI solutions, blockchain innovation, and premium digital strategies.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Blog - Premium IT Insights',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/blog'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | SanganakHQ Insights | Premium IT Boutique Articles',
+    description: 'Read SanganakHQ blog for expert insights on luxury branding, elite design, AI solutions, blockchain innovation, and premium digital strategies.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/blog'
+  }
+};
 
 const BlogPage = () => {
   return (

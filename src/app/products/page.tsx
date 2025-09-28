@@ -5,6 +5,37 @@ import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import LuxuryButton from '@/components/ui/LuxuryButton';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Products | SanganakHQ Premium Digital Solutions | Coming Soon',
+  description: 'Explore SanganakHQ premium products - SaaS tools, browser extensions, design systems, and design kits. Premium digital solutions crafted to elevate your digital experience.',
+  keywords: 'SanganakHQ products, premium digital solutions, SaaS tools, browser extensions, design systems, design kits, digital products, premium tools',
+  openGraph: {
+    title: 'Products | SanganakHQ Premium Digital Solutions | Coming Soon',
+    description: 'Explore SanganakHQ premium products - SaaS tools, browser extensions, design systems, and design kits.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Products - Premium Digital Solutions',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/products'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Products | SanganakHQ Premium Digital Solutions | Coming Soon',
+    description: 'Explore SanganakHQ premium products - SaaS tools, browser extensions, design systems, and design kits.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/products'
+  }
+};
 
 export default function Products() {
   const products = [

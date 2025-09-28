@@ -6,6 +6,37 @@ import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { Lightbulb, Search, Palette, Code, TestTube, Rocket } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Process | SanganakHQ Development Methodology | Premium IT Boutique',
+  description: 'Discover SanganakHQ development process - systematic innovation through discovery, research, design, development, testing, and launch. Premium methodology for measurable results.',
+  keywords: 'SanganakHQ process, premium development methodology, systematic innovation, discovery phase, design process, development workflow, testing methodology, launch strategy',
+  openGraph: {
+    title: 'Process | SanganakHQ Development Methodology | Premium IT Boutique',
+    description: 'Discover SanganakHQ development process - systematic innovation through discovery, research, design, development, testing, and launch.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Process - Development Methodology',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/process'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Process | SanganakHQ Development Methodology | Premium IT Boutique',
+    description: 'Discover SanganakHQ development process - systematic innovation through discovery, research, design, development, testing, and launch.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/process'
+  }
+};
 
 export default function Process() {
   const processSteps = [

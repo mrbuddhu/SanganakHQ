@@ -15,13 +15,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		'/services/bespoke-applications',
 		'/services/blockchain-innovation',
 		'/services/ai-powered-intelligence',
-		'/services/marketing-hq'
+		'/services/marketing-hq',
+		'/careers',
+		'/blog',
+		'/case-studies',
+		'/team',
+		'/process',
+		'/products',
+		'/support',
+		'/tutorials',
+		'/docs',
+		'/privacy',
+		'/terms',
+		'/cookies',
+		'/security'
 	]
 
 	return routes.map((route) => ({
 		url: `${baseUrl}${route}`,
 		lastModified,
 		changeFrequency: 'weekly',
-		priority: route === '/' ? 1 : route.startsWith('/services') ? 0.9 : 0.8,
+		priority: route === '/' ? 1 : 
+			route.startsWith('/services') ? 0.9 : 
+			route === '/careers' ? 0.8 :
+			route === '/blog' ? 0.8 :
+			route === '/case-studies' ? 0.8 :
+			route === '/portfolio' ? 0.8 :
+			0.7,
 	}))
 }

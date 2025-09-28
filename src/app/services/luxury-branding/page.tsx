@@ -8,6 +8,37 @@ import LuxuryCard from '@/components/ui/LuxuryCard'
 import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Luxury Branding Services | SanganakHQ Premium IT Boutique | Become Category King',
+  description: 'Transform your brand into a Category King with SanganakHQ luxury branding. Strategic positioning, premium visual identity, and conversion-optimized copywriting that drives 30% better conversions and market authority.',
+  keywords: 'luxury branding services, premium brand identity, strategic brand positioning, visual identity design, brand strategy, category king, premium branding, brand authority, conversion optimization',
+  openGraph: {
+    title: 'Luxury Branding Services | SanganakHQ Premium IT Boutique | Become Category King',
+    description: 'Transform your brand into a Category King with SanganakHQ luxury branding. Strategic positioning, premium visual identity, and conversion-optimized copywriting.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Luxury Branding Services',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/services/luxury-branding'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Luxury Branding Services | SanganakHQ Premium IT Boutique | Become Category King',
+    description: 'Transform your brand into a Category King with SanganakHQ luxury branding. Strategic positioning, premium visual identity, and conversion-optimized copywriting.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/services/luxury-branding'
+  }
+};
 
 // Service JSON-LD Schema for SEO
 const serviceSchema = {

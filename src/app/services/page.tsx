@@ -8,6 +8,37 @@ import LuxuryButton from '@/components/ui/LuxuryButton';
 import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Services | SanganakHQ Premium IT Boutique | Luxury Branding • Elite Design • AI Solutions',
+  description: 'SanganakHQ premium services: Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI-Powered Intelligence, and Marketing HQ. Launch Faster. Grow Smarter. Innovate at Scale.',
+  keywords: 'SanganakHQ services, luxury branding services, elite design services, bespoke applications, blockchain innovation, AI solutions, marketing HQ, premium IT services, digital transformation',
+  openGraph: {
+    title: 'Services | SanganakHQ Premium IT Boutique | Luxury Branding • Elite Design • AI Solutions',
+    description: 'SanganakHQ premium services: Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI-Powered Intelligence, and Marketing HQ.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Services - Premium IT Boutique',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/services'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Services | SanganakHQ Premium IT Boutique | Luxury Branding • Elite Design • AI Solutions',
+    description: 'SanganakHQ premium services: Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI-Powered Intelligence, and Marketing HQ.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/services'
+  }
+};
  
 // Services Page Component - Premium services ko showcase karne wala main component
 // Features:

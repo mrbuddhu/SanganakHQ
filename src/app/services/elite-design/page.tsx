@@ -8,6 +8,37 @@ import LuxuryCard from '@/components/ui/LuxuryCard'
 import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Elite Design Services | SanganakHQ Premium IT Boutique | Convert 25% More Visitors',
+  description: 'Convert 25% more visitors into customers with SanganakHQ elite design. Premium UI/UX design, conversion-optimized user journeys, interactive prototypes, and design systems for luxury brands.',
+  keywords: 'elite design services, premium UI UX design, conversion optimization, user experience design, interactive prototypes, design systems, luxury design, premium aesthetics',
+  openGraph: {
+    title: 'Elite Design Services | SanganakHQ Premium IT Boutique | Convert 25% More Visitors',
+    description: 'Convert 25% more visitors into customers with SanganakHQ elite design. Premium UI/UX design, conversion-optimized user journeys, and interactive prototypes.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Elite Design Services',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/services/elite-design'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Elite Design Services | SanganakHQ Premium IT Boutique | Convert 25% More Visitors',
+    description: 'Convert 25% more visitors into customers with SanganakHQ elite design. Premium UI/UX design, conversion-optimized user journeys, and interactive prototypes.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/services/elite-design'
+  }
+};
 
 export default function EliteDesignPage() {
   const features = [

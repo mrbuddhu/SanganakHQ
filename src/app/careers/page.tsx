@@ -4,6 +4,93 @@ import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import JobCard from '@/components/careers/JobCard';
 import { Code2, Smartphone, Palette, Database, Brain, Gem } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Careers at SanganakHQ | Join Our Elite Team of Tech Innovators',
+  description: 'Join SanganakHQ - the premium IT boutique. We\'re hiring elite developers, designers, and tech innovators for luxury branding, AI solutions, blockchain development, and bespoke applications. Remote positions available.',
+  keywords: 'SanganakHQ careers, tech jobs, developer jobs, designer jobs, AI engineer jobs, blockchain jobs, remote jobs, premium tech careers, luxury tech jobs, elite development team',
+  openGraph: {
+    title: 'Careers at SanganakHQ | Join Our Elite Team of Tech Innovators',
+    description: 'Join SanganakHQ - the premium IT boutique. We\'re hiring elite developers, designers, and tech innovators for luxury branding, AI solutions, blockchain development, and bespoke applications.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Careers - Join Our Elite Team',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/careers'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Careers at SanganakHQ | Join Our Elite Team of Tech Innovators',
+    description: 'Join SanganakHQ - the premium IT boutique. We\'re hiring elite developers, designers, and tech innovators for luxury branding, AI solutions, blockchain development, and bespoke applications.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/careers'
+  }
+};
+
+// JSON-LD Schema for Careers Page
+const careersSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'JobPosting',
+  title: 'Elite Tech Positions at SanganakHQ',
+  description: 'Join our premium IT boutique team of elite developers, designers, and tech innovators working on luxury branding, AI solutions, blockchain development, and bespoke applications.',
+  hiringOrganization: {
+    '@type': 'Organization',
+    name: 'SanganakHQ',
+    url: 'https://sanganak.org',
+    logo: 'https://sanganak.org/Logo.ico',
+    description: 'Premium IT boutique delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions.'
+  },
+  jobLocation: {
+    '@type': 'Place',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IN',
+      addressRegion: 'Bihar',
+      addressLocality: 'Remote'
+    }
+  },
+  employmentType: 'FULL_TIME',
+  workHours: 'Full-time',
+  datePosted: new Date().toISOString(),
+  validThrough: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(), // 90 days from now
+  baseSalary: {
+    '@type': 'MonetaryAmount',
+    currency: 'INR',
+    value: {
+      '@type': 'QuantitativeValue',
+      minValue: 500000,
+      maxValue: 2000000,
+      unitText: 'YEAR'
+    }
+  },
+  jobBenefits: [
+    'Remote work flexibility',
+    'Premium tech stack exposure',
+    'Luxury brand projects',
+    'Cutting-edge AI and blockchain work',
+    'Competitive compensation',
+    'Professional development opportunities'
+  ],
+  skills: [
+    'JavaScript',
+    'React',
+    'Node.js',
+    'AI/ML',
+    'Blockchain',
+    'UI/UX Design',
+    'Brand Management',
+    'Mobile Development'
+  ]
+};
 
 export default function CareersPage() {
   const jobs = [
@@ -89,6 +176,10 @@ export default function CareersPage() {
 
   return (
     <MainLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(careersSchema) }}
+      />
       <main className="min-h-screen bg-black text-white pt-24 pb-16">
         <div className="container mx-auto px-4">
           <LuxuryHeading

@@ -6,6 +6,37 @@ import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { Clock, HeartHandshake, MessageSquare, ShieldCheck, Phone, Mail, MapPin } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Support | SanganakHQ Premium Customer Support | 24/7 Technical Assistance',
+  description: 'Get premium support from SanganakHQ - 24/7 technical assistance, quick response times, secure communication, and expert assistance. Premium customer service for your digital needs.',
+  keywords: 'SanganakHQ support, premium customer support, 24/7 technical assistance, quick response, secure communication, expert assistance, customer service, technical support',
+  openGraph: {
+    title: 'Support | SanganakHQ Premium Customer Support | 24/7 Technical Assistance',
+    description: 'Get premium support from SanganakHQ - 24/7 technical assistance, quick response times, secure communication, and expert assistance.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Support - Premium Customer Service',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/support'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Support | SanganakHQ Premium Customer Support | 24/7 Technical Assistance',
+    description: 'Get premium support from SanganakHQ - 24/7 technical assistance, quick response times, secure communication, and expert assistance.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/support'
+  }
+};
 
 export default function SupportPage() {
   const supportFeatures = [

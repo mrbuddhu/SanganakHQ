@@ -8,6 +8,37 @@ import { ArrowRight } from 'lucide-react';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import { caseStudies } from './data';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Case Studies | SanganakHQ Success Stories | Premium IT Boutique Results',
+  description: 'Explore SanganakHQ case studies showcasing successful luxury branding, elite design, AI solutions, and blockchain projects. See measurable results and client success stories.',
+  keywords: 'SanganakHQ case studies, premium IT success stories, luxury branding results, elite design projects, AI solutions case studies, blockchain success stories, client testimonials',
+  openGraph: {
+    title: 'Case Studies | SanganakHQ Success Stories | Premium IT Boutique Results',
+    description: 'Explore SanganakHQ case studies showcasing successful luxury branding, elite design, AI solutions, and blockchain projects.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SanganakHQ Case Studies - Success Stories',
+        type: 'image/png'
+      }
+    ],
+    type: 'website',
+    url: 'https://sanganak.org/case-studies'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Case Studies | SanganakHQ Success Stories | Premium IT Boutique Results',
+    description: 'Explore SanganakHQ case studies showcasing successful luxury branding, elite design, AI solutions, and blockchain projects.',
+    images: ['/og-image.png']
+  },
+  alternates: {
+    canonical: 'https://sanganak.org/case-studies'
+  }
+};
 
 const MainLayout = dynamic(() => import('@/components/layout/MainLayout'));
 

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seo:setup": "node scripts/seo-setup.js",
+    "seo:update-codes": "node scripts/update-verification-codes.js"
   },
   "dependencies": {
     "@react-three/drei": "^9.121.4",
