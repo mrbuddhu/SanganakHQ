@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'SanganakHQ | Launch Faster. Grow Smarter. Innovate at Scale.',
-  description: 'SanganakHQ helps startups launch faster, brands grow smarter, and enterprises innovate at scale. Premium global innovation consultancy delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
+  description: 'SanganakHQ delivers 3x faster launches, 30% conversion lifts, and market leadership through premium innovation. Global consultancy across 6 continents.',
   manifest: '/manifest.json',
   metadataBase: new URL('https://sanganak.org'),
   keywords: 'SanganakHQ, Global Innovation Consultancy, Launch Faster, Grow Smarter, Innovate at Scale, Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, Digital Transformation, Enterprise Technology, International Tech Services, Premium Technology Solutions, Web Development, Mobile Apps, UI/UX Design, Software Development, Digital Agency, Tech Solutions, Enterprise Software, Custom Software Development, Cloud Solutions, SaaS Development, Fintech Solutions, E-commerce Development, Digital Marketing, Tech Consulting',

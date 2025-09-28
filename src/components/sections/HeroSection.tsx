@@ -158,7 +158,7 @@ export default function HeroSection({
                 transition={{ duration: 0.6, delay: 0.45 }}
                 className="text-body-lg font-inter text-white mb-2 sm:mb-3"
               >
-                We help startups launch faster, brands grow smarter, and enterprises innovate at scale—with measurable results across 6 continents.
+                SanganakHQ delivers 3x faster launches, 30% conversion lifts, and market leadership through premium innovation across 6 continents.
               </motion.h3>
             </div>
 

@@ -8,6 +8,17 @@ import { CTA_URL } from '@/constants/links';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About SanganakHQ | Premium Global Innovation Consultancy',
+  description: 'Learn about SanganakHQ, the premium global innovation consultancy that delivers 3x faster launches, 30% conversion lifts, and market leadership across 6 continents.',
+  keywords: 'about SanganakHQ, global innovation consultancy, premium technology solutions, enterprise consulting, startup acceleration',
+  openGraph: {
+    title: 'About SanganakHQ | Premium Global Innovation Consultancy',
+    description: 'Learn about SanganakHQ, the premium global innovation consultancy that delivers 3x faster launches, 30% conversion lifts, and market leadership across 6 continents.',
+  },
+};
 
 export default function AboutPage() {
   const values = [
@@ -49,7 +60,7 @@ export default function AboutPage() {
                 title="Launch Faster. Grow Smarter. Innovate at Scale."
               />
               <p className="text-xl text-gray-300 mb-8">
-                We are SanganakHQ, a premium global innovation consultancy dedicated to helping startups launch faster, brands grow smarter, and enterprises innovate at scale with measurable results across 6 continents.
+                SanganakHQ delivers 3x faster launches, 30% conversion lifts, and market leadership through premium innovation. We serve global clients across 6 continents with measurable results and elite experiences.
               </p>
             </motion.div>
           </div>
@@ -91,7 +102,7 @@ export default function AboutPage() {
               <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden">
                 <Image
                   src="/Sanganak.jpeg"
-                  alt="Sanganak Premium"
+                  alt="SanganakHQ Premium"
                   fill
                   className="object-contain sm:object-cover"
                   quality={100}

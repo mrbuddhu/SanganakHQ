@@ -16,10 +16,10 @@ export default function NewsletterSection() {
             <h4 className="text-xl font-semibold text-[#c6a255] mb-3">Weekly Premium Content</h4>
             <div className="max-w-2xl">
               <p className="text-gray-300 mb-2">
-                Get exclusive insights on luxury tech, AI innovations, and digital transformation.
+                Get exclusive insights on 3x faster launches, 30% conversion lifts, and market leadership strategies.
               </p>
               <p className="text-[#c6a255] font-medium">
-                For visionaries who demand excellence.
+                For visionaries who demand measurable results.
               </p>
             </div>
           </div>

@@ -9,8 +9,8 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "What sets Sanganak apart from other digital agencies?",
-      answer: "We combine cutting-edge technology with luxury design principles to create digital experiences that truly stand out. Our attention to detail, commitment to excellence, and focus on measurable results make us the preferred choice for discerning clients."
+      question: "What sets SanganakHQ apart from other digital agencies?",
+      answer: "SanganakHQ delivers 3x faster launches and 30% conversion lifts through premium innovation. We combine cutting-edge technology with luxury design principles to create digital experiences that drive measurable results and market leadership."
     },
     {
       question: "How do you ensure the success of digital projects?",
@@ -39,7 +39,7 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
           title="Frequently Asked Questions"
-          subtitle="Everything you need to know about working with Sanganak Premium"
+          subtitle="Everything you need to know about working with SanganakHQ Premium"
         />
         
         <div className="mt-16 space-y-4">

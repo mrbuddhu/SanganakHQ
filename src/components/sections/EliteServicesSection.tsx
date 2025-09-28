@@ -8,7 +8,7 @@ export default function EliteServicesSection() {
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: "Luxury Branding",
-      description: "Become a Category King with a brand that commands authority, drives premium pricing, and builds lasting customer loyalty.",
+      description: "Become a Category King with premium branding that drives 30% higher conversions and commands premium pricing.",
       features: [
         "Strategic Brand Positioning – Dominate your market segment with authority",
         "Signature Visual Identity – Premium perception that converts 30% better",

@@ -773,3 +773,22 @@ section::after {
     rgba(0, 0, 0, 0.95)
   );
 }
+
+/* Ensure sections are visible */
+section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix any hidden content */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure proper section spacing */
+section:not(:last-child) {
+  margin-bottom: 0;
+}

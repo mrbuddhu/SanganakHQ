@@ -8,6 +8,17 @@ import LuxuryButton from '@/components/ui/LuxuryButton';
 import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Services | SanganakHQ Premium Innovation Solutions',
+  description: 'Choose your path to market leadership with SanganakHQ premium services: Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, and Marketing HQ.',
+  keywords: 'SanganakHQ services, premium innovation solutions, luxury branding, elite design, bespoke applications, blockchain innovation, AI solutions, marketing HQ',
+  openGraph: {
+    title: 'Services | SanganakHQ Premium Innovation Solutions',
+    description: 'Choose your path to market leadership with SanganakHQ premium services: Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, and Marketing HQ.',
+  },
+};
 // Services Page Component - Premium services ko showcase karne wala main component
 // Features:
 // - Responsive grid layout - Mobile se desktop tak adaptive design

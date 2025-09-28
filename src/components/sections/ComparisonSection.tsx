@@ -48,10 +48,10 @@ export default function ComparisonSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Why Choose <span className="text-luxury-gold-300">Sanganak</span>
+            Why Choose <span className="text-luxury-gold-300">SanganakHQ</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how we outperform traditional agencies and freelancers
+            See how we deliver 3x faster launches and 30% conversion lifts vs traditional agencies
           </p>
         </motion.div>
         
@@ -101,9 +101,9 @@ export default function ComparisonSection() {
                 </div>
               </div>
               
-              {/* Sanganak Column */}
+              {/* SanganakHQ Column */}
               <div className="bg-luxury-gold-300/10 p-8 shadow-[0_0_32px_0_rgba(198,162,85,0.12)]">
-                <h3 className="text-xl font-extrabold text-luxury-gold-300 mb-8 text-center drop-shadow-lg">Sanganak Premium</h3>
+                <h3 className="text-xl font-extrabold text-luxury-gold-300 mb-8 text-center drop-shadow-lg">SanganakHQ Premium</h3>
                 <div className="space-y-8">
                   {comparisonData.map((item, index) => (
                     <motion.div
