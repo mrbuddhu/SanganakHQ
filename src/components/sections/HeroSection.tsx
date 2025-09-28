@@ -125,7 +125,7 @@ export default function HeroSection({
                 initial={{ opacity: 0, y: 30, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="text-display font-inter mb-2 sm:mb-3 md:mb-4 px-2 sm:px-4 w-full"
+                className="text-display font-inter mb-2 sm:mb-3 md:mb-4 px-2 sm:px-4 w-full whitespace-nowrap"
                 style={{
                   background: 'linear-gradient(135deg, #c6a255, #e9d5a1, #c6a255, #f4e6b8)',
                   WebkitBackgroundClip: 'text',
