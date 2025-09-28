@@ -31,7 +31,6 @@ const nextConfig = {
   generateEtags: true,
   // Enable experimental features for better SEO
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   // Headers for better SEO and security

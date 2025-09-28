@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,37 +8,8 @@ import { CTA_URL } from '@/constants/links';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'About SanganakHQ | #1 Premium IT Boutique | Our Story & Mission',
-  description: 'Learn about SanganakHQ - the #1 Premium IT Boutique. Our story of delivering luxury branding, elite design, and AI solutions across 6 continents. Launch Faster. Grow Smarter. Innovate at Scale.',
-  keywords: 'SanganakHQ about, premium IT boutique, luxury branding company, elite design team, AI solutions provider, blockchain innovation, our story, company mission',
-  openGraph: {
-    title: 'About SanganakHQ | #1 Premium IT Boutique | Our Story & Mission',
-    description: 'Learn about SanganakHQ - the #1 Premium IT Boutique. Our story of delivering luxury branding, elite design, and AI solutions across 6 continents.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'About SanganakHQ - #1 Premium IT Boutique',
-        type: 'image/png'
-      }
-    ],
-    type: 'website',
-    url: 'https://sanganak.org/about'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About SanganakHQ | #1 Premium IT Boutique | Our Story & Mission',
-    description: 'Learn about SanganakHQ - the #1 Premium IT Boutique. Our story of delivering luxury branding, elite design, and AI solutions across 6 continents.',
-    images: ['/og-image.png']
-  },
-  alternates: {
-    canonical: 'https://sanganak.org/about'
-  }
-};
+// Note: Metadata cannot be exported from client components
+// This will be handled by the layout or a separate metadata file
  
 
 export default function AboutPage() {

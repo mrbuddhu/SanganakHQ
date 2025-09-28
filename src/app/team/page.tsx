@@ -1,39 +1,12 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import Image from 'next/image';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Team | SanganakHQ Leadership | Premium IT Boutique Founders',
-  description: 'Meet the SanganakHQ leadership team - visionary founders and experts in luxury branding, elite design, AI solutions, and blockchain innovation. Learn about our mission and values.',
-  keywords: 'SanganakHQ team, premium IT leadership, luxury branding founders, elite design team, AI solutions experts, blockchain innovators, company leadership, founders',
-  openGraph: {
-    title: 'Team | SanganakHQ Leadership | Premium IT Boutique Founders',
-    description: 'Meet the SanganakHQ leadership team - visionary founders and experts in luxury branding, elite design, AI solutions, and blockchain innovation.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'SanganakHQ Team - Leadership',
-        type: 'image/png'
-      }
-    ],
-    type: 'website',
-    url: 'https://sanganak.org/team'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Team | SanganakHQ Leadership | Premium IT Boutique Founders',
-    description: 'Meet the SanganakHQ leadership team - visionary founders and experts in luxury branding, elite design, AI solutions, and blockchain innovation.',
-    images: ['/og-image.png']
-  },
-  alternates: {
-    canonical: 'https://sanganak.org/team'
-  }
-};
+// Note: Metadata cannot be exported from client components
+// This will be handled by the layout or a separate metadata file
 
 export default function TeamPage() {
   const team = [
