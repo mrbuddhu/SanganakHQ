@@ -94,8 +94,8 @@ const PortfolioSection = () => {
     <section id="portfolio" className="py-16 sm:py-24 relative bg-[#000000] overflow-hidden">
       <div className="container mx-auto px-4">
         <LuxuryHeading
-          title="Our Portfolio"
-          subtitle="Explore our collection of premium digital experiences that delivered exceptional results"
+          title="Premium Portfolio"
+          subtitle="Explore our collection of elite digital experiences that delivered measurable growth, market leadership, and exceptional ROI"
         />
         
         {/* First Row - Moves Left */}

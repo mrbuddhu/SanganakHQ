@@ -15,7 +15,7 @@ import NewsletterSection from '@/components/sections/NewsletterSection';
 import FAQSection from '@/components/sections/FAQSection';
 
 export default function Home() {
-  const [displayText, setDisplayText] = useState("Global Innovation Consultancy for Branding, Tech & Growth");
+  const [displayText, setDisplayText] = useState("Launch Faster. Grow Smarter. Innovate at Scale.");
   const [projectCount, setProjectCount] = useState(0);
   const [clientCount, setClientCount] = useState(0);
 

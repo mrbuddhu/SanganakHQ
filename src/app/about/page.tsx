@@ -46,10 +46,10 @@ export default function AboutPage() {
               className="text-center max-w-4xl mx-auto"
             >
               <LuxuryHeading
-                title="Crafting Digital Excellence"
+                title="Launch Faster. Grow Smarter. Innovate at Scale."
               />
               <p className="text-xl text-gray-300 mb-8">
-                We are Sanganak, a premium digital agency dedicated to transforming businesses through innovative technology solutions and stunning design.
+                We are SanganakHQ, a premium global innovation consultancy dedicated to helping startups launch faster, brands grow smarter, and enterprises innovate at scale with measurable results across 6 continents.
               </p>
             </motion.div>
           </div>
@@ -70,13 +70,13 @@ export default function AboutPage() {
                 />
                 <div className="space-y-4 text-gray-300">
                   <p>
-                    Founded in Patna, Bihar, Sanganak emerged from a vision to bridge the gap between premium technology solutions and businesses seeking digital excellence.
+                    Founded as a premium global innovation consultancy, SanganakHQ emerged from a vision to help businesses achieve measurable growth and market leadership through cutting-edge technology and strategic innovation.
                   </p>
                   <p>
-                    What started as a passion for creating exceptional digital experiences has evolved into a full-service agency, trusted by clients worldwide for our commitment to quality and innovation.
+                    What started as a passion for delivering exceptional results has evolved into a trusted partner for startups, brands, and enterprises worldwide, helping them launch faster, grow smarter, and innovate at scale.
                   </p>
                   <p>
-                    Today, we continue to push boundaries, embrace new technologies, and deliver solutions that not only meet but exceed our clients' expectations.
+                    Today, we continue to push boundaries with AI, blockchain, and premium design solutions that deliver measurable ROI and market leadership across 6 continents.
                   </p>
                 </div>
                 <a 
@@ -85,7 +85,7 @@ export default function AboutPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-8 px-8 py-3 rounded-full bg-luxury-gold-300 text-black font-semibold hover:bg-luxury-gold-400 transition-colors"
                 >
-                  Schedule a Call <ArrowRight className="ml-2 w-4 h-4" />
+                  Book Strategy Call <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </div>
               <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden">
@@ -152,14 +152,14 @@ export default function AboutPage() {
               className="text-center max-w-3xl mx-auto"
             >
               <LuxuryHeading
-                title="Ready to Transform Your Digital Presence?"
+                title="Ready to Launch Faster and Grow Smarter?"
               />
               <p className="text-gray-300 mb-8">
-                Let's create something extraordinary together. Our team is ready to bring your vision to life.
+                Let's create something extraordinary together. Our team is ready to help you achieve measurable growth and market leadership.
               </p>
               <Link href="/contact">
                 <button className="bg-luxury-gold-300 text-black px-8 py-3 rounded-full font-semibold hover:bg-luxury-gold-400 transition-colors">
-                  Start a Conversation
+                  Book Strategy Call
                 </button>
               </Link>
             </motion.div>

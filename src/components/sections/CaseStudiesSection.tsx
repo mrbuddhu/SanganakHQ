@@ -71,8 +71,8 @@ export default function CaseStudiesSection() {
     <section id="case-studies" className="py-24 bg-[#000000] relative overflow-hidden">
       <div className="container mx-auto px-4">
         <LuxuryHeading
-          title="Success Stories"
-          subtitle="Real results from our premium client engagements"
+          title="Client Success Stories"
+          subtitle="Measurable results from our premium engagements—real revenue growth, conversion lifts, and market leadership"
         />
 
         {/* Featured Case Studies - withsupafast.com style */}
@@ -149,10 +149,10 @@ export default function CaseStudiesSection() {
           className="text-center py-16"
         >
           <h3 className="text-h2 font-inter font-semibold text-white mb-4">
-            Ready to Create Your Success Story?
+            Ready to Launch Faster and Grow Smarter?
           </h3>
           <p className="text-body font-inter text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join our exclusive client portfolio and experience the premium service that delivers exceptional results.
+            Join our exclusive client portfolio and experience the premium service that delivers measurable growth, market leadership, and exceptional ROI.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -166,7 +166,7 @@ export default function CaseStudiesSection() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 border border-luxury-gold-300 text-luxury-gold-300 px-8 py-3 rounded-lg font-inter font-semibold hover:bg-luxury-gold-300 hover:text-black transition-colors"
             >
-              Start Your Project
+              Book Strategy Call
             </Link>
           </div>
         </motion.div>

@@ -23,11 +23,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Sanganak HQ | Global Innovation Consultancy for Branding, Tech & Growth',
-  description: 'Sanganak HQ — Global Innovation Consultancy for Branding, Tech & Growth. We deliver luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
+  title: 'SanganakHQ | Launch Faster. Grow Smarter. Innovate at Scale.',
+  description: 'SanganakHQ helps startups launch faster, brands grow smarter, and enterprises innovate at scale. Premium global innovation consultancy delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
   manifest: '/manifest.json',
   metadataBase: new URL('https://sanganak.org'),
-  keywords: 'Sanganak HQ, Sanganak, Global Innovation Consultancy, Branding, Tech & Growth, Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, Digital Transformation, Enterprise Technology, International Tech Services, Premium Technology Solutions, Web Development, Mobile Apps, UI/UX Design, Software Development, Digital Agency, Tech Solutions, Enterprise Software, Custom Software Development, Cloud Solutions, SaaS Development, Fintech Solutions, E-commerce Development, Digital Marketing, Tech Consulting',
+  keywords: 'SanganakHQ, Global Innovation Consultancy, Launch Faster, Grow Smarter, Innovate at Scale, Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, Digital Transformation, Enterprise Technology, International Tech Services, Premium Technology Solutions, Web Development, Mobile Apps, UI/UX Design, Software Development, Digital Agency, Tech Solutions, Enterprise Software, Custom Software Development, Cloud Solutions, SaaS Development, Fintech Solutions, E-commerce Development, Digital Marketing, Tech Consulting',
   authors: [{ name: 'mrbuddhu' }, { name: 'msbuddhu' }],
   creator: 'SanganakHQ',
   publisher: 'SanganakHQ',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Sanganak HQ | Global Innovation Consultancy',
+    title: 'SanganakHQ | Launch Faster. Grow Smarter.',
   },
   icons: {
     icon: '/Logo.ico',
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Sanganak HQ — Global Innovation Consultancy for Branding, Tech & Growth',
-    description: 'Sanganak HQ delivers luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
+    title: 'SanganakHQ — Launch Faster. Grow Smarter. Innovate at Scale.',
+    description: 'SanganakHQ helps startups launch faster, brands grow smarter, and enterprises innovate at scale. Premium global innovation consultancy delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Sanganak HQ — Global Innovation Consultancy',
+        alt: 'SanganakHQ — Launch Faster. Grow Smarter. Innovate at Scale.',
         type: 'image/png'
       }
     ],
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sanganak HQ — Global Innovation Consultancy for Branding, Tech & Growth',
-    description: 'Luxury branding, elite design, bespoke applications, blockchain innovation, and AI across 6 continents.',
+    title: 'SanganakHQ — Launch Faster. Grow Smarter. Innovate at Scale.',
+    description: 'Premium global innovation consultancy delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
     images: [{
       url: '/og-image.png',
       width: 1200,
       height: 630,
-      alt: 'Sanganak HQ — Global Innovation Consultancy',
+      alt: 'SanganakHQ — Launch Faster. Grow Smarter. Innovate at Scale.',
       type: 'image/png'
     }],
     site: '@sanganakHQ',
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    'application-name': 'Sanganak',
+    'application-name': 'SanganakHQ',
     'msapplication-TileColor': '#c6a255',
     'msapplication-TileImage': '/Logo.ico',
     'msapplication-config': '/browserconfig.xml',
@@ -111,7 +111,7 @@ export const metadata: Metadata = {
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
-    'apple-mobile-web-app-title': 'Sanganak'
+    'apple-mobile-web-app-title': 'SanganakHQ'
   }
 }
 
@@ -119,11 +119,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Sanganak HQ',
-  alternateName: 'Global Innovation Consultancy for Branding, Tech & Growth',
+  name: 'SanganakHQ',
+  alternateName: 'Launch Faster. Grow Smarter. Innovate at Scale.',
   url: 'https://sanganak.org',
   logo: 'https://sanganak.org/Logo.ico',
-  description: 'Global Innovation Consultancy delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
+  description: 'SanganakHQ helps startups launch faster, brands grow smarter, and enterprises innovate at scale. Premium global innovation consultancy delivering luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions across 6 continents.',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'Global'
@@ -223,26 +223,26 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What services does Sanganak offer?',
+      name: 'What services does SanganakHQ offer?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sanganak offers premium IT services including luxury branding, elite design, bespoke applications, blockchain innovation, and AI-powered solutions.'
+        text: 'SanganakHQ offers premium innovation services including luxury branding, elite design, bespoke applications, blockchain innovation, AI-powered solutions, and marketing HQ retainers for measurable growth.'
       }
     },
     {
       '@type': 'Question',
-      name: 'How can I contact Sanganak?',
+      name: 'How can I contact SanganakHQ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'You can contact Sanganak via email at contact@sanganak.org, phone at +919631864610, or through our social media channels.'
+        text: 'You can contact SanganakHQ via email at contact@sanganak.org, phone at +919631864610, or through our social media channels.'
       }
     },
     {
       '@type': 'Question',
-      name: 'What makes Sanganak different?',
+      name: 'What makes SanganakHQ different?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sanganak HQ is a Global Innovation Consultancy delivering luxury digital solutions with a focus on quality, innovation, and client success.'
+        text: 'SanganakHQ is a premium global innovation consultancy that helps startups launch faster, brands grow smarter, and enterprises innovate at scale with measurable results across 6 continents.'
       }
     }
   ]

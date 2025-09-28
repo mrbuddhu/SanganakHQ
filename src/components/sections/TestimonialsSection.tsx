@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
       name: "Ankit Kumar",
       role: "@Burgerrr",
       rating: 5,
-      content: "Working with Sanganak Premium was a game-changing experience. Their attention to detail and innovative solutions exceeded our expectations.",
+      content: "Working with SanganakHQ was a game-changing experience. Our monthly revenue grew from $120k to $720k in just 45 days with their end-to-end solution.",
       videoUrl: "/testimonials/ankit-kumar.mp4",
       avatar: "/testimonials/headshots/ankit-kumar.jpg",
       type: "video"
@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
       name: "Shyam Sharma",
       role: "@Interio",
       rating: 5,
-      content: "Sanganak delivered our MVP in just 15 days. Their premium project management and full-stack expertise made all the difference.",
+      content: "SanganakHQ delivered our MVP in just 15 days. Our monthly revenue grew from $15k to $105k in 3 months with their premium project management and full-stack expertise.",
       avatar: "/testimonials/headshots/shyam-sharma.jpg",
       type: "text"
     },
@@ -31,7 +31,7 @@ export default function TestimonialsSection() {
       name: "Shubham Kumar",
       role: "@GlobalEats",
       rating: 5,
-      content: "Their expertise in food tech platforms helped us create a seamless experience for our global customer base.",
+      content: "SanganakHQ's expertise in food tech platforms helped us increase daily orders from 500 to 2,500 in just 2 months with their full-service solution.",
       videoUrl: "/testimonials/shubham-kumar.mp4",
       avatar: "/testimonials/headshots/shubham-kumar.jpg",
       type: "video"
@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
       name: "Rahul Verma",
       role: "@TechStart",
       rating: 5,
-      content: "3x revenue growth in 6 months! Their AI-powered solutions transformed our entire business model. Absolutely phenomenal work.",
+      content: "3x revenue growth in 6 months! SanganakHQ's AI-powered solutions transformed our entire business model and increased efficiency by 80%. Absolutely phenomenal work.",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1e7220bb89?w=200&h=200&fit=crop&q=80",
       type: "text"
     },
@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
       name: "Priya Singh",
       role: "@LuxeFashion",
       rating: 5,
-      content: "Our conversion rate jumped 150% after the redesign. The attention to luxury details and user experience is simply unmatched.",
+      content: "Our conversion rate jumped 150% after SanganakHQ's redesign. The attention to luxury details and user experience increased our average order value by 40%. Simply unmatched.",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80",
       type: "text"
     },
@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
       name: "Aarav Patel",
       role: "@FinTechPro",
       rating: 5,
-      content: "Delivered our MVP in just 15 days. The quality and speed of execution is remarkable. Worth every penny and more.",
+      content: "SanganakHQ delivered our MVP in just 15 days. The quality and speed of execution helped us secure $2M in funding. Worth every penny and more.",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&q=80",
       type: "text"
     },
@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
       name: "Meera Kapoor",
       role: "@LuxeInteriors",
       rating: 5,
-      content: "2.5x increase in client acquisitions within 3 months. Their premium design approach perfectly aligns with our luxury market.",
+      content: "2.5x increase in client acquisitions within 3 months. SanganakHQ's premium design approach perfectly aligns with our luxury market and increased our average project value by 60%.",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80",
       type: "text"
     }
@@ -136,8 +136,8 @@ export default function TestimonialsSection() {
       <div className="w-full px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <LuxuryHeading
-            title="Client Stories"
-            subtitle="Hear from our distinguished clients who achieved extraordinary results"
+            title="Client Success Stories"
+            subtitle="Hear from our distinguished clients who achieved measurable growth, market leadership, and exceptional ROI"
           />
         </div>
         

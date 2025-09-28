@@ -61,12 +61,12 @@ export default function ContactPage() {
             className="text-center mb-16"
           >
             <LuxuryHeading
-              title="Let's Talk"
-              subtitle="Schedule a Strategy Call"
+              title="Ready to Launch Faster?"
+              subtitle="Book Your Strategy Call"
             />
             <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-              Have questions about our premium services? Schedule a call with our expert team
-              to discuss your project and explore tailored solutions.
+              Ready to grow smarter and innovate at scale? Book a strategy call with our expert team
+              to discuss your growth goals and explore tailored solutions for measurable results.
             </p>
             <div className="mt-8">
               <a
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-gradient-to-r from-luxury-gold-300 via-luxury-gold-400 to-luxury-gold-500 text-black font-medium rounded-full hover:shadow-lg hover:shadow-luxury-gold-300/20 transition-all duration-300 transform hover:scale-105"
               >
-                Schedule Your Call
+                Book Strategy Call
               </a>
             </div>
           </motion.div>

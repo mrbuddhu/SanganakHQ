@@ -13,7 +13,7 @@ const plans = [
   {
     name: "Essentials",
     price: "Investment: $2,999+",
-    description: "Perfect for startups with $10k+ monthly revenue looking to scale",
+    description: "Perfect for startups with $10k+ monthly revenue ready to scale 3x faster",
     slots: "2 weeks delivery",
     features: [
       "Professional Logo Design",
@@ -26,14 +26,14 @@ const plans = [
       author: "Shyam Sharma @Interio",
       quote: "Our monthly revenue grew from $15k to $105k in just 3 months after the brand transformation."
     },
-    cta: "Unlock Essentials",
+    cta: "Launch Faster",
     popular: false,
     availability: "Only 3 spots left this month"
   },
   {
     name: "Accelerator",
     price: "Investment: $4,999+",
-    description: "For businesses making $50k+ monthly, ready to dominate their market",
+    description: "For businesses making $50k+ monthly, ready to dominate their market and grow 5x",
     slots: "4 weeks delivery",
     features: [
       "Complete Brand Identity",
@@ -46,14 +46,14 @@ const plans = [
       author: "Shubham Kumar @GlobalEats",
       quote: "Our daily orders increased from 500 to 2,500 in 2 months with their full-service solution."
     },
-    cta: "Boost My Brand",
+    cta: "Grow Smarter",
     popular: false,
     availability: "Only 2 spots left this month"
   },
   {
     name: "Domination",
     price: "Investment: $9,999+",
-    description: "For established brands with $100k+ monthly revenue targeting market leadership",
+    description: "For established brands with $100k+ monthly revenue targeting market leadership and 10x growth",
     slots: "8 weeks delivery",
     features: [
       "Custom Next.js Website",
@@ -67,14 +67,14 @@ const plans = [
       author: "Ankit Kumar @Burgerrr",
       quote: "Our monthly revenue skyrocketed from $120k to $720k in just 45 days with their end-to-end solution."
     },
-    cta: "Claim Market Leadership",
+    cta: "Innovate at Scale",
     popular: true,
     availability: "Only 1 spot left this month"
   },
   {
     name: "Elite",
     price: "Investment: Get Quote",
-    description: "For enterprises with $500k+ monthly revenue seeking complete digital transformation",
+    description: "For enterprises with $500k+ monthly revenue seeking complete digital transformation and market dominance",
     slots: "Custom Timeline",
     features: [
       "Enterprise Software Development",
@@ -116,8 +116,8 @@ export default function PricingSection() {
           className="text-center mb-16"
         >
           <LuxuryHeading
-            title="Premium Solutions"
-            subtitle="Transform Your Digital Presence"
+            title="Premium Investment Packages"
+            subtitle="Choose Your Path to Market Leadership and Measurable Growth"
             className="bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text"
           />
         </motion.div>

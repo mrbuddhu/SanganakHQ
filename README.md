@@ -88,8 +88,8 @@ A luxurious, high-end website for Sanganak HQ — a global innovation consultanc
 
 ## ✨ Contributing
 
-This is a private project for Sanganak. Please contact the development team for contribution guidelines.
+This is a private project for SanganakHQ. Please contact the development team for contribution guidelines.
 
 ## 📝 License
 
-All rights reserved © Sanganak 2025
+All rights reserved © SanganakHQ 2025

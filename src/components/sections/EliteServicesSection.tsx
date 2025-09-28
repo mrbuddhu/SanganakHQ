@@ -8,70 +8,70 @@ export default function EliteServicesSection() {
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: "Luxury Branding",
-      description: "Become a Category King with a brand that exudes authority, prestige, and undeniable influence.",
+      description: "Become a Category King with a brand that commands authority, drives premium pricing, and builds lasting customer loyalty.",
       features: [
-        "Strategic Brand Positioning – Stand out. Stay unforgettable.",
-        "Signature Visual Identity – Designed for premium perception.",
-        "Comprehensive Brand Guidelines – Cohesive, timeless branding.",
-        "Conversion-Optimized Copywriting – Persuasion meets power."
+        "Strategic Brand Positioning – Dominate your market segment with authority",
+        "Signature Visual Identity – Premium perception that converts 30% better",
+        "Comprehensive Brand Guidelines – Cohesive, timeless brand consistency",
+        "Conversion-Optimized Copywriting – Persuasion that drives measurable results"
       ]
     },
     {
       icon: <Gem className="w-8 h-8" />,
       title: "Elite Design",
-      description: "Experience perfection. Every pixel, every interaction, meticulously crafted to convert.",
+      description: "Convert 25% more visitors into customers with premium design that builds trust, drives engagement, and maximizes revenue.",
       features: [
-        "Bespoke Website & App Design – Luxury aesthetics, seamless UX.",
-        "Conversion-Optimized User Journeys – Designed to maximize revenue.",
-        "Interactive Prototypes – Experience your product before it's built.",
-        "Premium Design System – Consistent luxury across platforms."
+        "Bespoke Website & App Design – Luxury aesthetics that convert visitors to customers",
+        "Conversion-Optimized User Journeys – Designed to maximize revenue and reduce bounce rates",
+        "Interactive Prototypes – Experience your product before it's built, reducing development costs",
+        "Premium Design System – Consistent luxury across all touchpoints for brand authority"
       ]
     },
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "Bespoke Applications",
-      description: "Tailor-made digital powerhouses. Scalable, high-performance software for trailblazers.",
+      description: "Launch 3x faster with custom software that scales with your growth, handles enterprise traffic, and delivers measurable ROI.",
       features: [
-        "No-Code Solutions – Webflow for web, Flutterflow for mobile.",
-        "Custom Code Development – Next.js for web, React Native for mobile.",
-        "E-Commerce Mastery – Elevate sales with elite UX.",
-        "SaaS Product Development – Future-proofing your business."
+        "No-Code Solutions – Webflow for web, Flutterflow for mobile, launch in 2 weeks",
+        "Custom Code Development – Next.js for web, React Native for mobile, built to scale",
+        "E-Commerce Mastery – Increase average order value by 40% with premium UX",
+        "SaaS Product Development – Future-proof architecture that grows with your business"
       ]
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Blockchain Innovation",
-      description: "Build the future. We architect blockchain solutions for enterprises ready to lead.",
+      description: "Lead the Web3 revolution with blockchain solutions that create new revenue streams, reduce costs by 60%, and future-proof your business.",
       features: [
-        "Smart Contract Development – Automate with absolute security.",
-        "Next-Gen DApps – Redefining decentralized experiences.",
-        "Enterprise Blockchain Integration – Elevate your business with Web3.",
-        "Tokenomics & Strategy – Designing sustainable blockchain ecosystems."
+        "Smart Contract Development – Automate processes with absolute security and transparency",
+        "Next-Gen DApps – Redefine user experiences with decentralized applications",
+        "Enterprise Blockchain Integration – Elevate your business with Web3 infrastructure",
+        "Tokenomics & Strategy – Design sustainable blockchain ecosystems that drive adoption"
       ]
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "AI-Powered Intelligence",
-      description: "Unleash the power of data. AI isn't the future—it's your competitive advantage today.",
+      description: "Increase efficiency by 80% and reduce operational costs by 50% with AI solutions that predict, optimize, and automate your business processes.",
       features: [
-        "Custom AI Models & Machine Learning – Predict. Optimize. Automate.",
-        "AI-Driven Business Insights – Data-powered growth strategies.",
-        "Process Automation – Scale smarter, work faster.",
-        "Computer Vision & NLP – Cutting-edge AI-driven experiences."
+        "Custom AI Models & Machine Learning – Predict customer behavior, optimize operations, automate workflows",
+        "AI-Driven Business Insights – Data-powered growth strategies that increase revenue by 35%",
+        "Process Automation – Scale smarter, work faster, reduce manual tasks by 80%",
+        "Computer Vision & NLP – Cutting-edge AI experiences that delight customers and drive engagement"
       ]
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Marketing HQ",
-      description: "Comprehensive marketing strategies to grow revenue & brand authority.",
+      description: "Grow revenue by 200% and reduce customer acquisition costs by 40% with data-driven marketing strategies that scale your business.",
       features: [
-        "SEO & Content Marketing – Rank higher and build compounding inbound traffic.",
-        "Social Media Strategy & Management – Grow engagement and brand authority.",
-        "Paid Ads (Google, Meta, LinkedIn) – Acquire customers with profitable CAC.",
-        "Email Marketing & Automations – Nurture leads and increase LTV.",
-        "Performance Analytics & Reporting – Track ROI and optimize monthly."
+        "SEO & Content Marketing – Rank higher, build compounding inbound traffic, increase organic revenue by 150%",
+        "Social Media Strategy & Management – Grow engagement by 300%, build brand authority, drive qualified leads",
+        "Paid Ads (Google, Meta, LinkedIn) – Acquire customers with profitable CAC, scale profitable campaigns",
+        "Email Marketing & Automations – Nurture leads, increase LTV by 60%, automate customer journeys",
+        "Performance Analytics & Reporting – Track ROI, optimize monthly, make data-driven decisions"
       ],
-      ctaNote: "Available as standalone or ongoing retainer."
+      ctaNote: "Available as standalone or ongoing retainer for continuous growth."
     }
   ];
 
@@ -85,8 +85,8 @@ export default function EliteServicesSection() {
           viewport={{ once: true }}
         >
           <LuxuryHeading
-            title="Elite Services"
-            subtitle="Transforming visions into digital excellence"
+            title="Premium Service Verticals"
+            subtitle="Six elite pathways to measurable growth and market leadership"
           />
         </motion.div>
 
