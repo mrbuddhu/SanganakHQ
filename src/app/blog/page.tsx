@@ -1,7 +1,3 @@
-'use client';
-
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -76,23 +72,6 @@ const BlogPage = () => {
   );
 };
 
-const BlogPost = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  const post = articles.find((post) => post.id === Number(id));
-
-  if (!post) {
-    return <div>Blog post not found.</div>;
-  }
-
-  return (
-    <LuxuryCard>
-      <h1 className="text-3xl font-bold">{post.title}</h1>
-      <p className="text-gray-500">By {post.author}</p>
-      <p className="mt-4">{post.content}</p>
-    </LuxuryCard>
-  );
-};
+// BlogPost component removed - individual blog posts are handled by [id]/page.tsx
 
 export default BlogPage;

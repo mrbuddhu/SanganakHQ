@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';

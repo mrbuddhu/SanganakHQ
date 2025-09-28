@@ -1,5 +1,3 @@
-'use client'
-
 import { motion } from 'framer-motion'
 import { Gem, Palette, Smartphone, Monitor, Zap } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'

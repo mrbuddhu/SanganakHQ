@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';

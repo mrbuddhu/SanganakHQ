@@ -385,10 +385,11 @@ export default function PricingSection() {
               <div className="pt-4">
                 <LuxuryButton
                   as="a"
-                  href="https://cal.com/SanganakHQ/growthstrategy"
+                  href="https://cal.com/sanganakhq/growth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-bold py-3 px-8"
+                  className="text-base font-bold py-3 px-8 relative z-20"
+                  style={{ pointerEvents: 'auto', position: 'relative', zIndex: 20 }}
                 >
                   Book Growth Strategy Call
                 </LuxuryButton>

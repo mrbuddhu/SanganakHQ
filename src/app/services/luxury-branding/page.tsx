@@ -1,5 +1,3 @@
-'use client'
-
 import { motion } from 'framer-motion'
 import { Sparkles, Crown, Target, TrendingUp, Users, DollarSign } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'

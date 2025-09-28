@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { CTA_URL } from '@/constants/links';
 import MainLayout from '@/components/layout/MainLayout';

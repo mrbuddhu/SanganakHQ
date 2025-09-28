@@ -1,5 +1,3 @@
-'use client'
-
 import { motion } from 'framer-motion'
 import { Code2, Smartphone, Globe, ShoppingCart, Rocket } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
