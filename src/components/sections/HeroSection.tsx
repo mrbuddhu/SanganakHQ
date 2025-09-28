@@ -150,7 +150,7 @@ export default function HeroSection({
                   textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
                 }}
               >
-                {displayText}
+                Branding • Design • Web Development • Mobile Apps • AI • Blockchain • Marketing
               </motion.h2>
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -162,7 +162,7 @@ export default function HeroSection({
                   Ship faster, lift conversions, and lead your market.
                 </p>
                 <p className="text-lg sm:text-xl text-gray-300">
-                  Elite solutions delivered in weeks, not months — across branding, design, websites, applications, AI, blockchain, and marketing.
+                  Elite solutions delivered in weeks, not months.
                 </p>
               </motion.div>
             </div>
