@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { motion } from 'framer-motion'
 import { Gem, Palette, Smartphone, Monitor, Zap } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
@@ -7,16 +8,6 @@ import LuxuryCard from '@/components/ui/LuxuryCard'
 import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'Elite Design Services – SanganakHQ | Convert 25% More Visitors',
-  description: 'Convert 25% more visitors into customers with SanganakHQ elite design. Premium UX/UI, conversion-optimized user journeys, and luxury design systems that maximize revenue.',
-  keywords: 'elite design, premium UX UI, conversion optimization, luxury design, web design, mobile app design, SanganakHQ',
-  openGraph: {
-    title: 'Elite Design Services – SanganakHQ | Convert 25% More Visitors',
-    description: 'Convert 25% more visitors into customers with SanganakHQ elite design. Premium UX/UI, conversion-optimized user journeys, and luxury design systems that maximize revenue.',
-  },
-}
 
 export default function EliteDesignPage() {
   const features = [

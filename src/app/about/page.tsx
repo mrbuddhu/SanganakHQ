@@ -8,17 +8,7 @@ import { CTA_URL } from '@/constants/links';
 import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'About SanganakHQ | Premium Global Innovation Consultancy',
-  description: 'Learn about SanganakHQ, the premium global innovation consultancy that delivers 3x faster launches, 30% conversion lifts, and market leadership across 6 continents.',
-  keywords: 'about SanganakHQ, global innovation consultancy, premium technology solutions, enterprise consulting, startup acceleration',
-  openGraph: {
-    title: 'About SanganakHQ | Premium Global Innovation Consultancy',
-    description: 'Learn about SanganakHQ, the premium global innovation consultancy that delivers 3x faster launches, 30% conversion lifts, and market leadership across 6 continents.',
-  },
-};
+ 
 
 export default function AboutPage() {
   const values = [

@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { motion } from 'framer-motion'
 import { Globe, Shield, Zap, TrendingUp } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
@@ -7,16 +8,6 @@ import LuxuryCard from '@/components/ui/LuxuryCard'
 import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'Blockchain Innovation – SanganakHQ | Lead the Web3 Revolution',
-  description: 'Lead the Web3 revolution with SanganakHQ blockchain solutions. Create new revenue streams, reduce costs by 60%, and future-proof your business with smart contracts and DApps.',
-  keywords: 'blockchain innovation, Web3 development, smart contracts, DApps, DeFi, tokenomics, blockchain consulting, SanganakHQ',
-  openGraph: {
-    title: 'Blockchain Innovation – SanganakHQ | Lead the Web3 Revolution',
-    description: 'Lead the Web3 revolution with SanganakHQ blockchain solutions. Create new revenue streams, reduce costs by 60%, and future-proof your business with smart contracts and DApps.',
-  },
-}
 
 export default function BlockchainInnovationPage() {
   const features = [

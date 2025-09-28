@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { motion } from 'framer-motion'
 import { Code2, Smartphone, Globe, ShoppingCart, Rocket } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
@@ -7,16 +8,6 @@ import LuxuryCard from '@/components/ui/LuxuryCard'
 import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'Bespoke Applications – SanganakHQ | Launch 3x Faster',
-  description: 'Launch 3x faster with SanganakHQ bespoke applications. Custom software that scales with your growth, handles enterprise traffic, and delivers measurable ROI.',
-  keywords: 'bespoke applications, custom software development, web development, mobile app development, SaaS development, SanganakHQ',
-  openGraph: {
-    title: 'Bespoke Applications – SanganakHQ | Launch 3x Faster',
-    description: 'Launch 3x faster with SanganakHQ bespoke applications. Custom software that scales with your growth, handles enterprise traffic, and delivers measurable ROI.',
-  },
-}
 
 export default function BespokeApplicationsPage() {
   const features = [

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Sparkles, Gem, Code2, Globe, Lightbulb, Shield } from 'lucide-react';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
+import Link from 'next/link';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 
 export default function EliteServicesSection() {
@@ -97,53 +98,65 @@ export default function EliteServicesSection() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-[95%] sm:max-w-7xl mx-auto mt-8"
         >
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <LuxuryCard className="h-full group hover:border-luxury-gold-300/40 transition-all duration-700 p-8 bg-black/60 backdrop-blur-md shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(198,162,85,0.15)] hover:scale-[1.02]">
-                <div className="text-[#c6a255] mb-4 text-2xl transform group-hover:scale-110 transition-all duration-500 group-hover:rotate-3 group-hover:drop-shadow-[0_0_20px_rgba(198,162,85,0.3)]">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-[#c6a255] mb-4 group-hover:text-[#e9d5a1] transition-all duration-500 group-hover:tracking-wide">
-                  {service.title}
-                </h3>
-                <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
-                  {service.description}
-                </p>
-                <ul className="space-y-3 text-gray-300 text-sm">
-                  {service.features.map((feature, featureIndex) => {
-                    const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
-                    return (
-                      <motion.li
-                        key={featureIndex}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        className="flex items-start gap-3 group/item"
-                      >
-                        <span className="text-[#c6a255] mt-1 group-hover/item:text-[#e9d5a1] transition-all duration-300 group-hover/item:scale-125 group-hover/item:drop-shadow-[0_0_8px_rgba(198,162,85,0.4)]">•</span>
-                        <span className="flex-1">
-                          <span className="text-[#c6a255] group-hover/item:text-[#e9d5a1] transition-colors">{firstPart}</span>
-                          {rest.length > 0 && (
-                            <span className="text-white block mt-1 transition-colors">{rest.join(' ')}</span>
-                          )}
-                        </span>
-                      </motion.li>
-                    );
-                  })}
-                </ul>
-                {service.ctaNote && (
-                  <p className="mt-4 text-xs text-gray-400">{service.ctaNote}</p>
-                )}
-              </LuxuryCard>
-            </motion.div>
-          ))}
+          {services.map((service, index) => {
+            const serviceSlug = service.title.toLowerCase().replace(/\s+/g, '-').replace('ai-powered', 'ai-powered-intelligence');
+            const serviceUrl = `/services/${serviceSlug}`;
+            
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Link href={serviceUrl} className="block h-full">
+                  <LuxuryCard className="h-full group hover:border-luxury-gold-300/40 transition-all duration-700 p-8 bg-black/60 backdrop-blur-md shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(198,162,85,0.15)] hover:scale-[1.02] cursor-pointer">
+                    <div className="text-[#c6a255] mb-4 text-2xl transform group-hover:scale-110 transition-all duration-500 group-hover:rotate-3 group-hover:drop-shadow-[0_0_20px_rgba(198,162,85,0.3)]">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-[#c6a255] mb-4 group-hover:text-[#e9d5a1] transition-all duration-500 group-hover:tracking-wide">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-3 text-gray-300 text-sm">
+                      {service.features.map((feature, featureIndex) => {
+                        const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+                        return (
+                          <motion.li
+                            key={featureIndex}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex items-start gap-3 group/item"
+                          >
+                            <span className="text-[#c6a255] mt-1 group-hover/item:text-[#e9d5a1] transition-all duration-300 group-hover/item:scale-125 group-hover/item:drop-shadow-[0_0_8px_rgba(198,162,85,0.4)]">•</span>
+                            <span className="flex-1">
+                              <span className="text-[#c6a255] group-hover/item:text-[#e9d5a1] transition-colors">{firstPart}</span>
+                              {rest.length > 0 && (
+                                <span className="text-white block mt-1 transition-colors">{rest.join(' ')}</span>
+                              )}
+                            </span>
+                          </motion.li>
+                        );
+                      })}
+                    </ul>
+                    <div className="mt-6 pt-4 border-t border-luxury-gold-300/20">
+                      <span className="text-luxury-gold-300 text-sm font-medium group-hover:text-luxury-gold-200 transition-colors">
+                        Learn More →
+                      </span>
+                    </div>
+                    {service.ctaNote && (
+                      <p className="mt-4 text-xs text-gray-400">{service.ctaNote}</p>
+                    )}
+                  </LuxuryCard>
+                </Link>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

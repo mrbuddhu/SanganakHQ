@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { motion } from 'framer-motion'
 import { Lightbulb, Brain, Zap, Eye } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
@@ -8,14 +9,81 @@ import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'AI-Powered Intelligence – SanganakHQ | Increase Efficiency 80%',
+// Service JSON-LD Schema for SEO
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'AI-Powered Intelligence Services',
   description: 'Increase efficiency by 80% and reduce operational costs by 50% with SanganakHQ AI solutions. Custom AI models, automation, and data-driven insights that transform your business.',
-  keywords: 'AI solutions, machine learning, artificial intelligence, automation, AI consulting, custom AI models, SanganakHQ',
-  openGraph: {
-    title: 'AI-Powered Intelligence – SanganakHQ | Increase Efficiency 80%',
-    description: 'Increase efficiency by 80% and reduce operational costs by 50% with SanganakHQ AI solutions. Custom AI models, automation, and data-driven insights that transform your business.',
+  provider: {
+    '@type': 'Organization',
+    name: 'SanganakHQ',
+    url: 'https://sanganak.org'
   },
+  serviceType: 'AI Solutions',
+  areaServed: 'Worldwide',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'AI-Powered Intelligence Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Custom AI Models & Machine Learning',
+          description: 'Predict customer behavior, optimize operations, and automate workflows with cutting-edge AI.'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI-Driven Business Insights',
+          description: 'Data-powered growth strategies that increase revenue by 35% through intelligent analytics.'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Process Automation',
+          description: 'Scale smarter, work faster, and reduce manual tasks by 80% with intelligent automation.'
+        }
+      }
+    ]
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '4999',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    validFrom: '2024-01-01'
+  }
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://sanganak.org'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Services',
+      item: 'https://sanganak.org/services'
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'AI-Powered Intelligence',
+      item: 'https://sanganak.org/services/ai-powered-intelligence'
+    }
+  ]
 }
 
 export default function AIPoweredIntelligencePage() {
@@ -91,6 +159,14 @@ export default function AIPoweredIntelligencePage() {
 
   return (
     <MainLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           {/* Hero Section */}

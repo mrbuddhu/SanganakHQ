@@ -13,82 +13,79 @@ const plans = [
   {
     name: "Essentials",
     price: "Investment: $2,999+",
-    description: "Perfect for startups with $10k+ monthly revenue ready to scale 3x faster",
+    description: "Launch in 14 days or we keep working free. Premium brand identity that converts 30% better.",
     slots: "2 weeks delivery",
     features: [
-      "Professional Logo Design",
-      "Brand Colors & Typography",
-      "High-Converting Landing Page",
-      "Mobile-First Design",
-      "Basic SEO Setup"
+      "Premium Logo & Brand Identity – Authority that commands premium pricing",
+      "High-Converting Landing Page – Mobile-first design that converts visitors to customers",
+      "Brand Guidelines & Assets – Cohesive visual system for consistent authority",
+      "Basic SEO Foundation – Rank higher, attract qualified traffic automatically"
     ],
     testimonial: {
       author: "Shyam Sharma @Interio",
       quote: "Our monthly revenue grew from $15k to $105k in just 3 months after the brand transformation."
     },
-    cta: "Launch Faster",
+    cta: "Launch in 14 Days",
     popular: false,
     availability: "Only 3 spots left this month"
   },
   {
     name: "Accelerator",
     price: "Investment: $4,999+",
-    description: "For businesses making $50k+ monthly, ready to dominate their market and grow 5x",
+    description: "20–30% conversion lift in 60 days. Fix leaky funnels and scale revenue with proven growth systems.",
     slots: "4 weeks delivery",
     features: [
-      "Complete Brand Identity",
-      "Webflow/Shopify Website",
-      "Professional UI Design",
-      "Content Writing",
-      "Social Media Templates"
+      "Complete Brand & Website – Premium identity that builds trust and converts",
+      "Conversion-Optimized Design – User journeys that maximize revenue and reduce bounce rates",
+      "Content & Copywriting – Persuasive messaging that drives measurable results",
+      "Growth-Ready Foundation – SEO, analytics, and systems that scale with your business"
     ],
     testimonial: {
       author: "Shubham Kumar @GlobalEats",
       quote: "Our daily orders increased from 500 to 2,500 in 2 months with their full-service solution."
     },
-    cta: "Grow Smarter",
+    cta: "Scale Revenue Now",
     popular: false,
     availability: "Only 2 spots left this month"
   },
   {
     name: "Domination",
     price: "Investment: $9,999+",
-    description: "For established brands with $100k+ monthly revenue targeting market leadership and 10x growth",
+    description: "MVP live in 45 days. Custom platforms that scale without chaos, handle enterprise traffic, and deliver measurable ROI.",
     slots: "8 weeks delivery",
     features: [
-      "Custom Next.js Website",
-      "React Native Mobile App",
-      "Backend Development",
-      "Admin Dashboard",
-      "API Integration",
-      "3 Months Support"
+      "Custom Next.js Platform – Enterprise-grade architecture that scales with your growth",
+      "React Native Mobile App – Native performance that delights users and drives engagement",
+      "Backend & API Development – Robust infrastructure that handles millions of requests",
+      "Admin Dashboard & Analytics – Data-driven insights that optimize performance and revenue",
+      "3 Months Priority Support – Dedicated team ensures smooth launch and optimization"
     ],
     testimonial: {
       author: "Ankit Kumar @Burgerrr",
       quote: "Our monthly revenue skyrocketed from $120k to $720k in just 45 days with their end-to-end solution."
     },
-    cta: "Innovate at Scale",
+    cta: "Build Market Leader",
     popular: true,
     availability: "Only 1 spot left this month"
   },
   {
     name: "Elite",
     price: "Investment: Get Quote",
-    description: "For enterprises with $500k+ monthly revenue seeking complete digital transformation and market dominance",
+    description: "Exclusive access to innovation leadership. Dedicated team, AI + blockchain expertise, only 3 elite slots per quarter.",
     slots: "Custom Timeline",
     features: [
-      "Enterprise Software Development",
-      "Custom Features & Integration",
-      "Dedicated Development Team",
-      "24/7 Priority Support",
-      "Regular Updates & Maintenance",
-      "Long-term Partnership"
+      "Dedicated Innovation Team – Your personal squad of AI, blockchain, and design experts",
+      "Custom Enterprise Solutions – Bespoke platforms that give you unfair competitive advantages",
+      "24/7 Elite Support – White-glove service with direct access to our best minds",
+      "Long-term Partnership – Strategic advisor relationship for sustained market leadership",
+      "AI + Blockchain Integration – Cutting-edge technology that future-proofs your business",
+      "Exclusive Innovation Access – First to new technologies and market opportunities"
     ],
     testimonial: {
       author: "Rahul Kumar @NFTCollect",
       quote: "Our platform's monthly volume grew from $2M to $16M with their comprehensive digital solution."
     },
-    cta: "Unlock Elite Partnership",
+    cta: "Apply for Elite",
     popular: false,
     availability: "By application only"
   }
@@ -117,7 +114,7 @@ export default function PricingSection() {
         >
           <LuxuryHeading
             title="Premium Investment Packages"
-            subtitle="Choose Your Path to Market Leadership and Measurable Growth"
+            subtitle="Choose Your Path to 3x Faster Launches, 30% Conversion Lifts, and Market Leadership"
             className="bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text"
           />
         </motion.div>
@@ -345,14 +342,14 @@ export default function PricingSection() {
                     as="a"
                     href={
                       plan.name === "Essentials"
-                        ? "https://cal.com/sanganak/essentialquote"
+                        ? "https://cal.com/SanganakHQ/essentialquote"
                         : plan.name === "Accelerator"
-                        ? "https://cal.com/sanganak/acceleratorquote"
+                        ? "https://cal.com/SanganakHQ/acceleratorquote"
                         : plan.name === "Domination"
-                        ? "https://cal.com/sanganak/dominationquote"
+                        ? "https://cal.com/SanganakHQ/dominationquote"
                         : plan.name === "Elite"
-                        ? "https://cal.com/sanganak/elitequote"
-                        : "https://cal.com/sanganak/strategycall"
+                        ? "https://cal.com/SanganakHQ/elitequote"
+                        : "https://cal.com/SanganakHQ/strategycall"
                     }
                     target="_blank"
                     rel="noopener noreferrer"
@@ -365,6 +362,40 @@ export default function PricingSection() {
             </div>
           ))}
         </div>
+
+        {/* Marketing HQ Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16 max-w-4xl mx-auto"
+        >
+          <LuxuryCard className="p-8 text-center bg-gradient-to-r from-luxury-gold-300/5 to-luxury-gold-300/10 border-luxury-gold-300/30">
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text">
+                Already have a website?
+              </h3>
+              <p className="text-lg text-gray-300">
+                Scale it with our <span className="text-luxury-gold-300 font-semibold">Marketing HQ Retainers</span>, starting at $1,499/month.
+              </p>
+              <p className="text-gray-400">
+                SEO, ads, and growth campaigns managed by your dedicated team.
+              </p>
+              <div className="pt-4">
+                <LuxuryButton
+                  as="a"
+                  href="https://cal.com/SanganakHQ/growthstrategy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base font-bold py-3 px-8"
+                >
+                  Book Growth Strategy Call
+                </LuxuryButton>
+              </div>
+            </div>
+          </LuxuryCard>
+        </motion.div>
 
         {/* Client Logos Section */}
         <motion.div

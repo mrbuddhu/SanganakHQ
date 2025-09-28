@@ -10,17 +10,6 @@ import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { CTA_URL } from '@/constants/links';
 import LuxuryButton from '@/components/ui/LuxuryButton';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Portfolio | SanganakHQ Premium Projects',
-  description: 'Explore SanganakHQ premium portfolio featuring 3x faster launches, 30% conversion lifts, and market-leading innovations across luxury branding, elite design, and bespoke applications.',
-  keywords: 'SanganakHQ portfolio, premium projects, luxury branding portfolio, elite design projects, bespoke applications, case studies',
-  openGraph: {
-    title: 'Portfolio | SanganakHQ Premium Projects',
-    description: 'Explore SanganakHQ premium portfolio featuring 3x faster launches, 30% conversion lifts, and market-leading innovations across luxury branding, elite design, and bespoke applications.',
-  },
-};
 
 export default function Portfolio() {
   const [selectedTag, setSelectedTag] = useState<string>('All');

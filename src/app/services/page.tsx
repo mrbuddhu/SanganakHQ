@@ -8,17 +8,7 @@ import LuxuryButton from '@/components/ui/LuxuryButton';
 import { Code2, Gem, Globe, Lightbulb, Shield, Sparkles } from 'lucide-react';
 import { CTA_URL } from '@/constants/links';
 import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Services | SanganakHQ Premium Innovation Solutions',
-  description: 'Choose your path to market leadership with SanganakHQ premium services: Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, and Marketing HQ.',
-  keywords: 'SanganakHQ services, premium innovation solutions, luxury branding, elite design, bespoke applications, blockchain innovation, AI solutions, marketing HQ',
-  openGraph: {
-    title: 'Services | SanganakHQ Premium Innovation Solutions',
-    description: 'Choose your path to market leadership with SanganakHQ premium services: Luxury Branding, Elite Design, Bespoke Applications, Blockchain Innovation, AI Solutions, and Marketing HQ.',
-  },
-};
+ 
 // Services Page Component - Premium services ko showcase karne wala main component
 // Features:
 // - Responsive grid layout - Mobile se desktop tak adaptive design
@@ -118,41 +108,53 @@ export default function Services() {
             subtitle="Six elite pathways to measurable growth and market leadership"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <LuxuryCard className="flex flex-col h-full">
-                  <div className="relative p-4 flex flex-col h-full">
-                    <div className="text-[#c6a255] mb-3 text-2xl">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-[#c6a255] mb-3">{service.title}</h3>
-                    <p className="text-gray-300 mb-3">{service.description}</p>
-                    <ul className="space-y-2 text-gray-300 text-sm flex-grow">
-                      {service.features.map((feature, featureIndex) => {
-                        const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
-                        return (
-                          <li key={featureIndex} className="flex items-start gap-2">
-                            <span className="text-[#c6a255] mt-1">•</span>
-                            <span className="flex-1">
-                              <span className="text-[#c6a255]">{firstPart}</span>
-                              {rest.length > 0 && (
-                                <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
-                              )}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                </LuxuryCard>
-              </motion.div>
-            ))}
+            {services.map((service, index) => {
+              const serviceSlug = service.title.toLowerCase().replace(/\s+/g, '-').replace('ai-powered', 'ai-powered-intelligence');
+              const serviceUrl = `/services/${serviceSlug}`;
+              
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Link href={serviceUrl} className="block h-full">
+                    <LuxuryCard className="flex flex-col h-full hover:border-luxury-gold-300/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+                      <div className="relative p-4 flex flex-col h-full">
+                        <div className="text-[#c6a255] mb-3 text-2xl">
+                          {service.icon}
+                        </div>
+                        <h3 className="text-xl font-bold text-[#c6a255] mb-3">{service.title}</h3>
+                        <p className="text-gray-300 mb-3">{service.description}</p>
+                        <ul className="space-y-2 text-gray-300 text-sm flex-grow">
+                          {service.features.map((feature, featureIndex) => {
+                            const [firstPart, ...rest] = feature.split('–').map(part => part.trim());
+                            return (
+                              <li key={featureIndex} className="flex items-start gap-2">
+                                <span className="text-[#c6a255] mt-1">•</span>
+                                <span className="flex-1">
+                                  <span className="text-[#c6a255]">{firstPart}</span>
+                                  {rest.length > 0 && (
+                                    <span className="text-gray-300 block mt-1">{rest.join(' ')}</span>
+                                  )}
+                                </span>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                        <div className="mt-4 pt-4 border-t border-luxury-gold-300/20">
+                          <span className="text-luxury-gold-300 text-sm font-medium hover:text-luxury-gold-200 transition-colors">
+                            Learn More →
+                          </span>
+                        </div>
+                      </div>
+                    </LuxuryCard>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* CTA Section */}

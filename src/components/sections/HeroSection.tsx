@@ -152,14 +152,19 @@ export default function HeroSection({
               >
                 {displayText}
               </motion.h2>
-              <motion.h3 
+              <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
-                className="text-body-lg font-inter text-white mb-2 sm:mb-3"
+                className="text-body-lg font-inter text-white mb-2 sm:mb-3 space-y-2"
               >
-                SanganakHQ delivers 3x faster launches, 30% conversion lifts, and market leadership through premium innovation across 6 continents.
-              </motion.h3>
+                <p className="text-xl sm:text-2xl font-medium">
+                  Ship faster, lift conversions, and lead your market.
+                </p>
+                <p className="text-lg sm:text-xl text-gray-300">
+                  Elite solutions delivered in weeks, not months — across branding, design, websites, applications, AI, blockchain, and marketing.
+                </p>
+              </motion.div>
             </div>
 
             

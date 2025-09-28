@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { motion } from 'framer-motion'
 import { Shield, Search, Share2, Mail, BarChart3 } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
@@ -7,16 +8,6 @@ import LuxuryCard from '@/components/ui/LuxuryCard'
 import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'Marketing HQ – SanganakHQ | Grow Revenue 200%',
-  description: 'Grow revenue by 200% and reduce customer acquisition costs by 40% with SanganakHQ Marketing HQ. Data-driven marketing strategies that scale your business with SEO, social media, paid ads, and email marketing.',
-  keywords: 'marketing HQ, digital marketing, SEO, social media marketing, paid advertising, email marketing, growth marketing, SanganakHQ',
-  openGraph: {
-    title: 'Marketing HQ – SanganakHQ | Grow Revenue 200%',
-    description: 'Grow revenue by 200% and reduce customer acquisition costs by 40% with SanganakHQ Marketing HQ. Data-driven marketing strategies that scale your business with SEO, social media, paid ads, and email marketing.',
-  },
-}
 
 export default function MarketingHQPage() {
   const features = [

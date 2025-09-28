@@ -36,7 +36,7 @@ export default function FinalCTASection() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
-                href="https://cal.com/sanganak/strategycall"
+                href="https://cal.com/SanganakHQ/strategycall"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => console.log('Primary button clicked')}

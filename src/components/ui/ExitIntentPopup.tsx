@@ -172,7 +172,7 @@ export default function ExitIntentPopup({ isEnabled = true }: ExitIntentPopupPro
             <div className="space-y-3">
               <LuxuryButton
                 as="a"
-                href="https://cal.com/sanganak/exclusive-discount"
+                href="https://cal.com/SanganakHQ/exclusive-discount"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center font-bold text-sm sm:text-base py-2 sm:py-3"

@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { motion } from 'framer-motion'
 import { Sparkles, Crown, Target, TrendingUp, Users, DollarSign } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
@@ -8,14 +9,81 @@ import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'Luxury Branding Services – SanganakHQ | Become a Category King',
+// Service JSON-LD Schema for SEO
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Luxury Branding Services',
   description: 'Become a Category King with SanganakHQ luxury branding. Strategic positioning, premium visual identity, and conversion-optimized copywriting that drives 30% better conversions and market authority.',
-  keywords: 'luxury branding, premium brand agency, category king, brand positioning, visual identity, brand strategy, premium branding services, SanganakHQ',
-  openGraph: {
-    title: 'Luxury Branding Services – SanganakHQ | Become a Category King',
-    description: 'Become a Category King with SanganakHQ luxury branding. Strategic positioning, premium visual identity, and conversion-optimized copywriting that drives 30% better conversions and market authority.',
+  provider: {
+    '@type': 'Organization',
+    name: 'SanganakHQ',
+    url: 'https://sanganak.org'
   },
+  serviceType: 'Luxury Branding',
+  areaServed: 'Worldwide',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Luxury Branding Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Strategic Brand Positioning',
+          description: 'Dominate your market segment with authority and create an unforgettable brand presence that commands premium pricing.'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Premium Visual Identity',
+          description: 'Signature visual identity with premium perception that converts 30% better than competitors.'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Conversion-Optimized Copywriting',
+          description: 'Persuasive messaging that drives measurable results and builds lasting customer loyalty.'
+        }
+      }
+    ]
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '2999',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    validFrom: '2024-01-01'
+  }
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://sanganak.org'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Services',
+      item: 'https://sanganak.org/services'
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Luxury Branding',
+      item: 'https://sanganak.org/services/luxury-branding'
+    }
+  ]
 }
 
 export default function LuxuryBrandingPage() {
@@ -91,6 +159,14 @@ export default function LuxuryBrandingPage() {
 
   return (
     <MainLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           {/* Hero Section */}

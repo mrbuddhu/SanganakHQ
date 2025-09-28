@@ -6,17 +6,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
 import LuxuryCard from '@/components/ui/LuxuryCard';
 import { Mail, Phone, MapPin, Clock, MessageCircle, ArrowRight, Calendar } from 'lucide-react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Contact SanganakHQ | Book Your Strategy Call',
-  description: 'Ready to launch 3x faster and grow 30% more? Contact SanganakHQ for your free strategy call. Premium innovation consultancy serving global clients.',
-  keywords: 'contact SanganakHQ, strategy call, premium consultancy, global innovation, book consultation',
-  openGraph: {
-    title: 'Contact SanganakHQ | Book Your Strategy Call',
-    description: 'Ready to launch 3x faster and grow 30% more? Contact SanganakHQ for your free strategy call. Premium innovation consultancy serving global clients.',
-  },
-};
+ 
 
 export default function ContactPage() {
   const contactInfo = [

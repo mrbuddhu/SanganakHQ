@@ -171,14 +171,14 @@ export default function TestimonialsSection() {
                         />
                         <button
                           onClick={(e) => toggleVideo(e, index)}
-                          className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/60 via-black/20 to-black/40 hover:from-black/70 hover:via-black/30 hover:to-black/50 transition-all duration-500 cursor-pointer z-10"
+                          className="absolute top-4 left-4 bg-gradient-to-t from-black/60 via-black/20 to-black/40 hover:from-black/70 hover:via-black/30 hover:to-black/50 transition-all duration-500 cursor-pointer z-10 rounded-full"
                           type="button"
                         >
-                          <div className="w-24 h-24 rounded-full bg-luxury-gold-300/95 backdrop-blur-sm flex items-center justify-center transform group-hover:scale-110 transition-all duration-500 shadow-2xl shadow-luxury-gold-300/30">
+                          <div className="w-12 h-12 rounded-full bg-luxury-gold-300/95 backdrop-blur-sm flex items-center justify-center transform group-hover:scale-110 transition-all duration-500 shadow-2xl shadow-luxury-gold-300/30">
                             {playingVideos[index] ? (
-                              <Pause className="w-10 h-10 text-black" />
+                              <Pause className="w-5 h-5 text-black" />
                             ) : (
-                              <Play className="w-10 h-10 text-black ml-1" />
+                              <Play className="w-5 h-5 text-black ml-0.5" />
                             )}
                           </div>
                         </button>
