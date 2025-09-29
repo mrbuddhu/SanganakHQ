@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { Sparkles, Crown, Target, TrendingUp, Users, DollarSign } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
@@ -8,35 +10,8 @@ import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Luxury Branding Services | SanganakHQ Premium IT Boutique | Become Category King',
-  description: 'Transform your brand into a Category King with SanganakHQ luxury branding. Strategic positioning, premium visual identity, and conversion-optimized copywriting that drives 30% better conversions and market authority.',
-  keywords: 'luxury branding services, premium brand identity, strategic brand positioning, visual identity design, brand strategy, category king, premium branding, brand authority, conversion optimization',
-  openGraph: {
-    title: 'Luxury Branding Services | SanganakHQ Premium IT Boutique | Become Category King',
-    description: 'Transform your brand into a Category King with SanganakHQ luxury branding. Strategic positioning, premium visual identity, and conversion-optimized copywriting.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'SanganakHQ Luxury Branding Services',
-        type: 'image/png'
-      }
-    ],
-    type: 'website',
-    url: 'https://sanganak.org/services/luxury-branding'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Luxury Branding Services | SanganakHQ Premium IT Boutique | Become Category King',
-    description: 'Transform your brand into a Category King with SanganakHQ luxury branding. Strategic positioning, premium visual identity, and conversion-optimized copywriting.',
-    images: ['/og-image.png']
-  },
-  alternates: {
-    canonical: 'https://sanganak.org/services/luxury-branding'
-  }
-};
+// Note: Metadata cannot be exported from client components
+// This will be handled by the layout or a separate metadata file
 
 // Service JSON-LD Schema for SEO
 const serviceSchema = {

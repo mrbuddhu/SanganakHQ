@@ -29,10 +29,10 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  // Enable experimental features for better SEO
-  experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
-  },
+  // Disable experimental features to fix Framer Motion issues
+  // experimental: {
+  //   optimizePackageImports: ['lucide-react'],
+  // },
   // Headers for better SEO and security
   async headers() {
     return [

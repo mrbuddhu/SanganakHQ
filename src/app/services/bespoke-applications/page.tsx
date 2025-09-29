@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { Code2, Smartphone, Globe, ShoppingCart, Rocket } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
@@ -8,35 +10,8 @@ import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Bespoke Applications | SanganakHQ Premium IT Boutique | Launch 3x Faster',
-  description: 'Launch 3x faster with SanganakHQ bespoke applications. Custom web & mobile development, e-commerce mastery, SaaS products, and no-code solutions that scale with your business.',
-  keywords: 'bespoke applications, custom software development, web development, mobile app development, SaaS development, e-commerce development, no-code solutions, custom applications',
-  openGraph: {
-    title: 'Bespoke Applications | SanganakHQ Premium IT Boutique | Launch 3x Faster',
-    description: 'Launch 3x faster with SanganakHQ bespoke applications. Custom web & mobile development, e-commerce mastery, and SaaS products that scale with your business.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'SanganakHQ Bespoke Applications',
-        type: 'image/png'
-      }
-    ],
-    type: 'website',
-    url: 'https://sanganak.org/services/bespoke-applications'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Bespoke Applications | SanganakHQ Premium IT Boutique | Launch 3x Faster',
-    description: 'Launch 3x faster with SanganakHQ bespoke applications. Custom web & mobile development, e-commerce mastery, and SaaS products that scale with your business.',
-    images: ['/og-image.png']
-  },
-  alternates: {
-    canonical: 'https://sanganak.org/services/bespoke-applications'
-  }
-};
+// Note: Metadata cannot be exported from client components
+// This will be handled by the layout or a separate metadata file
 
 export default function BespokeApplicationsPage() {
   const features = [
