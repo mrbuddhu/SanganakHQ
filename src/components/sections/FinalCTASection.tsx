@@ -31,7 +31,7 @@ export default function FinalCTASection() {
             </h3>
             
             <p className="text-gray-300 text-lg mb-4 max-w-2xl mx-auto">
-              Scale it with our <span className="text-luxury-gold-300 font-bold">Marketing HQ Retainers</span>, starting at $1,499/month.
+              Scale it with our <span className="text-luxury-gold-300 font-bold">Growth Engine Retainers</span>, starting at $1,499/month.
             </p>
             
             <p className="text-gray-400 text-sm mb-8">

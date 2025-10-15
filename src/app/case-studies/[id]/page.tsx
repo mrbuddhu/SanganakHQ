@@ -686,6 +686,44 @@ export default function CaseStudy() {
           </motion.div>
         </div>
       </main>
+      {/* JSON-LD: CaseStudy + Breadcrumbs (non-visual) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CaseStudy',
+            name: study.title,
+            url: `https://sanganak.org/case-studies/${id}`,
+            image: study.heroImage,
+            description: study.challenge,
+            articleBody: study.solution,
+            about: study.industry,
+            author: {
+              '@type': 'Organization',
+              name: 'SANGANAK HQ'
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'SANGANAK HQ'
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sanganak.org/' },
+              { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://sanganak.org/case-studies' },
+              { '@type': 'ListItem', position: 3, name: study.title, item: `https://sanganak.org/case-studies/${id}` }
+            ]
+          })
+        }}
+      />
     </MainLayout>
   );
 }

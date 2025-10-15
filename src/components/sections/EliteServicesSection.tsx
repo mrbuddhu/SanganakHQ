@@ -63,7 +63,7 @@ export default function EliteServicesSection() {
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Marketing HQ",
+      title: "Growth Engine",
       description: "Grow revenue by 200% and reduce customer acquisition costs by 40% with data-driven marketing strategies that scale your business.",
       features: [
         "SEO & Content Marketing – Rank higher, build compounding inbound traffic, increase organic revenue by 150%",

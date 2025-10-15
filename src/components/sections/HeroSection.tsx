@@ -150,7 +150,7 @@ export default function HeroSection({
                   textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
                 }}
               >
-                Branding • Design • Web & Mobile Apps • AI • Blockchain • Marketing
+                Branding • Design • Web & Mobile Apps • AI • Blockchain • Growth
               </motion.h2>
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}

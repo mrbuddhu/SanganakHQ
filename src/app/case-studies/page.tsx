@@ -87,6 +87,20 @@ export default function CaseStudies() {
           </div>
         </div>
       </main>
+      {/* JSON-LD: Breadcrumbs (non-visual) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sanganak.org/' },
+              { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://sanganak.org/case-studies' }
+            ]
+          })
+        }}
+      />
     </MainLayout>
   );
 }

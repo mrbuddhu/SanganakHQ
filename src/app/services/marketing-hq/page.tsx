@@ -9,7 +9,7 @@ import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
 
-export default function MarketingHQPage() {
+export default function GrowthEnginePageLegacy() {
   const features = [
     {
       icon: <Search className="w-8 h-8" />,
@@ -92,7 +92,7 @@ export default function MarketingHQPage() {
               transition={{ duration: 0.8 }}
             >
               <LuxuryHeading
-                title="Marketing HQ"
+                title="Growth Engine"
                 subtitle="Grow revenue by 200% and reduce customer acquisition costs by 40% with data-driven marketing strategies that scale your business"
               />
             </motion.div>

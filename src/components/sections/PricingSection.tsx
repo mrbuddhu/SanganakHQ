@@ -363,7 +363,7 @@ export default function PricingSection() {
           ))}
         </div>
 
-        {/* Marketing HQ Banner */}
+        {/* Growth Engine Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -377,7 +377,7 @@ export default function PricingSection() {
                 Already have a website?
               </h3>
               <p className="text-lg text-gray-300">
-                Scale it with our <span className="text-luxury-gold-300 font-semibold">Marketing HQ Retainers</span>, starting at $1,499/month.
+                Scale it with our <span className="text-luxury-gold-300 font-semibold">Growth Engine Retainers</span>, starting at $1,499/month.
               </p>
               <p className="text-gray-400">
                 SEO, ads, and growth campaigns managed by your dedicated team.

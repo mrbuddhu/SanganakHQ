@@ -206,6 +206,32 @@ export default function BlockchainInnovationPage() {
           </motion.div>
         </div>
       </section>
+      {/* JSON-LD: Service + Breadcrumbs (non-visual) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'Blockchain Innovation',
+            url: 'https://sanganak.org/services/blockchain-innovation'
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sanganak.org/' },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://sanganak.org/services' },
+              { '@type': 'ListItem', position: 3, name: 'Blockchain Innovation', item: 'https://sanganak.org/services/blockchain-innovation' }
+            ]
+          })
+        }}
+      />
     </MainLayout>
   )
 }

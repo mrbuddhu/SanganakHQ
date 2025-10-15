@@ -89,7 +89,7 @@ export default function Services() {
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Marketing HQ",
+      title: "Growth Engine",
       description: "Grow revenue by 200% and reduce customer acquisition costs by 40% with data-driven marketing strategies that scale your business.",
       features: [
         "SEO & Content Marketing – Rank higher, build compounding inbound traffic, increase organic revenue by 150%",
@@ -111,7 +111,10 @@ export default function Services() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {services.map((service, index) => {
-              const serviceSlug = service.title.toLowerCase().replace(/\s+/g, '-').replace('ai-powered', 'ai-powered-intelligence');
+              const serviceSlug = service.title
+                .toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace('ai-powered', 'ai-powered-intelligence');
               const serviceUrl = `/services/${serviceSlug}`;
               
               return (
@@ -191,6 +194,30 @@ export default function Services() {
           </div>
         </div>
       </section>
+      {/* JSON-LD: Breadcrumbs (non-visual) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://sanganak.org/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Services',
+                item: 'https://sanganak.org/services'
+              }
+            ]
+          })
+        }}
+      />
     </MainLayout>
   );
 }

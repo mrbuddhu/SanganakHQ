@@ -1,86 +1,82 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Gem, Palette, Smartphone, Monitor, Zap } from 'lucide-react'
+import { Shield, Search, Share2, Mail, BarChart3 } from 'lucide-react'
 import MainLayout from '@/components/layout/MainLayout'
 import LuxuryHeading from '@/components/ui/LuxuryHeading'
 import LuxuryCard from '@/components/ui/LuxuryCard'
 import LuxuryButton from '@/components/ui/LuxuryButton'
 import { CTA_URL } from '@/constants/links'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 
-// Note: Metadata cannot be exported from client components
-// This will be handled by the layout or a separate metadata file
-
-export default function EliteDesignPage() {
+export default function GrowthEnginePage() {
   const features = [
     {
-      icon: <Monitor className="w-8 h-8" />,
-      title: "Bespoke Website & App Design",
-      description: "Luxury aesthetics that convert visitors to customers with seamless user experiences across all devices.",
+      icon: <Search className="w-8 h-8" />,
+      title: "SEO & Content Marketing",
+      description: "Rank higher, build compounding inbound traffic, and increase organic revenue by 150% with strategic SEO and content marketing.",
       benefits: [
-        "Custom website and mobile app design",
-        "Responsive design for all screen sizes",
-        "Premium visual hierarchy and layout",
-        "User-centered design approach"
+        "Technical SEO optimization",
+        "Content strategy and creation",
+        "Keyword research and targeting",
+        "Link building and authority development"
       ]
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Conversion-Optimized User Journeys",
-      description: "Designed to maximize revenue and reduce bounce rates with strategic user flow optimization.",
+      icon: <Share2 className="w-8 h-8" />,
+      title: "Social Media Strategy & Management",
+      description: "Grow engagement by 300%, build brand authority, and drive qualified leads with strategic social media management.",
       benefits: [
-        "User journey mapping and optimization",
-        "Conversion funnel analysis and improvement",
-        "A/B testing and performance optimization",
-        "Revenue-focused design decisions"
+        "Social media strategy development",
+        "Content creation and curation",
+        "Community management and engagement",
+        "Influencer partnerships and collaborations"
       ]
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Interactive Prototypes",
-      description: "Experience your product before it's built, reducing development costs and ensuring perfect execution.",
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: "Paid Ads (Google, Meta, LinkedIn)",
+      description: "Acquire customers with profitable CAC and scale profitable campaigns across all major advertising platforms.",
       benefits: [
-        "High-fidelity interactive prototypes",
-        "User testing and feedback integration",
-        "Design validation and iteration",
-        "Stakeholder approval and sign-off"
+        "Google Ads and search campaigns",
+        "Facebook and Instagram advertising",
+        "LinkedIn B2B marketing",
+        "Campaign optimization and scaling"
       ]
     },
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: "Premium Design System",
-      description: "Consistent luxury across all touchpoints for brand authority and scalable design implementation.",
+      icon: <Mail className="w-8 h-8" />,
+      title: "Email Marketing & Automations",
+      description: "Nurture leads, increase LTV by 60%, and automate customer journeys with sophisticated email marketing strategies.",
       benefits: [
-        "Comprehensive design system creation",
-        "Component library and style guide",
-        "Brand consistency across platforms",
-        "Scalable design implementation"
+        "Email marketing strategy and design",
+        "Marketing automation workflows",
+        "Lead nurturing sequences",
+        "Customer retention campaigns"
       ]
     }
   ]
 
   const results = [
     {
-      metric: "25%",
-      label: "Higher Conversion Rate",
-      description: "Premium design that converts more visitors into customers"
+      metric: "200%",
+      label: "Revenue Growth",
+      description: "Data-driven strategies that scale your business"
     },
     {
       metric: "40%",
-      label: "Reduced Bounce Rate",
-      description: "Engaging user experience that keeps visitors on site"
+      label: "Lower CAC",
+      description: "Reduce customer acquisition costs with optimization"
     },
     {
-      metric: "60%",
-      label: "Faster Load Times",
-      description: "Optimized design for superior performance"
+      metric: "150%",
+      label: "Organic Traffic",
+      description: "SEO and content marketing that compounds over time"
     },
     {
-      metric: "200%",
-      label: "User Engagement",
-      description: "Interactive design that drives user interaction"
+      metric: "300%",
+      label: "Engagement",
+      description: "Social media strategies that build community"
     }
   ]
 
@@ -96,8 +92,8 @@ export default function EliteDesignPage() {
               transition={{ duration: 0.8 }}
             >
               <LuxuryHeading
-                title="Elite Design Services"
-                subtitle="Convert 25% more visitors into customers with premium design that builds trust, drives engagement, and maximizes revenue"
+                title="Growth Engine"
+                subtitle="Grow revenue by 200% and reduce customer acquisition costs by 40% with data-driven marketing strategies that scale your business"
               />
             </motion.div>
           </div>
@@ -193,10 +189,10 @@ export default function EliteDesignPage() {
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent'
                 }}>
-                  Ready to Convert More Visitors?
+                  Ready to Scale Your Marketing?
                 </h3>
                 <p className="text-xl text-gray-300">
-                  Transform your digital presence with premium design that drives results
+                  Grow revenue and reduce costs with data-driven marketing strategies
                 </p>
               </div>
               <div>
@@ -217,8 +213,8 @@ export default function EliteDesignPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Service',
-            name: 'Elite Design',
-            url: 'https://sanganak.org/services/elite-design'
+            name: 'Growth Engine',
+            url: 'https://sanganak.org/services/growth-engine'
           })
         }}
       />
@@ -231,7 +227,7 @@ export default function EliteDesignPage() {
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sanganak.org/' },
               { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://sanganak.org/services' },
-              { '@type': 'ListItem', position: 3, name: 'Elite Design', item: 'https://sanganak.org/services/elite-design' }
+              { '@type': 'ListItem', position: 3, name: 'Growth Engine', item: 'https://sanganak.org/services/growth-engine' }
             ]
           })
         }}
@@ -239,3 +235,5 @@ export default function EliteDesignPage() {
     </MainLayout>
   )
 }
+
+
