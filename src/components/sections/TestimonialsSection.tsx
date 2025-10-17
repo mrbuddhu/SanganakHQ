@@ -275,6 +275,70 @@ export default function TestimonialsSection() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Text Testimonials Section */}
+      <div className="lg:hidden mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="max-w-7xl mx-auto px-4"
+        >
+          <motion.div 
+            className="flex gap-4 overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide items-stretch"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            {testimonials.slice(4).map((testimonial, index) => (
+              <motion.div
+                key={4 + index}
+                className="w-[300px] flex-shrink-0 flex"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + (index * 0.1), duration: 0.6 }}
+                whileHover={{ y: -2 }}
+              >
+                <LuxuryCard className="p-4 bg-gradient-to-br from-black/80 via-black/60 to-black/80 backdrop-blur-md shadow-2xl flex flex-col w-full">
+                  <div className="flex flex-1">
+                    <div className="flex-shrink-0 mr-3">
+                      <svg className="w-6 h-6 text-luxury-gold-300/60 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                      </svg>
+                    </div>
+                    <div className="flex-grow flex flex-col justify-between min-w-0 h-full">
+                      <p className="text-sm text-luxury-gold-100 font-medium italic leading-relaxed flex-1 overflow-hidden">
+                        "{testimonial.content}"
+                      </p>
+                      <div className="mt-3 flex items-center justify-between flex-shrink-0">
+                        <div className="flex items-center gap-1">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <motion.svg
+                              key={i}
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              transition={{ delay: 0.6 + (index * 0.1) + (i * 0.1), duration: 0.3 }}
+                              className="w-3 h-3 text-luxury-gold-300 drop-shadow-sm"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </motion.svg>
+                          ))}
+                        </div>
+                        <div className="text-right">
+                          <h4 className="font-semibold text-luxury-gold-300 text-sm mb-0">{testimonial.name}</h4>
+                          <p className="text-xs text-luxury-gold-300/80 font-medium">{testimonial.role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </LuxuryCard>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 } 
