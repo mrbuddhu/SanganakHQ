@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+Sitemap: https://sanganak.org/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow all other pages
+Allow: /*.html$
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.ico$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Specific directives for important pages
+Allow: /careers
+Allow: /services
+Allow: /portfolio
+Allow: /case-studies
+Allow: /blog
+
+# Crawl-delay for all bots
+Crawl-delay: 5 
