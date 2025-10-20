@@ -12,7 +12,7 @@ export default function HeroSection({
 }) {
   return (
     // === START HERO SECTION ===
-        <section id="hero" className="relative min-h-screen py-2 sm:py-4 md:py-6 flex flex-col items-center justify-center overflow-x-hidden pb-[70px] sm:pb-0">
+        <section id="hero" className="relative py-8 sm:py-12 md:py-16 lg:py-20 flex flex-col items-center justify-start overflow-x-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black">
@@ -26,7 +26,7 @@ export default function HeroSection({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
-            className="flex items-center justify-center pb-2 sm:pb-3 md:pb-4"
+            className="flex items-center justify-center pb-4 sm:pb-6 md:pb-8"
           >
             <div className="bg-black/50 backdrop-blur-md border border-luxury-gold-300/25 rounded-full px-6 py-3 flex items-center gap-3">
               <div className="flex -space-x-2 flex-col items-center">
@@ -119,8 +119,8 @@ export default function HeroSection({
             </motion.div>
           </div>
 
-          <div className="text-center space-y-3 sm:space-y-4 md:space-y-5 mx-auto max-w-[90%] sm:max-w-full">
-            <div className="space-y-2 sm:space-y-3">
+          <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 mx-auto max-w-[90%] sm:max-w-full">
+            <div className="space-y-3 sm:space-y-4">
               <motion.h1 
                 initial={{ opacity: 0, y: 30, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -174,7 +174,7 @@ export default function HeroSection({
             
 
             {/* Client Logos Marquee */}
-            <div className="relative overflow-hidden mt-0 mb-0 sm:mb-0">
+            <div className="relative overflow-hidden mt-6 sm:mt-8 md:mt-10">
               <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-black to-transparent z-10" />
               <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-black to-transparent z-10" />
               <motion.div
@@ -231,7 +231,7 @@ export default function HeroSection({
         </div>
       </div>
       {/* Animated Counters */}
-      <div className="flex justify-center gap-8 mt-8">
+      <div className="flex justify-center gap-6 sm:gap-8 mt-6 sm:mt-8">
         <div className="text-center">
           <span className="text-h2 font-inter font-semibold text-[#c6a255]">{projectCount}+</span>
           <p className="text-body-sm font-inter text-gray-300">Projects Completed</p>
