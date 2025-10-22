@@ -1,0 +1,2 @@
+# Exclude large testimonial videos from deployment artifacts
+public/testimonials/*.mp4
