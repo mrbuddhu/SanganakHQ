@@ -403,7 +403,7 @@ export default function TestimonialsSection() {
                       onError={() => handleVideoError(0)}
                       playsInline
                       webkit-playsinline="true"
-                      preload="metadata"
+                      preload="auto"
                       muted
                       loop
                       x5-video-player-type="h5"
@@ -470,7 +470,7 @@ export default function TestimonialsSection() {
                       onError={() => handleVideoError(index + 1)}
                       playsInline
                       webkit-playsinline="true"
-                      preload="metadata"
+                      preload="auto"
                       muted
                       loop
                       x5-video-player-type="h5"
@@ -549,7 +549,7 @@ export default function TestimonialsSection() {
                       onError={() => handleVideoError(0)}
                       playsInline
                       webkit-playsinline="true"
-                      preload="metadata"
+                      preload="auto"
                       muted
                       loop
                       x5-playsinline="true"
@@ -616,7 +616,7 @@ export default function TestimonialsSection() {
                         onError={() => handleVideoError(index + 1)}
                         playsInline
                         webkit-playsinline="true"
-                        preload="metadata"
+                        preload="auto"
                         muted
                         loop
                         x5-playsinline="true"
