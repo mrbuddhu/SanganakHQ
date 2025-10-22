@@ -9,6 +9,7 @@ export default function TestimonialsSection() {
   const [playingVideos, setPlayingVideos] = useState<{[key: number]: boolean}>({});
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
   const [activeDot, setActiveDot] = useState(0);
+  const [videoErrors, setVideoErrors] = useState<{[key: number]: boolean}>({});
 
   const testimonials = [
     {
@@ -161,6 +162,14 @@ export default function TestimonialsSection() {
     setPlayingVideos(prev => ({
       ...prev,
       [index]: false
+    }));
+  };
+
+  const handleVideoError = (index: number) => {
+    console.log(`Video error for index ${index}`);
+    setVideoErrors(prev => ({
+      ...prev,
+      [index]: true
     }));
   };
 
@@ -391,16 +400,17 @@ export default function TestimonialsSection() {
                       className="w-full h-full object-cover"
                       src={testimonials[0].videoUrl}
                       onEnded={() => handleVideoEnd(0)}
+                      onError={() => handleVideoError(0)}
                       playsInline
                       webkit-playsinline="true"
                       preload="metadata"
-                    muted
-                    loop
+                      muted
+                      loop
                       x5-video-player-type="h5"
                       x5-video-player-fullscreen="true"
-                    onLoadedMetadata={(e) => {
-                      e.currentTarget.currentTime = 2; // Start 2 seconds ahead
-                    }}
+                      onLoadedMetadata={(e) => {
+                        e.currentTarget.currentTime = 2; // Start 2 seconds ahead
+                      }}
                     />
                     <button
                       onClick={(e) => toggleVideo(e, 0)}
@@ -457,6 +467,7 @@ export default function TestimonialsSection() {
                       className="w-full h-full object-cover"
                       src={testimonial.videoUrl}
                       onEnded={() => handleVideoEnd(index + 1)}
+                      onError={() => handleVideoError(index + 1)}
                       playsInline
                       webkit-playsinline="true"
                       preload="metadata"
@@ -535,17 +546,18 @@ export default function TestimonialsSection() {
                       className="w-full h-full object-cover object-center"
                       src={testimonials[0].videoUrl}
                       onEnded={() => handleVideoEnd(0)}
+                      onError={() => handleVideoError(0)}
                       playsInline
                       webkit-playsinline="true"
                       preload="metadata"
-                    muted
-                    loop
+                      muted
+                      loop
                       x5-playsinline="true"
                       x5-video-player-type="h5"
                       x5-video-player-fullscreen="false"
-                    onLoadedMetadata={(e) => {
-                      e.currentTarget.currentTime = 2; // Start 2 seconds ahead
-                    }}
+                      onLoadedMetadata={(e) => {
+                        e.currentTarget.currentTime = 2; // Start 2 seconds ahead
+                      }}
                     />
                     <button
                       onClick={(e) => toggleVideo(e, 0)}
@@ -601,11 +613,12 @@ export default function TestimonialsSection() {
                         className="w-full h-full object-cover"
                         src={testimonial.videoUrl}
                         onEnded={() => handleVideoEnd(index + 1)}
+                        onError={() => handleVideoError(index + 1)}
                         playsInline
-                      webkit-playsinline="true"
+                        webkit-playsinline="true"
                         preload="metadata"
-                      muted
-                      loop
+                        muted
+                        loop
                         x5-playsinline="true"
                         x5-video-player-type="h5"
                         x5-video-player-fullscreen="false"
