@@ -162,7 +162,7 @@ export default function Navbar() {
             href={CTA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center justify-center h-[50px] sm:h-[60px] md:h-[80px] w-[160px] sm:w-[200px] md:w-[260px] text-xs sm:text-sm font-bold text-black bg-gradient-to-r from-[#c6a255] via-[#e9d5a1] to-[#c6a255] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#c6a255]/30 absolute right-0 top-0 bottom-0 z-20 p-0 m-0"
+            className="group relative flex items-center justify-center h-[50px] sm:h-[60px] md:h-[80px] w-[120px] sm:w-[140px] md:w-[160px] text-xs sm:text-sm font-bold text-black bg-gradient-to-r from-[#c6a255] via-[#e9d5a1] to-[#c6a255] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#c6a255]/30 absolute right-0 top-0 bottom-0 z-20 p-0 m-0"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 10px 25px rgba(198, 162, 85, 0.4)"
@@ -177,8 +177,7 @@ export default function Navbar() {
             
             {/* Button content */}
             <span className="relative z-10 flex items-center gap-1 sm:gap-2">
-              <span className="hidden sm:inline">📞</span>
-              <span className="font-extrabold">Book a Free Call <span className="hidden sm:inline font-black text-black">@Sanganak</span></span>
+              <span className="font-extrabold">Get Started</span>
             </span>
             
             {/* Notification dot */}
