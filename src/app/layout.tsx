@@ -308,7 +308,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ backgroundColor: '#000000' }}>
       <head>
         <script
           type="application/ld+json"
@@ -375,7 +375,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-[#000000] antialiased text-white`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-[#000000] antialiased text-white`} style={{ backgroundColor: '#000000', color: '#ffffff' }}>
         {children}
         <ExitIntentPopup />
       </body>

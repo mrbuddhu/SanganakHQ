@@ -7,7 +7,7 @@ import LuxuryHeading from './LuxuryHeading';
 const techStack = [
   { name: 'Notion', icon: 'https://cdn.simpleicons.org/notion/c6a255' },
   { name: 'Loom', icon: 'https://cdn.simpleicons.org/loom/c6a255' },
-  { name: 'Canva', icon: 'https://cdn.simpleicons.org/canva/c6a255' },
+  { name: 'Canva', icon: '/tech/canva.svg' },
   { name: 'Figma', icon: 'https://cdn.simpleicons.org/figma/c6a255' },
   { name: 'Framer', icon: 'https://cdn.simpleicons.org/framer/c6a255' },
   { name: 'Webflow', icon: 'https://cdn.simpleicons.org/webflow/c6a255' },
@@ -24,7 +24,7 @@ const techStack = [
   { name: 'Ethereum', icon: 'https://cdn.simpleicons.org/ethereum/c6a255' },
   { name: 'Solidity', icon: 'https://cdn.simpleicons.org/solidity/c6a255' },
   { name: 'Solana', icon: 'https://cdn.simpleicons.org/solana/c6a255' },
-  { name: 'OpenAI', icon: 'https://cdn.simpleicons.org/openai/c6a255' },
+  { name: 'OpenAI', icon: '/tech/openai.svg' },
   { name: 'Shopify', icon: 'https://cdn.simpleicons.org/shopify/c6a255' },
   { name: 'WordPress', icon: 'https://cdn.simpleicons.org/wordpress/c6a255' },
   { name: 'Stripe', icon: 'https://cdn.simpleicons.org/stripe/c6a255' },
