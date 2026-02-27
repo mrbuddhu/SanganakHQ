@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import LuxuryHeading from '@/components/ui/LuxuryHeading';
-import LuxuryCard from '@/components/ui/LuxuryCard';
 
 export default function FAQSection() {
   const [openFaq, setOpenFaq] = useState(-1);
@@ -35,71 +34,71 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-[#000000] relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="w-full py-20 sm:py-24 bg-[#000000] relative">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
           title="Frequently Asked Questions"
           subtitle="Everything you need to know about working with SanganakHQ Premium"
         />
-        
-        <div className="mt-16 space-y-4">
+
+        <div className="mt-14 space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="relative"
+              className="rounded-xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm overflow-hidden transition-colors duration-200 hover:border-white/[0.12] hover:bg-white/[0.03]"
             >
-              <LuxuryCard className="p-0 overflow-visible">
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-luxury-gold-300/20 rounded-lg pr-16"
-                >
-                  <div className="flex items-center">
-                    <h3 className="text-lg font-semibold text-luxury-gold-300 pr-4">
-                      {faq.question}
-                    </h3>
-                  </div>
-                </button>
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: openFaq === index ? 'auto' : 0,
-                    opacity: openFaq === index ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-300 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </motion.div>
-              </LuxuryCard>
-              {/* Absolute +/− icon outside card on right */}
-              <span
+              <button
                 onClick={() => toggleFaq(index)}
-                className="absolute top-1/2 right-4 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-2xl font-bold text-luxury-gold-300 bg-black/80 rounded-full shadow-lg cursor-pointer transition-transform duration-200 hover:scale-110 z-10"
-                aria-hidden="true"
+                className="w-full flex items-center justify-between gap-4 py-4 px-4 sm:py-4 sm:px-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c6a255]/30 focus-visible:ring-inset rounded-xl"
               >
-                {openFaq === index ? '−' : '+'}
-              </span>
+                <h3 className="text-[15px] sm:text-base font-medium text-white/95 tracking-tight pr-2">
+                  {faq.question}
+                </h3>
+                <span className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-white/[0.06] text-[#c6a255] transition-transform duration-300">
+                  <motion.span
+                    animate={{ rotate: openFaq === index ? 180 : 0 }}
+                    transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <ChevronDown className="w-4 h-4" strokeWidth={2.25} />
+                  </motion.span>
+                </span>
+              </button>
+              <motion.div
+                initial={false}
+                animate={{
+                  height: openFaq === index ? 'auto' : 0,
+                  opacity: openFaq === index ? 1 : 0
+                }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden"
+              >
+                <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 border-t border-white/[0.06]">
+                  <p className="text-[14px] sm:text-[15px] text-white/70 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-10"
         >
-          <p className="text-gray-400 text-lg">
-            Still have questions? <a href="/contact" className="text-luxury-gold-300 hover:text-luxury-gold-200 underline">Contact us</a> for personalized assistance.
+          <p className="text-white/50 text-sm sm:text-base">
+            Still have questions?{' '}
+            <a href="/contact" className="text-[#c6a255] hover:text-[#e9d5a1] underline underline-offset-2 transition-colors">
+              Contact us
+            </a>
+            {' '}for personalized assistance.
           </p>
         </motion.div>
       </div>

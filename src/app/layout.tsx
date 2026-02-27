@@ -1,10 +1,17 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-luxury',
   display: 'swap',
 })
 
@@ -375,7 +382,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-[#000000] antialiased text-white`} style={{ backgroundColor: '#000000', color: '#ffffff' }}>
+      <body className={`${inter.variable} ${cormorantGaramond.variable} ${jetbrainsMono.variable} min-h-screen bg-[#000000] antialiased text-white`} style={{ backgroundColor: '#000000', color: '#ffffff' }}>
         {children}
         <ExitIntentPopup />
       </body>

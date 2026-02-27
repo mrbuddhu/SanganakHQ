@@ -91,8 +91,8 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-16 sm:py-24 relative bg-[#000000] overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="portfolio" className="w-full py-20 sm:py-24 relative bg-[#000000] overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
           title="Premium Portfolio"
           subtitle="Explore our collection of elite digital experiences that delivered measurable growth, market leadership, and exceptional ROI"
@@ -116,7 +116,7 @@ const PortfolioSection = () => {
              >
               <div className="space-y-3">
                 <Link href={project.caseStudyLink}>
-                  <div className="relative w-full h-[180px] sm:h-[220px] md:h-[250px] lg:h-[300px] overflow-hidden rounded-2xl border border-luxury-gold-300/20 group hover:border-luxury-gold-300/30 transition-all duration-300">
+                  <div className="relative w-full h-[180px] sm:h-[220px] md:h-[250px] lg:h-[300px] overflow-hidden rounded-2xl border border-white/[0.08] group hover:border-[#c6a255]/30 hover:shadow-[0_0_28px_-6px_rgba(198,162,85,0.15)] transition-all duration-300">
                     <div className="relative w-full h-full">
                       {/* Blurred background image */}
                       <Image
@@ -139,7 +139,7 @@ const PortfolioSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 rounded-2xl z-20 pointer-events-none" />
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-                      <h3 className="text-sm sm:text-lg font-bold text-luxury-gold-100 mb-1 sm:mb-2 group-hover:text-luxury-gold-300 transition-colors">
+                      <h3 className="text-sm sm:text-lg font-bold text-white/95 mb-1 sm:mb-2 group-hover:text-[#c6a255] transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-gray-300 text-xs sm:text-sm mb-2 sm:mb-3 line-clamp-1">
@@ -149,7 +149,7 @@ const PortfolioSection = () => {
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs bg-luxury-gold-900/30 text-luxury-gold-300 rounded-full border border-luxury-gold-300/10"
+                            className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs bg-[#c6a255]/15 text-[#c6a255] rounded-full border border-[#c6a255]/20"
                           >
                             {tag}
                           </span>
@@ -163,7 +163,7 @@ const PortfolioSection = () => {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <span className="text-xs text-gray-400 font-medium">Industry:</span>
-                    <span className="text-xs text-luxury-gold-300 font-semibold">{project.industry}</span>
+                    <span className="text-xs text-[#c6a255] font-semibold">{project.industry}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-xs text-gray-400 font-medium mt-0.5">Tech:</span>
@@ -202,7 +202,7 @@ const PortfolioSection = () => {
              >
               <div className="space-y-3">
                 <Link href={project.caseStudyLink}>
-                  <div className="relative w-full h-[180px] sm:h-[220px] md:h-[250px] lg:h-[300px] overflow-hidden rounded-2xl border border-luxury-gold-300/20 group hover:border-luxury-gold-300/30 transition-all duration-300">
+                  <div className="relative w-full h-[180px] sm:h-[220px] md:h-[250px] lg:h-[300px] overflow-hidden rounded-2xl border border-white/[0.08] group hover:border-[#c6a255]/30 hover:shadow-[0_0_28px_-6px_rgba(198,162,85,0.15)] transition-all duration-300">
                     <div className="relative w-full h-full">
                       {/* Blurred background image */}
                       <Image
@@ -225,7 +225,7 @@ const PortfolioSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 rounded-2xl z-20 pointer-events-none" />
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-lg font-bold text-luxury-gold-100 mb-2 group-hover:text-luxury-gold-300 transition-colors">
+                      <h3 className="text-lg font-bold text-white/95 mb-2 group-hover:text-[#c6a255] transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-gray-300 text-sm mb-3 line-clamp-1">
@@ -235,7 +235,7 @@ const PortfolioSection = () => {
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2 py-0.5 text-xs bg-luxury-gold-900/30 text-luxury-gold-300 rounded-full border border-luxury-gold-300/10"
+                            className="px-2 py-0.5 text-xs bg-[#c6a255]/15 text-[#c6a255] rounded-full border border-[#c6a255]/20"
                           >
                             {tag}
                           </span>
@@ -249,7 +249,7 @@ const PortfolioSection = () => {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <span className="text-xs text-gray-400 font-medium">Industry:</span>
-                    <span className="text-xs text-luxury-gold-300 font-semibold">{project.industry}</span>
+                    <span className="text-xs text-[#c6a255] font-semibold">{project.industry}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-xs text-gray-400 font-medium mt-0.5">Tech:</span>

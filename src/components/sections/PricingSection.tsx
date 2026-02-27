@@ -150,8 +150,8 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="relative z-10 py-24 overflow-hidden bg-[#000000]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative z-10 w-full py-20 sm:py-24 overflow-hidden bg-[#000000]">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
