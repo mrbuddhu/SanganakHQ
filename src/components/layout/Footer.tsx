@@ -19,11 +19,11 @@ function XIcon({ className }: { className?: string }) {
 }
 
 const SOCIAL_LINKS = [
-  { href: 'https://x.com/sanganakHQ', label: 'X (Twitter)', icon: XIcon },
-  { href: 'https://linkedin.com/company/sanganakHQ', label: 'LinkedIn', icon: Linkedin },
-  { href: 'https://instagram.com/sanganakHQ', label: 'Instagram', icon: Instagram },
-  { href: 'https://youtube.com/@sanganakHQ', label: 'YouTube', icon: Youtube },
-  { href: 'https://tiktok.com/@sanganakHQ', label: 'TikTok', icon: TikTokIcon },
+  { href: 'https://x.com/SanganakHQ', label: 'X (Twitter)', icon: XIcon },
+  { href: 'https://linkedin.com/company/SanganakHQ', label: 'LinkedIn', icon: Linkedin },
+  { href: 'https://instagram.com/SanganakHQ', label: 'Instagram', icon: Instagram },
+  { href: 'https://youtube.com/@SanganakHQ', label: 'YouTube', icon: Youtube },
+  { href: 'https://tiktok.com/@SanganakHQ', label: 'TikTok', icon: TikTokIcon },
   { href: 'https://www.facebook.com/SanganakHQ/', label: 'Facebook', icon: Facebook },
 ];
 
