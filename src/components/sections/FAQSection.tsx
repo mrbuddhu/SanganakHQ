@@ -34,9 +34,10 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="w-full py-20 sm:py-24 bg-[#000000] relative">
+    <section id="faq" className="w-full py-20 sm:py-24 bg-[#050505] relative">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
+          overline="FAQ"
           title="Frequently Asked Questions"
           subtitle="Everything you need to know about working with SanganakHQ Premium"
         />
@@ -49,7 +50,7 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="rounded-xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm overflow-hidden transition-colors duration-200 hover:border-white/[0.12] hover:bg-white/[0.03]"
+              className="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200 hover:border-white/[0.1] hover:bg-white/[0.03]"
             >
               <button
                 onClick={() => toggleFaq(index)}

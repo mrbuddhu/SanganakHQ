@@ -68,9 +68,10 @@ export default function CaseStudiesSection() {
   const otherCaseStudies = caseStudies.filter(study => !study.featured);
 
   return (
-    <section id="case-studies" className="w-full py-20 sm:py-24 bg-[#000000] relative overflow-hidden">
+    <section id="case-studies" className="w-full py-20 sm:py-24 bg-[#030303] relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
+          overline="Case studies"
           title="Client Success Stories"
           subtitle="Measurable results from our premium engagements—real revenue growth, conversion lifts, and market leadership"
         />

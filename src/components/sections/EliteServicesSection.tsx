@@ -56,6 +56,7 @@ export default function EliteServicesSection() {
           viewport={{ once: true }}
         >
           <LuxuryHeading
+            overline="What we do"
             title="Three Core Pillars"
             subtitle="Everything we deliver fits inside these."
           />
@@ -76,28 +77,29 @@ export default function EliteServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <LuxuryCard className="h-full group hover:border-[#c6a255]/30 transition-all duration-300 p-8 bg-black/50 backdrop-blur-md border border-white/[0.08] hover:shadow-[0_0_40px_-8px_rgba(198,162,85,0.2)] hover:scale-[1.02]">
-                <div className="text-[#c6a255] mb-3 transform group-hover:scale-110 transition-all duration-500">
+              <LuxuryCard className="h-full group relative overflow-hidden transition-all duration-300 p-8 pl-9 bg-black/40 backdrop-blur-md border border-white/[0.06] hover:border-white/[0.1] hover:bg-black/50">
+                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#c6a255]/60 group-hover:bg-[#c6a255] transition-colors duration-300" aria-hidden />
+                <div className="text-[#c6a255]/90 mb-3 transition-transform duration-300 group-hover:text-[#c6a255]">
                   {pillar.icon}
                 </div>
-                <h3 className="text-lg font-bold text-[#c6a255] uppercase tracking-wider mb-2">
+                <h3 className="text-base font-semibold text-white uppercase tracking-[0.12em] mb-2">
                   {pillar.title}
                 </h3>
-                <p className="text-sm font-medium text-gray-400 mb-3 italic">
+                <p className="text-sm font-medium text-white/50 mb-3 italic">
                   {pillar.tagline}
                 </p>
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                <p className="text-white/70 mb-4 text-sm leading-relaxed">
                   {pillar.description}
                 </p>
-                <ul className="space-y-2 text-gray-300 text-sm mb-4">
+                <ul className="space-y-2 text-white/65 text-sm mb-4">
                   {pillar.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#c6a255] mt-0.5 flex-shrink-0">•</span>
+                      <span className="text-[#c6a255]/80 mt-0.5 flex-shrink-0">·</span>
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-gray-400 border-t border-white/[0.08] pt-4 mt-4">
+                <p className="text-xs text-white/40 border-t border-white/[0.06] pt-4 mt-4">
                   {pillar.footer}
                 </p>
               </LuxuryCard>

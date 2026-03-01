@@ -7,13 +7,16 @@ interface LuxuryHeadingProps {
   subtitle?: string;
   align?: 'left' | 'center' | 'right';
   className?: string;
+  /** If set, show a small overline above the title (e.g. "WHAT WE DO") */
+  overline?: string;
 }
 
-export default function LuxuryHeading({ 
-  title, 
-  subtitle, 
+export default function LuxuryHeading({
+  title,
+  subtitle,
   align = 'center',
-  className = ''
+  className = '',
+  overline,
 }: LuxuryHeadingProps) {
   const alignClass = {
     left: 'text-left',
@@ -23,45 +26,52 @@ export default function LuxuryHeading({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className={`mb-16 ${alignClass[align]} ${className}`}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, margin: '-40px' }}
+      className={`mb-12 sm:mb-14 ${alignClass[align]} ${className}`}
     >
-      {/* Decorative elements */}
-      <div className="flex items-center justify-center gap-4 mb-6">
-        <div className="h-[2px] w-16 bg-gradient-to-r from-luxury-gold-300/10 via-luxury-gold-300 to-luxury-gold-300/10" />
-        <div className="w-3 h-3 rounded-full bg-luxury-gold-300 shadow-glow-gold" />
-        <div className="h-[2px] w-16 bg-gradient-to-r from-luxury-gold-300/10 via-luxury-gold-300 to-luxury-gold-300/10" />
-      </div>
+      {overline && (
+        <p
+          className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-3"
+          style={{ fontFamily: 'var(--font-inter), sans-serif' }}
+        >
+          {overline}
+        </p>
+      )}
 
-      {/* Title with enhanced gradient and glow */}
-      <motion.h2
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#c6a255] bg-gradient-to-r from-[#c6a255] via-[#e9d5a1] to-[#c6a255] text-transparent bg-clip-text mb-4 sm:mb-6 drop-shadow-[0_0_10px_rgba(218,165,32,0.3)] tracking-tight py-1"
-        initial={{ backgroundPosition: '200% center' }}
-        whileInView={{ backgroundPosition: '0% center' }}
-        transition={{ duration: 2 }}
+      <h2
+        className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight leading-[1.15] max-w-2xl"
+        style={{
+          fontFamily: 'var(--font-luxury), Georgia, serif',
+          ...(align === 'center' ? { marginLeft: 'auto', marginRight: 'auto' } : {}),
+        }}
       >
         {title}
-      </motion.h2>
+      </h2>
 
-      {/* Subtitle with enhanced visibility */}
       {subtitle && (
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.15 }}
+          viewport={{ once: true }}
+          className="mt-4 text-base sm:text-lg text-white/60 max-w-2xl leading-relaxed"
+          style={{
+            fontFamily: 'var(--font-inter), sans-serif',
+            ...(align === 'center' ? { marginLeft: 'auto', marginRight: 'auto' } : {}),
+          }}
         >
           {subtitle}
         </motion.p>
       )}
 
-      {/* Bottom accent */}
-      <div className="mt-6 flex justify-center">
-        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-luxury-gold-300/30 to-transparent" />
-      </div>
+      {/* Single thin rule — restrained */}
+      <div
+        className={`mt-6 h-px w-12 bg-gradient-to-r ${align === 'center' ? 'mx-auto from-transparent via-white/20 to-transparent' : 'from-white/20 to-transparent'}`}
+        aria-hidden
+      />
     </motion.div>
   );
 }

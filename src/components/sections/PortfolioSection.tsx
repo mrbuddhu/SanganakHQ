@@ -94,6 +94,7 @@ const PortfolioSection = () => {
     <section id="portfolio" className="w-full py-20 sm:py-24 relative bg-[#000000] overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
+          overline="Work"
           title="Premium Portfolio"
           subtitle="Explore our collection of elite digital experiences that delivered measurable growth, market leadership, and exceptional ROI"
         />

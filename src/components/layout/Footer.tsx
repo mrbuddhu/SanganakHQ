@@ -1,6 +1,6 @@
 'use client';
 
-import { Twitter, Linkedin, Instagram, Youtube, Facebook } from 'lucide-react';
+import { Linkedin, Instagram, Youtube, Facebook } from 'lucide-react';
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -10,13 +10,21 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 const SOCIAL_LINKS = [
-  { href: 'https://x.com/sanganakHQ', label: 'X (Twitter)', icon: Twitter },
+  { href: 'https://x.com/sanganakHQ', label: 'X (Twitter)', icon: XIcon },
   { href: 'https://linkedin.com/company/sanganakHQ', label: 'LinkedIn', icon: Linkedin },
   { href: 'https://instagram.com/sanganakHQ', label: 'Instagram', icon: Instagram },
   { href: 'https://youtube.com/@sanganakHQ', label: 'YouTube', icon: Youtube },
   { href: 'https://tiktok.com/@sanganakHQ', label: 'TikTok', icon: TikTokIcon },
-  { href: 'https://facebook.com/sanganakorg', label: 'Facebook', icon: Facebook },
+  { href: 'https://www.facebook.com/SanganakHQ/', label: 'Facebook', icon: Facebook },
 ];
 
 export default function Footer() {
@@ -24,11 +32,12 @@ export default function Footer() {
     <footer className="bg-black text-white">
       {/* Full-width thin divider */}
       <div
-        className="w-full h-px"
+        className="w-full"
         style={{
-          marginTop: '60px',
-          marginBottom: '40px',
-          backgroundColor: 'rgba(255,255,255,0.15)',
+          marginTop: '4rem',
+          marginBottom: '2.5rem',
+          height: '1px',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.12) 80%, transparent 100%)',
         }}
       />
 

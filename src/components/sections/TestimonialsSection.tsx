@@ -14,7 +14,7 @@ const landscapeVideos = videoTestimonials.filter((v) => v.orientation === 'lands
 const portraitVideos = videoTestimonials.filter((v) => v.orientation === 'portrait');
 
 const cardBase =
-  'rounded-2xl border border-white/[0.08] bg-black/50 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-[#c6a255]/30 hover:shadow-[0_0_30px_-5px_rgba(198,162,85,0.12)]';
+  'rounded-2xl border border-white/[0.06] bg-black/40 overflow-hidden transition-all duration-300 hover:border-white/[0.12] hover:bg-black/50';
 
 export default function TestimonialsSection() {
   const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>({});
@@ -47,9 +47,10 @@ export default function TestimonialsSection() {
   const handleVideoError = (id: string) => setVideoErrors((p) => ({ ...p, [id]: true }));
 
   return (
-    <section id="testimonials" className="relative w-full py-20 sm:py-24 bg-[#000000] overflow-hidden">
+    <section id="testimonials" className="relative w-full py-20 sm:py-24 bg-[#050505] overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
+          overline="Testimonials"
           title="Wall of Love"
           subtitle="Hear from our distinguished clients who achieved measurable growth, market leadership, and exceptional ROI"
         />
@@ -61,7 +62,7 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.03] to-transparent p-4 sm:p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset]"
+            className="rounded-2xl border border-white/[0.06] bg-black/30 p-4 sm:p-5"
           >
             {/* Row 1: landscape videos (single one spans full width) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">

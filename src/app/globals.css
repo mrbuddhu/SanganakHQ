@@ -13,6 +13,9 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+  /* Design rhythm */
+  --space-section: clamp(4rem, 10vw, 6.5rem);
+  --space-block: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 @media (prefers-color-scheme: dark) {

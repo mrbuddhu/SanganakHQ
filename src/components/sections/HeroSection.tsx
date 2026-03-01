@@ -26,7 +26,7 @@ export default function HeroSection({
             transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="flex items-center justify-center pb-4 sm:pb-6 md:pb-8"
           >
-            <div className="bg-black/60 backdrop-blur-md border border-[#c6a255]/25 rounded-full px-6 py-3 flex items-center gap-3 shadow-[0_0_24px_-4px_rgba(198,162,85,0.12)]">
+            <div className="bg-black/50 backdrop-blur-md border border-white/[0.08] rounded-full px-5 sm:px-6 py-2.5 sm:py-3 flex items-center gap-3">
               <div className="flex -space-x-2 flex-col items-center">
                 <div className="flex -space-x-2">
                   <div className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden ring-2 ring-black">
@@ -100,10 +100,10 @@ export default function HeroSection({
           <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 mx-auto max-w-[90%] sm:max-w-3xl">
             <div className="space-y-4 sm:space-y-5">
               <motion.h1
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.12] tracking-[-0.02em]"
                 style={{
                   fontFamily: 'var(--font-luxury), Georgia, serif',
                 }}
@@ -111,19 +111,19 @@ export default function HeroSection({
                 We fix broken growth systems.
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="text-xl sm:text-2xl text-[#c6a255] font-medium"
+                transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                className="text-lg sm:text-xl text-[#c6a255] font-medium tracking-tight"
                 style={{ fontFamily: 'var(--font-luxury), Georgia, serif' }}
               >
                 Design, technology, and acquisition — done right.
               </motion.p>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto"
+                transition={{ duration: 0.5, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="text-[15px] sm:text-base text-white/65 leading-relaxed max-w-2xl mx-auto"
               >
                 Founder-led execution for startups, brands, and operators who want results — not coordination headaches.
               </motion.p>
@@ -131,24 +131,25 @@ export default function HeroSection({
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
+                className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2"
               >
-                <LuxuryButton
-                  as="a"
-                  href="/portfolio"
-                  variant="secondary"
-                  className="w-full sm:w-auto text-center font-bold py-3 px-8"
-                >
-                  View Projects
-                </LuxuryButton>
                 <LuxuryButton
                   as="a"
                   href={CTA_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto text-center font-bold py-3 px-8"
+                  variant="primary"
+                  className="w-full sm:w-auto text-center font-semibold py-3 px-6 sm:px-8"
                 >
                   Book a Strategy Call
+                </LuxuryButton>
+                <LuxuryButton
+                  as="a"
+                  href="/portfolio"
+                  variant="outline"
+                  className="w-full sm:w-auto text-center font-medium py-3 px-6 sm:px-8"
+                >
+                  View Projects
                 </LuxuryButton>
               </motion.div>
             </div>

@@ -157,12 +157,12 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-14"
         >
           <LuxuryHeading
+            overline="Pricing"
             title="Premium Investment Packages"
             subtitle="Choose Your Path to 3x Faster Launches, 30% Conversion Lifts, and Market Leadership"
-            className="bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text"
           />
         </motion.div>
 
