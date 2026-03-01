@@ -68,9 +68,10 @@ export default function CaseStudiesSection() {
   const otherCaseStudies = caseStudies.filter(study => !study.featured);
 
   return (
-    <section id="case-studies" className="py-24 bg-[#000000] relative overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="case-studies" className="w-full py-20 sm:py-24 bg-[#030303] relative overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <LuxuryHeading
+          overline="Case studies"
           title="Client Success Stories"
           subtitle="Measurable results from our premium engagements—real revenue growth, conversion lifts, and market leadership"
         />
@@ -88,15 +89,15 @@ export default function CaseStudiesSection() {
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
                 {/* Image - Left Side */}
                 <div className="w-full lg:w-1/2">
-                  <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
+                  <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden border border-white/[0.08] shadow-[0_0_30px_-8px_rgba(0,0,0,0.4)] group-hover:border-[#c6a255]/20 transition-all duration-300">
                     <Image
                       src={study.image}
                       alt={`${study.title} case study`}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    <div className="absolute top-4 left-4 bg-luxury-gold-300/10 backdrop-blur-sm text-luxury-gold-300 px-3 py-1 rounded-full text-caption font-inter font-medium border border-luxury-gold-300/20">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    <div className="absolute top-4 left-4 bg-[#c6a255]/15 backdrop-blur-sm text-[#c6a255] px-3 py-1.5 rounded-full text-xs font-medium border border-[#c6a255]/25">
                       Featured
                     </div>
                   </div>
@@ -106,30 +107,30 @@ export default function CaseStudiesSection() {
                 <div className="w-full lg:w-1/2 space-y-6">
                   {/* Header */}
                   <div>
-                    <h3 className="text-h1 font-inter font-semibold text-white mb-3 group-hover:text-luxury-gold-300 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 group-hover:text-[#c6a255] transition-colors">
                       {study.title}
                     </h3>
-                    <p className="text-body-lg font-inter text-gray-400 mb-6">{study.subtitle}</p>
+                    <p className="text-base text-gray-400 mb-6">{study.subtitle}</p>
                   </div>
 
                   {/* Key Results */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-luxury-gold-300/5 rounded-lg p-4 text-center">
-                      <DollarSign className="w-6 h-6 text-luxury-gold-300 mx-auto mb-2" />
-                      <p className="text-h3 font-inter font-semibold text-white">{study.results.revenue}</p>
-                      <p className="text-body-sm font-inter text-gray-400">Revenue</p>
+                    <div className="bg-white/[0.04] rounded-xl p-4 text-center border border-white/[0.06]">
+                      <DollarSign className="w-6 h-6 text-[#c6a255] mx-auto mb-2" />
+                      <p className="text-lg font-semibold text-white">{study.results.revenue}</p>
+                      <p className="text-sm text-gray-400">Revenue</p>
                     </div>
-                    <div className="bg-luxury-gold-300/5 rounded-lg p-4 text-center">
-                      <Users className="w-6 h-6 text-luxury-gold-300 mx-auto mb-2" />
-                      <p className="text-h3 font-inter font-semibold text-white">{study.results.users}</p>
-                      <p className="text-body-sm font-inter text-gray-400">Users</p>
+                    <div className="bg-white/[0.04] rounded-xl p-4 text-center border border-white/[0.06]">
+                      <Users className="w-6 h-6 text-[#c6a255] mx-auto mb-2" />
+                      <p className="text-lg font-semibold text-white">{study.results.users}</p>
+                      <p className="text-sm text-gray-400">Users</p>
                     </div>
                   </div>
 
                   {/* CTA */}
                   <Link
                     href={`/case-studies/${study.id}`}
-                    className="inline-flex items-center gap-2 text-luxury-gold-300 hover:text-luxury-gold-200 font-inter font-semibold text-body transition-colors group-hover:gap-3 duration-300"
+                    className="inline-flex items-center gap-2 text-[#c6a255] hover:text-[#e9d5a1] font-semibold text-sm transition-all duration-300 group-hover:gap-3"
                   >
                     Read Full Case Study
                     <ArrowRight className="w-5 h-5" />
@@ -145,26 +146,27 @@ export default function CaseStudiesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="text-center py-16"
         >
-          <h3 className="text-h2 font-inter font-semibold text-white mb-4">
+          <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">
             Ready to Launch Faster and Grow Smarter?
           </h3>
-          <p className="text-body font-inter text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-base text-gray-300 mb-8 max-w-2xl mx-auto">
             Join our exclusive client portfolio and experience the premium service that delivers measurable growth, market leadership, and exceptional ROI.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/case-studies"
-              className="inline-flex items-center justify-center gap-2 bg-luxury-gold-300 text-black px-8 py-3 rounded-lg font-inter font-semibold hover:bg-luxury-gold-200 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#c6a255] to-[#e9d5a1] text-black px-8 py-3.5 rounded-full font-semibold hover:shadow-[0_4px_20px_rgba(198,162,85,0.35)] transition-all duration-300"
             >
               View All Case Studies
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 border border-luxury-gold-300 text-luxury-gold-300 px-8 py-3 rounded-lg font-inter font-semibold hover:bg-luxury-gold-300 hover:text-black transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-[#c6a255]/50 text-[#c6a255] px-8 py-3.5 rounded-full font-semibold hover:bg-[#c6a255]/10 transition-colors duration-300"
             >
               Book Strategy Call
             </Link>

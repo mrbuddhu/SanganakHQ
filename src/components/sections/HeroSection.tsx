@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import LuxuryButton from '@/components/ui/LuxuryButton';
+import { CTA_URL } from '@/constants/links';
 
 export default function HeroSection({
   displayText,
@@ -11,24 +13,20 @@ export default function HeroSection({
   clientCount: number;
 }) {
   return (
-    // === START HERO SECTION ===
-        <section id="hero" className="relative py-8 sm:py-12 md:py-16 lg:py-20 flex flex-col items-center justify-start overflow-x-hidden">
-      {/* Background Effects */}
+    <section id="hero" className="relative w-full py-10 sm:py-14 md:py-20 lg:py-24 flex flex-col items-center justify-start overflow-x-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black">
-          <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(45deg,rgba(var(--luxury-gold-300),0.04)_25%,transparent_25%,transparent_75%,rgba(var(--luxury-gold-300),0.04)_75%,rgba(var(--luxury-gold-300),0.04))]" style={{ backgroundSize: '80px 80px' }} />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black" />
+        <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(45deg,rgba(198,162,85,0.06)_25%,transparent_25%,transparent_75%,rgba(198,162,85,0.06)_75%)]" style={{ backgroundSize: '80px 80px' }} />
       </div>
-      <div className="relative w-full z-10 pt-2">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <div className="relative w-full z-10 pt-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Testimonial Banner */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="flex items-center justify-center pb-4 sm:pb-6 md:pb-8"
           >
-            <div className="bg-black/50 backdrop-blur-md border border-luxury-gold-300/25 rounded-full px-6 py-3 flex items-center gap-3">
+            <div className="bg-black/50 backdrop-blur-md border border-white/[0.08] rounded-full px-5 sm:px-6 py-2.5 sm:py-3 flex items-center gap-3">
               <div className="flex -space-x-2 flex-col items-center">
                 <div className="flex -space-x-2">
                   <div className="w-8 h-8 rounded-full border-2 border-luxury-gold-300 overflow-hidden ring-2 ring-black">
@@ -99,71 +97,60 @@ export default function HeroSection({
             </div>
           </motion.div>
 
-          <div className="w-full flex justify-center mt-1 sm:mt-2 md:mt-3 mb-3 sm:mb-4 md:mb-5">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0, rotate: -5 }}
-              animate={{ scale: 1, opacity: 1, rotate: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              className="relative"
-            >
-              <Image 
-                src="/Globe.jpg" 
-                alt="SanganakHQ Company Logo" 
-                width={200} 
-                height={200} 
-                className="mx-auto w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px]"
-                priority={true}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-luxury-gold-300/5 rounded-full" />
-            </motion.div>
-          </div>
-
-          <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 mx-auto max-w-[90%] sm:max-w-full">
-            <div className="space-y-3 sm:space-y-4">
-              <motion.h1 
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="text-display font-inter mb-2 sm:mb-3 md:mb-4 px-2 sm:px-4 w-full whitespace-nowrap"
+          <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 mx-auto max-w-[90%] sm:max-w-3xl">
+            <div className="space-y-4 sm:space-y-5">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.12] tracking-[-0.02em]"
                 style={{
-                  background: 'linear-gradient(135deg, #c6a255, #e9d5a1, #c6a255, #f4e6b8)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  textShadow: '0 0 30px rgba(198, 162, 85, 0.4)',
-                  overflowWrap: 'break-word',
-                  backgroundSize: '200% 200%',
-                  animation: 'gradientShift 4s ease-in-out infinite'
+                  fontFamily: 'var(--font-luxury), Georgia, serif',
                 }}
               >
-                SANGANAK HQ
+                We fix broken growth systems.
               </motion.h1>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-h3 font-inter mb-2 sm:mb-3"
-                style={{
-                  background: 'linear-gradient(to right, #c6a255, #e9d5a1, #c6a255)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  textShadow: '0 0 20px rgba(198, 162, 85, 0.3)'
-                }}
+                transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                className="text-lg sm:text-xl text-[#c6a255] font-medium tracking-tight"
+                style={{ fontFamily: 'var(--font-luxury), Georgia, serif' }}
               >
-                Branding • Design • Web & Mobile Apps • AI • Blockchain • Growth
-              </motion.h2>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                Design, technology, and acquisition — done right.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.45 }}
-                className="text-body-lg font-inter text-white mb-2 sm:mb-3 space-y-2"
+                transition={{ duration: 0.5, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="text-[15px] sm:text-base text-white/65 leading-relaxed max-w-2xl mx-auto"
               >
-                <p className="text-xl sm:text-2xl font-medium">
-                  Ship faster, lift conversions, and lead your market.
-                </p>
-                <p className="text-lg sm:text-xl text-gray-300">
-                  Elite solutions delivered in weeks, not months.
-                </p>
+                Founder-led execution for startups, brands, and operators who want results — not coordination headaches.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2"
+              >
+                <LuxuryButton
+                  as="a"
+                  href={CTA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary"
+                  className="w-full sm:w-auto text-center font-semibold py-3 px-6 sm:px-8"
+                >
+                  Book a Strategy Call
+                </LuxuryButton>
+                <LuxuryButton
+                  as="a"
+                  href="/portfolio"
+                  variant="outline"
+                  className="w-full sm:w-auto text-center font-medium py-3 px-6 sm:px-8"
+                >
+                  View Projects
+                </LuxuryButton>
               </motion.div>
             </div>
 
@@ -228,18 +215,6 @@ export default function HeroSection({
               </motion.div>
             </div>
           </div>
-        </div>
-      </div>
-      {/* Animated Counters */}
-      <div className="flex justify-center gap-6 sm:gap-8 mt-6 sm:mt-8">
-        <div className="text-center">
-          <span className="text-h2 font-inter font-semibold text-[#c6a255]">{projectCount}+</span>
-          <p className="text-body-sm font-inter text-gray-300">Projects Completed</p>
-        </div>
-        <div className="text-center">
-          <span className="text-h2 font-inter font-semibold text-[#c6a255]">{clientCount}+</span>
-          <p className="text-body-sm font-inter text-gray-300">Happy Clients</p>
-        </div>
       </div>
     </section>
   );

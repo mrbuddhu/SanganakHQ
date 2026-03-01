@@ -2,15 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import TechStack from '@/components/ui/TechStack';
 import HeroSection from '@/components/sections/HeroSection';
 import EliteServicesSection from '@/components/sections/EliteServicesSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import PricingSection from '@/components/sections/PricingSection';
-import ProcessSection from '@/components/sections/ProcessSection';
-import ComparisonSection from '@/components/sections/ComparisonSection';
 import NewsletterSection from '@/components/sections/NewsletterSection';
 import FAQSection from '@/components/sections/FAQSection';
 
@@ -67,22 +64,13 @@ export default function Home() {
         {/* === ELITE SERVICES SECTION === */}
         <EliteServicesSection />
 
-        {/* === COMPARISON SECTION === */}
-        <ComparisonSection />
-
         {/* === PRICING SECTION === */}
         <PricingSection />
-
-        {/* === TECH STACK SECTION === */}
-        <TechStack />
-
-        {/* === PROCESS SECTION === */}
-        <ProcessSection />
 
         {/* === FAQ SECTION === */}
         <FAQSection />
 
-        {/* === NEWSLETTER SECTION === */}
+        {/* === FINAL CTA (View Projects · Book a Strategy Call) === */}
         <NewsletterSection />
       </main>
     </MainLayout>

@@ -150,19 +150,19 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="relative z-10 py-24 overflow-hidden bg-[#000000]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative z-10 w-full py-20 sm:py-24 overflow-hidden bg-[#000000]">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-14"
         >
           <LuxuryHeading
+            overline="Pricing"
             title="Premium Investment Packages"
             subtitle="Choose Your Path to 3x Faster Launches, 30% Conversion Lifts, and Market Leadership"
-            className="bg-gradient-to-r from-luxury-gold-100 via-luxury-gold-300 to-luxury-gold-200 text-transparent bg-clip-text"
           />
         </motion.div>
 
